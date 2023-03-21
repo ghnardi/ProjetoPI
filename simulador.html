@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de Obras pequenas: <input id="input_pequenas"><br>
+    Quantidade de Obras médias: <input id="input_medias"><br>
+    Quantidade de Obras grandes: <input id="input_grandes"><br>
+ Tempo médio da duraçao da conservaçao: <input id="input_tempo">
+ <button onclick="calcular()">Calcular</button>
+ <div id="div_museu"></div>
+</body>
+</html>
+<script> 
+
+    function calcular() {
+        var qtdPequenas = Number(input_pequenas.value) * 2000;
+        var qtdMedias = Number(input_medias.value) * 3000;
+        var qtdGrandes = Number(input_grandes.value) * 20000;
+        var tempo = Number(input_tempo.value);
+
+        var total = qtdGrandes + qtdMedias + qtdPequenas;
+        var tempoPorcemtagem30 =tempo *1.30
+        var tempoPorcemtagem50 =tempo * 1.50
+
+        div_museu.innerHTML = ` <br>
+            O custo das obras pequenas ficam:  <span style="color: green">R$${qtdPequenas}.</span> <br>
+            O custo das obras médias ficam: <span style="color: green">R$${qtdMedias}.</span> <br>
+            O custo das obras grandes ficam: <span style="color: green">R$${qtdGrandes}.</span> <br>
+            E o custo total da restauração do inventário: <span style="color: green">R$${total}.</span><br>
+            <br>
+            Sem nosso serviço, o tempo para levar a obra para restauração é de <span style="color:red">${tempo} ano/s.</span>
+            <br> Com o nosso serviço o tempo médio para leva-la a restauração: <span style="color: green">${tempoPorcemtagem30} 
+            até ${tempoPorcemtagem50} anos </span>`
+        
+    }
+</script>
