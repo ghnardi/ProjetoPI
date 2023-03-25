@@ -5,37 +5,233 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Quantidade de Obras pequenas: <input id="input_pequenas"><br>
-    Quantidade de Obras médias: <input id="input_medias"><br>
-    Quantidade de Obras grandes: <input id="input_grandes"><br>
- Tempo médio da duraçao da conservaçao: <input id="input_tempo">
- <button onclick="calcular()">Calcular</button>
- <div id="div_museu"></div>
+    <div class="header">
+            <h1 style="text-align: center;">Simulador Financeiro</h1>
+    </div>
+
+    <div class="div_input">
+
+                <span class="inputs">Tipo de obra: <input placeholder="Escultura, Pintura ou Ambos" class="input" id="input_tipo"><br></span>
+                <span class="inputs">Quantidade de Obras pequenas: <input class="input" id="input_pequenas"><br></span>
+                <span class="inputs">Quantidade de Obras médias: <input class="input" id="input_medias"><br></span>
+                <span class="inputs">Quantidade de Obras grandes: <input class="input" id="input_grandes"><br></span>
+                <span class="inputs">Sua galeria fica em algum lugar com condições adversas de temperatura? <input placeholder="Sim ou Não" class="input" id="input_temp"> <br></span>
+                <span class="inputs">Tamanho total da galeria: <input placeholder="m²" class="input" id="input_tamanho"> <br></span>
+                <span class="inputs">Tempo médio da duraçao da conservaçao: <input placeholder="Anos" class="input" id="input_tempo"> <br></span>
+                
+                <button class="button" onclick="calcular()">Calcular</button>
+    </div>
+
+    <div class="div_resultado">
+            <div id="div_museu"></div>
+    </div>
+
 </body>
 </html>
 <script> 
 
     function calcular() {
-        var qtdPequenas = Number(input_pequenas.value) * 2000;
-        var qtdMedias = Number(input_medias.value) * 3000;
-        var qtdGrandes = Number(input_grandes.value) * 20000;
+        var tipo = input_tipo.value;
+        var qtdpequenas = Number(input_pequenas.value);
+        var qtdmedias = Number(input_medias.value);
+        var qtdgrandes = Number(input_grandes.value); 
+        var valorpequenas = qtdpequenas * 2000;
+        var valormedias = qtdmedias * 3000;
+        var valorgrandes = qtdgrandes * 10000;
+        var condicao = input_temp.value;
+        var tamanho = Number(input_tamanho.value);
         var tempo = Number(input_tempo.value);
+        var instalacao = 2000;
+        var manutencao = 1500;
+        var qtdsensor = 0;
+        var totalservico = 0;
+        var taxaescultura = 1.5;
+        var taxapintura = 1.2;
+        var taxaambos = 1.7;
+        var taxacondicao = 1.2;
+        var total6meses = 0;
+        var total1ano = 0;
 
-        var total = qtdGrandes + qtdMedias + qtdPequenas;
-        var tempoPorcemtagem30 =tempo *1.3
-        var tempoPorcemtagem50 =tempo * 1.50
+        var totalvalor = valorpequenas + valormedias + valorgrandes;
+        var preju = totalvalor * 0.15;
+        var tempoPorcemtagem30 = tempo * 1.3;
+        var tempoPorcemtagem50 = tempo * 1.5;
 
-        div_museu.innerHTML = ` <br>
-            O custo das obras pequenas ficam:  <span style="color: green">R$${qtdPequenas}.</span> <br>
-            O custo das obras médias ficam: <span style="color: green">R$${qtdMedias}.</span> <br>
-            O custo das obras grandes ficam: <span style="color: green">R$${qtdGrandes}.</span> <br>
-            E o custo total da restauração do inventário: <span style="color: green">R$${total}.</span><br>
-            <br>
-            Sem nosso serviço, o tempo para levar a obra para restauração é de <span style="color:red">${tempo} ano/s.</span>
-            <br> Com o nosso serviço o tempo médio para leva-la a restauração: <span style="color: green">${tempoPorcemtagem30} 
-            até ${tempoPorcemtagem50} anos </span>`
-        
+        if (tipo == `Escultura`){
+            if (condicao == `Sim`){
+                if (tamanho > 0 && tamanho <=20){
+                    instalacao = instalacao * 1;
+                    manutencao = manutencao * 1;
+                    qtdsensor = 1;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaescultura);
+                } else if (tamanho > 20 && tamanho <= 40){
+                    qtdsensor = 2;
+                    instalacao = instalacao * qtdsensor;
+                    manutencao = manutencao * 1.8;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaescultura);
+                } else if (tamanho > 40 && tamanho <= 60){
+                    qtdsensor = 3;
+                    manutencao = manutencao * 2.7;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaescultura);
+                } else if (tamanho > 60 && tamanho <= 80){
+                    qtdsensor = 4;
+                    manutencao = manutencao * 3.6;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaescultura);
+                } else if (tamanho > 80 && tamanho <= 100){
+                    qtdsensor = 5;
+                    manutencao = manutencao * 4.5;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaescultura);
+                }
+            } else if (condicao == `Não`){
+                if (tamanho > 0 && tamanho <=20){
+                    qtdsensor = 1;
+                    manutencao = manutencao * 1;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaescultura);
+                } else if (tamanho > 20 && tamanho <= 40){
+                    qtdsensor = 2;
+                    instalacao = instalacao * qtdsensor;
+                    manutencao = manutencao * 1.8;
+                    totalservico = ((instalacao + manutencao)* taxaescultura);
+                } else if (tamanho > 40 && tamanho <= 60){
+                    qtdsensor = 3;
+                    manutencao = manutencao * 2.7;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaescultura);
+                } else if (tamanho > 60 && tamanho <= 80){
+                    qtdsensor = 4;
+                    manutencao = manutencao * 3.6;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaescultura);
+                } else if (tamanho > 80 && tamanho <= 100){
+                    qtdsensor = 5;
+                    manutencao = manutencao * 4.5;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaescultura);
+                }
+            }
+        } else if (tipo == `Pintura`){
+            if (condicao == `Sim`){
+                if (tamanho > 0 && tamanho <=20){
+                    instalacao = instalacao * 1;
+                    manutencao = manutencao * 1;
+                    qtdsensor = 1;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxapintura);
+                } else if (tamanho > 20 && tamanho <= 40){
+                    qtdsensor = 2;
+                    instalacao = instalacao * qtdsensor;
+                    manutencao = manutencao * 1.8;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxapintura);
+                } else if (tamanho > 40 && tamanho <= 60){
+                    qtdsensor = 3;
+                    manutencao = manutencao * 2.7;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxapintura);
+                } else if (tamanho > 60 && tamanho <= 80){
+                    qtdsensor = 4;
+                    manutencao = manutencao * 3.6;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxapintura);
+                } else if (tamanho > 80 && tamanho <= 100){
+                    qtdsensor = 5;
+                    manutencao = manutencao * 4.5;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxapintura);
+                }
+            } else if (condicao == `Não`){
+                if (tamanho > 0 && tamanho <=20){
+                    qtdsensor = 1;
+                    manutencao = manutencao * 1;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxapintura);
+                } else if (tamanho > 20 && tamanho <= 40){
+                    qtdsensor = 2;
+                    instalacao = instalacao * qtdsensor;
+                    manutencao = manutencao * 1.8;
+                    totalservico = ((instalacao + manutencao)* taxapintura);
+                } else if (tamanho > 40 && tamanho <= 60){
+                    qtdsensor = 3;
+                    manutencao = manutencao * 2.7;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxapintura);
+                } else if (tamanho > 60 && tamanho <= 80){
+                    qtdsensor = 4;
+                    manutencao = manutencao * 3.6;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxapintura);
+                } else if (tamanho > 80 && tamanho <= 100){
+                    qtdsensor = 5;
+                    manutencao = manutencao * 4.5;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxapintura);
+                }
+            }
+        } else if (tipo == `Ambos`) {
+            if (condicao == `Sim`){
+                if (tamanho > 0 && tamanho <=20){
+                    instalacao = instalacao * 1;
+                    manutencao = manutencao * 1;
+                    qtdsensor = 1;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaambos);
+                } else if (tamanho > 20 && tamanho <= 40){
+                    qtdsensor = 2;
+                    instalacao = instalacao * qtdsensor;
+                    manutencao = manutencao * 1.8;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaambos);
+                } else if (tamanho > 40 && tamanho <= 60){
+                    qtdsensor = 3;
+                    manutencao = manutencao * 2.7;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaambos);
+                } else if (tamanho > 60 && tamanho <= 80){
+                    qtdsensor = 4;
+                    manutencao = manutencao * 3.6;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaambos);
+                } else if (tamanho > 80 && tamanho <= 100){
+                    qtdsensor = 5;
+                    manutencao = manutencao * 4.5;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = (((instalacao + manutencao) * taxacondicao) * taxaambos);
+                }
+            } else if (condicao == `Não`){
+                if (tamanho > 0 && tamanho <=20){
+                    qtdsensor = 1;
+                    manutencao = manutencao * 1;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaambos);
+                } else if (tamanho > 20 && tamanho <= 40){
+                    qtdsensor = 2;
+                    instalacao = instalacao * qtdsensor;
+                    manutencao = manutencao * 1.8;
+                    totalservico = ((instalacao + manutencao)* taxaambos);
+                } else if (tamanho > 40 && tamanho <= 60){
+                    qtdsensor = 3;
+                    manutencao = manutencao * 2.7;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaambos);
+                } else if (tamanho > 60 && tamanho <= 80){
+                    qtdsensor = 4;
+                    manutencao = manutencao * 3.6;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaambos);
+                } else if (tamanho > 80 && tamanho <= 100){
+                    qtdsensor = 5;
+                    manutencao = manutencao * 4.5;
+                    instalacao = instalacao * qtdsensor;
+                    totalservico = ((instalacao + manutencao)* taxaambos);
+                }
+            }
+        }
+
+        total6meses = ((totalservico * 6) * 0.9);
+        total1ano = ((totalservico * 12 )* 0.75);
+        div_museu.innerHTML = `O resultado é ${totalservico}, em 6 meses é ${total6meses} e em 1 ano ${total1ano}`;
     }
 </script>

@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: bisque;
+    padding: 0.5px;
+}
+
+.div_input {
+    margin-top: 2%;
+    background-color: beige;
+    padding: 15px;
+    margin-top: 0px;
+}
+
+.inputs {
+    margin-left: 10%;
+}
+
+.input{
+    border: 1px solid black;
+    border-radius: 0;
+    width: fit-content;
+}
+.button {
+    margin-left: 10%;
+    border-radius: 0;
+    border: solid black 1px;
+}
