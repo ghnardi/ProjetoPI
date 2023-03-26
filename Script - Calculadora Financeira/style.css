@@ -29,3 +29,11 @@ body {
     border-radius: 0;
     border: solid black 1px;
 }
+
+.div_resultado {
+    margin-top: 2%;
+    display: flex;
+    background-color: beige;
+    padding: 15px;
+    margin-top: 0px;
+}

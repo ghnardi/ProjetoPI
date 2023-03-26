@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador Financeiro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="div_resultado">
-            <div id="div_museu"></div>
+            <span style="margin-left: 10%" id="span_museu"></span>
     </div>
 
 </body>
@@ -44,6 +44,7 @@
         var condicao = input_temp.value;
         var tamanho = Number(input_tamanho.value);
         var tempo = Number(input_tempo.value);
+        var totalvalorobra = 0;
         var instalacao = 2000;
         var manutencao = 1500;
         var qtdsensor = 0;
@@ -55,12 +56,19 @@
         var total6meses = 0;
         var total1ano = 0;
 
-        var totalvalor = valorpequenas + valormedias + valorgrandes;
-        var preju = totalvalor * 0.15;
-        var tempoPorcemtagem30 = tempo * 1.3;
-        var tempoPorcemtagem50 = tempo * 1.5;
+        var totalvalorrestauracao = 0;
+        var preju = 0;
+        var prejus40 = 0;
+        var prejus60 = 0;
+        var tempo40 = tempo * 1.4;
+        var tempo60 = tempo * 1.6;
 
         if (tipo == `Escultura`){
+
+            valorpequenas = valorpequenas * 1.5;
+            valormedias = valormedias * 1.5;
+            valorgrandes = valorgrandes * 1.5;
+
             if (condicao == `Sim`){
                 if (tamanho > 0 && tamanho <=20){
                     instalacao = instalacao * 1;
@@ -173,6 +181,11 @@
                 }
             }
         } else if (tipo == `Ambos`) {
+
+            valorpequenas = valorpequenas * 1.25;
+            valormedias = valormedias * 1.25;
+            valorgrandes = valorgrandes * 1.25;
+
             if (condicao == `Sim`){
                 if (tamanho > 0 && tamanho <=20){
                     instalacao = instalacao * 1;
@@ -232,6 +245,17 @@
 
         total6meses = ((totalservico * 6) * 0.9);
         total1ano = ((totalservico * 12 )* 0.75);
-        div_museu.innerHTML = `O resultado é ${totalservico}, em 6 meses é ${total6meses} e em 1 ano ${total1ano}`;
+        span_museu.innerHTML = `O resultado é ${totalservico}, em 6 meses é ${total6meses} e em 1 ano ${total1ano} <br>`;
+
+
+        totalvalorobra = (valorpequenas + valormedias + valorgrandes) * 4.5;
+        totalvalorrestauracao = valorpequenas + valormedias + valorgrandes;
+        preju = totalvalorobra * 0.12;
+        prejus40 = preju * 0.6;
+        prejus60 = preju * 0.4;
+        span_museu.innerHTML += `Suas obras são estimadas em R$${totalvalorobra}, com uma possibilidade de perda de R$${preju} por motivos de temperatura e umidade. <br>
+        Com os nossos serviços esse prejuízo pode ser reduzido para  no máximo R$${prejus40} - R$${prejus60}. <br>
+        O valor de restauração fica em R$${totalvalorrestauracao}, que deveria ser realizada a cada ${tempo} anos. <br> 
+        Com o monitoramento e controle ideal da temperatura e da umidade, a necessidade de uma restauração só será necessária a cada ${tempo40} - ${tempo60} anos.`;
     }
 </script>
