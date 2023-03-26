@@ -18,8 +18,8 @@
                 <span class="inputs">Quantidade de Obras pequenas: <input class="input" id="input_pequenas"><br></span>
                 <span class="inputs">Quantidade de Obras médias: <input class="input" id="input_medias"><br></span>
                 <span class="inputs">Quantidade de Obras grandes: <input class="input" id="input_grandes"><br></span>
-                <span class="inputs">Sua galeria fica em algum lugar com condições adversas de temperatura? <input placeholder="Sim ou Não" class="input" id="input_temp"> <br></span>
-                <span class="inputs">Tamanho total da galeria: <input placeholder="m²" class="input" id="input_tamanho"> <br></span>
+                <span class="inputs">Seu acervo fica em algum lugar com condições adversas de temperatura? <input placeholder="Sim ou Não" class="input" id="input_temp"> <br></span>
+                <span class="inputs">Tamanho total do acervo (em metros quadrados): <input placeholder="m²" class="input" id="input_tamanho"> <br></span>
                 <span class="inputs">Tempo médio da duraçao da conservaçao: <input placeholder="Anos" class="input" id="input_tempo"> <br></span>
                 
                 <button class="button" onclick="calcular()">Calcular</button>
@@ -245,7 +245,7 @@
 
         total6meses = ((totalservico * 6) * 0.9);
         total1ano = ((totalservico * 12 )* 0.75);
-        span_museu.innerHTML = `O resultado é ${totalservico}, em 6 meses é ${total6meses} e em 1 ano ${total1ano} <br>`;
+        span_museu.innerHTML = `O preço mensal do nosso serviço - incluindo instalação e manutenção - é de <b>R$${totalservico}</b>. O plano de 6 meses fica em <b>R$${total6meses}</b>, enquanto o de 1 ano fica em <b>R$${total1ano}</b> <br><br>`;
 
 
         totalvalorobra = (valorpequenas + valormedias + valorgrandes) * 4.5;
@@ -253,9 +253,9 @@
         preju = totalvalorobra * 0.12;
         prejus40 = preju * 0.6;
         prejus60 = preju * 0.4;
-        span_museu.innerHTML += `Suas obras são estimadas em R$${totalvalorobra}, com uma possibilidade de perda de R$${preju} por motivos de temperatura e umidade. <br>
-        Com os nossos serviços esse prejuízo pode ser reduzido para  no máximo R$${prejus40} - R$${prejus60}. <br>
-        O valor de restauração fica em R$${totalvalorrestauracao}, que deveria ser realizada a cada ${tempo} anos. <br> 
-        Com o monitoramento e controle ideal da temperatura e da umidade, a necessidade de uma restauração só será necessária a cada ${tempo40} - ${tempo60} anos.`;
+        span_museu.innerHTML += `Com base nos nossos cálculos suas obras são estimadas em <b>R$${totalvalorobra}</b>, com uma possibilidade de perda de <b>R$${preju}</b> por motivos de temperatura e umidade. <br>
+        Com a ajuda dos nossos serviços esperamos que esse prejuízo pode ser reduzido para uma faixa de <b>R$${prejus40} - R$${prejus60}</b>. <br><br>
+        O valor de uma restauração total de seu inventário ficaria em média <b>R$${totalvalorrestauracao}</b>, que deveria ser realizada a cada <b>${tempo} anos</b>  com base nos dados inseridos. <br> 
+        Com o monitoramento e controle ideal da temperatura e da umidade, a necessidade de uma restauração só seria percebida em um intervalo de <b>${tempo40} - ${tempo60} anos.</b>`;
     }
 </script>
