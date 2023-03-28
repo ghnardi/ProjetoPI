@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleCadastro.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="container">
+            <div class="topo">
+            <img src="../assets/imgs/ddd.png" alt="">
+            </div>
+                <h1>Cadastrar</h1>
+                <div class="containerInterno">
+                <div class="conjuntoEmail"><span id="a">Email:</span>
+                <input id="input_email"> </div>
+                <div class="conjuntoSenha">
+                <span id="b">Senha:</span>
+                <input id="input_senha"> </div>
+                <div class="conjuntoEmpresa"><span id="c">Empresa:</span>
+                <input id="input_empresa"> </div>
+                <button id="cadastro" onclick="cadastrar()">Cadastrar</button>
+                </div>
+            
+            <div class="container2">a</div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+    function cadastrar() {
+        var email = input_email.value
+        var senha = input_senha.value
+        var empresa = input_empresa.value
+
+        alert(`Olá ${empresa}!`)
+    }
+</script>
+
