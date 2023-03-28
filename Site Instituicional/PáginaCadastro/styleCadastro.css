@@ -90,9 +90,8 @@ input {
 
 h1{
     color: white;
-    margin-top: 63px;
+    margin-top: 0px;
     margin-left: 126px;
-    position: fixed;
     font-size: 48px;
    
 }
