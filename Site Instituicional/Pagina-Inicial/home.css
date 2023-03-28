@@ -30,7 +30,7 @@ body{
     align-items: center;
 }
 
-.navbar li{
+.navbar li, .navbar a{
     text-decoration: none;
     color: rgb(147, 107, 47);
     align-items: center;
