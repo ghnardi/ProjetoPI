@@ -12,14 +12,14 @@
         <div class="container">
             <h1 class="titulo">arttech</h1><!-- Provisório até a logo -->
             <ul class="navbar">
-				<li><a href="">Home</a></li>
+				<li><a href="../PáginaInicial/home.html">Home</a></li>
 				<li><a href="">Sobre</a></li>
 				<li><a href="">Ajuda</a></li>
 				<li><a href="">Fale Conosco</a></li>
 			</ul>
             <ul class="login">
-				<li><a href="">Cadastrar</a></li>
-                <li><a href=""><button class="botao-entrar">Entrar</button></a></li>
+				<li><a href="../PáginaCadastro/cadastro.html">Cadastrar</a></li>
+                <li><button class="botao-entrar" onclick="entrar()">Entrar</li>
 			</ul>
         </div>
     </div>
@@ -31,3 +31,11 @@
     </div>
 </body>
 </html>
+
+<script>
+
+    function entrar(){
+        window.location.href = "../PáginaLogin/login.html";
+    }
+
+</script>

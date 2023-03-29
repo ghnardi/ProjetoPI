@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -6,16 +7,17 @@ body {
     font-family: 'Montserrat Ace';
 }
 
-.banner {
-    background-image: url(./assets/imgs/D.jpg);
-    background-size: cover;
-    width: 1388px;
-    height: 768px;
-    position: absolute;
-    z-index: -1;
-    margin: auto;
-}
+    .banner {
+        background-image: url(../assets/img/D.jpg);
+        background-size: cover;
+        width: 1388px;
+        height: 768px;
+        position: absolute;
+        z-index: -1;
+        margin: auto;
+    }
 
+    
 .banner .container {
     display: flex;
     width: 472px;
@@ -58,24 +60,14 @@ body {
 }
 
 
-.containerInterno #a {
-    display: flex;
-    margin-left: 36px;
-    margin-top: 30px;
-    font-size: 25px;
-    
-}
-
-.containerInterno #b {
+.containerInterno span {
     display: flex;
     margin-left: 36px;
     font-size: 25px;
 }
 
-.containerInterno #c {
-    display: flex;
-    margin-left: 36px;
-    font-size: 25px;
+#a {
+    margin-top: 120px;
 }
 
 input {
@@ -91,25 +83,49 @@ input {
 
 h1{
     color: white;
-    margin-top: 0px;
-    margin-left: 126px;
+    margin-top: -5px;
+    margin-left: 165px;
     font-size: 48px;
-   
+    font-family: 'Montserrat Ace';   
+}
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+span a {
+    font-size: 12px;
+    padding: 7px 0;
 }
 
-button {
+#span_erro {
+    color: red;
+    margin-left: 36px;
+    font-family: 'Montserrat Ace';
+    font-size: 18px;
+}
+
+.botoes {
+    margin-top: 75px;
+    margin-left: 36px;
+    font-family: 'Montserrat Ace';
+}
+#cadastro {
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+}
+#entrar {
     background-color: #9C770B;
     border: 1px solid #8f6d0f;
     width: 120px;
-    margin-left: 330px;
-    margin-top: 40px;
     height: 30px;
+    margin-left: 175px;
     border-radius: 6px;
-    top: 300px;
-    position: absolute;
     font-size: 20px;
     color: white;
-    font-family: 'Montserrat Ace';
     cursor: pointer;
 }
 
@@ -120,14 +136,6 @@ img{
     margin-left: 194px;
 }
 
-.conjuntoEmail {
-    margin-top: 20px;
-}
-
-.containerInterno .conjuntoSenha {
-    margin-top: 20px;
-}
-
-.conjuntoEmpresa {
+.conjuntotextoinput {
     margin-top: 20px;
 }

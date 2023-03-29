@@ -11,15 +11,15 @@
     <div class="banner">
         <div class="container">
             <div class="topo">
-            <img src="../assets/imgs/ddd.png" alt="">
+            <img src="./assets/imgs/ddd.png" alt="">
             </div>
                 <h1>Cadastrar</h1>
                 <div class="containerInterno">
                 <div class="conjuntoEmail"><span id="a">Email:</span>
-                <input id="input_email"> </div>
+                <input id="input_email" type="email"> </div>
                 <div class="conjuntoSenha">
                 <span id="b">Senha:</span>
-                <input id="input_senha"> </div>
+                <input id="input_senha" type="password"> </div>
                 <div class="conjuntoEmpresa"><span id="c">Empresa:</span>
                 <input id="input_empresa"> </div>
                 <button id="cadastro" onclick="cadastrar()">Cadastrar</button>
@@ -35,11 +35,7 @@
 
 <script>
     function cadastrar() {
-        var email = input_email.value
-        var senha = input_senha.value
-        var empresa = input_empresa.value
-
-        alert(`Olá ${empresa}!`)
+        window.location.href = "../PáginaLogin/login.html"
     }
 </script>
 

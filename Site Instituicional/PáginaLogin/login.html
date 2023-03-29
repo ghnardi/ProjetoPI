@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Login</title>
+</head>
+<body>
+
+        <div class="banner">
+            <div class="container">
+                <div class="topo">
+                <img src="assets/img/ddd.png" alt="">
+                </div>
+                    <h1>Entrar</h1>
+                    <div class="containerInterno">
+                    <div class="conjuntotextoinput"><span id="a">Email:</span>
+                    <input id="input_email" type="email"> </div>
+                    <div class="conjuntotextoinput">
+                    <span id="b">Senha:</span>
+                    <input id="input_senha" type="password"> </div>
+                    <span><a href="">Esqueceu sua senha?</a></span>
+                    <span id="span_erro"></span>
+                    <div class="botoes">
+                        <button id="cadastro"><a href="../PáginaCadastro/cadastro.html">Criar conta</a></button>
+                        <button id="entrar" onclick="login()">Entrar</button>
+                    </div>
+                </div>
+                
+                <div class="container2">a</div>
+            </div>
+        </div>
+    
+</body>
+</html>
+
+<script>
+
+    function login(){   
+        var email = input_email.value;
+        var senha = input_senha.value;
+
+        if ((email == `lucas.flima@sptech.school` && senha == `12345678`)
+        || (email == `thiago.romaris@sptech.school` && senha == `12345678`)
+        || (email == `gabriella.roman@sptech.school` && senha == `12345678`)
+        || (email == `guilherme.nardi@sptech.school` && senha == `12345678`)
+        || (email == `matheus.santiago@sptech.school` && senha == `12345678`)
+        || (email == `douglas.queiroz@sptech.school` && senha == `12345678`)
+        || (email == `fernando.brandao@sptech.school` && senha == `12345678`)) {
+            window.location.href = "../PáginaInicial/home.html";
+        } else {
+            span_erro.innerHTML = `E-mail ou senha inválido(a).`
+        }
+    }
+
+</script>
