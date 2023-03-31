@@ -263,15 +263,17 @@ a:link, a:visited, a:hover, a:active {
 .dashboard {
     display: flex;
     position: relative;
-    left: 15%;
-    width: 100%;
     
 }
 .containerdashboard {
     position: relative;
     height: 100vh;
-    width: 100%;
-    color:#C6B082
+    width: 85%;
+    color:#C6B082;
+    z-index: -2;
+    left: 15%;
+
+
 }
 
 .conteudo #alaala2a{
@@ -306,7 +308,7 @@ a:link, a:visited, a:hover, a:active {
 
 .containerdashboard .dashboard1{
     position: absolute;
-    width: 38%;
+    width: 43%;
     height: 32%;
     left: 3%;
     top: 6%;
@@ -357,9 +359,9 @@ a:link, a:visited, a:hover, a:active {
 .containerdashboard .dashboard2{
     display: flex;
     position: absolute;
-    left: 44%;
+    left: 49%;
     top: 6%;
-    width: 38%;
+    width: 43%;
     height: 32%;
 }
 
@@ -412,7 +414,7 @@ a:link, a:visited, a:hover, a:active {
     position: absolute;
     top: 44%;
     left: 3%;
-    width: 38%;
+    width: 43%;
     height: 32%;
 }
 
@@ -461,8 +463,8 @@ a:link, a:visited, a:hover, a:active {
 .containerdashboard .dashboard4{
     position: absolute;
     top: 44%;
-    left: 44%;
-    width: 38%;
+    left: 49%;
+    width: 43%;
     height: 32%;
 }
 
