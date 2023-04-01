@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
 body{
     border: 0%;
     margin: 0%;
@@ -48,7 +49,7 @@ body{
     align-items: center;
     color: white;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    
     cursor: pointer;
 }
 
@@ -65,7 +66,7 @@ body{
     background-size: cover;
     height: 600px;
     width: 100%;
-    font-family: monospace;
+    
 }
 .banner .container{
     height: 500px;
@@ -102,7 +103,7 @@ body{
     color: white;
     font-size: medium;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    
     height: 50px;
     width: 200px;
     border-radius: 7px;
@@ -113,7 +114,7 @@ body{
 .subtitulo{
     display: flex;
     justify-content: center;
-    color: rgb(100, 75, 38);
+    color: #644b26;
 }
 
 .valores{
@@ -122,20 +123,35 @@ body{
 }
  .boxes{
     display: flex;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 50px 50px 50px;
     gap: 8px;
+
 } 
+
+.box h4{
+    color: #644b26;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.box p {
+    width: 75%;
+}
 
 .box{
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 50%;
 }
 
 .box img{
-    width: 400px;
-    margin-left: 15px;
+    width: 15%;
 }
 
+#img1{
+    width: 70px;
+}
 
 /* SOBRE NÒS */
 
@@ -175,7 +191,7 @@ body{
     color: white;
     font-size: medium;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    
     height: 50px;
     width: 200px;
     border-radius: 7px;
