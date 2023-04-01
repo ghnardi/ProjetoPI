@@ -125,7 +125,6 @@ body{
     display: flex;
     padding: 50px 50px 50px 50px;
     gap: 8px;
-
 } 
 
 .box h4{
@@ -136,6 +135,8 @@ body{
 
 .box p {
     width: 75%;
+    text-align: center;
+    margin: 0;
 }
 
 .box{
