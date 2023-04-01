@@ -203,13 +203,13 @@ body{
 
 .rodapé{
     margin-top: 80px;
-    background-color: #ad7f3a;
+    background-color: #C6B082;
     height: 200px;
     width: 100%;
 }
 
 .final{
-    background-color: rgb(64, 37, 7);
+    background-color: #36290D;
     color: white;
     height: 60px;
     display: flex;
@@ -219,7 +219,7 @@ body{
 
 #linha-vertical {
     height: 170px;
-    border-right: 3px solid rgb(0, 0, 0);
+    border-right: 3px solid rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     margin: 0px 50% 0px 0px;
