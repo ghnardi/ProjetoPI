@@ -61,7 +61,7 @@ body {
 .containerInterno #a {
     display: flex;
     margin-left: 36px;
-    margin-top: 30px;
+    margin-top: 45px;
     font-size: 25px;
     
 }
@@ -95,6 +95,14 @@ h1{
     margin-left: 126px;
     font-size: 48px;
    
+}
+
+#span_erro{
+    color: red;
+    margin-left: 36px;
+    font-size: 17px;
+    margin-top: 3px;
+    visibility: hidden;
 }
 
 button {

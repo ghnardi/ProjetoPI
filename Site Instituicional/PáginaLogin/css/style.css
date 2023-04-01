@@ -109,7 +109,7 @@ span a {
 #span_erro {
     color: red;
     width: 100%;
-    margin: 0 auto 0;
+    margin: 3px 0px 0px 36px;
     font-family: 'Montserrat Ace';
     font-size: 18px;
     visibility: hidden;

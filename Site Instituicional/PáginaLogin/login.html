@@ -50,14 +50,18 @@
         var email = input_email.value;
         var senha = input_senha.value;
         var spanErro = document.getElementById('span_erro');
+        var validacao_email = ((email == "lucas.flima@sptech.school")
+        || (email == "thiago.romaris@sptech.school")
+        || (email == "gabriella.roman@sptech.school")
+        || (email == "guilherme.nardi@sptech.school")
+        || (email == "matheus.santiago@sptech.school")
+        || (email == "douglas.queiroz@sptech.school")
+        || (email == "fernando.brandao@sptech.school"));
 
-        if ((email == `lucas.flima@sptech.school` && senha == `12345678`)
-            || (email == `thiago.romaris@sptech.school` && senha == `12345678`)
-            || (email == `gabriella.roman@sptech.school` && senha == `12345678`)
-            || (email == `guilherme.nardi@sptech.school` && senha == `12345678`)
-            || (email == `matheus.santiago@sptech.school` && senha == `12345678`)
-            || (email == `douglas.queiroz@sptech.school` && senha == `12345678`)
-            || (email == `fernando.brandao@sptech.school` && senha == `12345678`)) {
+        var validacao_senha = (senha == `@12345678`); 
+        var validacao_login = (validacao_email && validacao_senha);
+
+        if (validacao_login) {
             window.location.href = "../PáginaInicial/home.html";
         } else {
             spanErro.style.visibility = `visible`
