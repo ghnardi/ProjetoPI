@@ -1,39 +1,98 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+
+* {
+    font-family: 'Montserrat Ace';
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat Ace';
 }
 
-.header {
-    background-color: bisque;
+.container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.titulo {
+    background-color: #36290d;
     padding: 0.5px;
+    color: #C6B082;
+    font-family: 'Montserrat Ace';  
+    text-align: center;
 }
 
 .div_input {
-    margin-top: 2%;
-    background-color: beige;
-    padding: 15px;
-    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: #C6B082;
+    padding: 15px 0;
+}
+
+.div_simulador {
+    display: flex;
+}
+
+h4 {
+    margin: 0;
+    padding: 5px 0;
 }
 
 .inputs {
-    margin-left: 10%;
+    color: #2F220A;
+    font-size: 3vh;
+    display: flex;
+    justify-content: left;
 }
 
-.input{
-    border: 1px solid black;
-    border-radius: 0;
-    width: fit-content;
+input {
+    border: 1px solid #ae8406;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #36290d;
+    height: 25px;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-bottom: 10px;
+    transition: background-color 0.35s ease-in-out;
+    color: #C6B082;
+    text-indent: 4px;
 }
-.button {
-    margin-left: 10%;
-    border-radius: 0;
-    border: solid black 1px;
+
+input:focus {
+    outline: none;
+    background-color: #C6B082;
+    color: #36290d;
+    border: #2F220A 1px solid;
+}
+
+input::placeholder{
+    color: #C6B082;
+}
+
+#button {
+    margin-top: 35px;
+    border: 1px solid #ae8406;
+    border-radius: 4px;
+    background-color: #36290d;
+    color: #B49F75;
+    font-size: 4vh;
+    font-family: 'Montserrat Ace';
+    font-weight: bold;
+    align-self: center;
+    margin-left: 38%;
+    cursor: pointer;
 }
 
 .div_resultado {
-    margin-top: 2%;
     display: flex;
-    background-color: beige;
-    padding: 15px;
-    margin-top: 0px;
+    background-color: #C6B082;
+    padding: 30px 25% 5%;
+    justify-content: center;
+    color: #36290d;
+    font-family: 'Montserrat Ace';
+    font-size: 2.5vh;
 }
+
