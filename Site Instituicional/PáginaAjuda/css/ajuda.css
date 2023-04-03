@@ -2,17 +2,19 @@ body {
     margin: 0;
     padding: 0;
 }
- *{
-    font-family: Arial;
- }
+
+* {
+    font-family: 'Montserrat Ace';
+}
 
 /*Conteudo*/
-
 
 .containerBlocao {
     display: flex;
     justify-content: center;
     padding: 10px;
+    max-width: 100%;
+    max-height: 400px;
 }
 
 .blocaoMarrom {
@@ -22,25 +24,64 @@ body {
     border-radius: 20px;
 }
 
-.containerFuncaoCima{
+.containerBlocao #PrecisaDeAjuda {
+    display: flex;
+    width: 40%;
+    height: 65px;
+    font-family: 'Montserrat Ace';
+    font-size: 40px;
+    color: #F0EBDF;
+    margin: 1%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.containerBlocao #CasoPrecise {
+    display: flex;
+    width: 40%;
+    height: 65px;
+    font-family: 'Montserrat Ace';
+    font-size: 20px;
+    color: #F0EBDF;
+    margin: 1%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.containerBlocao #tracejadoBlocao {
+    display: flex;
+    border: 2px dashed #ae8406c7;
+    border-radius: 50px;
+    width: 90%;
+    height: 100px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.containerFuncaoCima {
     display: flex;
     padding: 10px;
     justify-content: space-between;
 
 }
-.containerFuncaoBaixo{
+
+.containerFuncaoBaixo {
     display: flex;
     padding: 10px;
     justify-content: space-between;
-    
+
 }
 
-.financeiro{
+
+
+.financeiro {
     width: 49%;
     height: 150px;
     background-color: #493510;
     border-radius: 20px;
-    
+    color: #F0EBDF;
 }
 
 .TecnologiaParceriaCadastro {
@@ -48,38 +89,47 @@ body {
     height: 150px;
     border-radius: 20px;
     background-color: #F0EBDF;
+    color: #493510;
 }
 
-.BlocaoBrancoDentro{
+.BlocaoBrancoDentro {
     background-color: #F0EBDF;
     width: 60%;
-    height: 300px;  
+    height: 300px;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 17%;
 }
 
 .BlocaoBrancoDentro button {
     width: 20%px;
-    height:70px;
+    height: 70px;
     background: #493510;
     border-radius: 10px;
-    align-self: center;
     cursor: pointer;
     border: 0;
     font-size: 30px;
     color: #F0EBDF;
-    
+    margin: 10px;
+    flex-direction: row;
+    border: 0;
+
 }
 
-#AindaPrecisaDeAjuda{
+#AindaPrecisaDeAjuda {
     align-self: center;
     font-size: 50px;
     margin-bottom: 20px;
+    text-align: center;
+
 }
 
-#NosEnvie{
+#NosEnvie {
     align-self: center;
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 0;
+    text-align: center;
 }
 
 .BlocaoBrancoDentro h3 {
@@ -91,12 +141,27 @@ body {
 }
 
 
+
+.figurasBlocaoMarrom {
+    display: flex;
+    box-sizing: border-box;
+    width: 526px;
+    height: 365px;
+    border: 2px dashed rgba(174, 132, 6, 0.78);
+    border-radius: 50px;
+    margin: 17px;
+    flex-direction: row-reverse;
+}
+
+
+
+
 /*Footer*/
 .footer {
     width: 100%;
     height: 100px;
-    background-color:#493510;
-    color:  #F0EBDF;
+    background-color: #493510;
+    color: #F0EBDF;
     display: flex;
 }
 
@@ -105,5 +170,3 @@ body {
     align-items: center;
     height: 100%;
 }
-
-
