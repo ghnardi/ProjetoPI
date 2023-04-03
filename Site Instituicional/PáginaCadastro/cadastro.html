@@ -35,11 +35,35 @@
 
 <script>
     function cadastrar() {
-        var email = input_email.value
-        var senha = input_senha.value
-        var empresa = input_empresa.value
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var empresa = input_empresa.value;
+        var spanErro = document.getElementById('span_erro');
 
-        alert(`Olá ${empresa}!`)
+        var indice_arroba = email.indexOf("@")
+        var validacao_arroba = (indice_arroba >= 0);
+        var validacao_fim_email = (email.endsWith("sptech.school") || email.endsWith(".com") || email.endsWith(".com.br"))
+        var validacao_especial = (senha.startsWith("#") || senha.startsWith("+") 
+        || senha.startsWith("-") || senha.startsWith("[") 
+        || senha.startsWith("]") || senha.startsWith("*")
+        || senha.startsWith("~") || senha.startsWith("_")
+        || senha.startsWith("@") || senha.startsWith(":")
+        || senha.startsWith("?"));
+        var validacao_tamanho_senha = (senha.length > 8);
+
+
+        if (validacao_arroba && validacao_fim_email && validacao_especial && validacao_tamanho_senha) {
+            window.location.href = "../PáginaLogin/login.html"
+        } else if (!validacao_arroba || !validacao_fim_email) {
+            spanErro.innerHTML = `E-mail inválido!`
+            spanErro.style.visibility = `visible`;
+        } else if (!validacao_especial) {
+            spanErro.innerHTML = `É necessário ter um caracter especial na senha!`
+            spanErro.style.visibility = `visible`;
+        } else if (!validacao_tamanho_senha){
+            spanErro.innerHTML = `É necessário que a sua senha tenha no mínimo 8 caracteres.`
+            spanErro.style.visibility = `visible`;
+        }
     }
 </script>
 

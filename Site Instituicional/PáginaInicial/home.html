@@ -14,13 +14,13 @@
             <img class="logo" src="img/logo.PNG" alt="">
             <ul class="navbar">
                 <li><a href="home.html">HOME</a></li>
-                <li><a href="">SOBRE</a></li>
+                <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
                 <li><a href="">AJUDA</a></li>
                 <li><a href="">CONTATO</a></li>
                 <li>|</li>
                 <!-- <li>LOGIN</li> -->
-                <li><a href="">CADASTRAR</a></li>
-                <li><a href=""><button class="bt_login">ENTRAR</button></a></li>
+                <li><a href="../PáginaCadastro/cadastro.html">CADASTRAR</a></li>
+                <li><button class="bt_login" onclick="entrar()">ENTRAR</button></li>
             </ul>
         </div>
     </div>
@@ -43,29 +43,38 @@
                 <div class="boxes">
                 
                     <div class="box">
-                        
-                        <img src="img/headset.png" alt="">
+                        <img src="img/headfone-removebg-preview.png" alt="">
+                        <h4>Suporte 24/7</h4>
+                        <p>Suporte disponível para te ajudar e tirar dúvidas sobre o nosso produto.</p>
+                    </div>
+
+                    <div class="box">
+                        <img src="img/Capturar-removebg-preview.png" alt="">
+                        <h4>Proteção de dados</h4>
+                        <p>Segurança, confidencialidade integridade e disponibilidade.</p>
                     </div>
                     <div class="box">
-                        <img src="img/protecao.png" alt="">
-                        
-                    </div>
-                    <div class="box">
-                        <img src="img/tag.png" alt="">
+                        <img src="img/uni-removebg-preview.png" alt="">
+                        <h4>Universalidade</h4>
+                        <p>Nossa solução abrange todos os tipos de obras de arte.</p>
                     </div>
                 </div>
                 <div class="boxes">
                 
                     <div class="box">
-                        
-                        <img src="img/alertas.png" alt="">
+                        <img src="img/alertass-removebg-preview.png" alt="">
+                        <h4>Alertas</h4>
+                        <p>Caso o sensor detectar uma temperatura e umidade fora do normal um alerta será emitido automaticamente.</p>
                     </div>
                     <div class="box">
-                        <img src="img/interacao.png" alt="">
-                        
+                        <img src="img/interaçao-removebg-preview.png" id="img1" alt="">
+                        <h4>Interação</h4>
+                        <p>Interação entre todas as suas galerias.</p>
                     </div>
                     <div class="box">
-                        <img src="img/backup.png" alt="">
+                        <img src="img/dados-removebg-preview.png"  alt="">
+                        <h4>Backup de Dados</h4>
+                        <p>Banco completo de dados com informações em nuvem com acesso em tempo real em qualquer lugar.</p>
                     </div>
                 </div>
                     
@@ -102,3 +111,10 @@
    <div class="final">Copyright © 2023 - 2023 Arttech. Todos os direitos reservados. | Termos de uso | Política de privacidade | Definições de cookies | Mapa do site</div>
 </body>
 </html>
+
+<script>
+
+    function entrar(){
+        window.location.href = "../PáginaLogin/login.html";    }
+
+</script>

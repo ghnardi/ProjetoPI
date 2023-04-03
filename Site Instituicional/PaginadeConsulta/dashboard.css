@@ -1,0 +1,955 @@
+/* ALA 1 DASHBOARD
+.
+.
+.
+.
+.
+.
+.
+.
+.
+*/
+.dashboard {
+    display: flex;
+    position: relative;
+    
+}
+.containerdashboard {
+    position: relative;
+    height: 100vh;
+    width: 85%;
+    color:#C6B082;
+    z-index: -2;
+    left: 15%;
+
+
+}
+/*DASHBOARD 1*/
+
+.containerdashboard .dashboard1{
+    position: absolute;
+    width: 43%;
+    height: 32%;
+    left: 3%;
+    top: 6%;
+}
+
+.containerdashboard #dash1{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard #dash1icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard #dash1marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard .dashboard1 #dash1texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+/*DASHBOARD 2*/
+.containerdashboard .dashboard2{
+    display: flex;
+    position: absolute;
+    left: 49%;
+    top: 6%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard #dash2{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard #dash2icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard #dash2marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.containerdashboard .dashboard2 #dash2texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 700;
+    width: 40%;
+    left: 9%;
+}
+
+/*DASHBOARD 3*/
+.containerdashboard .dashboard3{
+    position: absolute;
+    top: 44%;
+    left: 3%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard #dash3{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard #dash3icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard #dash3marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard .dashboard3 #dash3texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 4*/
+.containerdashboard .dashboard4{
+    position: absolute;
+    top: 44%;
+    left: 49%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard #dash4{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard #dash4icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard #dash4marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard .dashboard4 #dash4texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+
+/* ALA 2 DASHBOARD
+.
+.
+.
+.
+.
+.
+.
+.
+.
+*/
+
+.dash2 {
+    display: none;
+    position: relative;
+    
+}
+.containerdashboard2 {
+    position: relative;
+    height: 100vh;
+    width: 85%;
+    color:#C6B082;
+    z-index: -2;
+    left: 15%;
+
+
+}
+/*DASHBOARD 1*/
+
+.containerdashboard2 .dashboard1{
+    position: absolute;
+    width: 43%;
+    height: 32%;
+    left: 3%;
+    top: 6%;
+}
+
+.containerdashboard2 #dash1{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard2 #dash1icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard2 #dash1marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard2  .dashboard1 #dash1texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+/*DASHBOARD 2*/
+.containerdashboard2 .dashboard2{
+    display: flex;
+    position: absolute;
+    left: 49%;
+    top: 6%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard2 #dash2{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard2 #dash2icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard2 #dash2marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.containerdashboard2 .dashboard2 #dash2texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 3*/
+.containerdashboard2 .dashboard3{
+    position: absolute;
+    top: 44%;
+    left: 3%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard2 #dash3{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard2 #dash3icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard2 #dash3marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard2 .dashboard3 #dash3texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 4*/
+.containerdashboard2 .dashboard4{
+    position: absolute;
+    top: 44%;
+    left: 49%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard2 #dash4{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard2 #dash4icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard2 #dash4marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard2 .dashboard4 #dash4texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/* ALA 3 DASHBOARD
+.
+.
+.
+.
+.
+.
+.
+.
+.
+*/
+
+.dash3 {
+    display: none;
+    position: relative;
+    
+}
+.containerdashboard3 {
+    position: relative;
+    height: 100vh;
+    width: 85%;
+    color:#C6B082;
+    z-index: -2;
+    left: 15%;
+
+
+}
+/*DASHBOARD 1*/
+
+.containerdashboard3 .dashboard1{
+    position: absolute;
+    width: 43%;
+    height: 32%;
+    left: 3%;
+    top: 6%;
+}
+
+.containerdashboard3 #dash1{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard3 #dash1icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard3 #dash1marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard3 .dashboard1 #dash1texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+    font-size: 32px;
+    left: 9%;
+}
+/*DASHBOARD 2*/
+.containerdashboard3 .dashboard2{
+    display: flex;
+    position: absolute;
+    left: 49%;
+    top: 6%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard3 #dash2{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard3 #dash2icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard3 #dash2marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.containerdashboard3 .dashboard2 #dash2texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 3*/
+.containerdashboard3 .dashboard3{
+    position: absolute;
+    top: 44%;
+    left: 3%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard3 #dash3{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard3 #dash3icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard3 #dash3marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard3 .dashboard3 #dash3texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 4*/
+.containerdashboard3 .dashboard4{
+    position: absolute;
+    top: 44%;
+    left: 49%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard3 #dash4{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard3 #dash4icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard3 #dash4marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard3 .dashboard4 #dash4texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+/* ALA 4 DASHBOARD
+.
+.
+.
+.
+.
+.
+.
+.
+.
+*/
+
+.dash4 {
+    display: none;
+    position: relative;
+    
+}
+.containerdashboard4 {
+    position: relative;
+    height: 100vh;
+    width: 85%;
+    color:#C6B082;
+    z-index: -2;
+    left: 15%;
+
+
+}
+/*DASHBOARD 1*/
+
+.containerdashboard4 .dashboard1{
+    position: absolute;
+    width: 43%;
+    height: 32%;
+    left: 3%;
+    top: 6%;
+}
+
+.containerdashboard4 #dash1{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard4 #dash1icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard4 #dash1marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard4 .dashboard1 #dash1texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+/*DASHBOARD 2*/
+.containerdashboard4 .dashboard2{
+    display: flex;
+    position: absolute;
+    left: 49%;
+    top: 6%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard4 #dash2{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard4 #dash2icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard4 #dash2marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.containerdashboard4 .dashboard2 #dash2texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 3*/
+.containerdashboard4 .dashboard3{
+    position: absolute;
+    top: 44%;
+    left: 3%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard4 #dash3{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard4 #dash3icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard4 #dash3marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard4 .dashboard3 #dash3texto{
+    display: flex;
+    position: absolute;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
+
+/*DASHBOARD 4*/
+.containerdashboard4 .dashboard4{
+    position: absolute;
+    top: 44%;
+    left: 49%;
+    width: 43%;
+    height: 32%;
+}
+
+.containerdashboard4 #dash4{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.containerdashboard4 #dash4icon{
+    display: flex;
+    position: absolute;
+    background-color: #6D4A00;
+    left: 85.9%;
+    width: 14.1%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.containerdashboard4 #dash4marrom{
+    display: flex;
+    position: absolute;
+    background-color: #2E2109;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.containerdashboard4 .dashboard4 #dash4texto{
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat Ace';
+    font-style: normal;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
+    font-weight: 700;
+    left: 9%;
+}
