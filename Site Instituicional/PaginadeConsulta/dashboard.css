@@ -71,7 +71,8 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -124,8 +125,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
+    width: 40%;
     left: 9%;
 }
 
@@ -174,7 +176,8 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -226,7 +229,8 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -306,7 +310,8 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -359,7 +364,8 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -409,7 +415,8 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -461,7 +468,8 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -541,7 +549,6 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     font-size: 32px;
-    font-weight: 700;
     left: 9%;
 }
 /*DASHBOARD 2*/
@@ -593,7 +600,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -643,7 +652,9 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -695,7 +706,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -773,7 +786,9 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -826,7 +841,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -876,7 +893,9 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
@@ -928,7 +947,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-    font-size: 32px;
+      font-weight: 700;
+    width: 40%;
+    font-size: 26px;
     font-weight: 700;
     left: 9%;
 }
