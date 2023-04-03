@@ -4,6 +4,12 @@ body {
     font-family: 'Montserrat Ace';
 }
 
+a {
+    text-decoration: none;
+}
+.header a {
+    color: inherit;
+}
 .header {
     background-color: #F0EBDF;
     display: flex;
@@ -76,6 +82,7 @@ body {
     display: flex;
     position: absolute;
     background-color: #6D4A00;
+    color: white;
     border-radius: 5%;
     width: 45%;
     height: 100%;
