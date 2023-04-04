@@ -19,46 +19,46 @@ body {
 }
 
 .blocaoMarrom {
+    display: flex;
     width: 100%;
     height: 400px;
     background-color: #493510;
     border-radius: 20px;
+    flex-direction: row;
 }
 
-.containerBlocao #PrecisaDeAjuda {
-    display: flex;
-    width: 40%;
-    height: 65px;
+.frases #PrecisaDeAjuda  {
+
+    width: 70%;
+    height: 50px;
     font-family: 'Montserrat Ace';
-    font-size: 40px;
+    font-size: 30px;
     color: #F0EBDF;
-    margin: 1%;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    margin: 0 auto;
+    margin-top: 30%;
 }
 
-.containerBlocao #CasoPrecise {
-    display: flex;
-    width: 40%;
-    height: 65px;
+.frases #CasoPrecise {
+    
+    width: 70%;
+    height: 50px;
     font-family: 'Montserrat Ace';
     font-size: 20px;
     color: #F0EBDF;
-    margin: 1%;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 30%;
+    
 }
 
 .containerBlocao #tracejadoBlocao {
-    display: flex;
+    
     border: 2px dashed #ae8406c7;
     border-radius: 50px;
-    width: 90%;
-    height: 100px;
-    justify-content: flex-end;
-    align-items: flex-end;
+    width: 40%;
+    height: 300px;
+    flex-direction: row-reverse;
+    margin-top: 45px;
+    
 }
 
 .containerFuncaoCima {
