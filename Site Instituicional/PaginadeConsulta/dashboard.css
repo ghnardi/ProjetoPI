@@ -71,6 +71,7 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
+    top: 3.2%;
     width: 40%;
     font-size: 26px;
     font-weight: 700;
@@ -126,6 +127,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     font-size: 26px;
+    top: 3.2%;
     font-weight: 700;
     width: 40%;
     left: 9%;
@@ -178,6 +180,7 @@
     font-style: normal;
     width: 40%;
     font-size: 26px;
+    top: 3.2%;
     font-weight: 700;
     left: 9%;
 }
@@ -230,6 +233,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -311,6 +315,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -365,6 +370,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -416,6 +422,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -469,6 +476,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -549,6 +557,7 @@
     font-family: 'Montserrat Ace';
     font-style: normal;
     font-size: 32px;
+    top: 3.2%;
     left: 9%;
 }
 /*DASHBOARD 2*/
@@ -600,9 +609,10 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
     font-size: 26px;
+    top: 3.2%;
     font-weight: 700;
     left: 9%;
 }
@@ -652,8 +662,9 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -706,8 +717,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -786,8 +798,9 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -841,8 +854,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -893,8 +907,9 @@
     position: absolute;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
@@ -947,8 +962,9 @@
     z-index: 2;
     font-family: 'Montserrat Ace';
     font-style: normal;
-      font-weight: 700;
+    font-weight: 700;
     width: 40%;
+    top: 3.2%;
     font-size: 26px;
     font-weight: 700;
     left: 9%;
