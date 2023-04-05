@@ -101,7 +101,7 @@ button {
     color: white;
     font-family: 'Montserrat Ace';
     font-size: 1vmax;
-    margin-top: 25%;
+    margin-top: 20%;
     margin-left: 55%;
     cursor: pointer;
 }
@@ -114,4 +114,10 @@ span {
     color: #9C770B;
     font-size: 1vmax;
     font-weight: 800;
+}
+
+#span_erro {
+    visibility: hidden;
+    color: red;
+    font-size: 0.7vmax;
 }
