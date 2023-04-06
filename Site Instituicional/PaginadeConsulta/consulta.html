@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arttech | Página de Consulta</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylemenuleft.css">
+    <link rel="stylesheet" href="./styledashboard.css">
+    <link rel="stylesheet" href="./stylemenuflutuante.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div class="header">
+        <span class="logo">Arttech</span>
+        <div class="navbar">
+            <span><a href="">HOME</a></span>
+            <span><a href="">SOBRE</a></span>
+            <span><a href="">AJUDA</a></span>
+            <span><a href="">FALE CONOSCO</a></span>
+            <span>|</span>
+            <span>ID_PERFIL</span>
+        </div>
+        <i id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</i>
+    </div>
+
+    <div class="menuflutuante" id="subsub">
+        <span class="blocomenuflu"></span>
+        <span class="conta">CONTA</span>
+        <span class="imagemperfil"></span>
+        <span class="nomeconta">Museu Ipiranga</span>
+        <span class="contaemail">museudoipiranga@ipiranga.com</span>
+        <span class="gerenciarconta">Gerenciar conta</span>
+        <span class="contadashboard">Dashboard</span>
+        <span class="contaconfig">Configurações</span>
+        <span class="contalinha"></span>
+        <span class="contalogout">Fazer Logout</span>
+    </div>
+
+    <div class="menutop">
+        <i id="iconmenutop" class="material-symbols-outlined" onclick="clickMenu()"><span id="iconmenumenu">close</span></i>
+        <span class="menutoptexto">Menu</span>
+
+    </div>
+    <div class="conteudo">
+        <div class="menuleft" id="menumenu">
+            <div class="containermenuleft">
+
+                <span id="menulefttexto">MUSEU IPIRANGA
+                    <i id="iconmenuleft" class="material-symbols-outlined" onclick="clickMenuLeft()">expand_more</i>
+                </span>
+
+                <div class="blocoala1" id="menuleft1" onclick="clickBloco1()">
+                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
+                    <span class="textomenuleft">Ala 1</span>
+                </div>
+
+                <div class="blocoala2" id="menuleft2" onclick="clickBloco2()">
+                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
+                    <span class="textomenuleft">Ala 2</span>
+                </div>
+
+                <div class="blocoala3" id="menuleft3" onclick="clickBloco3()">
+                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
+                    <span class="textomenuleft">Ala 3</span>
+                </div>
+
+                <div class="blocoala4" id="menuleft4" onclick="clickBloco1()">
+                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
+                    <span class="textomenuleft">Ala 4</span>
+                </div>
+            </div>
+            <div class="menuleftlinha"></div>
+
+        </div>
+
+        <div class="dashboard" id="dashdash1">
+            <div class="dashboardbloco">
+                <div class="dashboardbloco2">
+                    <span class="dashboardtexto">DASHBOARD DA ALA 1</span>
+                </div>
+
+                <div class="dashs">
+                    <div class="dash">
+                        <div id="dashmarrom">
+                            <span id="dashtexto">N° da Sala: 1</span>
+                            <span id="dashicon"></span>
+                        </div>
+                    </div>
+                    <div class="dash">
+                        <div id="dashmarrom">
+                            <span id="dashtexto">N° da Sala: 1</span>
+                            <span id="dashicon"></span>
+                        </div>
+                    </div>
+                    <div class="dash">
+                        <div id="dashmarrom">
+                            <span id="dashtexto">N° da Sala: 1</span>
+                            <span id="dashicon"></span>
+                        </div>
+                    </div>
+                    <div class="dash">
+                        <div id="dashmarrom">
+                            <span id="dashtexto">N° da Sala: 1</span>
+                            <span id="dashicon"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="./script.js"></script>

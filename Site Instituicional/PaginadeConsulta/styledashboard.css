@@ -1,0 +1,83 @@
+.dashboard {
+    display: flex;
+    width: 100%;
+    height: 90.3vh;
+    background-color: #553f16;
+ 
+}
+
+.dashboardbloco{
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.dashboardbloco2{
+    display: flex;
+    width: 100%;
+    height: 8%;
+    justify-content: center;
+    background-color: #2E2109;
+    border-bottom: 3px solid #775201;
+
+}
+
+.dashboardtexto {
+    display: flex;
+    font-size: 30px;
+    color: #C6B082;
+    font-weight: 800;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.dashs {
+    display: flex;
+    width: 94%;
+    height: 65%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    row-gap: 5%;
+    margin-top: 3%;
+    
+}
+.dashs .dash{
+    display: flex;
+    width: 48%;
+    height: 55%;
+    background-color: #C6B082;
+    border-radius: 10px;
+}
+
+.dash #dashmarrom {
+    display: flex;
+    width: 100%;
+    height: 31.5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    justify-content: flex-end;
+    background-color: #2E2109;
+}
+
+.dash #dashicon {
+    display: flex;
+    width: 17%;
+    height: 100%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: #775201;
+}
+
+.dash #dashtexto {
+    display: flex;
+    font-size: 30px;
+    white-space: nowrap;
+    font-weight: 700;
+    align-items: center;
+    margin-right: 40%;
+    color: #C6B082;
+}
