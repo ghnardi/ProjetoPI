@@ -4,113 +4,58 @@ body {
     font-family: 'Montserrat Ace';
 }
 
-a {
-    text-decoration: none;
-}
-.header a {
-    color: inherit;
-}
-.header {
-    background-color: #F0EBDF;
+.header .containerHeader{
     display: flex;
-    height: 10vh;
+    justify-content: space-between ;
+    align-items: center;
+}
+
+
+.header{
     width: 100%;
-    top: 30%;
-    color: #6D4A00;
-    position: relative;
-    font-size: 1vmax;
+    height: 2%;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(6px 6px 10px rgba(190, 171, 93, 0.585));
 }
 
-
-
-.header_esquerda {
-    display: flex;
-    position: absolute;
-    width: 33.3%;
-    height: 100%;
-    align-items: center;
-    left: 0%;
-}
-
-#imgHeader {
-    display: flex;
-    margin-left: 10%;
-}
-
-.header_meio {
-    display: flex;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    left: 33.3%;
-    align-items: center;
+.navbar{
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar li, .navbar a{
+    text-decoration: none;
+    color: rgb(147, 107, 47);
+    align-items: center;
+    margin: 10px;
     justify-content: center;
 }
 
-.header_meio li {
-    padding: 2%;
- }
-
-.navbar {
-    position: absolute;
-    width: 80%;
-    display: flex;
-    list-style: none;
-    gap: 10%;
-    white-space: nowrap;
-    left: 20%;
-    font-size: 1vmax;
-}
-
-.navbar .faleConosco {
-    display: flex;
-    border-bottom: 1px solid #6D4A00;
-}
-
-.header_direita {
-    display: flex;
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    left: 80%;
+.bt_login{
+    border-radius: 5px;
+    background-color: rgba(109, 70, 11, 0.885);
+    /* border-bottom: 6px; */
+    border: 0px;
+    width: 75px;
+    height: 23px;
     align-items: center;
-    justify-content: center;
-}
-
-.usuario_entrar {
-    display: flex;
-    position: absolute;
-    background-color: #6D4A00;
     color: white;
-    border-radius: 5%;
-    width: 45%;
-    height: 100%;
-    left: 60%;
-    justify-content: center;
-    align-items: center;
-    font-size: 1vmax;
+    font-weight: bold;
     
+    cursor: pointer;
 }
 
-.cadastrar {
-    display: flex;
-    position: absolute;
-    border-radius: 5%;
-    width: 50%;
-    height: 100%;
-    left: 5%;
-    justify-content: center;
-    align-items: center;
-    
+.logo{
+    width: 10%;
+    height: 10%;
+    margin-top: 25.6px;
 }
-.login {
-    display: flex;
-    position: absolute;
-    list-style: none;
-    width: 60%;
-    height: 40%;
-}
+
+
+
+
 
 .container{
     display: flex;
@@ -218,7 +163,7 @@ input {
     left: 5%;
 }
 
-button {
+#faleConosco {
     background-color: #1E1E1E;
     border: 1px solid #1E1E1E;
     border-radius: 50px;
@@ -304,4 +249,11 @@ button {
     height: 5%;
     top: 49%;
     left: 3%;
+}
+
+#logoHeader {
+    color: #AE8406;
+    font-size: 2vmax;
+    font-weight: 800;
+    margin-left: 5%;
 }

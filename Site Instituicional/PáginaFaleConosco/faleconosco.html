@@ -9,25 +9,19 @@
 </head>
 <body>
     <div class="header">
-
-        <div class="header_esquerda"><h1 id="imgHeader">arttech</h1></div>
-
-        <div class="header_meio">
+        <div class="containerHeader">
+            <span id="logoHeader">arttech</span>    
             <ul class="navbar">
-                <li class="home"><a href="../PáginaInicial/home.html">Home</a></li>
-                <li><a href="../PáginaSobre/pagina-sobre.html">Sobre</a></li>
-                <li><a href="../PáginaAjuda/ajuda.html">Ajuda</a></li>
-                <li class="faleConosco">Fale Conosco</li>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
+                <li><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
+                <li><a href="../PáginaFaleConosco/faleconosco.html">CONTATO</a></li>
+                <li>|</li>
+                <!-- <li>LOGIN</li> -->
+                <li><a href="../PáginaCadastro/cadastro.html">CADASTRAR</a></li>
+                <li><button class="bt_login" onclick="entrar()">ENTRAR</button></li>
             </ul>
         </div>
-
-        <div class="header_direita">
-            <ul class="login">
-                <li class="cadastrar"><a href="../PáginaCadastro/cadastro.html">Cadastrar</a></li>
-                <li class="usuario_entrar"><a href="../PáginaLogin/login.html">Entrar</a></li>
-            </ul>
-        </div>
-
     </div>
 
     
@@ -39,7 +33,7 @@
                 <div class="conjuntoEmail"><span id="email">Email</span><input id="input_email"></span></div>
                 <div class="conjuntoTelefone"><span id="telefone">Telefone</span><input id="input_telefone"> </div>
                 <div class="conjuntoMensagem"><span id="mensagem">Mensagem</span><input id="input_mensagem"></div>
-                <button onclick="contatar()">Contate-nos</button>
+                <button id="faleConosco" onclick="contatar()">Contate-nos</button>
                     <div class="containerInterno">
                         <span id="contato">Contato:</span>
                         <h4 id="arttechEmail">arttech@gmail.com</h4>
