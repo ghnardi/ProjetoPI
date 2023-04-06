@@ -1,13 +1,30 @@
-function clickMenu() {
-
-    if (menumenu.style.display == 'flex' && hidemenumenu.style.display == 'none') {
-        menumenu.style.display = 'none'
-        hidemenumenu.style.display = 'flex'
+function clickMenuLeft() {
+    if (menuleft1.style.display == "flex") {
+        menuleft1.style.display = 'none'
+        menuleft2.style.display = 'none'
+        menuleft3.style.display = 'none'
+        menuleft4.style.display = 'none'
+        iconmenuleft.style.transform = 'rotate(360deg)'
     } else {
-        menumenu.style.display = 'flex'
-        hidemenumenu.style.display = 'none'
+        menuleft1.style.display = 'flex'
+        menuleft2.style.display = 'flex'
+        menuleft3.style.display = 'flex'
+        menuleft4.style.display = 'flex'
+        iconmenuleft.style.transform = 'rotate(180deg)'
     }
 }
+
+function clickMenu(){
+    if (menumenu.style.display == "flex") {
+        menumenu.style.display = 'none'
+        iconmenumenu.innerHTML = 'menu'
+} else {
+    menumenu.style.display = "flex"
+    iconmenumenu.innerHTML = "close"
+}
+}
+
+
 function clickBloco1() {
     blocobloco2.style.backgroundColor = "#2E2109"
     blocobloco3.style.backgroundColor = "#2E2109"
@@ -100,17 +117,17 @@ function clickBloco4() {
 
 function clickHide01() {
     blocobloco3.style.backgroundColor = "#2E2109"
-        hidemenubloco3.style.backgroundColor = "#2E2109"
-        dashdash3.style.display = 'none'
-        blocobloco2.style.backgroundColor = "#2E2109"
-        hidemenubloco2.style.backgroundColor = "#2E2109"
-        dashdash2.style.display = 'none'
-        blocobloco4.style.backgroundColor = "#2E2109"
-        hidemenubloco4.style.backgroundColor = "#2E2109"
-        dashdash4.style.display = 'none'
-        
+    hidemenubloco3.style.backgroundColor = "#2E2109"
+    dashdash3.style.display = 'none'
+    blocobloco2.style.backgroundColor = "#2E2109"
+    hidemenubloco2.style.backgroundColor = "#2E2109"
+    dashdash2.style.display = 'none'
+    blocobloco4.style.backgroundColor = "#2E2109"
+    hidemenubloco4.style.backgroundColor = "#2E2109"
+    dashdash4.style.display = 'none'
+
     if (dashdash1.style.display == 'flex') {
-        
+
 
         blocobloco1.style.backgroundColor = "#2E2109"
         dashdash1.style.display = 'none'

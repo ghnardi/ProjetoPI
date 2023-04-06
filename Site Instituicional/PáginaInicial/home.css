@@ -3,7 +3,15 @@ body{
     border: 0%;
     margin: 0%;
     background-color: rgb(255, 255, 255);
+<<<<<<< HEAD
     font-family: 'Montserrat Ace', sans-serif;
+=======
+<<<<<<< HEAD
+    /* font-family: monospace; */
+=======
+>>>>>>> cd6bfde5c1513cf5dcd7a0a2521b45ce05c83245
+    font-family: 'Montserrat Ace';
+>>>>>>> b56e1c584ca3195af30367fc6d001e2c3470b18b
 }
 
 .container{

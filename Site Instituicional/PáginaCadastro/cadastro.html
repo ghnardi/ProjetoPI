@@ -5,32 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styleCadastro.css">
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
     <div class="banner">
-        <div class="container">
-            <div class="topo">
-            <img src="./assets/imgs/ddd.png" alt="">
-            </div>
-                <h1>Cadastrar</h1>
+        <div class="containermarrom">
+          <div class="logo">
+            <span id="logo">Arttech</span> 
+          </div>
+            <span id="cadastrar">Cadastrar</span>
                 <div class="containerInterno">
-                <div class="conjuntoEmail"><span id="a">Email:</span>
-                <input id="input_email" type="email"> </div>
-                <div class="conjuntoSenha">
-                <span id="b">Senha:</span>
-                <input id="input_senha" type="password"> </div>
-                <div class="conjuntoEmpresa"><span id="c">Empresa:</span>
-                <input id="input_empresa"> </div>
-                <span id="span_erro">.</span>
-                <button id="cadastro" onclick="cadastrar()">Cadastrar</button>
+                    <span id="a">Email:</span> 
+                    <input id="input_email"> 
+                    <span id="b">Senha:</span>
+                    <input id="input_senha" type="password"> 
+                    <span id="c">Empresa:</span>
+                    <input id="input_empresa">
+                    <div class="erro">
+                        <span id="span_erro">.</span>
+                    </div>
                 </div>
-            
-            <div class="container2">a</div>
+            <button id="cadastro" onclick="cadastrar()">Cadastrar</button>
         </div>
-    </div>
-
-    
+      </div>
 </body>
 </html>
 
@@ -67,4 +64,3 @@
         }
     }
 </script>
-
