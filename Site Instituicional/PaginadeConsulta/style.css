@@ -17,13 +17,13 @@ body {
 
 .logo {
     display: flex;
-    width: 6%;
+    position: absolute;
+    width: 115px;
     height: 30px;
-    font-size: 30px;
     color: #6D4A00;
-    font-weight: 800;
     align-items: center;
     margin-left: 8%;
+    top: 2%;
 }
 
 .navbar a {
@@ -39,7 +39,7 @@ body {
     align-items: center;
     text-align: center;
     gap: 1.8vmax;
-    margin-left: 47%;
+    margin-left: 60%;
 }
 
 .header #iconmenuperfil {
