@@ -19,6 +19,7 @@ body {
 }
 
 .blocaoMarrom {
+    position: relative;
     display: flex;
     width: 100%;
     height: 400px;
@@ -27,41 +28,48 @@ body {
     flex-direction: row;
 }
 
-.frases #PrecisaDeAjuda  {
-
+.frases #PrecisaDeAjuda {
+    position: absolute;
+    display: flex;
     width: 70%;
     height: 50px;
     font-family: 'Montserrat Ace';
-    font-size: 30px;
+    font-size: 50px;
     color: #F0EBDF;
-    margin: 0 auto;
-    margin-top: 30%;
+    left: 10%;
+    bottom: 40%;
+    font-weight:bold ;
+    
 }
 
 .frases #CasoPrecise {
-    
+    position: absolute;
+    display: flex;
     width: 70%;
     height: 50px;
     font-family: 'Montserrat Ace';
     font-size: 20px;
     color: #F0EBDF;
-    margin: 0 auto;
-    margin-bottom: 30%;
-    
+    left: 10%;
+    bottom: 20%;
+
+
 }
 
 .containerBlocao #tracejadoBlocao {
-    
-    border: 2px dashed #ae8406c7;
-    border-radius: 50px;
-    width: 40%;
+    display: flex;
+    position: absolute;
+    width: 45%;
     height: 300px;
-    flex-direction: row-reverse;
-    margin-top: 45px;
-    
+    align-items: flex-end;
+    justify-content: flex-end;
+    bottom: 30%;
+    left: 50%;
+
 }
 
 .containerFuncaoCima {
+    position: relative; 
     display: flex;
     padding: 10px;
     justify-content: space-between;
@@ -69,12 +77,12 @@ body {
 }
 
 .containerFuncaoBaixo {
+    position: relative;
     display: flex;
     padding: 10px;
     justify-content: space-between;
 
 }
-
 
 
 .financeiro {
@@ -94,32 +102,44 @@ body {
 }
 
 .BlocaoBrancoDentro {
+    position: absolute;
     background-color: #F0EBDF;
     width: 60%;
     height: 300px;
-    border-radius: 20px;
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
-    margin-left: 17%;
+    left: 17%;
+    top: 12.85%;
 }
 
 .BlocaoBrancoDentro button {
+    position: absolute;
     width: 20%px;
     height: 70px;
+    left: 33%;
+    top: 60%;
     background: #493510;
     border-radius: 10px;
     cursor: pointer;
     border: 0;
     font-size: 30px;
+    font-weight: 600;
     color: #F0EBDF;
     margin: 10px;
     flex-direction: row;
     border: 0;
+    padding: 10px;
 
 }
 
 #AindaPrecisaDeAjuda {
+    position: absolute;
+    color: #493510;
+    font-weight: 600;
     align-self: center;
+    left: 13%;
+    top: 13%;
     font-size: 50px;
     margin-bottom: 20px;
     text-align: center;
@@ -127,18 +147,51 @@ body {
 }
 
 #NosEnvie {
+    position: absolute;
     align-self: center;
-    font-size: 20px;
+    left: 23%;
+    top: 35%;
+    color: #493510;
+    font-size: 32px;
+    font-weight: 100px;
     margin-bottom: 0;
     text-align: center;
 }
 
-.BlocaoBrancoDentro h3 {
+.BlocaoBrancoDentro span{
     color: #493510;
 }
 
-.BlocaoBrancoDentro h4 {
-    color: #493510;
+.financeiro #titulo {
+    display: flex;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 5%;
+
+}
+
+.TecnologiaParceriaCadastro #titulo {
+    display: flex;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.financeiro #conteudo {
+    display: flex;
+    font-size: 25px;
+    margin-top: 3%;
+    margin-left: 5%;
+
+}
+
+.TecnologiaParceriaCadastro #conteudo {
+    display: flex;
+    font-size: 25px;
+    margin-top: 3%;
+    margin-left: 5%;
 }
 
 
