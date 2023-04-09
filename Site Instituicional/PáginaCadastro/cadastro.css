@@ -127,3 +127,16 @@ span {
     color: red;
     font-size: 0.7vmax;
 }
+
+.containeramarelo {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: #7F601F;
+    opacity: 80%;
+    width: 30%;
+    height: 60%;
+    border-radius: 5%;
+    top: 26%;
+    left: 38%;
+}
