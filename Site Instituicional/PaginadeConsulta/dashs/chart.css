@@ -1,0 +1,48 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Ace';
+}
+
+.header {
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    position: absolute;
+    width: 115px;
+    height: 30px;
+    color: #6D4A00;
+    align-items: center;
+    margin-left: 5%;
+    top: 2%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(147, 107, 47);
+}
+
+.navbar{
+    display: flex;
+    color: rgb(147, 107, 47);
+    flex-direction: row;
+    white-space: nowrap;
+    align-items: center;
+    text-align: center;
+    gap: 1.8vmax;
+    margin-left: 60%;
+}
+
+.header #iconmenuperfil {
+    display: flex;
+    color: rgb(147, 107, 47);
+    margin-left: 0.7%;
+    cursor: pointer;
+}
