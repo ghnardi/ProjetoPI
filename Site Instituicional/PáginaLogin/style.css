@@ -1,0 +1,155 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Ace';
+}
+
+.banner {
+    display: flex;
+    background-image: url(assets/img/D.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.containermarrom {
+    display: flex;
+    flex-direction: column;
+    background-color: #2E2109;
+    width: 30%;
+    height: 60%;
+    border-radius: 5%;
+    border: 1px solid #AE8406;
+    align-items: center;
+    z-index: 2;
+    margin-left: 0%;
+}
+
+.containerInterno {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3%;
+    color: white;
+    justify-content: start;
+    width: 90%;
+    height: 60%;
+    margin-top: 5%;
+    font-size: 1.2vmax;
+}
+
+.containeramarelo {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: #7F601F;
+    opacity: 80%;
+    width: 30%;
+    height: 60%;
+    border-radius: 5%;
+    top: 26%;
+    left: 38%;
+}
+
+#input_email {
+    background-color: #392D12;
+    border: 1px solid #8f6d0f;
+    display: flex;
+    width: 100%;
+    height: 12%;
+    border-radius: 6px;
+    color: white;
+    font-size: 1vmax;
+}
+
+#input_senha {
+    background-color: #392D12;
+    border: 1px solid #8f6d0f;
+    display: flex;
+    width: 100%;
+    height: 12%;
+    border-radius: 6px;
+    color: white;
+    font-size: 1vmax;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+span a {
+    font-size: 0.8vmax;
+}
+
+#span_erro {
+    color: red;
+    width: 100%;
+    font-family: 'Montserrat Ace';
+    font-size: 1vmax;
+    visibility: hidden;
+    margin-left: 5%;
+}
+
+button{
+    display: inline-block;
+}
+.botoes {
+    width: 100%;
+    height: 7%;
+    font-family: 'Montserrat Ace';
+    display: flex;
+    align-self: center;
+    display: inline-block;
+    font-weight: 800;
+}
+
+#cadastro {
+    font-size: 1vmax;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    margin-left: 5%;
+}
+
+#entrar {
+    font-size: 1vmax;
+    width: 100%;
+    background-color: #9C770B;
+    border: 1px solid #8f6d0f;
+    width: 30%;
+    height: 100%;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-left: 38%;
+}
+
+#logo {
+    color: #9C770B;
+    font-size: 1vmax;
+    font-weight: 800;
+}
+
+.containermarrom #entrar1{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    font-weight: 800;
+    color: white;
+    justify-content: center;
+    font-size: 2vmax;
+}
+
+.logo {
+    display: flex;
+    height: 5%;
+    width: 100%;
+    justify-content: center;
+    margin-top: 7%;
+}
