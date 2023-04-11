@@ -4,9 +4,10 @@ body {
     font-family: 'Montserrat Ace';
 }
 
-.header .containerHeader{
+.containerHeader{
     display: flex;
-    justify-content: space-between ;
+    width: 80%;
+    height: 100%;
     align-items: center;
 }
 
@@ -23,6 +24,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 49%;
 }
 
 .navbar li, .navbar a{
@@ -43,19 +45,15 @@ body {
     align-items: center;
     color: white;
     font-weight: bold;
-    
     cursor: pointer;
 }
 
-.logo{
-    width: 10%;
-    height: 10%;
-    margin-top: 25.6px;
+.logoHeader{
+    display: flex;
+    margin-left: 12.5%;
+    width: 7%;
+    height: 30%;
 }
-
-
-
-
 
 .container{
     display: flex;

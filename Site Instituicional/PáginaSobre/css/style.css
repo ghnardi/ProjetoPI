@@ -17,14 +17,9 @@ a:active {
 .container {
     display: flex;
     width: 80%;
-    margin: auto;
-    justify-content: space-between;
+    height: 100%;
+    align-items: center;
 }
-
-.header .container{
-    justify-content: space-between ;
-}
-
 
 .header{
     width: 100%;
@@ -37,6 +32,7 @@ a:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 48%;
 }
 
 .navbar li, .navbar a{
@@ -62,9 +58,10 @@ a:active {
 }
 
 .logo{
+    display: flex;
+    margin-left: 12.5%;
     width: 10%;
-    height: 10%;
-    margin-top: 25.6px;
+    height: 40%;
 }
 
 /* banner */
