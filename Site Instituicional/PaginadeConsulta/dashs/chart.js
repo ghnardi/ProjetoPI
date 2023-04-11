@@ -27,6 +27,7 @@ var myChart = new Chart(ctx, {
     },
 
     options: {
+        maintainAspectRatio: false,
         scales: {
             y: {
                 ticks: {
@@ -107,6 +108,7 @@ const labels = [
     type: 'bar',
     data: data2,
     options: {
+        maintainAspectRatio: false,
         scales: {
             y: {
                 ticks: {
