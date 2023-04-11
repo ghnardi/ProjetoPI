@@ -2,19 +2,17 @@
     display: flex;
     width: 100vw;
     height: auto;
-    background-color: rgba(198, 176, 130, 0.25);
+    background-color: #2E2109;
     flex-direction: column;
-    
 }
 
 .textoTopo {
     display: flex;
     font-weight: 700;
     font-size: 20px;
-    color: #2E2109;
+    color: rgb(243, 234, 216);
     margin-left: 11%;
     margin-top: 1.5%;
-    background-color: red;
 }
 
 #textoTopoSala {
@@ -22,7 +20,7 @@
     font-weight: 300;
 }
 
-#iconTopo{
+#iconTopo {
     display: flex;
     transform: rotate(-90deg);
 }
@@ -41,32 +39,35 @@
     display: flex;
     width: 25%;
     height: 100%;
-    background-color: rebeccapurple;
+    background-color: rgb(243, 234, 216);
+    border-radius: 10px;
 }
 
-.blocosBaixo{
+.blocosBaixo {
     display: flex;
+
 }
 
-.blocoRetangulo{
+.blocoRetangulo {
     display: flex;
     width: 25%;
-    height: 80vh;
+    height: 100vh;
     margin-top: 1.5%;
     margin-left: 11%;
 }
 
-.blocoMarromRet{
+.blocoMarromRet {
     display: flex;
     width: 100%;
+    border-radius: 10px;
     height: 100%;
-    background-color: red;
+    background-color: rgb(243, 234, 216);
 }
 
-.blocoDireita{
+.blocoDireita {
     display: flex;
     width: 51.5vw;
-    height: 80vh;
+    height: 100vh;
     margin-left: 1.5%;
     margin-top: 1.5%;
     flex-direction: column;
@@ -75,108 +76,42 @@
 
 .blocoMarromDireita {
     display: flex;
-    background-color: yellow;
+    background-color: rgb(243, 234, 216);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.chartJS {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
-.footer{
+
+#graficolinha {
+    display: flex;
+}
+
+.chartJS2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#graficobarra {
+    display: flex;
+
+}
+
+.footer {
     display: flex;
     width: 100vw;
     height: 5vh;
     background-color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #textoDash {
-    display: flex;
-    width: 80vw;
-    margin-left: 10%;
-    font-weight: 700;
-    font-size: 20px;
-    height: 8vh;
+    font-weight: 500;
     align-items: center;
+    justify-content: center;
+    margin-top: 5%;
 }
-
-#icondash {
-    display: flex;
-    transform: rotate(-90deg);
-}
-
-#textoSala {
-    display: flex;
-    font-weight: 400;
-    text-align: center;
-}
-
-.containerDash {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-}
-
-.quadrados {
-    display: flex;
-    width: 92vw;
-    height: 40vh;
-    margin-left: 8%;
-    column-gap: 1.5%;
-}
-
-
-.quadradoMarrom {
-    display: flex;
-    background-color: #2E2109;
-    width: 29.5%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.retanguloMaior {
-    display: flex;
-    height: 100vh;
-    width: 92vw;
-    margin-left: 8%;
-    border-radius: 10px;
-    
-}
-
-.retanguloMarromMaior {
-    display: flex;
-    background-color: #2E2109;
-    width: 29.5%;
-    border-radius: 10px;
-    margin-top: 1.5%;
-    height: 100%;
-}
-
-.retangulo {
-    display: flex;
-    margin-top: 1.5%;
-    margin-left: 1.5%;
-    width: 60.5%;
-    row-gap: 5%;
-    height: 100%;
-    flex-direction: column;
-}
-
-.retanguloMarrom {
-    display: flex;
-    border-radius: 10px;
-    background-color: #2E2109;
-    width: 100%;
-    height: 50%;
-} */
