@@ -90,13 +90,13 @@ const labels = [
     labels: labels,
     datasets: [{
       label: 'Temperatura',
-      backgroundColor: 'red',
-      borderColor: 'red',
+      backgroundColor: 'rgba(255, 99, 132, 1)',
+      borderColor: 'rgba(255, 99, 132, 1)',
       data: [30, 29, 28, 25, 22, 23],
     }, {
         label: 'Umidade',
-        backgroundColor: 'blue',
-        borderColor: 'blue',
+        backgroundColor: '#1d8d8e',
+        borderColor: '#1d8d8e',
         data: [80, 82, 80, 85, 80, 83],
       }
   ]
