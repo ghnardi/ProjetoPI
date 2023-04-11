@@ -15,12 +15,12 @@
           </div>
             <span id="cadastrar">Cadastrar</span>
                 <div class="containerInterno">
-                    <span id="a">Email:</span> 
-                    <input id="input_email"> 
-                    <span id="b">Senha:</span>
-                    <input id="input_senha" type="password"> 
-                    <span id="c">Empresa:</span>
-                    <input id="input_empresa">
+                    <span id="a">Nome:</span> 
+                    <input id="input_nome"> 
+                    <span id="b">E-mail:</span>
+                    <input id="input_email" type="email"> 
+                    <span id="c">Senha:</span>
+                    <input id="input_senha" type="password">
                     <div class="erro">
                         <span id="span_erro">.</span>
                     </div>
@@ -37,7 +37,7 @@
     function cadastrar() {
         var email = input_email.value;
         var senha = input_senha.value;
-        var empresa = input_empresa.value;
+        var nome = input_nome.value;
         var spanErro = document.getElementById('span_erro');
 
         var indice_arroba = email.indexOf("@")
