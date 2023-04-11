@@ -1,7 +1,7 @@
 .conteudo {
     display: flex;
     width: 100vw;
-    height: auto;
+    height: 100%;
     background-color: #2E2109;
     flex-direction: column;
 }
@@ -29,7 +29,7 @@
 .blocosCima {
     margin-top: 1.5%;
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 35vh;
     justify-content: center;
     column-gap: 1.5%;
@@ -45,12 +45,15 @@
 
 .blocosBaixo {
     display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
 
 }
 
 .blocoRetangulo {
     display: flex;
-    width: 25%;
+    width: 25vw;
     height: 100vh;
     margin-top: 1.5%;
     margin-left: 11%;
@@ -67,7 +70,7 @@
 .blocoDireita {
     display: flex;
     width: 51.5vw;
-    height: 100vh;
+    height: 100%;
     margin-left: 1.5%;
     margin-top: 1.5%;
     flex-direction: column;
@@ -78,7 +81,7 @@
     display: flex;
     background-color: rgb(243, 234, 216);
     width: 100%;
-    height: 100%;
+    height: 40%;
     border-radius: 10px;
 }
 
@@ -106,12 +109,11 @@
 }
 
 .footer {
-    display: flex;
+    display: none;
     width: 100vw;
     height: 5vh;
     background-color: white;
     font-weight: 500;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
 }

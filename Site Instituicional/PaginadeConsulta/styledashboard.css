@@ -71,6 +71,12 @@
     color: #C6B082;
 }
 
+.dashiconfundo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dash .dashiconfundo {
     display: flex;
     width: 17%;
@@ -83,8 +89,7 @@
 }
 
 #iconflecha{
-    display: flex;
-    width: 50%;
-    height: 50%;
+    font-size: 50px;
     cursor: pointer;
+    color:#C6B082
 }
