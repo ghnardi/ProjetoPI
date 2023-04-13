@@ -1,170 +1,151 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+
+* {
+    font-family: 'Montserrat ace';
+}
 body {
     margin: 0;
     padding: 0;
-}
-
-* {
-    font-family: 'Montserrat Ace';
-}
-
-
-/*Conteudo*/
-
-.containerBlocao {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    max-width: 100%;
-    max-height: 400px;
-}
-
-.blocaoMarrom {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 400px;
-    background-color: #493510;
-    border-radius: 20px;
-    flex-direction: row;
-}
-
-.frases #PrecisaDeAjuda {
-    position: absolute;
-    display: flex;
-    width: 70%;
-    height: 50px;
-    font-family: 'Montserrat Ace';
-    font-size: 50px;
-    color: #F0EBDF;
-    left: 10%;
-    bottom: 40%;
-    font-weight:bold ;
     
 }
 
-.frases #CasoPrecise {
-    position: absolute;
+.container {
     display: flex;
-    width: 70%;
-    height: 50px;
-    font-family: 'Montserrat Ace';
-    font-size: 20px;
-    color: #F0EBDF;
-    left: 10%;
-    bottom: 20%;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+}
 
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar li,
+.navbar a {
+    text-decoration: none;
+    color: rgb(147, 107, 47);
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 35%;
+}
+
+.bt_login {
+    border-radius: 10px;
+    background-color: #6d460be2;
+    /* border-bottom: 6px; */
+    border: 0px;
+    width: 75px;
+    height: 23px;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    margin-left: 12.5%;
+    width: 10%;
+    height: 40%;
+}
+
+/*CONTEÚDO DO SITE*/
+
+/*Primeiro Blocão Marrom*/
+
+.BlocaoMarrom {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.MensagemAjuda {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerBlocao {
+    display: flex;
+    width: 100vw;
+    height: 60vh;
+    background-color: #493510;
+    border-radius: 10px;
+}
+
+#PrecisaDeAjuda {
+    display: flex;
+    width: 100%;
+    height: 16%;
+    font-size: 50px;
+    color: #F0EBDF; 
+    font-weight:bold;
+    white-space: nowrap;
+    align-items: center;
+    margin-left: 15%;
+    margin-top: 38%;
+    
+}
+
+#CasoPrecise {
+    display: flex;
+    width: 100%;
+    height: 16%;
+    font-size: 25px;
+    color: #F0EBDF;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    margin-left: 15%;
 
 }
 
-.containerBlocao #tracejadoBlocao {
-    display: flex;
-    position: absolute;
-    width: 45%;
-    height: 300px;
+#ImagemTracejado {
+    width: 100%;
+    height: 90%;
+    margin-top: 10px;
     align-items: flex-end;
     justify-content: flex-end;
-    bottom: 30%;
-    left: 50%;
-
+    margin-left: 10.5%;
 }
 
-.containerFuncaoCima {
-    position: relative; 
+/*4 Funcionalidades (Financeiro, Cadastro, Tecnologia e Parceria)*/
+
+.Funcionalidades {
     display: flex;
     padding: 10px;
     justify-content: space-between;
-
 }
-
-.containerFuncaoBaixo {
-    position: relative;
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-
-}
-
 
 .financeiro {
     width: 49%;
     height: 150px;
     background-color: #493510;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #F0EBDF;
 }
 
 .TecnologiaParceriaCadastro {
     width: 49%;
     height: 150px;
-    border-radius: 20px;
-    background-color: #F0EBDF;
-    color: #493510;
-}
-
-.BlocaoBrancoDentro {
-    position: absolute;
-    background-color: #F0EBDF;
-    width: 60%;
-    height: 300px;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    left: 17%;
-    top: 12.85%;
-}
-
-.BlocaoBrancoDentro button {
-    position: absolute;
-    width: 20%px;
-    height: 70px;
-    left: 33%;
-    top: 60%;
-    background: #493510;
     border-radius: 10px;
-    cursor: pointer;
-    border: 0;
-    font-size: 30px;
-    font-weight: 600;
-    color: #F0EBDF;
-    margin: 10px;
-    flex-direction: row;
-    border: 0;
-    padding: 10px;
-
-}
-
-#AindaPrecisaDeAjuda {
-    position: absolute;
-    color: #493510;
-    font-weight: 600;
-    align-self: center;
-    left: 13%;
-    top: 13%;
-    font-size: 50px;
-    margin-bottom: 20px;
-    text-align: center;
-
-}
-
-#NosEnvie {
-    position: absolute;
-    align-self: center;
-    left: 23%;
-    top: 35%;
-    color: #493510;
-    font-size: 32px;
-    font-weight: 100px;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.BlocaoBrancoDentro span{
+    background-color: #F0EBDF;
     color: #493510;
 }
 
 .financeiro #titulo {
     display: flex;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 3%;
     margin-left: 5%;
@@ -173,7 +154,7 @@ body {
 
 .TecnologiaParceriaCadastro #titulo {
     display: flex;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 3%;
     margin-left: 5%;
@@ -181,7 +162,7 @@ body {
 
 .financeiro #conteudo {
     display: flex;
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 3%;
     margin-left: 5%;
 
@@ -189,38 +170,88 @@ body {
 
 .TecnologiaParceriaCadastro #conteudo {
     display: flex;
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 3%;
     margin-left: 5%;
 }
 
+/*Ainda precida de Ajuda ?*/
 
-
-.figurasBlocaoMarrom {
+.BlocaoMarromBaixo{
     display: flex;
-    box-sizing: border-box;
-    width: 526px;
-    height: 365px;
-    border: 2px dashed rgba(174, 132, 6, 0.78);
-    border-radius: 50px;
-    margin: 17px;
-    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 10px;
 }
 
-
-
-
-/*Footer*/
-.footer {
-    width: 100%;
-    height: 100px;
+.containerBlocaoBaixo {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
     background-color: #493510;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocoBranco {
+    display: flex;
+    width: 55%;
+    height: 70%;
+    background-color: #F0EBDF;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#AindaPrecisaDeAjuda {
+    display: flex;
+    font-size: 50px;
+    font-weight: bold;
+    color: #493510;
+}
+
+#NosEnvieUmaMensagem {
+    font-size: 30px;
+    color: #493510;
+    display: flex;
+
+}
+
+#buttonFaleConosco {
+    display: flex;
+    width: 33%;
+    height: 30%;
+    background: #493510;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    font-size: 25px;
+    font-weight: bold;
     color: #F0EBDF;
+    margin-top: 3%;
+    justify-content: center;
+    align-items: center;
+
+}
+/*Footer*/
+
+
+
+
+
+.footer {
     display: flex;
 }
 
 .footer .container {
-    justify-content: center;
+    display: flex;
+    width: 100vw;
+    height: 15vh;
+    background-color: #493510;
     align-items: center;
-    height: 100%;
+    justify-content: center;
+    color: #F0EBDF;
+    font-weight: bold;
 }

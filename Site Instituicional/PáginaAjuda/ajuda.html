@@ -1,91 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/ajuda.css">
-    <link rel="stylesheet" href="../PáginaInicial/home.css">
-
-    <title>Pagina de Ajuda | Arttech</title>
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/ajuda.css" />
+    <title>Página Ajuda | Arttech</title>
+  </head>
+  <body>
+    <!--HEADER - NAVBAR-->
     <div class="header">
-        <div class="container">
-            <img class="logo" src="../PaginadeConsulta/assets/ddd.png" alt="">
-            <ul class="navbar">
-                <li><a href="../PáginaInicial/home.html">HOME</a></li>
-                <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
-                <li><a href="">AJUDA</a></li>
-                <li><a href="../PáginaFaleConosco/faleconosco.html">CONTATO</a></li>
-                <li>|</li>
-                <!-- <li>LOGIN</li> -->
-                <li><a href="../PáginaCadastro/cadastro.html">CADASTRAR</a></li>
-                <li><button class="bt_login" onclick="entrar()">ENTRAR</button></li>
-            </ul>
-        </div>
+      <div class="container">
+        <img class="logo" src="./assets/logo.png" alt="" />
+        <ul class="navbar">
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
+          <li><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
+          <li><a href="../PáginaFaleConosco/faleconosco.html">CONTATO</a></li>
+          <li>|</li>
+          <!-- <li>LOGIN</li> -->
+          <li><a href="../PáginaCadastro/cadastro.html">CADASTRAR</a></li>
+          <li><button class="bt_login" onclick="entrar()">ENTRAR</button></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- CONTEÚDO -->
-    <div class="containerBlocao">
-        <div class="blocaoMarrom">
-            <div class="frases">
-                <span id="PrecisaDeAjuda">Precisa de ajuda ?</span>
-                <span id="CasoPrecise">Caso precise de uma ajuda rápida, escolha <br> uma seção das seguintes
-                    opções</span>
-            </div>
-
+    <!--CONTEÚDO DO SITE-->
+    <!--Primeiro Blocao marrom-->
+    <div class="BlocaoMarrom">
+      <div class="containerBlocao">
+        <div class ="MensagemAjuda">
+          <span id="PrecisaDeAjuda">Precisa de ajuda ?</span>
+          <span id="CasoPrecise"
+            >Caso precisa de uma ajuda rápida, escolha <br />
+            uma seção das seguintes opções</span>
         </div>
-        <img src="../PáginaAjuda/assets/Group 20.png" id="tracejadoBlocao">
+        <div id="ImagemTracejado">
+          <img src="./assets/Group 20.png" srcset="" />
+        </div>
+      </div>
     </div>
-
-    <div class="containerFuncaoCima">
-
+    <!--4 Funcionalidades (Financeiro, Cadastro, Tecnologia e Parceria)-->
+    <div class="Funcionalidades">
         <div class="financeiro">
             <span id="titulo">Financeiro</span>
             <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre o Financeiro.</span>
         </div>
         <div class="TecnologiaParceriaCadastro">
             <span id="titulo">Tecnologia</span>
-            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre a parte de Tecnologia.</span>
+            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre Tecnologia.</span>
         </div>
-
     </div>
 
-
-    <div class="containerFuncaoBaixo">
+    <div class="Funcionalidades">
         <div class="TecnologiaParceriaCadastro">
             <span id="titulo">Cadastro</span>
-            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre a parte de Cadastro.</span>
+            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre o Cadastro.</span>
         </div>
         <div class="TecnologiaParceriaCadastro">
             <span id="titulo">Parceria</span>
             <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre as nossas parcerias.</span>
         </div>
     </div>
-    </div>
 
-    <div class="containerBlocao">
-        <div class="blocaoMarrom">
-            <div class="BlocaoBrancoDentro">
-                <span id="AindaPrecisaDeAjuda">Ainda precisa de ajuda?</span>
-                <span id="NosEnvie">Nos mande uma mensagem!</span>
-                <button>FALE CONOSCO</button>
+    <!-- Ainda precisa de ajuda ?-->
+
+    <div class="BlocaoMarromBaixo">
+        <div class="containerBlocaoBaixo">
+            <div class="blocoBranco">
+                <span id="AindaPrecisaDeAjuda">Ainda precisa de ajuda ?</span>
+                <span id="NosEnvieUmaMensagem">Nos envie uma mensagem!</span>
+                <button id="buttonFaleConosco">FALE CONOSCO</button>
             </div>
         </div>
-    </div>
+      </div>
 
     <!--Footer-->
     <div class="footer">
         <div class="container">
-            <span>Todos os direitos reservados pela Arttech &hearts;</span>
+            <span>Arttech - Copyright 2023</span>
         </div>
     </div>
 
-</body>
 
+  </body>
 </html>
