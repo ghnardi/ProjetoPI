@@ -1,3 +1,12 @@
+@keyframes clarear {
+    from {
+opacity: 0;
+    }
+    to {
+opacity: 1;
+
+}
+}
 .conteudo {
     display: flex;
     width: 100%;
@@ -89,11 +98,30 @@
     border-radius: 10px;
 }
 
-#graficolinha {
-    display: flex;
-    margin: 3%;
+#graficoobra1 {
+    display: none;
+    animation: clarear .6s;
 }
-
+#graficoobra2 {
+    display: none;
+    animation: clarear .6s;
+}
+#graficoobra3 {
+    display: none;
+    animation: clarear .6s;
+}
+#graficoobra4 {
+    display: none;
+    animation: clarear .6s;
+}
+#graficoobra5 {
+    display: none;
+    animation: clarear .6s;
+}
+#graficoobra6 {
+    display: none;
+    animation: clarear .6s;
+}
 .blocoMarromDireita2 {
     display: flex;
     background-color: rgb(243, 234, 216);
@@ -103,6 +131,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2.5%;
+    padding: 2% 0 2% 2%;
 }
 
 #graficobarra {
@@ -120,3 +149,4 @@
     align-items: center;
     justify-content: center;
 }
+
