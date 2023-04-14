@@ -240,6 +240,255 @@ var myChart = new Chart(obra3, {
     }
 });
 
+// GRÁFICO OBRA 4
+const obra4 = document.getElementById('graficoobra4');
+obra4.style.display = 'none';
+var myChart = new Chart(obra4, {
+    type: 'line',
+    data: {
+        labels: ['12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',],
+        datasets: [{
+            label: 'Temperatura',
+            data: [18, 19, 20, 20, 21, 22],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 2
+
+        }, {
+
+            label: 'Umidade',
+            data: [46, 47, 46, 48, 49, 52],
+            backgroundColor: '#1d8d8e',
+            borderColor: '#1d8d8e',
+            borderWidth: 2
+        }
+        ]
+    },
+
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                ticks: {
+                    beginAtZero: true,
+                    color: '#2E2109;',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                },
+            },
+            x: {
+                ticks: {
+                    color: '#2E2109;',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'OBRA 4',
+                font: {
+                    size: 18,
+                    color: 'black',
+                    family: 'Montserrat Ace',
+                    weight: 800
+                }
+
+            },
+            legend: {
+                labels: {
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        }
+    }
+});
+
+// GRÁFICO OBRA 5
+const obra5 = document.getElementById('graficoobra5');
+obra5.style.display = 'none';
+
+var myChart = new Chart(obra5, {
+    type: 'line',
+    data: {
+        labels: ['12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',],
+        datasets: [{
+            label: 'Temperatura',
+            data: [18, 19, 19, 22, 22, 23],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 2
+
+        }, {
+
+            label: 'Umidade',
+            data: [45, 45, 47, 48, 54, 55],
+            backgroundColor: '#1d8d8e',
+            borderColor: '#1d8d8e',
+            borderWidth: 2
+        }
+        ]
+    },
+
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                ticks: {
+                    beginAtZero: true,
+                    color: '#2E2109;',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                },
+            },
+            x: {
+                ticks: {
+                    color: '#2E2109;',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        },
+        plugins: {
+            /* tooltip: {
+                callbacks: {
+                    afterBody: function(context) {
+                        const valor_array = myChart.data.datasets.find(dataset => dataset.label === 'Temperatura').data;
+                        return `${valor_array}`;
+                    }
+                }
+            }, */
+            title: {
+                display: true,
+                text: 'OBRA 5',
+                font: {
+                    size: 18,
+                    color: 'black',
+                    family: 'Montserrat Ace',
+                    weight: 800
+                }
+
+            },
+            legend: {
+                labels: {
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        }
+    }
+});
+
+// GRÁFICO OBRA 6
+const obra6 = document.getElementById('graficoobra6');
+obra6.style.display = 'none';
+var myChart = new Chart(obra6, {
+    type: 'line',
+    data: {
+        labels: ['12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',],
+        datasets: [{
+            label: 'Temperatura',
+            data: [22, 22, 21, 20, 18, 16],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 2
+
+        }, {
+
+            label: 'Umidade',
+            data: [55, 54, 52, 50, 48, 45],
+            backgroundColor: '#1d8d8e',
+            borderColor: '#1d8d8e',
+            borderWidth: 2
+        }
+        ]
+    },
+
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                ticks: {
+                    beginAtZero: true,
+                    color: '#2E2109;',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                },
+            },
+            x: {
+                ticks: {
+                    color: '#2E2109;',
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'OBRA 6',
+                font: {
+                    size: 18,
+                    color: 'black',
+                    family: 'Montserrat Ace',
+                    weight: 800
+                }
+
+            },
+            legend: {
+                labels: {
+                    font: {
+                        size: 18,
+                        family: 'Montserrat Ace',
+                        weight: 500
+                    }
+                }
+            }
+        }
+    }
+});
+
 /*GRAFICO DE BARRA*/
 const labels = [
     'Obra1',
@@ -250,22 +499,25 @@ const labels = [
     'Obra6',
 ];
 
+const obraarray = [1, 2, 3, 4, 5, 6];
+const labelarray = ['Temperatura', 'Umidade']
 const data2 = {
     labels: labels,
     datasets: [{
         label: 'Temperatura',
         backgroundColor: 'rgba(255, 99, 132, 1)',
         borderColor: 'rgba(255, 99, 132, 1)',
-        data: [30, 29, 28, 25, 22, 23],
+        data: [22, 19, 25, 23, 20, 18],
     }, {
         label: 'Umidade',
         backgroundColor: '#1d8d8e',
         borderColor: '#1d8d8e',
-        data: [80, 82, 80, 85, 80, 83],
+        data: [53, 50, 33, 40, 49, 55],
     }
     ]
 };
-
+const valor_temp_array = data2.datasets.find(dataset => dataset.label === 'Temperatura').data;
+const valor_umid_array = data2.datasets.find(dataset => dataset.label === 'Umidade').data;
 
 const config2 = {
     type: 'bar',
@@ -296,6 +548,35 @@ const config2 = {
             }
         },
         plugins: {
+            tooltip: {
+                callbacks: {
+                    beforeTitle: function (context) {
+                        return 'Média do dia';
+                    },
+                    title: function (context) {
+                        const dataIndex = [context[0].dataIndex]
+                        return `Obra: ${obraarray[dataIndex]}`;
+                    },
+                    footer: function (context) {
+                        const dataIndex = [context[0].dataIndex]
+                        const datasetIndex = [context[0].datasetIndex]
+                        if (datasetIndex == 0){
+                            if (valor_temp_array[dataIndex] >= 18 && valor_temp_array[dataIndex] <= 22) {
+                                return `A temperatura de: ${valor_temp_array[dataIndex]}º está normal.`
+                            } else {
+                                return `A temperatura de: ${valor_temp_array[dataIndex]}º está anormal.`
+                            }
+                        }
+                        if (datasetIndex == 1) {
+                            if (valor_umid_array[dataIndex] >= 45 && valor_umid_array[dataIndex] <= 53) {
+                                return `A umidade de: ${valor_umid_array[dataIndex]}% está normal.`
+                            } else {
+                                return `A umidade de: ${valor_umid_array[dataIndex]}% está anormal.`
+                            }
+                        }
+                    }
+                }
+            },
             title: {
                 display: true,
                 text: 'OBRAS',
@@ -316,6 +597,8 @@ const config2 = {
                 }
             }
         },
+
+
         onClick: function (events, elements) {
             if (elements.length > 0) {
                 const graficoobra1 = document.getElementById('graficoobra1');
@@ -325,51 +608,36 @@ const config2 = {
                 const graficoobra5 = document.getElementById('graficoobra5');
                 const graficoobra6 = document.getElementById('graficoobra6');
                 var index = elements[0].index;
+
+                // Deixar todos os gráficos escondidos
+                graficoobra1.style.display = 'none';
+                graficoobra2.style.display = 'none';
+                graficoobra3.style.display = 'none';
+                graficoobra4.style.display = 'none';
+                graficoobra5.style.display = 'none';
+                graficoobra6.style.display = 'none';
+
+                // Dependendo da posição escolhida, exibe o gráfico de linha correspondente
                 switch (index) {
-                    // Caso o index (posição da barra) seja 1
                     case 0:
-                        if (graficoobra1.style.display == 'none') {
-                            // Se estiver oculta, torna visível
-                            graficoobra1.style.display = 'block';
-                    } else {
-                        // Caso contrário, torna oculta
-                        graficoobra1.style.display = 'none';
-                    }
+                        graficoobra1.style.display = 'block';
                         break;
                     case 1:
-                        // Caso o index (posição da barra) seja 2
-                        if (graficoobra2.style.display == 'none') {
-                            // Se estiver oculta, torna visível
-                            graficoobra2.style.display = 'block';
-                    } else {
-                        // Caso contrário, torna oculta
-                        graficoobra2.style.display = 'none';
-                    }
+                        graficoobra2.style.display = 'block';
                         break;
                     case 2:
-                        // Caso o index (posição da barra) seja 3
-                        if (graficoobra3.style.display == 'none') {
-                            // Se estiver oculta, torna visível
-                            graficoobra3.style.display = 'block';
-                    } else {
-                        // Caso contrário, torna oculta
-                        graficoobra3.style.display = 'none';
-                    }
+                        graficoobra3.style.display = 'block';
                         break;
                     case 3:
-                        // Caso o index (posição da barra) seja 4
-                        alert("clicou na barra 4")
+                        graficoobra4.style.display = 'block';
                         break;
                     case 4:
-                        // Caso o index (posição da barra) seja 5
-                        alert("clicou na barra 5")
+                        graficoobra5.style.display = 'block';
                         break;
-                    case 5:4
-                        // Caso o index (posição da barra) seja 6
-                        alert("clicou na barra 6")
+                    case 5:
+                        graficoobra6.style.display = 'block';
                         break;
                 }
-            
             }
         },
     }
@@ -380,4 +648,3 @@ const myChart2 = new Chart(
     document.getElementById('graficobarra'),
     config2
 );
-
