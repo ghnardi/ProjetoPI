@@ -47,7 +47,7 @@ opacity: 1;
 
 .blocoMarromCima {
     display: flex;
-    width: 25%;
+    width: 25.5%;
     height: 100%;
     background-color: rgb(243, 234, 216);
     border-radius: 10px;
@@ -56,17 +56,9 @@ opacity: 1;
 .blocosBaixo {
     display: flex;
     width: 100%;
-    height: auto;
-
-}
-
-.blocoRetangulo {
-    display: flex;
-    width: 25%;
     height: 110vh;
-    margin-bottom: 1.5%;
-    margin-top: 1.5%;
-    margin-left: 11%;
+    margin-left: 8.7%;
+
 }
 
 .blocoMarromRet {
@@ -79,7 +71,7 @@ opacity: 1;
 
 .blocoDireita {
     display: flex;
-    width: 57%;
+    width: 79.5%;
     height: auto;
     margin-left: 1.5%;
     margin-bottom: 1.5%;
@@ -91,7 +83,7 @@ opacity: 1;
 .blocoMarromDireita {
     display: flex;
     background-color: rgb(243, 234, 216);
-    width: 90%;
+    width: 100%;
     height: 50%;
     justify-content: center;
     align-items: center;
@@ -99,33 +91,28 @@ opacity: 1;
 }
 
 #graficoobra1 {
-    display: none;
+    display: block;
     animation: clarear .6s;
 }
 #graficoobra2 {
-    display: none;
     animation: clarear .6s;
 }
 #graficoobra3 {
-    display: none;
     animation: clarear .6s;
 }
 #graficoobra4 {
-    display: none;
     animation: clarear .6s;
 }
 #graficoobra5 {
-    display: none;
     animation: clarear .6s;
 }
 #graficoobra6 {
-    display: none;
     animation: clarear .6s;
 }
 .blocoMarromDireita2 {
     display: flex;
     background-color: rgb(243, 234, 216);
-    width: 90%;
+    width: 98%;
     height: 50%;
     border-radius: 10px;
     justify-content: center;

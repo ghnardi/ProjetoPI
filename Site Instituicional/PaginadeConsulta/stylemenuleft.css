@@ -1,6 +1,6 @@
 .menuleft {
     display: flex;
-    height: auto%;
+    height: auto;
     background-color: #2E2109;
     border-bottom: 3px solid #775201;
     border-right: 3px solid #775201;
@@ -91,13 +91,3 @@
     cursor: pointer;
     align-items: center;
 }
-
-/* .menuleftlinha{
-    display: flex;
-    background-color: #6D4A00;
-    width: 3px;
-    height: 92%;
-
-
-}  */
-

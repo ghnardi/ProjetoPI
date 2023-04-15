@@ -2,7 +2,7 @@
 
 // GRÁFICO OBRA 1   
 const obra1 = document.getElementById('graficoobra1');
-obra1.style.display = 'none';
+obra1.style.display = 'block';
 var myChart = new Chart(obra1, {
     type: 'line',
     data: {
