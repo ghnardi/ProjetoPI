@@ -77,14 +77,16 @@
 #standbytexto {
   display: flex;
   font-weight: 800;
-  width: 55%;
+  width: 40%;
   white-space:normal;
   height: 26%;
+  align-items: center;
   font-size: 80px;
   color: #c6b082;
   text-align: center;
   margin-top: 3%;
   border-bottom: 2px solid #c6b082;
+  border-top: 2px solid #c6b082;
 }
 
 .dash {
