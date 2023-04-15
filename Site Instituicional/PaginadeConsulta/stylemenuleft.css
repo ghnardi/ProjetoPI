@@ -4,6 +4,7 @@
     background-color: #2E2109;
     border-bottom: 3px solid #775201;
     border-right: 3px solid #775201;
+    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .containermenuleft {
@@ -34,7 +35,7 @@
     height: 7%;
     border-radius: 5px;
     margin-top: 5%;
-    background-color: #775201;
+    background-color: #2e2109;
     cursor: pointer;
     align-items: center;
 }

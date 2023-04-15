@@ -1,12 +1,22 @@
 @import url('https://fonts.cdnfonts.com/css/montserrat-ace');
 
 * {
-    font-family: 'Montserrat ace';
+    font-family: 'Montserrat Ace';
 }
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
     
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #6D4A00;
 }
 
 .container {
@@ -16,48 +26,42 @@ body {
     align-items: center;
 }
 
-.header {
-    width: 100%;
-    height: 70px;
-    background-color: rgb(255, 255, 255);
-}
-
-.navbar li,
-.navbar a {
-    text-decoration: none;
-    color: rgb(147, 107, 47);
-    align-items: center;
-    margin: 10px;
-    justify-content: center;
-}
-
-.navbar {
-    list-style: none;
+.header{
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    height: 7%;
+    background-color: rgb(255, 255, 255);
     align-items: center;
-    margin-left: 35%;
 }
 
-.bt_login {
-    border-radius: 10px;
-    background-color: #6d460be2;
-    /* border-bottom: 6px; */
-    border: 0px;
-    width: 75px;
-    height: 23px;
+.navbar{
+    display: flex;
+    color: rgb(147, 107, 47);
+    flex-direction: row;
+    white-space: nowrap;
     align-items: center;
-    color: white;
-    font-weight: bold;
+    text-align: center;
+    gap: 1.8vmax;
+    margin-left: 60%;
+    list-style: none;
+}
 
+.header #iconmenuperfil {
+    display: flex;
+    color: rgb(147, 107, 47);
+    margin-left: 0.7%;
     cursor: pointer;
 }
 
-.logo {
+.logo{
     display: flex;
-    margin-left: 12.5%;
-    width: 10%;
-    height: 40%;
+    position: absolute;
+    width: 115px;
+    height: 30px;
+    color: #6D4A00;
+    align-items: center;
+    margin-left: 8%;
+    top: 2%;
 }
 
 /*CONTEÚDO DO SITE*/
@@ -235,7 +239,7 @@ body {
 
 }
 
-a {
+.BlocaoMarromBaixo a {
     text-decoration: none;
     color: #F0EBDF; 
 }

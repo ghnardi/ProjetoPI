@@ -1,5 +1,6 @@
 .menuflutuante {
     display: none;
+    z-index: 2;
     position: absolute;
     width: 22%;
     height: 34%;
