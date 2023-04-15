@@ -1,12 +1,14 @@
 @keyframes clarear {
     from {
-opacity: 0;
+        opacity: 0;
     }
-    to {
-opacity: 1;
 
+    to {
+        opacity: 1;
+
+    }
 }
-}
+
 .conteudo {
     display: flex;
     width: 100%;
@@ -53,6 +55,185 @@ opacity: 1;
     border-radius: 10px;
 }
 
+/* KPI Umidade Atual*/
+#primeirobloco {
+    display: flex;
+    background-color: #FF004D;
+    flex-direction: column;
+
+}
+
+.headerbloco1 {
+    display: flex;
+    background-color: #972648;
+    width: 100%;
+    height: 23%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 1.5%;
+}
+
+#headertexto1 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#headericon {
+    display: flex;
+    font-size: 27px;
+}
+
+.headerinfo {
+    display: flex;
+    color: white;
+    margin-top: 8%;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#headerinfoobra{
+    display: flex;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: -10%;
+
+}
+#headerinfotexto {
+    display: flex;
+    font-size: 110px;
+    font-weight: 700;
+    color: white;
+}
+/* KPI Temperatura Atual*/
+#segundobloco {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerbloco2 {
+    display: flex;
+    background-color: #6D4A00;
+    height: 23%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #F0EBDF;
+}
+
+#headertexto2 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#headerinfotexto2 {
+    display: flex;
+    font-size: 110px;
+    font-weight: 700;
+    align-self: center;
+    margin-top: 5%;
+    color: #6D4A00;
+}
+
+.headerinfo2 {
+    display: flex;
+    color: #6D4A00;
+    margin-top: 8%;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#headerinfoobra2{
+    display: flex;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: -10%;
+
+}
+#headerinfotexto2 {
+    display: flex;
+    font-size: 110px;
+    font-weight: 700;
+    color: #6D4A00;
+}
+/* KPI Média dos Dois*/
+
+#terceirobloco {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerbloco3 {
+    display: flex;
+    background-color: #6D4A00;
+    height: 23%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #F0EBDF;
+}
+
+#headertexto3 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#headerinfotexto3 {
+    display: flex;
+    font-size: 60px;
+    font-weight: 700;
+    align-self: center;
+    color: #6D4A00;
+
+}
+
+.blocomediaumidade {
+    display: flex;
+    background-color: #FF004D;
+    height: 53%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+    margin-top: 1%;
+    
+}
+.headerbloco4 {
+    display: flex;
+    background-color: #972648;
+    height: 40%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 1.5%;
+}
+
+#headertexto4 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#headerinfotexto4 {
+    display: flex;
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    margin: auto;
+}
+
+
 .blocosBaixo {
     display: flex;
     width: 100%;
@@ -94,21 +275,27 @@ opacity: 1;
     display: block;
     animation: clarear .6s;
 }
+
 #graficoobra2 {
     animation: clarear .6s;
 }
+
 #graficoobra3 {
     animation: clarear .6s;
 }
+
 #graficoobra4 {
     animation: clarear .6s;
 }
+
 #graficoobra5 {
     animation: clarear .6s;
 }
+
 #graficoobra6 {
     animation: clarear .6s;
 }
+
 .blocoMarromDireita2 {
     display: flex;
     background-color: rgb(243, 234, 216);
@@ -136,4 +323,3 @@ opacity: 1;
     align-items: center;
     justify-content: center;
 }
-
