@@ -24,7 +24,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 48%;
+    margin-left: 43%;
 }
 
 .navbar li, .navbar a{
@@ -99,7 +99,7 @@ body{
     color: white;
     font-size: medium;
     font-weight: bold;
-    
+    margin-right: 55%;
     height: 50px;
     width: 200px;
     border-radius: 7px;
@@ -111,6 +111,14 @@ body{
     display: flex;
     justify-content: center;
     color: #644b26;
+}
+
+.valores .container{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    margin-left: 10%; 
 }
 
 .valores{
@@ -169,6 +177,15 @@ body{
     
     flex-direction: column;
 }
+
+.infor .container{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    margin-left: 10%; 
+}
+
 #fotoInfo{
     height: 500px;
     filter: drop-shadow(0 0 0.75rem rgb(181, 134, 7));
