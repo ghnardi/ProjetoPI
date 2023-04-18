@@ -76,7 +76,7 @@ var myChart = new Chart(obra1, {
         plugins: {
             title: {
                 display: true,
-                text: 'OBRA 1',
+                text: 'SETOR 1',
                 font: {
                     size: 18,
                     color: 'black',
@@ -156,7 +156,7 @@ var myChart = new Chart(obra2, {
         plugins: {
             title: {
                 display: true,
-                text: 'OBRA 2',
+                text: 'SETOR 2',
                 font: {
                     size: 18,
                     color: 'black',
@@ -236,7 +236,7 @@ var myChart = new Chart(obra3, {
         plugins: {
             title: {
                 display: true,
-                text: 'OBRA 3',
+                text: 'SETOR 3',
                 font: {
                     size: 18,
                     color: 'black',
@@ -316,7 +316,7 @@ var myChart = new Chart(obra4, {
         plugins: {
             title: {
                 display: true,
-                text: 'OBRA 4',
+                text: 'SETOR 4',
                 font: {
                     size: 18,
                     color: 'black',
@@ -405,7 +405,7 @@ var myChart = new Chart(obra5, {
             }, */
             title: {
                 display: true,
-                text: 'OBRA 5',
+                text: 'SETOR 5',
                 font: {
                     size: 18,
                     color: 'black',
@@ -485,7 +485,7 @@ var myChart = new Chart(obra6, {
         plugins: {
             title: {
                 display: true,
-                text: 'OBRA 6',
+                text: 'SETOR 6',
                 font: {
                     size: 18,
                     color: 'black',
@@ -509,12 +509,12 @@ var myChart = new Chart(obra6, {
 
 /*GRAFICO DE BARRA*/
 const labels = [
-    'Obra1',
-    'Obra2',
-    'Obra3',
-    'Obra4',
-    'Obra5',
-    'Obra6',
+    'Setor 1',
+    'Setor 2',
+    'Setor 3',
+    'Setor 4',
+    'Setor 5',
+    'Setor 6',
 ];
 
 const obraarray = [1, 2, 3, 4, 5, 6];
@@ -573,7 +573,7 @@ const config2 = {
                     },
                     title: function (context) {
                         const dataIndex = [context[0].dataIndex]
-                        return `Obra: ${obraarray[dataIndex]}`;
+                        return `Setor: ${obraarray[dataIndex]}`;
                     },
                     footer: function (context) {
                         const dataIndex = [context[0].dataIndex]
@@ -597,7 +597,7 @@ const config2 = {
             },
             title: {
                 display: true,
-                text: 'OBRAS',
+                text: 'SALA 12345',
                 font: {
                     size: 18,
                     color: 'black',
