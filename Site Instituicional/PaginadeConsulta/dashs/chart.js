@@ -662,9 +662,6 @@ return soma / array.length
 const array_temperatura = valor_temp_array.map(Number)
 const array_umidade= valor_umid_array.map(Number)
 
-const valor_temp_array_setor6 = setor6.datasets.find(dataset => dataset.label == 'Temperatura').data;
-const array_temp_setor6 = valor_temp_array_setor6.map(Number);
-
 
 headerinfotexto.innerHTML = `${valor_umid_array[valor_umid_array.length - 1]}%`
 headerinfotexto2.innerHTML = `${valor_temp_array[valor_temp_array.length - 1]}%`
