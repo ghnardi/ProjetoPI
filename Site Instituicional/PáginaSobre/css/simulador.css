@@ -49,13 +49,9 @@
     color: #C6B082;
     font-family: 'Montserrat Ace';  
     text-align: center;
-<<<<<<< HEAD
-
-=======
     justify-self: center;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 .div_input {
@@ -63,19 +59,11 @@
     justify-content: center;
     background-color: #C6B082;
     padding: 15px 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 h4 {
     margin: 0;
     padding: 5px 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 .inputs {
@@ -83,10 +71,6 @@ h4 {
     font-size: 3vh;
     display: flex;
     justify-content: left;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 input {
@@ -94,17 +78,6 @@ input {
     border-radius: 4px;
     width: 99%;
     background-color: #36290d;
-<<<<<<< HEAD
-    height: 25px;
-    display: flex;
-	justify-content: center;
-	align-items: center;
-    bottom: 1.5%;
-    transition: background-color 0.3s ease-in-out;
-    color: #C6B082;
-    text-indent: 4px;
-
-=======
     height: 35px;
     display: flex;
 	justify-content: center;
@@ -113,7 +86,6 @@ input {
     transition: background-color 0.3s ease-in-out;
     color: #C6B082;
     text-indent: 4px;
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 input:focus {
@@ -121,34 +93,19 @@ input:focus {
     background-color: #C6B082;
     color: #36290d;
     border: #2F220A 1px solid;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 input::placeholder{
     color: #C6B082;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 .botao {
     width: 100%;
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-
-}
-#button {
-    top: 6%;
-=======
 }
 #button {
     margin-top: 6%;
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
     border: 1px solid #ae8406;
     border-radius: 4px;
     background-color: #36290d;
@@ -158,10 +115,6 @@ input::placeholder{
     font-weight: bold;
     align-self: center;
     cursor: pointer;
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
 }
 
 .div_resultado {
@@ -172,15 +125,9 @@ input::placeholder{
     color: #36290d;
     font-family: 'Montserrat Ace';
     font-size: 2.5vh;
-<<<<<<< HEAD
-
-}
-
-=======
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px    ;
 }
 
 
 
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
