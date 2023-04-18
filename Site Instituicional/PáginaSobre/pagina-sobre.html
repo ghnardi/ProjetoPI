@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Nós | Arttech</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/simulador.css">
     <link rel="stylesheet" href="./css/stylemenuflutuante.css" />
     <link rel="stylesheet" href="css/simulador.css">
     <link
@@ -15,6 +16,60 @@
   </head>
 
   <body>
+    <div class="simuladorfinanceiro" id="financeiro1">
+      <span class="blocofinanceiro">
+        <div class="titulofinanceiro">
+          <div id="containerfinanceiro">
+              <h1>SIMULADOR FINANCEIRO
+                <span id="fecharfinanceiro" onclick="ir_financeiro()" class="material-symbols-outlined">
+                  close
+                  </span>
+
+              </h1>
+          </div>
+      </div>
+      <div class="div_input">
+        <div id="container">
+            <div id="simulador">
+
+
+                <h4 class="inputs">Tipo de obra: </h4>
+                <input placeholder="Escultura, Pintura ou Ambos" class="input" id="input_tipo">
+                <h4 class="inputs">Quantidade de Obras pequenas: </h4>
+                <input class="input" id="input_pequenas">
+                <h4 class="inputs">Quantidade de Obras médias:</h4>
+                <input class="input" id="input_medias">
+                <h4 class="inputs">Quantidade de Obras grandes:</h4>
+                <input class="input" id="input_grandes">
+                <h4 class="inputs">Seu acervo fica em algum lugar com condições adversas de temperatura? </h4>
+                <input placeholder="Sim ou Não" class="input" id="input_temp">
+                <h4 class="inputs">Tamanho total do acervo (em metros quadrados): </h4>
+                <input placeholder="m²" class="input" id="input_tamanho">
+                <h4 class="inputs">Tempo médio da duraçao da conservaçao: </h4>
+                <input placeholder="Anos" class="input" id="input_tempo">
+
+                <div class="botao">
+                    <button id="button" onclick="calcular()">CALCULAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="div_resultado">
+        <div id="container">
+            <div id="resultado">
+                <span style="margin-left: 10%" id="span_museu" class="resultado_simulador"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+      </span>
+   
+    </div>
+
+
     <img class="logo" src="assets/imagens/logo.PNG" alt="" />
     <div class="header">
       <div class="navbar">
@@ -130,7 +185,7 @@
         </h2>
         |
         <div class="arrow">
-          <a href="../../Script - Calculadora Financeira/simulador.html">→</a>
+          <span id="abrirfinanceiro" onclick="ir_financeiro()">→</span>
         </div>
       </div>
     </div>
