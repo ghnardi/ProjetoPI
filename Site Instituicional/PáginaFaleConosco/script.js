@@ -129,5 +129,5 @@ function clickPerfil() {
 
 
 function dashboard() {
-    window.location.href = "./dashs/chart.html"
+    window.location.href = "../PaginadeConsulta/consulta.html"
 }
