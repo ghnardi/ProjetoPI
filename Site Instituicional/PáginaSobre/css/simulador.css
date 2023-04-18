@@ -3,25 +3,6 @@
 * {
     font-family: 'Montserrat Ace';
 }
-<<<<<<< HEAD
-    
-.div_simulador {
-    display: flex;
-    z-index: 2;
-    height: 80%;
-    width: 80%  ;
-
-}
-
-.container_simulador {
-    display: flex;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-
-}
-.titulo {
-=======
 
 #financeiro1 {
     display: none;
@@ -63,7 +44,6 @@
     cursor: pointer;
 }
 .titulofinanceiro {
->>>>>>> 4ad98d29379dbaa71b97cc5ff27f2b913b18d4e8
     background-color: #36290d;
     padding: 0.5px;
     color: #C6B082;
