@@ -1,0 +1,72 @@
+// const obra6 = document.getElementById('graficoobra6');
+// const data_setor6 = {
+//     labels: labels_linha,
+//     datasets: [{
+//         label: 'Temperatura',
+//         backgroundColor: 'rgba(255, 99, 132, 1)',
+//         borderColor: 'rgba(255, 99, 132, 1)',
+//         data: [22, 19, 25, 20, 20, 18],
+//     }, {
+//         label: 'Umidade',
+//         backgroundColor: '#1d8d8e',
+//         borderColor: '#1d8d8e',
+//         data: [53, 50, 33, 40, 49, 55],
+//     }
+//     ]
+// };
+
+
+// const valor_temp_array_setor6 = data_setor6.datasets.find(dataset => dataset.label == 'Temperatura').data;
+// const valor_umid_array_setor6 = data_setor6.datasets.find(dataset => dataset.label == 'Umidade').data;
+
+// const config_setor6 = {
+//     type: 'line',
+//     data: data_setor6,
+//     options: {
+//         maintainAspectRatio: false,
+//         scales: {
+//             y: {
+//                 ticks: {
+//                     beginAtZero: true,
+//                     color: '#2E2109;',
+//                     font: {
+//                         size: 18,
+//                         family: 'Montserrat Ace',
+//                         weight: 500
+//                     }
+//                 },
+//             },
+//             x: {
+//                 ticks: {
+//                     color: '#2E2109;',
+//                     font: {
+//                         size: 18,
+//                         family: 'Montserrat Ace',
+//                         weight: 500
+//                     }
+//                 }
+//             }
+//         },
+//         plugins: {
+//             title: {
+//                 display: true,
+//                 text: 'SETOR 6',
+//                 font: {
+//                     size: 18,
+//                     color: 'black',
+//                     family: 'Montserrat Ace',
+//                     weight: 800
+//                 }
+
+//             },
+//             legend: {
+//                 labels: {
+//                     font: {
+//                         size: 18,
+//                         family: 'Montserrat Ace',
+//                         weight: 500
+//                     }
+//                 }
+//             }
+//         }}
+// };

@@ -18,18 +18,23 @@ function clickVoltar(){
     window.location.href = "../consulta.html"
 }
 
+
+const labels_linha = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+];
+
 // GRÁFICO OBRA 1   
 const obra1 = document.getElementById('graficoobra1');
 obra1.style.display = 'block';
 var myChart = new Chart(obra1, {
     type: 'line',
     data: {
-        labels: ['12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00',],
+        labels: labels_linha,
         datasets: [{
             label: 'Temperatura',
             data: [30, 29, 28, 25, 22, 23],
@@ -104,12 +109,7 @@ obra2.style.display = 'none';
 var myChart = new Chart(obra2, {
     type: 'line',
     data: {
-        labels: ['12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00',],
+        labels: labels_linha,
         datasets: [{
             label: 'Temperatura',
             data: [17, 19, 22, 23, 29, 20],
@@ -184,12 +184,7 @@ obra3.style.display = 'none';
 var myChart = new Chart(obra3, {
     type: 'line',
     data: {
-        labels: ['12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00',],
+        labels: labels_linha,
         datasets: [{
             label: 'Temperatura',
             data: [18, 26, 29, 27, 15, 30],
@@ -264,12 +259,7 @@ obra4.style.display = 'none';
 var myChart = new Chart(obra4, {
     type: 'line',
     data: {
-        labels: ['12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00',],
+        labels: labels_linha,
         datasets: [{
             label: 'Temperatura',
             data: [18, 19, 20, 20, 21, 22],
@@ -345,12 +335,7 @@ obra5.style.display = 'none';
 var myChart = new Chart(obra5, {
     type: 'line',
     data: {
-        labels: ['12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00',],
+        labels: labels_linha,
         datasets: [{
             label: 'Temperatura',
             data: [18, 19, 19, 22, 22, 23],
@@ -430,15 +415,10 @@ var myChart = new Chart(obra5, {
 // GRÁFICO OBRA 6
 const obra6 = document.getElementById('graficoobra6');
 obra6.style.display = 'none';
-var myChart = new Chart(obra6, {
+const setor6 = new Chart(obra6, {
     type: 'line',
     data: {
-        labels: ['12:00',
-            '13:00',
-            '14:00',
-            '15:00',
-            '16:00',
-            '17:00',],
+        labels: labels_linha,
         datasets: [{
             label: 'Temperatura',
             data: [22, 22, 21, 20, 18, 16],
@@ -517,7 +497,7 @@ const labels = [
     'Setor 6',
 ];
 
-const obraarray = [1, 2, 3, 4, 5, 6];
+const setorarray = [1, 2, 3, 4, 5, 6];
 const labelarray = ['Temperatura', 'Umidade']
 const data2 = {
     labels: labels,
@@ -525,7 +505,7 @@ const data2 = {
         label: 'Temperatura',
         backgroundColor: 'rgba(255, 99, 132, 1)',
         borderColor: 'rgba(255, 99, 132, 1)',
-        data: [22, 19, 25, 23, 20, 18],
+        data: [22, 19, 25, 20, 20, 18],
     }, {
         label: 'Umidade',
         backgroundColor: '#1d8d8e',
@@ -534,8 +514,8 @@ const data2 = {
     }
     ]
 };
-const valor_temp_array = data2.datasets.find(dataset => dataset.label === 'Temperatura').data;
-const valor_umid_array = data2.datasets.find(dataset => dataset.label === 'Umidade').data;
+const valor_temp_array = data2.datasets.find(dataset => dataset.label == 'Temperatura').data;
+const valor_umid_array = data2.datasets.find(dataset => dataset.label == 'Umidade').data;
 
 const config2 = {
     type: 'bar',
@@ -573,7 +553,7 @@ const config2 = {
                     },
                     title: function (context) {
                         const dataIndex = [context[0].dataIndex]
-                        return `Setor: ${obraarray[dataIndex]}`;
+                        return `Setor: ${setorarray[dataIndex]}`;
                     },
                     footer: function (context) {
                         const dataIndex = [context[0].dataIndex]
@@ -666,3 +646,27 @@ const myChart2 = new Chart(
     document.getElementById('graficobarra'),
     config2
 );
+
+
+
+function mediaArray(array){
+
+soma = 0;
+
+for (i = 0; i < array.length; i++){
+    soma += array[i];
+}
+return soma / array.length
+}
+
+const array_temperatura = valor_temp_array.map(Number)
+const array_umidade= valor_umid_array.map(Number)
+
+const valor_temp_array_setor6 = setor6.datasets.find(dataset => dataset.label == 'Temperatura').data;
+const array_temp_setor6 = valor_temp_array_setor6.map(Number);
+
+
+headerinfotexto.innerHTML = `${valor_umid_array[valor_umid_array.length - 1]}%`
+headerinfotexto2.innerHTML = `${valor_temp_array[valor_temp_array.length - 1]}%`
+headerinfotexto3.innerHTML = `${mediaArray(array_temperatura).toFixed(1)}ºC`
+headerinfotexto4.innerHTML = `${mediaArray(array_umidade).toFixed(1)}%`
