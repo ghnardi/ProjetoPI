@@ -117,13 +117,13 @@ body{
     display: flex;
     width: 80%;
     height: 100%;
-    align-items: center;
-    margin-left: 10%; 
 }
 
 .valores{
     background-color: #d6d1cbe5;
     height: 700px;
+    display: flex;
+    justify-content: center;
 }
  .boxes{
     display: flex;

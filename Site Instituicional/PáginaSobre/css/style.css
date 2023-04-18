@@ -100,9 +100,11 @@ a:active {
 }
 
 .texto_sobre {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.3vmax;
 }
 
 /* importância */
@@ -121,9 +123,11 @@ a:active {
 }
 
 .texto_importante {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.3vmax; 
 }
 
 /* valores */
@@ -138,6 +142,7 @@ a:active {
 }
 
 .box {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
