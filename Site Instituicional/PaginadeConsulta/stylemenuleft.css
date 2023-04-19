@@ -33,9 +33,9 @@
     display: flex;
     width: 90%;
     height: 7%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 5%;
-    background-color: #2e2109;
+    background-color: #775201;
     cursor: pointer;
     align-items: center;
 }
@@ -60,9 +60,10 @@
     cursor: pointer;
     transform: rotate(180deg);
 }
+
 .containermenuleft #menuleft2 {
     display: flex;
-     width: 90%;
+    width: 90%;
     height: 7%;
     border-radius: 10px;
     margin-top: 5%;
@@ -73,7 +74,7 @@
 
 .containermenuleft #menuleft3 {
     display: flex;
-     width: 90%;
+    width: 90%;
     height: 7%;
     border-radius: 10px;
     margin-top: 5%;
@@ -84,7 +85,7 @@
 
 .containermenuleft #menuleft4 {
     display: flex;
-     width: 90%;
+    width: 90%;
     height: 7%;
     border-radius: 10px;
     margin-top: 5%;

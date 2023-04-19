@@ -25,10 +25,13 @@ function clickMenu() {
 }
 
 
+dashdash1.style.display = 'flex'
+dashdash2.style.display = 'none'
+dashdash3.style.display = 'none'
+dashdash4.style.display = 'none'
 
 function clickBloco1() {
     if (dashdash1.style.display == 'none') {
-
         menuleft2.style.backgroundColor = '#2E2109'
         menuleft3.style.backgroundColor = '#2E2109'
         menuleft4.style.backgroundColor = '#2E2109'
@@ -37,15 +40,10 @@ function clickBloco1() {
         dashdash3.style.display = 'none'
         dashdash4.style.display = 'none'
         dashdash1.style.display = 'flex'
-        dashstandby.style.display = 'none'
 
         menuleft1.style.backgroundColor = '#775201'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
-    } else {
-        dashdash1.style.display = 'none'
-        menuleft1.style.backgroundColor = '#2E2109'
-        dashstandby.style.display = 'flex'
-        dashdashtexto.innerHTML = ` `
+    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'none' && dashdash4.style.display == 'none' && dashdash1.style.display == 'flex'){
     }
 
 }
@@ -62,14 +60,9 @@ function clickBloco2() {
         dashdash3.style.display = 'none'
         dashdash4.style.display = 'none'
         dashdash2.style.display = 'flex'
-        dashstandby.style.display = 'none'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 2`
 
-    } else {
-        menuleft2.style.backgroundColor = '#2E2109'
-        dashdash2.style.display = 'none'
-        dashstandby.style.display = 'flex'
-        dashdashtexto.innerHTML = ` `
+    } else if (dashdash2.style.display == 'flex' && dashdash3.style.display == 'none' && dashdash4.style.display == 'none' && dashdash1.style.display == 'none'){
     }
 
 }
@@ -84,14 +77,9 @@ function clickBloco3() {
         dashdash2.style.display = 'none'
         dashdash4.style.display = 'none'
         dashdash3.style.display = 'flex'
-        dashstandby.style.display = 'none'
         menuleft3.style.backgroundColor = '#775201'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 3`
-    } else {
-        dashdash3.style.display = 'none'
-        menuleft3.style.backgroundColor = '#2E2109'
-        dashstandby.style.display = 'flex'
-        dashdashtexto.innerHTML = ` `
+    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'flex' && dashdash4.style.display == 'none' && dashdash1.style.display == 'none'){
     }
 
 }
@@ -105,14 +93,9 @@ function clickBloco4() {
         dashdash2.style.display = 'none'
         dashdash3.style.display = 'none'
         dashdash4.style.display = 'flex'
-        dashstandby.style.display = 'none'
         menuleft4.style.backgroundColor = '#775201'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 4`
-    } else {
-        dashdash4.style.display = 'none'
-        menuleft4.style.backgroundColor = '#2E2109'
-        dashstandby.style.display = 'flex'
-        dashdashtexto.innerHTML = ` `
+    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'none' && dashdash4.style.display == 'flex' && dashdash1.style.display == 'none'){
     }
 
 }

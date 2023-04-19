@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arttech | Dashboard</title>
     <link rel="stylesheet" href="chart.css">
-    <link rel="stylesheet" href="../stylemenuflutuante.css">
+    <link rel="stylesheet" href="../../cssglobal/stylemenuflutuante.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="chartdashs.css">
@@ -15,18 +15,21 @@
 </head>
 
 <body>
-    <img src="../assets/logo.png" class="logo">
     <div class="header">
-
         <div class="navbar">
-            <span><a href="">HOME</a></span>
-            <span><a href="">SOBRE</a></span>
-            <span><a href="">AJUDA</a></span>
-            <span><a href="">FALE CONOSCO</a></span>
-            <span>|</span>
-            <span>ID_PERFIL</span>
+            <img src="../assets/logo.png" class="logo" alt="">
+            <div id="textonavbar">
+                <li><a href="../PáginaInicial/home.html">HOME</a></li>
+                <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
+                <li><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
+                <li><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
+                <li>|</li>
+                <li>ID_PERFIL</li>
+                <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>
+            </div>
+       
         </div>
-        <i id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</i>
+       
     </div>
 
     <div class="menuflutuante" id="subsub">
