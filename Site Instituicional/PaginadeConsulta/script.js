@@ -37,6 +37,7 @@ menuleft1.style.backgroundColor = '#775201'
 menuleft2.style.backgroundColor = '#2E2109'
 menuleft3.style.backgroundColor = '#2E2109'
 menuleft4.style.backgroundColor = '#2E2109'
+dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
 
 
 function clickBloco1() {
