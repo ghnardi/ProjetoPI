@@ -29,6 +29,15 @@ dashdash1.style.display = 'flex'
 dashdash2.style.display = 'none'
 dashdash3.style.display = 'none'
 dashdash4.style.display = 'none'
+menuleft1.style.display = 'flex'
+menuleft2.style.display = 'flex'
+menuleft3.style.display = 'flex'
+menuleft4.style.display = 'flex'
+menuleft1.style.backgroundColor = '#775201'
+menuleft2.style.backgroundColor = '#2E2109'
+menuleft3.style.backgroundColor = '#2E2109'
+menuleft4.style.backgroundColor = '#2E2109'
+
 
 function clickBloco1() {
     if (dashdash1.style.display == 'none') {

@@ -190,3 +190,9 @@
   cursor: pointer;
   color: #c6b082;
 }
+
+#iconflecha:hover {
+  font-size: 50px;
+  cursor: pointer;
+  color: white;
+}

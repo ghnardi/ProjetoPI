@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 
-.containermenuleft #menulefttexto {
+#menulefttexto {
     display: flex;
     font-weight: 700;
     font-size: 15px;
@@ -29,7 +29,7 @@
 
 }
 
-.containermenuleft #menuleft1 {
+#menuleft1 {
     display: flex;
     width: 90%;
     height: 7%;
@@ -40,14 +40,20 @@
     align-items: center;
 }
 
-.containermenuleft .pincelmenuleft {
+#menuleft1:hover {
+    display: flex;
+    background-color: #775201;
+}
+
+
+.pincelmenuleft {
     display: flex;
     height: 3.21vh;
     top: 27.2%;
     margin-left: 7%;
 }
 
-.containermenuleft .textomenuleft {
+.textomenuleft {
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -61,7 +67,12 @@
     transform: rotate(180deg);
 }
 
-.containermenuleft #menuleft2 {
+#iconmenuleft:hover {
+    color: white;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+#menuleft2 {
     display: flex;
     width: 90%;
     height: 7%;
@@ -72,7 +83,13 @@
     align-items: center;
 }
 
-.containermenuleft #menuleft3 {
+#menuleft2:hover {
+    display: flex;
+    background-color: #775201;
+}
+
+
+#menuleft3 {
     display: flex;
     width: 90%;
     height: 7%;
@@ -83,7 +100,13 @@
     align-items: center;
 }
 
-.containermenuleft #menuleft4 {
+#menuleft3:hover {
+    display: flex;
+    background-color: #775201;
+}
+
+
+#menuleft4 {
     display: flex;
     width: 90%;
     height: 7%;
@@ -92,4 +115,9 @@
     background-color: #2E2109;
     cursor: pointer;
     align-items: center;
+}
+
+#menuleft4:hover {
+    display: flex;
+    background-color: #775201;
 }
