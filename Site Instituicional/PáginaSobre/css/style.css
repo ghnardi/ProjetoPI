@@ -23,42 +23,56 @@ a:active {
     align-items: center;
 }
 
-.header{
+.header {
     display: flex;
     width: 100%;
     height: 7%;
-    background-color: rgb(255, 255, 255);
     align-items: center;
+    justify-content: center;
+    
 }
 
+.logo {
+    display: flex;
+    width: 115px;
+    height: 30px;
+    color: #6D4A00;
+    align-items: center;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(147, 107, 47);
+}
+
+.navbar li{
+    display: inline-flex;
+    list-style: none;
+    margin-left: 1.5%;
+}
 .navbar{
     display: flex;
+    height: 100%;
+    width: 80%;
     color: rgb(147, 107, 47);
-    flex-direction: row;
-    white-space: nowrap;
     align-items: center;
     text-align: center;
-    gap: 1.8vmax;
-    margin-left: 60%;
-    list-style: none;
+
+}
+
+#textonavbar{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .header #iconmenuperfil {
     display: flex;
     color: rgb(147, 107, 47);
-    margin-left: 0.7%;
     cursor: pointer;
-}
-
-.logo{
-    display: flex;
-    position: absolute;
-    width: 115px;
-    height: 30px;
-    color: #6D4A00;
-    align-items: center;
-    margin-left: 8%;
-    top: 2%;
 }
 
 /* banner */

@@ -7,7 +7,7 @@
     <title>Sobre Nós | Arttech</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/simulador.css">
-    <link rel="stylesheet" href="./css/stylemenuflutuante.css" />
+    <link rel="stylesheet" href="../cssglobal/stylemenuflutuante.css">
     <link rel="stylesheet" href="css/simulador.css">
     <link
       rel="stylesheet"
@@ -16,6 +16,7 @@
   </head>
 
   <body>
+    <!-- Simulador Financeiro POP-UP -->
     <div class="simuladorfinanceiro" id="financeiro1">
       <span class="blocofinanceiro">
         <div class="titulofinanceiro">
@@ -62,35 +63,26 @@
             </div>
         </div>
     </div>
-
-
-
       </span>
-   
+
     </div>
 
-
-    <img class="logo" src="assets/imagens/logo.PNG" alt="" />
     <div class="header">
       <div class="navbar">
-        <span><a href="../PáginaInicial/home.html">HOME</a></span>
-        <span><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></span>
-        <span><a href="../PáginaAjuda/ajuda.html">AJUDA</a></span>
-        <span
-          ><a href="../PáginaFaleConosco/faleconosco.html"
-            >FALE CONOSCO</a
-          ></span
-        >
-        <span>|</span>
-        <span>ID_PERFIL</span>
+          <img src="assets/imagens/logo.png" class="logo" alt="">
+          <div id="textonavbar">
+              <li><a href="../PáginaInicial/home.html">HOME</a></li>
+              <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
+              <li><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
+              <li><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
+              <li>|</li>
+              <li>ID_PERFIL</li>
+              <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>
+          </div>
+     
       </div>
-      <i
-        id="iconmenuperfil"
-        class="material-symbols-outlined"
-        onclick="clickPerfil()"
-        >menu</i
-      >
-    </div>
+     
+  </div>
 
     <div class="menuflutuante" id="subsub">
       <span class="blocomenuflu"></span>
