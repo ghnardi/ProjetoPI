@@ -187,13 +187,14 @@ body{
     height: 500px;
     background-color: rgb(72, 40, 0);
     display: flex;
-    
+    align-items: center;
+   
 }
 .resumo{
     height: 350px;
     width: 380px;
     background-color: #896530df;
-    margin: 55px 30px 0px 10%;
+    margin: 0px 30px 0px 10%;
     border-radius: 6px;
     padding: 5% 5% 0 5%;
     display: flex;
