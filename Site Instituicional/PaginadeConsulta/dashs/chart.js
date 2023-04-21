@@ -18,6 +18,9 @@ function clickVoltar() {
     window.location.href = "../consulta.html"
 }
 
+function gerenciarconta(){
+    window.location.href = '/PaginaGerenciarConta/gerenciar.html'
+}
 
 const labels_linha = [
     '12:00',
