@@ -77,7 +77,7 @@
     font-size: 100%;
     line-height: 18px;
     color: #C6B082;
-    top: 50%;
+    top: 61%;
     left: 6.5%;
     cursor: pointer;
 }
@@ -87,21 +87,10 @@
     font-weight: 300;
     font-size: 100%;
     color: #C6B082;
-    top: 61%;
+    top: 72%;
     left: 6.5%;
     cursor: pointer;
 }
-
-.contaconfig{
-    display: flex;
-    position: absolute;
-    font-weight: 300;
-    font-size: 100%;
-    color: #C6B082;
-    top: 72%;
-    left: 6.5%;
-}
-
 .contalinha{
     display: flex;
     position: absolute;
@@ -118,6 +107,6 @@
     font-weight: 300;
     font-size: 100%;
     color: #C6B082;
-    top: 86%;
+    top: 88%;
     left: 6.5%;
 }

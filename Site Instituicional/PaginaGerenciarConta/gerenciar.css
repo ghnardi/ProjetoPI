@@ -1,0 +1,495 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 175vh;
+    font-family: 'Montserrat Ace';
+}
+
+.imagemFundo {
+    display: flex;
+    background-image: url(./assets/D.jpg);
+    background-position: left 30% top 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#iconvoltar {
+    color: white;
+    font-size: 50px;
+    transform: rotate(90deg);
+    margin-top: 1%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+#iconvoltar:hover {
+    color: rgb(243, 234, 216);
+}
+
+.blocoMarrom {
+    display: flex;
+    height: auto;
+    padding-bottom: 1.5%;
+    width: 80%;
+    background-color: #2E2109;
+    border: 2px solid #AE8406;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+#parteCima {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.gerenciarTexto {
+    display: flex;
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+    width: 1%;
+}
+
+#logo {
+    display: flex;
+    width: 6.6%;
+    height: 20%;
+}
+
+.infopessoaisBloco {
+    display: flex;
+    background-color: #392D12;
+    height: 30%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4%;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+}
+
+.IPparteEsquerda {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5%;
+    margin-top: 3%;
+    width: 30.4vw;
+    height: 16vh;
+}
+
+#IPtexto {
+    color: white;
+    font-weight: 650;
+    font-size: 2.5vmax;
+    white-space: nowrap;
+    width: 60%;
+    align-items: center;
+}
+
+#IPtextoAviso {
+    display: flex;
+    color: white;
+    margin-top: 1%;
+    height: auto;
+    font-style: normal;
+    width: 80%;
+    text-align: left;
+    font-weight: 300;
+    font-size: 0.7vmax;
+    line-height: 20px;
+    align-items: center;
+
+}
+
+.IPparteDireita {
+    display: flex;
+    border-left: 1px solid #AE8406;
+    width: 32vmax;
+    height: 47.3vh;
+    flex-direction: column;
+}
+
+.enderecoEmail {
+    display: flex;
+    width: 93%;
+    flex-direction: column;
+    margin-left: 6.5%;
+    margin-top: 9%;
+}
+
+#enderecoEmailTexto {
+    display: flex;
+    color: white;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75vmax;
+    width: 8vw;
+    margin-left: 1%;
+}
+
+#i_email {
+    display: flex;
+    color: white;
+    width: 90%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+}
+
+#i_email:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+.nomeEDtNasc {
+    display: flex;
+    width: 94%;
+    margin-left: 6.5%;
+    margin-top: 5%;
+}
+
+#nomeBloco {
+    display: flex;
+    width: 43%;
+    flex-direction: column;
+}
+
+#nomeTexto {
+    display: flex;
+    color: white;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.75vmax;
+    width: 43%;
+    flex-direction: column;
+    margin-left: 2%;
+}
+
+
+#i_nome {
+    display: flex;
+    color: white;
+    width: 95%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+}
+
+#i_nome:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+#dtNascBloco {
+    display: flex;
+    width: 50%;
+    margin-left: 2%;
+    flex-direction: column;
+}
+
+#dtNascTexto {
+    display: flex;
+    color: white;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 2%;
+    font-size: 0.75vmax;
+}
+
+#i_dtnasc {
+    display: flex;
+    color: white;
+    width: 90%;
+    color-scheme: dark;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+}
+
+#btn_salvar {
+    display: flex;
+    margin-left: 64.5%;
+    margin-top: 5%;
+    height: 4vh;
+    width: 18vh;
+    background: #FF9300;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Ace';
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8vmax;
+    cursor: pointer;
+}
+
+#btn_salvar:hover {
+    background-color:white;
+    color: #BD8500;
+    border: 1px solid #392D12;
+}
+
+/* INFO LOGIN */
+.infoLoginBloco {
+    display: flex;
+    background-color: #392D12;
+    height: 44%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4%;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+}
+
+.ILparteDireita {
+    display: flex;
+    border-left: 1px solid #AE8406;
+    width: 32vmax;
+    height: 69.4vh;
+    flex-direction: column;
+}
+
+.alterarEmail{
+    display: flex;
+    width: 93%;
+    height: 25vh;
+    margin-top: 8%;
+    margin-left: 7%;
+    flex-direction: column;
+
+
+}
+
+#alterarEmailTexto{
+    display: flex;
+    color: white;
+    width: 10vw;
+    font-size: 1vmax;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#alterarEmailAtual{
+    display: flex;
+    color: white;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75vmax;
+    width: 15vw;
+    margin-left: 1%;
+}
+
+#i_emailatual{
+    display: flex;
+    color: white;
+    width: 90%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+    margin-bottom: 2%;
+}
+
+#i_emailatual:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+
+#alterarEmailNovo{
+    display: flex;
+    color: white;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75vmax;
+    width: 15vw;
+    margin-left: 1%;
+}
+
+#i_emailnovo{
+    display: flex;
+    color: white;
+    width: 90%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+}
+
+#i_emailnovo:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+#btn_alterar {
+    display: flex;
+    margin-left: 62%;
+    margin-top: 5%;
+    height: 4.45vh;
+    width: 18.5vh;
+    background: #FF9300;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Ace';
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8vmax;
+    cursor: pointer;
+}
+
+
+#btn_alterar:hover {
+    background-color:white;
+    color: #BD8500;
+    border: 1px solid #392D12;
+}
+
+.alterarSenha{
+    display: flex;
+    width: 93%;
+    height: 40vh;
+    margin-left: 7%;
+    flex-direction: column;
+
+}
+
+#alterarSenhaTexto{
+    display: flex;
+    color: white;
+    width: 10vw;
+    font-size: 1vmax;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#senhaAtual{
+    display: flex;
+    color: white;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75vmax;
+    width: 15vw;
+    margin-left: 1%;
+}
+
+#i_senhaatual{
+    display: flex;
+    color: white;
+    width: 90%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+    margin-bottom: 2%;
+}
+
+#i_senhaatual:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+#senhaNova{
+    display: flex;
+    color: white;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75vmax;
+    width: 15vw;
+    margin-left: 1%;
+}
+
+#i_senhanova{
+    display: flex;
+    color: white;
+    width: 90%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+    margin-bottom: 2%;
+}
+
+#i_senhanova:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+
+#senhaNovaConfirmar{
+    display: flex;
+    color: white;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.75vmax;
+    width: 15vw;
+    margin-left: 1%;
+}
+
+#i_senhanovaconfirmar{
+    display: flex;
+    color: white;
+    width: 90%;
+    font-size: 0.7vmax;
+    padding-left: 2%;
+    height: 3.5vh;
+    background-color: rgba(185, 150, 102, 0.56);
+    border: 1px solid #BD8500;
+    border-radius: 6px;
+    margin-bottom: 2%;
+}
+
+#i_senhanovaconfirmar:focus {
+    background-color: white;
+    color: #2E2109;
+}
+
+#btn_alterarSenha{
+    display: flex;
+    margin-left: 62%;
+    margin-top: 5%;
+    height: 4.45vh;
+    width: 18.5vh;
+    background: #FF9300;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Ace';
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8vmax;
+    cursor: pointer;
+}

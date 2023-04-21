@@ -16,10 +16,10 @@
       <div class="navbar">
           <img src="./assets/logo.png" class="logo" alt="">
           <div id="textonavbar">
-              <li><a href="../PáginaInicial/home.html">HOME</a></li>
-              <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
-              <li><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
-              <li><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
+              <li id="homehover"><a href="../PáginaInicial/home.html">HOME</a></li>
+              <li id="sobrehover"><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
+              <li id="ajudahover"><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
+              <li id="falehover"><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
               <li>|</li>
               <li>ID_PERFIL</li>
               <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>
@@ -37,7 +37,7 @@
       <span class="nomeconta">Museu Ipiranga</span>
       <span class="adminconta">(admin)</span>
       <span class="contaemail">museudoipiranga@ipiranga.com</span>
-      <span class="gerenciarconta">Gerenciar conta</span>
+      <span class="gerenciarconta"onclick="gerenciarconta()">Gerenciar conta</span>
       <span class="contadashboard" onclick="dashboard()">Dashboard</span>
       <span class="contaconfig">Configurações</span>
       <span class="contalinha"></span>
@@ -47,7 +47,7 @@
   
     <!--CONTEÚDO DO SITE-->
     <!--Primeiro Blocao marrom-->
-    <div class="BlocaoMarrom">
+    <div class="BlocaoMarrom" id="blocaoMarrom">
       <div class="containerBlocao">
         <div class ="MensagemAjuda">
           <span id="PrecisaDeAjuda">Precisa de ajuda ?</span>
@@ -60,26 +60,33 @@
         </div>
       </div>
     </div>
+
+    <div class="BlocaoMarromInfos" id="blocaoMarromInfo">
+      <div class="containerBlocaoInfos">
+      <span id="categoriaExibida">Financeiro</span>
+      <span id="fraseExibida"></span>
+      </div>
+    </div>
     <!--4 Funcionalidades (Financeiro, Cadastro, Tecnologia e Parceria)-->
     <div class="Funcionalidades">
-        <div class="financeiro">
-            <span id="titulo">Financeiro</span>
-            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre o Financeiro.</span>
+        <div class="Financeiro" id="financeiroBloco" onclick="categoriaFinanceiro()">
+            <span id="tituloFinanceiro">Financeiro</span>
+            <span id="conteudoFinanceiro"><a href="../PáginaSobre/pagina-sobre.html#abrirfinanceiro.html">Nesta aba você terá acesso á todas as informações sobre o Financeiro.</a></span>
         </div>
-        <div class="TecnologiaParceriaCadastro">
-            <span id="titulo">Tecnologia</span>
-            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre Tecnologia.</span>
+        <div class="Tecnologia" onclick="categoriaTecnologia()" id="tecnologiaBloco">
+            <span id="tituloTecnologia">Tecnologia</span>
+            <span id="conteudoTecnologia">Nesta aba você terá acesso á todas as informações sobre Tecnologia.</span>
         </div>
     </div>
 
     <div class="Funcionalidades">
-        <div class="TecnologiaParceriaCadastro">
-            <span id="titulo"><a href="../PáginaCadastro/cadastro.html">Cadastro</a></span>
-            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre o Cadastro.</span>
+        <div class="Cadastro" onclick="categoriaCadastro()">
+            <span id="tituloCadastro">Cadastro</span>
+            <span id="conteudoCadastro">Nesta aba você terá acesso á todas as informações sobre o Cadastro.</span>
         </div>
-        <div class="TecnologiaParceriaCadastro">
-            <span id="titulo">Parceria</span>
-            <span id="conteudo">Nesta aba você terá acesso á todas as informações sobre as nossas parcerias.</span>
+        <div class="Parceria" onclick="categoriaParceria()" id="parceriaBloco">
+            <span id="tituloParceria">Parceria</span>
+            <span id="conteudoParceria">Nesta aba você terá acesso á todas as informações sobre as nossas parcerias.</span>
         </div>
     </div>
 

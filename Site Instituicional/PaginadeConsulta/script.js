@@ -118,6 +118,10 @@ function clickPerfil() {
 }
 
 
-function dashboard() {
+function dashboardIcon() {
     window.location.href = "./dashs/chart.html"
+}
+
+function gerenciarconta(){
+    window.location.href = '/PaginaGerenciarConta/gerenciar.html'
 }
