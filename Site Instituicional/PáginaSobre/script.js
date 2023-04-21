@@ -14,7 +14,8 @@ function dashboard() {
 }
 
 function gerenciarconta(){
-    window.location.href = '../PaginaGerenciarConta/gerenciar.html'
+    window.location.href = '../PaginaGerenciarConta/gerenciar.html#aqui'
+    window.scrollTo(0, 230);
 }
 
 financeiro1.style.display = 'none'
