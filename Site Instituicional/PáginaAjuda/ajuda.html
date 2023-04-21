@@ -64,14 +64,14 @@
     <div class="BlocaoMarromInfos" id="blocaoMarromInfo">
       <div class="containerBlocaoInfos">
       <span id="categoriaExibida">Financeiro</span>
-      <span id="fraseExibidaFinanceiro">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quisquam minima quos, laudantium impedit ea sunt ut corrupti suscipit eos distinctio nam vitae error numquam, minus qui enim ipsa obcaecati?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quisquam minima quos, laudantium impedit ea sunt ut corrupti suscipit eos distinctio nam vitae error numquam, minus qui enim ipsa obcaecati?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quisquam minima quos, laudantium impedit ea sunt ut corrupti suscipit eos distinctio nam vitae error numquam, minus qui enim ipsa obcaecati?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quisquam minima quos, laudantium impedit ea sunt ut corrupti suscipit eos distinctio nam vitae error numquam, minus qui enim ipsa obcaecati?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quisquam minima quos, laudantium impedit ea sunt ut corrupti suscipit eos distinctio nam vitae error numquam, minus qui enim ipsa obcaecati?</span>
+      <span id="fraseExibida"></span>
       </div>
     </div>
     <!--4 Funcionalidades (Financeiro, Cadastro, Tecnologia e Parceria)-->
     <div class="Funcionalidades">
         <div class="Financeiro" id="financeiroBloco" onclick="categoriaFinanceiro()">
             <span id="tituloFinanceiro">Financeiro</span>
-            <span id="conteudoFinanceiro">Nesta aba você terá acesso á todas as informações sobre o Financeiro.</span>
+            <span id="conteudoFinanceiro"><a href="../PáginaSobre/pagina-sobre.html#abrirfinanceiro.html">Nesta aba você terá acesso á todas as informações sobre o Financeiro.</a></span>
         </div>
         <div class="Tecnologia" onclick="categoriaTecnologia()" id="tecnologiaBloco">
             <span id="tituloTecnologia">Tecnologia</span>
@@ -80,11 +80,11 @@
     </div>
 
     <div class="Funcionalidades">
-        <div class="Cadastro">
-            <span id="tituloCadastro"><a href="../PáginaCadastro/cadastro.html">Cadastro</a></span>
+        <div class="Cadastro" onclick="categoriaCadastro()">
+            <span id="tituloCadastro">Cadastro</span>
             <span id="conteudoCadastro">Nesta aba você terá acesso á todas as informações sobre o Cadastro.</span>
         </div>
-        <div class="Parceria">
+        <div class="Parceria" onclick="categoriaParceria()" id="parceriaBloco">
             <span id="tituloParceria">Parceria</span>
             <span id="conteudoParceria">Nesta aba você terá acesso á todas as informações sobre as nossas parcerias.</span>
         </div>

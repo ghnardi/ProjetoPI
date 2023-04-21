@@ -197,6 +197,7 @@ a:active {
   border-radius: 10px;
   background-color: #f0ebdf;
   color: #493510;
+  cursor: pointer;
 }
 
 .Parceria #conteudoParceria {
@@ -220,6 +221,7 @@ a:active {
   border-radius: 10px;
   background-color: #f0ebdf;
   color: #493510;
+  cursor: pointer;
 }
 
 .Cadastro #conteudoCadastro {
@@ -243,6 +245,7 @@ a:active {
     border-radius: 10px;
     background-color: #F0EBDF;
     color: #493510;
+    cursor: pointer;
 
   }
 
@@ -319,6 +322,11 @@ a:active {
   align-items: center;
 }
 
+#buttonFaleConosco:hover {
+  background-color: #b4a892;
+  color: #493510;
+}
+
 .BlocaoMarromBaixo a {
   text-decoration: none;
   color: #f0ebdf;
@@ -365,7 +373,7 @@ a:active {
   margin-top: 5%;
 }
 
-#fraseExibidaFinanceiro {
+#fraseExibida {
   display: flex;
   font-weight: 400;
   font-size: 20px;
