@@ -1,6 +1,7 @@
 // CONSTANTE É QUASE A MESMA COISA QUE UM VAR(íavel), A DIFERENÇA É QUE UMA CONSTANTE AO RECEBER UM VALOR, 
 // NÃO PODE SER ALTERADO DEPOIS, TORNANDO MAIS "SEGURO" DE SER USADO EM UM PROJETO COM MUITOS VALORES.
 
+
 // Função do Menu Flutuante
 function clickPerfil() {
     if (subsub.style.display == 'flex') {
@@ -386,7 +387,7 @@ const setor5 = document.getElementById('graficosetor5');
 setor5.style.display = 'none';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor5 = [18, 19, 19, 22, 22, 23];
+const temperatura_setor5 = [18, 19, 19, 20, 22, 23];
 const umidade_setor5 = [45, 45, 47, 48, 54, 55];
 
 const data_setor5 = {
@@ -618,11 +619,11 @@ const media_umidade_setor6 = mediaArray(array_umidade_setor6);
 // NAS DIV'S DO CARD, USANDO INNERHTML
 
 // O QUE ESTÁ ENTRE CHAVES NO infotexto1 e 2 É PARA PEGAR SOMENTE A ÚLTIMA POSIÇÃO DO VETOR (OU SEJA, A MAIS ATUAL)
-headerinfotexto.innerHTML = `${valor_umid_array_setor6[valor_umid_array_setor6.length - 1]}%`
-headerinfotexto2.innerHTML = `${valor_temp_array_setor6[valor_temp_array_setor6.length - 1]}ºC`
+headerinfotexto.innerHTML = `${valor_umid_array_setor1[valor_umid_array_setor1.length - 1]}%`
+headerinfotexto2.innerHTML = `${valor_temp_array_setor1[valor_temp_array_setor1.length - 1]}ºC`
 // toFixed(1) é para mostrar apenas uma casa decimal.
-headerinfotexto3.innerHTML = `${media_temperatura_setor6.toFixed(1)}ºC`
-headerinfotexto4.innerHTML = `${media_umidade_setor6.toFixed(1)}%`
+headerinfotexto3.innerHTML = `${media_temperatura_setor1.toFixed(1)}ºC`
+headerinfotexto4.innerHTML = `${media_umidade_setor1.toFixed(1)}%`
 
 
 /*GRAFICO DE BARRA*/
@@ -782,6 +783,7 @@ const config_grafico_barra = {
 
         // FUNCÃO QUE AO CLICAR EM UM PONTO DO GRÁFICO DE BARRAS, MOSTRAR O GRÁFICO DE LINHA RESPECTIVO DO SETOR.
         onClick: function (events, elements) {
+            
             if (elements.length > 0) {
                 const graficosetor1 = document.getElementById('graficosetor1');
                 const graficosetor2 = document.getElementById('graficosetor2');
@@ -803,23 +805,95 @@ const config_grafico_barra = {
 
                 // Dependendo da posição escolhida, exibe o gráfico de linha correspondente
                 // mudando o display de "none", para "block".
+                
+                // Também muda o texto e o valor apresentado na div dos indicadores, manipulando o CSS por meio de um INNERHTML
                 switch (index) {
                     case 0:
+                        headerinfoobra.innerHTML = `SETOR 1`
+                        headerinfotexto.innerHTML = `${valor_umid_array_setor1[valor_umid_array_setor1.length - 1]}%`
+
+                        headerinfoobra2.innerHTML = `SETOR 1`
+                        headerinfotexto2.innerHTML = `${valor_temp_array_setor1[valor_temp_array_setor1.length - 1]}ºC`
+
+                        headerinfoobra3.innerHTML = `SETOR 1`
+                        headerinfotexto3.innerHTML = `${media_temperatura_setor1.toFixed(1)}ºC`
+
+                        headerinfoobra4.innerHTML = `SETOR 1`;
+                        headerinfotexto4.innerHTML = `${media_umidade_setor1.toFixed(1)}%`
                         graficosetor1.style.display = 'block';
                         break;
+
                     case 1:
+                        headerinfoobra.innerHTML = `SETOR 2`
+                        headerinfotexto.innerHTML = `${valor_umid_array_setor2[valor_umid_array_setor2.length - 1]}%`
+
+                        headerinfoobra2.innerHTML = `SETOR 2`
+                        headerinfotexto2.innerHTML = `${valor_temp_array_setor2[valor_temp_array_setor2.length - 1]}ºC`
+
+                        headerinfoobra3.innerHTML = `SETOR 2`
+                        headerinfotexto3.innerHTML = `${media_temperatura_setor2.toFixed(1)}ºC`
+                        
+                        headerinfoobra4.innerHTML = `SETOR 2`;
+                        headerinfotexto4.innerHTML = `${media_umidade_setor2.toFixed(1)}%`
                         graficosetor2.style.display = 'block';
                         break;
+
                     case 2:
+                        headerinfoobra.innerHTML = `SETOR 3`
+                        headerinfotexto.innerHTML = `${valor_umid_array_setor3[valor_umid_array_setor3.length - 1]}%`
+
+                        headerinfoobra2.innerHTML = `SETOR 3`
+                        headerinfotexto2.innerHTML = `${valor_temp_array_setor3[valor_temp_array_setor3.length - 1]}ºC`
+
+                        headerinfoobra3.innerHTML = `SETOR 3`
+                        headerinfotexto3.innerHTML = `${media_temperatura_setor3.toFixed(1)}ºC`
+                        
+                        headerinfoobra4.innerHTML = `SETOR 3`;
+                        headerinfotexto4.innerHTML = `${media_umidade_setor3.toFixed(1)}%`
                         graficosetor3.style.display = 'block';
                         break;
                     case 3:
+                        headerinfoobra.innerHTML = `SETOR 4`
+                        headerinfotexto.innerHTML = `${valor_umid_array_setor4[valor_umid_array_setor4.length - 1]}%`
+
+                        headerinfoobra2.innerHTML = `SETOR 4`
+                        headerinfotexto2.innerHTML = `${valor_temp_array_setor4[valor_temp_array_setor4.length - 1]}ºC`
+
+                        headerinfoobra3.innerHTML = `SETOR 4`
+                        headerinfotexto3.innerHTML = `${media_temperatura_setor4.toFixed(1)}ºC`
+                        
+                        headerinfoobra4.innerHTML = `SETOR 4`;
+                        headerinfotexto4.innerHTML = `${media_umidade_setor4.toFixed(1)}%`
                         graficosetor4.style.display = 'block';
                         break;
+
                     case 4:
+                        headerinfoobra.innerHTML = `SETOR 5`
+                        headerinfotexto.innerHTML = `${valor_umid_array_setor5[valor_umid_array_setor5.length - 1]}%`
+
+                        headerinfoobra2.innerHTML = `SETOR 5`
+                        headerinfotexto2.innerHTML = `${valor_temp_array_setor5[valor_temp_array_setor5.length - 1]}ºC`
+
+                        headerinfoobra3.innerHTML = `SETOR 5`
+                        headerinfotexto3.innerHTML = `${media_temperatura_setor5.toFixed(1)}ºC`
+                        
+                        headerinfoobra4.innerHTML = `SETOR 5`;
+                        headerinfotexto4.innerHTML = `${media_umidade_setor5.toFixed(1)}%`
                         graficosetor5.style.display = 'block';
                         break;
+
                     case 5:
+                        headerinfoobra.innerHTML = `SETOR 6`
+                        headerinfotexto.innerHTML = `${valor_umid_array_setor6[valor_umid_array_setor6.length - 1]}%`
+
+                        headerinfoobra2.innerHTML = `SETOR 6`
+                        headerinfotexto2.innerHTML = `${valor_temp_array_setor6[valor_temp_array_setor6.length - 1]}ºC`
+
+                        headerinfoobra3.innerHTML = `SETOR 6`
+                        headerinfotexto3.innerHTML = `${media_temperatura_setor6.toFixed(1)}ºC`
+                        
+                        headerinfoobra4.innerHTML = `SETOR 6`;
+                        headerinfotexto4.innerHTML = `${media_umidade_setor6.toFixed(1)}%`
                         graficosetor6.style.display = 'block';
                         break;
                 }
