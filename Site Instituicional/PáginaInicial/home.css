@@ -8,6 +8,11 @@ body{
     font-family: 'Montserrat Ace', sans-serif;
 }
 
+a {
+    
+    text-decoration: none;
+    color: white;
+}
 .container{
     display: flex;
     width: 80%;
@@ -127,6 +132,12 @@ body{
     height: 50px;
     width: 200px;
     border-radius: 7px;
+    font-family: "Montserrat Ace";
+    cursor: pointer;
+}
+
+.btSM:hover{
+    background-color: #b4a892;
 }
 
 /* VALORES */
@@ -233,7 +244,12 @@ body{
     height: 50px;
     width: 200px;
     border-radius: 7px;
+    font-family: 'Montserrat Ace', sans-serif;
+    cursor: pointer
 
+}
+#bthis:hover{
+    background-color: #b4a892;
 }
 
 
