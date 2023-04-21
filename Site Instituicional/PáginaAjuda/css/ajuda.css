@@ -1,280 +1,347 @@
-@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+@import url("https://fonts.cdnfonts.com/css/montserrat-ace");
 
 * {
-    font-family: 'Montserrat Ace';
+  font-family: "Montserrat Ace";
 }
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active {
-    text-decoration: none;
-    color: #6D4A00;
+  text-decoration: none;
+  color: #6d4a00;
 }
 
 .container {
-    display: flex;
-    width: 80%;
-    height: 100%;
-    align-items: center;
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-items: center;
 }
 
 .header {
-    display: flex;
-    width: 100%;
-    height: 7%;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  width: 100%;
+  height: 7%;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-    display: flex;
-    width: 115px;
-    height: 30px;
-    color: #6D4A00;
-    align-items: center;
-
+  display: flex;
+  width: 115px;
+  height: 30px;
+  color: #6d4a00;
+  align-items: center;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: rgb(147, 107, 47);
+  text-decoration: none;
+  color: rgb(147, 107, 47);
 }
 
-.navbar li{
-    display: inline-flex;
-    list-style: none;
-    margin-left: 1.5%;
+.navbar li {
+  display: inline-flex;
+  list-style: none;
+  margin-left: 1.5%;
 }
-.navbar{
-    display: flex;
-    height: 100%;
-    width: 80%;
-    color: rgb(147, 107, 47);
-    align-items: center;
-    text-align: center;
-
+.navbar {
+  display: flex;
+  height: 100%;
+  width: 80%;
+  color: rgb(147, 107, 47);
+  align-items: center;
+  text-align: center;
 }
 
-#textonavbar{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-end;
+#textonavbar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .header #iconmenuperfil {
-    display: flex;
-    color: rgb(147, 107, 47);
-    cursor: pointer;
+  display: flex;
+  color: rgb(147, 107, 47);
+  cursor: pointer;
 }
-
 
 /*CONTEÚDO DO SITE*/
 
 /*Primeiro Blocão Marrom*/
 
 .BlocaoMarrom {
-    display: flex;
-    justify-content: center;
-    padding: 0 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px 10px 10px;
 }
 
 .MensagemAjuda {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .containerBlocao {
-    display: flex;
-    width: 100vw;
-    height: 60vh;
-    background-color: #493510;
-    border-radius: 10px;
+  display: flex;
+  width: 100vw;
+  height: 60vh;
+  background-color: #493510;
+  border-radius: 10px;
 }
 
 #PrecisaDeAjuda {
-    display: flex;
-    width: 100%;
-    height: 16%;
-    font-size: 50px;
-    color: #F0EBDF; 
-    font-weight:bold;
-    white-space: nowrap;
-    align-items: center;
-    margin-left: 15%;
-    margin-top: 38%;
-    
+  display: flex;
+  width: 100%;
+  height: 16%;
+  font-size: 50px;
+  color: #f0ebdf;
+  font-weight: bold;
+  white-space: nowrap;
+  align-items: center;
+  margin-left: 15%;
+  margin-top: 38%;
 }
 
 #CasoPrecise {
-    display: flex;
-    width: 100%;
-    height: 16%;
-    font-size: 25px;
-    color: #F0EBDF;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-    margin-left: 15%;
-
+  display: flex;
+  width: 100%;
+  height: 16%;
+  font-size: 25px;
+  color: #f0ebdf;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  margin-left: 15%;
 }
 
 #ImagemTracejado {
-    margin-top: 1%;
-    margin-left: 13%;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+  margin-top: 1%;
+  margin-left: 13%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 /*4 Funcionalidades (Financeiro, Cadastro, Tecnologia e Parceria)*/
 
 .Funcionalidades {
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
 }
 
-.financeiro {
-    width: 49%;
-    height: 150px;
-    background-color: #493510;
-    border-radius: 10px;
-    color: #F0EBDF;
+#tecnologiaBloco {
+  width: 49%;
+  height: 150px;
+  border-radius: 10px;
+  background-color: #F0EBDF;
+  color: #493510;
+  cursor: pointer;
 }
 
-.TecnologiaParceriaCadastro {
+.Tecnologia #conteudoTecnologia {
+  display: flex;
+  font-size: 20px;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.Tecnologia #tituloTecnologia {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.Parceria {
+  width: 49%;
+  height: 150px;
+  border-radius: 10px;
+  background-color: #f0ebdf;
+  color: #493510;
+}
+
+.Parceria #conteudoParceria {
+  display: flex;
+  font-size: 20px;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.Parceria #tituloParceria {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.Cadastro {
+  width: 49%;
+  height: 150px;
+  border-radius: 10px;
+  background-color: #f0ebdf;
+  color: #493510;
+}
+
+.Cadastro #conteudoCadastro {
+  display: flex;
+  font-size: 20px;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.Cadastro #tituloCadastro {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.Financeiro {
     width: 49%;
     height: 150px;
     border-radius: 10px;
     background-color: #F0EBDF;
     color: #493510;
+
+  }
+
+  
+.Financeiro #tituloFinanceiro {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 3%;
+  margin-left: 5%;
 }
 
-.financeiro #titulo {
-    display: flex;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 5%;
-
+.Financeiro #conteudoFinanceiro {
+  display: flex;
+  font-size: 20px;
+  margin-top: 3%;
+  margin-left: 5%;
 }
-
-.TecnologiaParceriaCadastro #titulo {
-    display: flex;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 3%;
-    margin-left: 5%;
-}
-
-.financeiro #conteudo {
-    display: flex;
-    font-size: 20px;
-    margin-top: 3%;
-    margin-left: 5%;
-
-}
-
-.TecnologiaParceriaCadastro #conteudo {
-    display: flex;
-    font-size: 20px;
-    margin-top: 3%;
-    margin-left: 5%;
-}
-
 /*Ainda precida de Ajuda ?*/
 
-.BlocaoMarromBaixo{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+.BlocaoMarromBaixo {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
 .containerBlocaoBaixo {
-    display: flex;
-    width: 100vw;
-    height: 50vh;
-    background-color: #493510;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  background-color: #493510;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .blocoBranco {
-    display: flex;
-    width: 55%;
-    height: 70%;
-    background-color: #F0EBDF;
-    border-radius: 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  width: 55%;
+  height: 70%;
+  background-color: #f0ebdf;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #AindaPrecisaDeAjuda {
-    display: flex;
-    font-size: 50px;
-    font-weight: bold;
-    color: #493510;
+  display: flex;
+  font-size: 50px;
+  font-weight: bold;
+  color: #493510;
 }
 
 #NosEnvieUmaMensagem {
-    font-size: 30px;
-    color: #493510;
-    display: flex;
-
+  font-size: 30px;
+  color: #493510;
+  display: flex;
 }
 
 #buttonFaleConosco {
-    display: flex;
-    width: 33%;
-    height: 30%;
-    background: #493510;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 0;
-    font-size: 25px;
-    font-weight: bold;
-    color: #F0EBDF;
-    margin-top: 3%;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  width: 33%;
+  height: 30%;
+  background: #493510;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #f0ebdf;
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
 }
 
 .BlocaoMarromBaixo a {
-    text-decoration: none;
-    color: #F0EBDF; 
+  text-decoration: none;
+  color: #f0ebdf;
 }
 /*Footer*/
 
-
-
-
-
 .footer {
-    display: flex;
+  display: flex;
 }
 
 .footer .container {
-    display: flex;
-    width: 100vw;
-    height: 15vh;
-    background-color: #493510;
-    align-items: center;
-    justify-content: center;
-    color: #F0EBDF;
-    font-weight: bold;
+  display: flex;
+  width: 100vw;
+  height: 15vh;
+  background-color: #493510;
+  align-items: center;
+  justify-content: center;
+  color: #f0ebdf;
+  font-weight: bold;
+}
+
+/* INFOS NO BLOCAO */
+.BlocaoMarromInfos {
+  display: none;
+  justify-content: center;
+  padding: 0 10px 10px 10px;
+}
+
+.containerBlocaoInfos {
+  display: flex;
+  width: 100vw;
+  height: 60vh;
+  background-color: #493510;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+#categoriaExibida {
+  display: flex;
+  font-weight: 700;
+  font-size: 36px;
+  color: white;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#fraseExibidaFinanceiro {
+  display: flex;
+  font-weight: 400;
+  font-size: 20px;
+  width: 90%;
+  color: white;
+  margin-top: 1%;
+  margin-left: 5%;
 }
