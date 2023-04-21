@@ -13,6 +13,9 @@ function dashboard() {
     window.location.href = "../PaginadeConsulta/consulta.html"
 }
 
+function gerenciarconta(){
+    window.location.href = '../PaginaGerenciarConta/gerenciar.html'
+}
 
 financeiro1.style.display = 'none'
 function ir_financeiro() {

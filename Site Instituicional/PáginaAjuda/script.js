@@ -15,6 +15,9 @@ function dashboard() {
     window.location.href = "../PaginadeConsulta/consulta.html"
 }
 
+function gerenciarconta(){
+    window.location.href = '/PaginaGerenciarConta/gerenciar.html'
+}
 
 
 tecnologiaBloco.style.backgroundColor = '#F0EBDF'
