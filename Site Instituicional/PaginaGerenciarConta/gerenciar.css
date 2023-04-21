@@ -1,0 +1,89 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat-ace');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 150vh;
+    font-family: 'Montserrat Ace';
+}
+
+.imagemFundo {
+    display: flex;
+    background-image: url(./assets/D.jpg);
+    background-position: left 30% top 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocoMarrom{
+    display: flex;
+    height: 90%;
+    width: 80%;
+    background-color: #2E2109;
+    border: 2px solid #AE8406;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+#parteCima {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 4%;
+}
+.gerenciarTexto{
+    display: flex;
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+    width: 1%;
+}
+#logo {
+    display: flex;
+    width: 6.6%;
+    height: 20%;
+}
+
+.infopessoaisBloco {
+    display: flex;
+    background-color: #392D12;
+    height: 40%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4%;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+}
+
+.IPparteEsquerda {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5%;
+    margin-top: 1.5%;
+}
+
+#IPtexto {
+    color: white;
+    font-weight: 650;
+    font-size: 36px;
+    align-items: center;
+}
+
+#IPtextoAviso {
+    display: flex;
+    color: white;
+    margin-top: 1%;
+    height: auto;
+    width: 45%;
+    text-align:left;
+    font-weight: 300;
+    font-size: 1vmax;
+    line-height: 20px;
+    align-items: center;
+}
