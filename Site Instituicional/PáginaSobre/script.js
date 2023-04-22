@@ -18,6 +18,10 @@ function gerenciarconta(){
     window.scrollTo(0, 230);
 }
 
+function logout(){
+    window.location.href = "../PáginaInicial/home.html"
+}
+
 financeiro1.style.display = 'none'
 function ir_financeiro() {
     const financeiro1 = document.getElementById('financeiro1');

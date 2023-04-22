@@ -133,5 +133,9 @@ function dashboard() {
 }
 
 function gerenciarconta(){
-    window.location.href = '/PaginaGerenciarConta/gerenciar.html'
+    window.location.href = '../PaginaGerenciarConta/gerenciar.html'
+}
+
+function logout(){
+    window.location.href = "../PáginaInicial/home.html"
 }

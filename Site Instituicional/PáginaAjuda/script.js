@@ -19,6 +19,10 @@ function gerenciarconta(){
     window.location.href = '../PaginaGerenciarConta/gerenciar.html'
 }
 
+function logout(){
+    window.location.href = "../PáginaInicial/home.html"
+}
+
 
 tecnologiaBloco.style.backgroundColor = '#F0EBDF'
 financeiroBloco.style.backgroundColor = '#F0EBDF'

@@ -26,6 +26,10 @@ function gerenciarconta(){
     window.location.href = '../../PaginaGerenciarConta/gerenciar.html'
 }
 
+function logout(){
+    window.location.href = "../../PáginaInicial/home.html"
+}
+
 const labels_linha = [
     '12:00',
     '13:00',
