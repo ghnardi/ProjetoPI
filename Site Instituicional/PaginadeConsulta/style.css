@@ -54,35 +54,6 @@ body {
     justify-content: flex-end;
 }
 
-#sobrehover:hover{
-    display: flex;
-    justify-content: center;
-    width: 4%;
-    border-bottom: 1px solid #6D4A00;
-}
-
-#ajudahover:hover{
-    display: flex;
-    justify-content: center;
-    width: 4%;
-    border-bottom: 1px solid #6D4A00;
-}
-
-#falehover:hover{
-    display: flex;
-    justify-content: center;
-    white-space: nowrap;
-    width: 9%;
-    border-bottom: 1px solid #6D4A00;
-}
-
-#homehover:hover{
-    display: flex;
-    justify-content: center;
-    width: 3.5%;
-    border-bottom: 1px solid #6D4A00;
-}
-
 .header #iconmenuperfil {
     display: flex;
     color: rgb(147, 107, 47);
