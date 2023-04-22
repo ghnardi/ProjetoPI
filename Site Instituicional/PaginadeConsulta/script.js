@@ -123,5 +123,5 @@ function dashboardIcon() {
 }
 
 function gerenciarconta(){
-    window.location.href = '/PaginaGerenciarConta/gerenciar.html'
+    window.location.href = "../PaginaGerenciarConta/gerenciar.html"
 }

@@ -32,7 +32,7 @@
         <div class="container">
             <h1 class="escrita1">MONITORAMENTO DE OBRAS COM EFICÁCIA</h1> <br>
             <h3 class="escrita2">Arttech é especialista em garantir que <br>a preservação de obras de arte em todos os </h3>
-            <button class="btSM"> <a href="../PáginaSobre/pagina-sobre.html">SAIBA MAIS</a></button>
+            <button class="btSM" onclick="botaoSM()">SAIBA MAIS</button>
         </div>
     </div>
 
@@ -94,7 +94,7 @@
                     conservação de obras de arte e preservação adequada das mesmas, e outros
                     materiais históricos armazenados em museus, galerias de arte, bibliotecas, arquivos históricos
                     e outras instituições. </h5>
-                <a href="../PáginaSobre/pagina-sobre.html"><button id="bthis">CONHEÇA NOSSA HISTÓRIA</button></a>
+               <button id="bthis" onclick="botaoSM()">CONHEÇA NOSSA HISTÓRIA</button></a>
             </div>
             <img src="img/informações.png" id="fotoInfo">
            
@@ -119,6 +119,10 @@
 <script>
 
     function entrar(){
-        window.location.href = "../PáginaLogin/login.html";    }
+        window.location.href = "../PáginaLogin/login.html";    
+    }
 
+    function botaoSM(){
+        window.location.href = "../PáginaSobre/pagina-sobre.html"
+    }
 </script>
