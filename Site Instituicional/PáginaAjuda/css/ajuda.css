@@ -39,6 +39,7 @@ a:active {
   height: 30px;
   color: #6d4a00;
   align-items: center;
+  cursor: pointer;
 }
 
 .navbar a {

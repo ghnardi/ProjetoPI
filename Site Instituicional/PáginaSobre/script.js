@@ -22,6 +22,10 @@ function logout(){
     window.location.href = "../PáginaInicial/home.html"
 }
 
+function home() {
+    window.location.href = "../PáginaInicial/home.html"
+}
+
 financeiro1.style.display = 'none'
 function ir_financeiro() {
     const financeiro1 = document.getElementById('financeiro1');

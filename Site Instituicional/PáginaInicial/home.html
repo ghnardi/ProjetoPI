@@ -14,7 +14,7 @@
     <!-- NAVBAR -->
     <div class="header">
         <div class="navbar">
-            <img src="./img/arttech.png" class="logo" alt="">
+            <img src="./img/arttech.png" class="logo" alt="" onclick="home()">
             <div id="textonavbar">
                 <li><a href="../PáginaInicial/home.html">HOME</a></li>
                 <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
@@ -35,10 +35,10 @@
     <div class="banner">
         <div class="container">
             <div class="bannerTexto">
-                <span class="escrita1">A FALTA to testand on liga</span>
-                <span class="escrita2">de monitoramento de temperatura e umidade pode causar danos irreparáveis ​​às obras de arte? Imagine ver sua coleção de arte valiosa desaparecer diante de seus olhos por causa de um ambiente inadequado. Não permita que isso aconteça! Com a Arttech, você pode garantir que suas obras de arte sejam mantidas em condições ideais de conservação, permitindo que elas sejam apreciadas por muitas gerações futuras.
+                <span class="escrita1">A FALTA DE MONITORAMENTO DE TEMPERATURA E UMIDADE</span>
+                <span class="escrita2">pode causar danos irreparáveis ​​às obras de arte. Imagine ver sua coleção de arte valiosa desaparecer diante de seus olhos por causa de um ambiente inadequado. Não permita que isso aconteça! Com a <span id="arttech">Arttech</span>, você pode garantir que suas obras de arte sejam mantidas em condições ideais de conservação, permitindo que elas sejam apreciadas por muitas gerações futuras.
                 </span>
-                <button class="btSM" onclick="botaoSM()">SAIBA MAIS</button>
+
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@
     <div class="infor">
         <div class="container">
             <div class="resumo">
-                <span id="subtNos">Principais Objetivos da Arttech</span>
+                <span id="subtNos">Principais objetivos da Arttech</span>
                 <span id="escritaNos">Nós da Arttech temos o objetivo de garantir a
                     conservação de obras de arte e preservação adequada das mesmas, e outros
                     materiais históricos armazenados em museus, galerias de arte, bibliotecas, arquivos históricos
@@ -125,12 +125,7 @@
 
 
     <!-- RODAPÉ -->
-    <div class="">
-        <div class="rodapé">
-            <hr>
-            <div id="linha-vertical"></div>
 
-        </div>
 
     </div>
     <div class="final">Copyright © 2023 - 2023 Arttech. Todos os direitos reservados. | Termos de uso | Política de
@@ -147,5 +142,9 @@
 
     function botaoSM() {
         window.location.href = "../PáginaSobre/pagina-sobre.html"
+    }
+
+    function home() {
+        window.location.href = "../PáginaInicial/home.html"
     }
 </script>

@@ -23,7 +23,7 @@ body {
     height: 30px;
     color: #6D4A00;
     align-items: center;
-
+    cursor: pointer;
 }
 
 .navbar a {

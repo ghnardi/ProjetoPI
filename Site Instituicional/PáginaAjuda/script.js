@@ -22,7 +22,9 @@ function gerenciarconta(){
 function logout(){
     window.location.href = "../PáginaInicial/home.html"
 }
-
+function home() {
+    window.location.href = "../PáginaInicial/home.html"
+}
 
 tecnologiaBloco.style.backgroundColor = '#F0EBDF'
 financeiroBloco.style.backgroundColor = '#F0EBDF'

@@ -30,6 +30,10 @@ function logout(){
     window.location.href = "../../PáginaInicial/home.html"
 }
 
+function home() {
+    window.location.href = "../../PáginaInicial/home.html"
+}
+
 const labels_linha = [
     '12:00',
     '13:00',

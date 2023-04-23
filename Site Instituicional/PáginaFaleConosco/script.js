@@ -139,3 +139,7 @@ function gerenciarconta(){
 function logout(){
     window.location.href = "../PáginaInicial/home.html"
 }
+
+function home() {
+    window.location.href = "../PáginaInicial/home.html"
+}
