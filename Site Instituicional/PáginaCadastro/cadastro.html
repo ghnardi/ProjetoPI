@@ -49,7 +49,8 @@
         || senha.startsWith("~") || senha.startsWith("_")
         || senha.startsWith("@") || senha.startsWith(":")
         || senha.startsWith("?"));
-        var validacao_tamanho_senha = (senha.length > 8);
+
+        var validacao_tamanho_senha = (senha.length >= 8);
 
 
         if (validacao_arroba && validacao_fim_email && validacao_especial && validacao_tamanho_senha) {
