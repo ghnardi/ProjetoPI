@@ -127,3 +127,27 @@ insert into registro values
 
 -- SELECTs 
 
+select usuario.*, empresa.nome 
+	from usuario join empresa 
+		on usuario.fkEmpresa = empresa.idEmpresa;
+
+
+select * 
+	from usuario join usuario as adm
+		on usuario.fkAdmin = adm.idUsuario;
+        
+        
+select sensores.idSensor, registro.*
+	from sensores join registro
+		on sensores.idSensor = registro.idRegistro;
+        
+select sensores.idSensor, registro.*
+	from sensores join registro
+		on sensores.idSensor = registro.idRegistro
+			where dataHora = '2023-02-10';
+            
+select sensores.idSensor, locais.nome, empresa.nome
+	from sensores join locais 
+		on locais.idLocal = sensores.fkLocais
+			join empresa
+				on locais.fkEmpresa = empresa.idEmpresa;
