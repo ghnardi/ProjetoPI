@@ -26,6 +26,10 @@ function home() {
     window.location.href = "../PáginaInicial/home.html"
 }
 
+function cadastrar() {
+    window.location.href = "../PáginaCadastro/cadastro.html"
+}
+
 tecnologiaBloco.style.backgroundColor = '#F0EBDF'
 financeiroBloco.style.backgroundColor = '#F0EBDF'
 parceriaBloco.style.backgroundColor = '#F0EBDF'

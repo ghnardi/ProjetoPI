@@ -94,29 +94,23 @@ span a {
     visibility: hidden;
 }
 
-button{
-    display: inline-block;
-}
+
 .botoes {
     width: 100%;
     height: 7%;
     font-family: 'Montserrat Ace';
     display: flex;
     align-self: center;
-    display: inline-block;
+    justify-content: flex-end;
+    margin-right: 8%;
     font-weight: 800;
 }
 
-#cadastro {
-    font-size: 1vmax;
-    border: 0;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    margin-left: 5%;
-}
-
 #entrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Ace';
     font-size: 1vmax;
     width: 100%;
     background-color: #9C770B;
@@ -126,7 +120,6 @@ button{
     border-radius: 4px;
     color: white;
     cursor: pointer;
-    margin-left: 38%;
 }
 
 #logo {

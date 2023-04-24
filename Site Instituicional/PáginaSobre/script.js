@@ -26,6 +26,10 @@ function home() {
     window.location.href = "../PáginaInicial/home.html"
 }
 
+function cadastrar() {
+    window.location.href = "../PáginaCadastro/cadastro.html"
+}
+
 financeiro1.style.display = 'none'
 function ir_financeiro() {
     const financeiro1 = document.getElementById('financeiro1');

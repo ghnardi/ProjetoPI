@@ -143,3 +143,7 @@ function logout(){
 function home() {
     window.location.href = "../PáginaInicial/home.html"
 }
+
+function cadastrar() {
+    window.location.href = "../PáginaCadastro/cadastro.html"
+}

@@ -34,6 +34,10 @@ function home() {
     window.location.href = "../../PáginaInicial/home.html"
 }
 
+function cadastrar() {
+    window.location.href = "../PáginaCadastro/cadastro.html"
+}
+
 const labels_linha = [
     '12:00',
     '13:00',
