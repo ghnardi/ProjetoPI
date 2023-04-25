@@ -5,7 +5,8 @@ create table empresa (
 idEmpresa int primary key auto_increment,
 nome varchar (50),
 cnpj char (14),
-email varchar(50)
+email varchar(50),
+cep char(9)
 );
 
 create table usuario (
@@ -13,14 +14,16 @@ idUsuario int auto_increment,
 nome varchar(45),
 email varchar(45),
 senha varchar(45),
+isAdmin int,
 fkEmpresa int,
 fkAdmin int,
+constraint chkisAdmin check (isAdmin in (0,1)), 
 constraint fkAdmin foreign key (fkAdmin) references usuario(idUsuario),
 constraint fkEmpresa foreign key (fkEmpresa) references empresa(idEmpresa),
 primary key (idUsuario, fkEmpresa)
 )auto_increment = 100;
 
-create table locais (
+create table localInstalacao (
 idLocal int auto_increment,
 nome varchar(45),
 fkEmpresa int,
@@ -33,7 +36,7 @@ create table sensores (
 idSensor int primary key auto_increment,
 modelo varchar (45),
 fkLocais int,
-constraint fkSensorLocal foreign key (fkLocais) references locais(idLocal)
+constraint fkSensorLocal foreign key (fkLocais) references localInstalacao(idLocal)
 );
 
 
@@ -53,26 +56,26 @@ primary key (idRegistro, fkSensor)
 
 -- INSERINDO EMPRESAS
 insert into empresa values 
-(null,'museu1','12345678912345','museu1@sptech.school'),
-(null,'museu2','12345678912345','museu1@sptech.school'),
-(null,'museu3','12345678912345','museu1@sptech.school');
+(null,'museu1','12345678912345','museu1@sptech.school', '09581-310'),
+(null,'museu2','12345678912345','museu1@sptech.school', '09581-310'),
+(null,'museu3','12345678912345','museu1@sptech.school', '09581-310');
 
 select * from empresa;
 -- INSERINDO USUARIOS
 
 -- USUARIO ADM
 insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '012341', 2,null);
+(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 1,  2,'09581-310', null);
 -- USUARIO COMUM
 insert into usuario values 
-(null,'Douglas', 'douglas.queiroz@sptech.school', '0122321', 1,100),
-(null,'Guilherme', 'guilherme.queiroz@sptech.school', '0212321', 2,100),
-(null,'Lucas', 'lucas.queiroz@sptech.school', '012541', 3,100);
+(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 0 , 1, 100),
+(null,'Guilherme', 'guilherme.queiroz@sptech.school', '@12345678', 0, 2, 100),
+(null,'Lucas', 'lucas.queiroz@sptech.school', '@12345678', 0,  3, 100);
 
 select * from usuario;
 
 -- INSERINDO ALAS
-insert into locais values 
+insert into localInstalacao values 
 (null, 'ala1', 3),
 (null, 'ala2', 3),
 (null, 'ala3', 3),
@@ -82,7 +85,7 @@ insert into locais values
 (null, 'ala3', 1),
 (null, 'ala1', 2),
 (null, 'ala2', 2);
-select * from locais;
+select * from localInstalacao;
 
 
 -- INSERINDO SENSOR
@@ -146,8 +149,8 @@ select sensores.idSensor, registro.*
 		on sensores.idSensor = registro.idRegistro
 			where dataHora = '2023-02-10';
             
-select sensores.idSensor, locais.nome, empresa.nome
-	from sensores join locais 
-		on locais.idLocal = sensores.fkLocais
+select sensores.idSensor, localInstalacao.nome, empresa.nome
+	from sensores join localInstalacao 
+		on localInstalacao.idLocal = sensores.fkLocais
 			join empresa
-				on locais.fkEmpresa = empresa.idEmpresa;
+				on localInstalacao.fkEmpresa = empresa.idEmpresa;
