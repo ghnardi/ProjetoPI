@@ -351,6 +351,35 @@
     margin: 3%;
 }
 
+.headericon1{
+    display: flex;
+}
+
+.headericon2{
+    display: flex;
+}
+
+.headericon3{
+    display: none;
+}
+
+.headericon4{
+    display: none;
+}
+.headericon5{
+    display: none;
+}
+.headericon6{
+    display: none;
+}
+.headericon7{
+    display: flex;
+}
+
+.headericon8{
+    display: flex;
+}
+
 
 .footer {
     display: flex;

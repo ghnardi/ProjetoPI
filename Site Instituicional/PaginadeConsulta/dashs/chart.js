@@ -1,6 +1,10 @@
 // CONSTANTE É QUASE A MESMA COISA QUE UM VAR(íavel), A DIFERENÇA É QUE UMA CONSTANTE AO RECEBER UM VALOR, 
 // NÃO PODE SER ALTERADO DEPOIS, TORNANDO MAIS "SEGURO" DE SER USADO EM UM PROJETO COM MUITOS VALORES.
 
+headericon3.style.display = 'none'
+headericon4.style.display = 'none'
+headericon5.style.display = 'none'
+headericon6.style.display = 'none'
 
 // Função do Menu Flutuante
 function clickPerfil() {
@@ -565,7 +569,7 @@ const grafico_linha_setor6 = new Chart(setor6, configSetor6);
 
 
 
-/* VALIDACOES; MEDIAS; ARRAYS DE VALORES E TUDO MAIS*/
+ /* VALIDACOES; MEDIAS; ARRAYS DE VALORES E TUDO MAIS*/
 
 
 // MEDIAS
@@ -813,6 +817,8 @@ const config_grafico_barra = {
                 const headericon7 = document.getElementById('headericon7');
                 const headericon8 = document.getElementById('headericon8');
 
+        
+
                 // Constante para receber a posição na qual será efetuado o click.
                 const index = elements[0].index;
 
@@ -873,9 +879,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
                             
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
-
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex"
                         } else if ((valor_temp_array_setor1[valor_temp_array_setor1.length - 1] >= 18 && valor_temp_array_setor1[valor_temp_array_setor1.length - 1] < 18.47) ||
                          (valor_temp_array_setor1[valor_temp_array_setor1.length - 1] > 20.6 && valor_temp_array_setor1[valor_temp_array_setor1.length - 1] <= 22)) {
                             headerinfo_segundobloco.style.backgroundColor = "#FFB800"
@@ -885,8 +890,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
 
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                          } else {
                             headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
@@ -896,8 +901,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#6D4A00"
                             headerinfosetor2.style.color = "#6D4A00"
                             
-                            /* headericon3.style.display = "none"
-                            headericon4.style.display = "none" */
+                             headericon3.style.display = "none"
+                            headericon4.style.display = "none"
                          }
 
                          if (media_temperatura_setor1 > 22 || media_temperatura_setor1 < 18) {
@@ -908,8 +913,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                         headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                             
                         } else if ((media_temperatura_setor1 >= 18 && media_temperatura_setor1 < 18.47) ||
                          (media_temperatura_setor1 > 20.6 && media_temperatura_setor1 <= 22)) {
@@ -920,8 +925,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                          } else {
                             headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
                             headertexto3.style.color = "#F0EBDF"
@@ -930,8 +935,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#6D4A00"
                             headerinfosetor3.style.color = "#6D4A00"
                             
-                            /* headericon5.style.display = "none"
-                            headericon6.style.display = "none" */
+                             headericon5.style.display = "none"
+                            headericon6.style.display = "none" 
                          }
 
                          if (media_umidade_setor1 > 55 || media_umidade_setor1 < 45 ) {
@@ -1029,8 +1034,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
                             
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                         } else if ((valor_temp_array_setor2[valor_temp_array_setor2.length - 1] >= 18 && valor_temp_array_setor2[valor_temp_array_setor2.length - 1] < 18.47) ||
                          (valor_temp_array_setor2[valor_temp_array_setor2.length - 1] > 20.6 && valor_temp_array_setor2[valor_temp_array_setor2.length - 1] <= 22)) {
@@ -1041,8 +1046,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
 
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                          } else {
                             headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
@@ -1052,8 +1057,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#6D4A00"
                             headerinfosetor2.style.color = "#6D4A00"
                             
-                            /* headericon3.style.display = "none"
-                            headericon4.style.display = "none" */
+                             headericon3.style.display = "none"
+                            headericon4.style.display = "none" 
                          }
 
                          if (media_temperatura_setor2 > 22 || media_temperatura_setor2 < 18) {
@@ -1064,8 +1069,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                             
                         } else if ((media_temperatura_setor2 >= 18 && media_temperatura_setor2 < 18.47) ||
                          (media_temperatura_setor2 > 20.6 && media_temperatura_setor2 <= 22)) {
@@ -1076,8 +1081,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                          } else {
                             headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
                             headertexto3.style.color = "#F0EBDF"
@@ -1086,8 +1091,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#6D4A00"
                             headerinfosetor3.style.color = "#6D4A00"
                             
-                            /* headericon5.style.display = "none"
-                            headericon6.style.display = "none" */
+                             headericon5.style.display = "none"
+                            headericon6.style.display = "none" 
                          }
 
                          if (media_umidade_setor2 > 55 || media_umidade_setor2 < 45 ) {
@@ -1182,8 +1187,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
                             
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                         } else if ((valor_temp_array_setor3[valor_temp_array_setor3.length - 1] >= 18 && valor_temp_array_setor3[valor_temp_array_setor3.length - 1] < 18.47) ||
                          (valor_temp_array_setor3[valor_temp_array_setor3.length - 1] > 20.6 && valor_temp_array_setor3[valor_temp_array_setor3.length - 1] <= 22)) {
@@ -1194,8 +1199,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
 
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                          } else {
                             headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
@@ -1205,8 +1210,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#6D4A00"
                             headerinfosetor2.style.color = "#6D4A00"
                             
-                            /* headericon3.style.display = "none"
-                            headericon4.style.display = "none" */
+                             headericon3.style.display = "none"
+                            headericon4.style.display = "none" 
                          }
 
                          if (media_temperatura_setor3 > 22 || media_temperatura_setor3 < 18) {
@@ -1217,8 +1222,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                             
                         } else if ((media_temperatura_setor3 >= 18 && media_temperatura_setor3 < 18.47) ||
                          (media_temperatura_setor3 > 20.6 && media_temperatura_setor3 <= 22)) {
@@ -1229,8 +1234,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                          } else {
                             headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
                             headertexto3.style.color = "#F0EBDF"
@@ -1239,8 +1244,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#6D4A00"
                             headerinfosetor3.style.color = "#6D4A00"
                             
-                            /* headericon5.style.display = "none"
-                            headericon6.style.display = "none" */
+                             headericon5.style.display = "none"
+                            headericon6.style.display = "none" 
                          }
 
                          if (media_umidade_setor3 > 55 || media_umidade_setor3 < 45 ) {
@@ -1334,8 +1339,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
                             
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                         } else if ((valor_temp_array_setor4[valor_temp_array_setor4.length - 1] >= 18 && valor_temp_array_setor4[valor_temp_array_setor4.length - 1] < 18.47) ||
                          (valor_temp_array_setor4[valor_temp_array_setor4.length - 1] > 20.6 && valor_temp_array_setor4[valor_temp_array_setor4.length - 1] <= 22)) {
@@ -1346,8 +1351,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
 
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                          } else {
                             headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
@@ -1357,8 +1362,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#6D4A00"
                             headerinfosetor2.style.color = "#6D4A00"
                             
-                            /* headericon3.style.display = "none"
-                            headericon4.style.display = "none" */
+                             headericon3.style.display = "none"
+                            headericon4.style.display = "none" 
                          }
 
                          if (media_temperatura_setor4 > 22 || media_temperatura_setor4 < 18) {
@@ -1369,8 +1374,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                             
                         } else if ((media_temperatura_setor4 >= 18 && media_temperatura_setor4 < 18.47) ||
                          (media_temperatura_setor4 > 20.6 && media_temperatura_setor4 <= 22)) {
@@ -1381,8 +1386,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                          } else {
                             headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
                             headertexto3.style.color = "#F0EBDF"
@@ -1391,8 +1396,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#6D4A00"
                             headerinfosetor3.style.color = "#6D4A00"
                             
-                            /* headericon5.style.display = "none"
-                            headericon6.style.display = "none" */
+                             headericon5.style.display = "none"
+                            headericon6.style.display = "none" 
                          }
 
                          if (media_umidade_setor4 > 55 || media_umidade_setor4 < 45 ) {
@@ -1487,8 +1492,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
                             
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                         } else if ((valor_temp_array_setor5[valor_temp_array_setor5.length - 1] >= 18 && valor_temp_array_setor5[valor_temp_array_setor5.length - 1] < 18.47) ||
                          (valor_temp_array_setor5[valor_temp_array_setor5.length - 1] > 20.6 && valor_temp_array_setor5[valor_temp_array_setor5.length - 1] <= 22)) {
@@ -1499,8 +1504,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
 
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                             headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                          } else {
                             headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
@@ -1510,8 +1515,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#6D4A00"
                             headerinfosetor2.style.color = "#6D4A00"
                             
-                            /* headericon3.style.display = "none"
-                            headericon4.style.display = "none" */
+                             headericon3.style.display = "none"
+                            headericon4.style.display = "none" 
                          }
 
                          if (media_temperatura_setor5 > 22 || media_temperatura_setor5 < 18) {
@@ -1522,8 +1527,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                             
                         } else if ((media_temperatura_setor5 >= 18 && media_temperatura_setor5 < 18.47) ||
                          (media_temperatura_setor5 > 20.6 && media_temperatura_setor5 <= 22)) {
@@ -1534,8 +1539,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                             headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                          } else {
                             headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
                             headertexto3.style.color = "#F0EBDF"
@@ -1544,8 +1549,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#6D4A00"
                             headerinfosetor3.style.color = "#6D4A00"
                             
-                            /* headericon5.style.display = "none"
-                            headericon6.style.display = "none" */
+                            headericon5.style.display = "none"
+                            headericon6.style.display = "none"
                          }
 
                          if (media_umidade_setor5 > 55 || media_umidade_setor5 < 45 ) {
@@ -1640,8 +1645,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
                             
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                            headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                         } else if ((valor_temp_array_setor6[valor_temp_array_setor6.length - 1] >= 18 && valor_temp_array_setor6[valor_temp_array_setor6.length - 1] < 18.47) ||
                          (valor_temp_array_setor6[valor_temp_array_setor6.length - 1] > 20.6 && valor_temp_array_setor6[valor_temp_array_setor6.length - 1] <= 22)) {
@@ -1652,8 +1657,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#FFFFFF"
                             headerinfosetor2.style.color = "#FFFFFF"
 
-                            /* headericon3.style.display = "flex"
-                            headericon4.style.display = "flex" */
+                            headericon3.style.display = "flex"
+                            headericon4.style.display = "flex" 
 
                          } else {
                             headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
@@ -1663,8 +1668,8 @@ const config_grafico_barra = {
                             headerinfotexto2.style.color = "#6D4A00"
                             headerinfosetor2.style.color = "#6D4A00"
                             
-                            /* headericon3.style.display = "none"
-                            headericon4.style.display = "none" */
+                            headericon3.style.display = "none"
+                            headericon4.style.display = "none"
                          }
 
                          if (media_temperatura_setor6 > 22 || media_temperatura_setor6 < 18) {
@@ -1675,8 +1680,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                            headericon5.style.display = "flex"
+                            headericon6.style.display = "flex" 
                             
                         } else if ((media_temperatura_setor6 >= 18 && media_temperatura_setor6 < 18.47) ||
                          (media_temperatura_setor6 > 20.6 && media_temperatura_setor6 <= 22)) {
@@ -1687,8 +1692,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#FFFFFF"
                             headerinfosetor3.style.color = "#FFFFFF"
 
-                            /* headericon5.style.display = "flex"
-                            headericon6.style.display = "flex" */
+                            headericon5.style.display = "flex"
+                            headericon6.style.display = "flex"
                          } else {
                             headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
                             headertexto3.style.color = "#F0EBDF"
@@ -1697,8 +1702,8 @@ const config_grafico_barra = {
                             headerinfotexto3.style.color = "#6D4A00"
                             headerinfosetor3.style.color = "#6D4A00"
                             
-                            /* headericon5.style.display = "none"
-                            headericon6.style.display = "none" */
+                            headericon5.style.display = "none"
+                            headericon6.style.display = "none" 
                          }
 
                          if (media_umidade_setor6 > 55 || media_umidade_setor6 < 45 ) {

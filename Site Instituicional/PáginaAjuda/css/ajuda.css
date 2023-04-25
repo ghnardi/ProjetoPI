@@ -343,7 +343,6 @@ a:active {
   font-size: 50px;
   color: white;
   margin-left: 5%;
-  margin-top: 5%;
 }
 
 #fraseExibida {
@@ -353,8 +352,7 @@ a:active {
   align-self: center;
   font-size: 32px;
   line-height: 50px;
-  width: 80%;
+  width: 95%;
   color: white;
   margin-top: 1%;
-  margin-left: 5%;
 }

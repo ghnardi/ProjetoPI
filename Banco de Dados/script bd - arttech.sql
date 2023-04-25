@@ -14,8 +14,8 @@ idUsuario int auto_increment,
 nome varchar(45),
 email varchar(45),
 senha varchar(45),
-isAdmin int,
 fkEmpresa int,
+fkAdmin int,
 constraint fkAdmin foreign key (fkAdmin) references usuario(idUsuario),
 constraint fkEmpresa foreign key (fkEmpresa) references empresa(idEmpresa),
 primary key (idUsuario, fkEmpresa)
@@ -63,7 +63,7 @@ select * from empresa;
 
 -- USUARIO ADM
 insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2,'09581-310', null);
+(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
 (null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
