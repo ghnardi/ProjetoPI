@@ -53,7 +53,7 @@ setor1.style.display = 'block';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
 const temperatura_setor1 = [28, 26, 24, 23, 24, 25];
-const umidade_setor1 = [59, 59, 60, 61, 62, 63];
+const umidade_setor1 = [59, 59, 60, 61, 62, 47];
 
 const data_setor1 = {
     labels: labels_linha,
@@ -804,6 +804,8 @@ const config_grafico_barra = {
                 const graficosetor5 = document.getElementById('graficosetor5');
                 const graficosetor6 = document.getElementById('graficosetor6');
                 
+                const headericon1 = document.getElementById('headericon1');
+                const headericon2 = document.getElementById('headericon2');
                 // Constante para receber a posição na qual será efetuado o click.
                 const index = elements[0].index;
 
@@ -821,6 +823,121 @@ const config_grafico_barra = {
                 // Também muda o texto e o valor apresentado na div dos indicadores, manipulando o CSS por meio de um INNERHTML
                 switch (index) {
                     case 0:
+                        if (valor_umid_array_setor1[valor_umid_array_setor1.length - 1] > 55 || valor_umid_array_setor1[valor_umid_array_setor1.length - 1] < 45 ) {
+                            headerinfo_primeirobloco.style.backgroundColor = "#972648"
+                            headertexto1.style.color = "#FFFFFF"
+
+                            primeirobloco.style.backgroundColor = "#FF004D";
+                            headerinfotexto.style.color = "#FFFFFF"
+                            headerinfosetor.style.color = "#FFFFFF"
+
+                        } else if ((valor_umid_array_setor1[valor_umid_array_setor1.length - 1] >= 45 && valor_umid_array_setor1[valor_umid_array_setor1.length - 1] < 46.2) ||
+                         (valor_umid_array_setor1[valor_umid_array_setor1.length - 1] > 52.6 && valor_umid_array_setor1[valor_umid_array_setor1.length - 1] <= 55)) {
+                            headerinfo_primeirobloco.style.backgroundColor = "#FFB800"
+                            headertexto1.style.color = "#FFFFFF"
+
+                            primeirobloco.style.backgroundColor = "#FFD700";
+                            headerinfotexto.style.color = "#FFFFFF"
+                            headerinfosetor.style.color = "#FFFFFF"
+                         } else {
+                            headerinfo_primeirobloco.style.backgroundColor = "#6D4A00"
+                            headertexto1.style.color = "#F0EBDF"
+
+                            primeirobloco.style.backgroundColor = "#F3EAD8";
+                            headerinfotexto.style.color = "#6D4A00"
+                            headerinfosetor.style.color = "#6D4A00"
+
+                            headericon1.style.display = "none"
+                            headericon2.style.display = "none"
+                         }
+
+                         if (valor_temp_array_setor1[valor_temp_array_setor1.length - 1] > 55 || valor_temp_array_setor1[valor_temp_array_setor1.length - 1] < 45 ) {
+                            headerinfo_segundobloco.style.backgroundColor = "#972648"
+                            headertexto2.style.color = "#FFFFFF"
+
+                            segundobloco.style.backgroundColor = "#FF004D";
+                            headerinfotexto2.style.color = "#FFFFFF"
+                            headerinfosetor2.style.color = "#FFFFFF"
+                            
+                        } else if ((valor_temp_array_setor1[valor_temp_array_setor1.length - 1] >= 45 && valor_temp_array_setor1[valor_temp_array_setor1.length - 1] < 46.2) ||
+                         (valor_temp_array_setor1[valor_temp_array_setor1.length - 1] > 52.6 && valor_temp_array_setor1[valor_temp_array_setor1.length - 1] <= 55)) {
+                            headerinfo_segundobloco.style.backgroundColor = "#FFB800"
+                            headertexto2.style.color = "#FFFFFF"
+
+                            segundobloco.style.backgroundColor = "#FFD700";
+                            headerinfotexto2.style.color = "#FFFFFF"
+                            headerinfosetor2.style.color = "#FFFFFF"
+                         } else {
+                            headerinfo_segundobloco.style.backgroundColor = "#6D4A00"
+                            headertexto2.style.color = "#F0EBDF"
+
+                            segundobloco.style.backgroundColor = "#F3EAD8";
+                            headerinfotexto2.style.color = "#6D4A00"
+                            headerinfosetor2.style.color = "#6D4A00"
+                            
+                            /* headericon3.style.display = "none"
+                            headericon4.style.display = "none" */
+                         }
+
+                         if (media_temperatura_setor1 > 55 || media_temperatura_setor1 < 45 ) {
+                            headerinfo_terceirobloco.style.backgroundColor = "#972648"
+                            headertexto3.style.color = "#FFFFFF"
+
+                            terceirobloco.style.backgroundColor = "#FF004D";
+                            headerinfotexto3.style.color = "#FFFFFF"
+                            headerinfosetor3.style.color = "#FFFFFF"
+                            
+                        } else if ((media_temperatura_setor1 >= 45 && media_temperatura_setor1 < 46.2) ||
+                         (media_temperatura_setor1 > 52.6 && media_temperatura_setor1 <= 55)) {
+                            headerinfo_terceirobloco.style.backgroundColor = "#FFB800"
+                            headertexto3.style.color = "#FFFFFF"
+
+                            terceirobloco.style.backgroundColor = "#FFD700";
+                            headerinfotexto3.style.color = "#FFFFFF"
+                            headerinfosetor3.style.color = "#FFFFFF"
+                         } else {
+                            headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
+                            headertexto3.style.color = "#F0EBDF"
+
+                            terceirobloco.style.backgroundColor = "#F3EAD8";
+                            headerinfotexto3.style.color = "#6D4A00"
+                            headerinfosetor3.style.color = "#6D4A00"
+                            
+                            /* headericon5.style.display = "none"
+                            headericon6.style.display = "none" */
+                         }
+
+                         if (media_umidade_setor1 > 55 || media_umidade_setor1 < 45 ) {
+                            headerinfo_terceirobloco.style.backgroundColor = "#972648"
+                            headertexto3.style.color = "#FFFFFF"
+
+                            terceirobloco.style.backgroundColor = "#FF004D";
+                            headerinfotexto3.style.color = "#FFFFFF"
+                            headerinfosetor3.style.color = "#FFFFFF"
+                            
+                        } else if ((media_umidade_setor1 >= 45 && media_umidade_setor1 < 46.2) ||
+                         (media_umidade_setor1 > 52.6 && media_umidade_setor1 <= 55)) {
+                            headerinfo_terceirobloco.style.backgroundColor = "#FFB800"
+                            headertexto3.style.color = "#FFFFFF"
+
+                            terceirobloco.style.backgroundColor = "#FFD700";
+                            headerinfotexto3.style.color = "#FFFFFF"
+                            headerinfosetor3.style.color = "#FFFFFF"
+                         } else {
+                            headerinfo_terceirobloco.style.backgroundColor = "#6D4A00"
+                            headertexto3.style.color = "#F0EBDF"
+
+                            terceirobloco.style.backgroundColor = "#F3EAD8";
+                            headerinfotexto3.style.color = "#6D4A00"
+                            headerinfosetor3.style.color = "#6D4A00"
+                            
+                            /* headericon5.style.display = "none"
+                            headericon6.style.display = "none" */
+                         }
+
+
+
+
                         headerinfosetor.innerHTML = `SETOR 1`
                         headerinfotexto.innerHTML = `${valor_umid_array_setor1[valor_umid_array_setor1.length - 1]}%`
 
