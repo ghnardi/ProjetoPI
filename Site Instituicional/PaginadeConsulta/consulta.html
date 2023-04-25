@@ -19,7 +19,7 @@
 
     <div class="header">
         <div class="navbar">
-            <img src="./assets/logo.png" class="logo" alt="">
+            <img src="./assets/logo.png" class="logo" alt="" onclick="home()">
             <div id="textonavbar">
                 <li id="homehover"><a href="../PáginaInicial/home.html">HOME</a></li>
                 <li id="sobrehover"><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
@@ -41,10 +41,11 @@
         <span class="nomeconta">Museu Ipiranga</span>
         <span class="adminconta">(admin)</span>
         <span class="contaemail">museudoipiranga@ipiranga.com</span>
+        <span class="cadastrarusuario" onclick="cadastrar()">Cadastrar Usuario</span>
         <span class="gerenciarconta"onclick="gerenciarconta()">Gerenciar conta</span>
         <span class="contadashboard" onclick="dashboard()">Dashboard</span>
         <span class="contalinha"></span>
-        <span class="contalogout">Fazer Logout</span>
+        <span class="contalogout" onclick="logout()">Fazer Logout</span>
     </div>
 
     <div class="menutop">

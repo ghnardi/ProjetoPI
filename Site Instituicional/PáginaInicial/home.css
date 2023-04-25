@@ -17,7 +17,6 @@ a {
     display: flex;
     width: 80%;
     height: 100%;
-    align-items: center;
 }
 .header {
     display: flex;
@@ -34,7 +33,7 @@ a {
     height: 30px;
     color: #6D4A00;
     align-items: center;
-
+    cursor: pointer;
 }
 
 .navbar a {
@@ -57,6 +56,23 @@ a {
 
 }
 
+.naotemconta {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+#texto1{
+    display: flex;
+    font-size: 0.5vmax;
+}
+
+#texto2{
+    display: flex;
+    font-size: 0.7vmax;
+    font-weight: 600;
+    margin-top: -4.5%;
+}
 #textonavbar{
     display: flex;
     height: 100%;
@@ -77,7 +93,8 @@ a {
     background-color: rgba(109, 70, 11, 0.885);
     /* border-bottom: 6px; */
     border: 0px;
-    width: 75px;
+    width: 100%;
+    white-space: nowrap;
     height: 23px;
     align-items: center;
     color: white;
@@ -87,53 +104,96 @@ a {
 }
 
  /* CONTEUDO */
+ .gradiente{
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    background: rgba(55, 39, 13, 0.36);
+box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.25);
+transform: matrix(-1, 0, 0, 1, 0, 0);
+ }
 .banner{
+    display: flex;
     background-image: url('img/fundost.png');
     background-size: cover;
-    height: 600px;
-    width: 100%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 .banner .container{
-    height: 500px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.bannerTexto{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-/* .banner h1, h3 {
-    width: 900px;
-    font-size: 25;
-    color: white;
-} */
-
+.vocesabiatexto{
+    display: flex;
+    z-index: 2;
+    color: #C6B082;
+    font-weight: 400;
+    font-size: 1.1vmax;
+}
 .escrita1{
-    width: 900px;
-    margin-top: 150px;
-    font-weight: 3000;
-    font-size: xx-large;
-    /* font-size: 25; */
+    margin-top: 1%;
+    display: flex;
+    height: auto;
+    width: 22vw;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 2.4vmax;
     color: white;
 }
 .escrita2{
-    width: 900px;
-    margin-top: 10px;
-    font-weight: 2000;
-    font-size: x-large;
-    font-size: 25;
+    margin-top: 3%;
+    display: flex;
+    z-index: 2;
+    width: 30vw;
+    height: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.1vmax;
+    line-height: 30px;
     color: white;
 }
 
-.btSM{
-    background-color: rgba(94, 63, 23, 0.751);
-    color: white;
-    font-size: medium;
+#arttech{
+    display: inline-flexbox;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    z-index: 2;
     font-weight: bold;
-    margin-right: 55%;
-    height: 50px;
-    width: 200px;
-    border-radius: 7px;
-    font-family: "Montserrat Ace";
-    cursor: pointer;
+    height: 5vh;
+    color: #ffffff;
+}
+
+.btSM{
+    display: flex;
+    background-color: rgb(52, 33, 8);
+    margin-top: 2%;
+    color: white;
+    z-index: 2;
+    font-size: 1.3vmax;
+    font-weight: normal;
+    align-items: center;
+    justify-content: center;
+    height: 3vmax;
+    width: 15%;
+    border-radius: 5px;
+    border: 1px solid #2F220A;
+    font-family: 'Montserrat Ace', sans-serif;
+    cursor: pointer
+
 }
 
 .btSM:hover{
@@ -152,10 +212,11 @@ a {
     display: flex;
     width: 80%;
     height: 100%;
+    align-items: center;
 }
 
 .valores{
-    height: 700px;
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -165,6 +226,35 @@ a {
     gap: 8px;
 } 
 
+#headsetIcon{
+    font-size: 45px;
+    color: #644b26;
+}
+
+#tagIcon{
+    font-size: 45px;
+    color: #644b26;
+}
+
+#alertaIcon{
+    font-size: 45px;
+    color: #644b26;
+}
+
+#compartilharIcon{
+    font-size: 45px;
+    color: #644b26;
+}
+
+#escudoIcon{
+    font-size: 45px;
+    color: #644b26;
+}
+
+#databaseIcon{
+    font-size: 45px;
+    color: #644b26;
+}
 .box h4{
     color: #644b26;
     font-weight: bold;
@@ -195,22 +285,22 @@ a {
 /* SOBRE NÒS */
 
 .infor{
-    height: 500px;
-    background-color: rgb(72, 40, 0);
+    height: 75vh;
+    width: 100vw;
+    background-color: #36290D;
     display: flex;
     align-items: center;
+    justify-content: center;
    
 }
 .resumo{
-    height: 350px;
-    width: 380px;
-    background-color: #896530df;
-    margin: 0px 30px 0px 10%;
-    border-radius: 6px;
-    padding: 5% 5% 0 5%;
     display: flex;
-    
+    height: 52vh;
+    width: 32vw;
+    background-color: #C6B082;
+    border-radius: 5px;
     flex-direction: column;
+    justify-content: center;
 }
 
 .infor .container{
@@ -218,32 +308,48 @@ a {
     width: 80%;
     height: 100%;
     align-items: center;
-    margin-left: 10%; 
+    z-index: 2;
 }
 
 #fotoInfo{
-    height: 500px;
-    filter: drop-shadow(0 0 0.75rem rgb(181, 134, 7));
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    width: 60%;
+    right: 10%;
+    filter: drop-shadow(0px 6px 30px rgba(0, 0, 0, 0.25));
 }
 
 #subtNos{
+    display: flex;
     font-weight: bolder;
-    color: white;
-    font-size: xx-large;
-    margin: 0;
+    margin-left: 10%;
+    color: black;
+    font-size: 2vmax;
 }
 #escritaNos{
-    font-size: 18px;
+    display: flex;
+    align-self: center;
+    width: 80%;
+    font-size: 1.3vmax;
+    font-weight: 300;
+    line-height: 32px;
 }
 #bthis{
+    display: flex;
     background-color: rgb(52, 33, 8);
+    align-items: center;
+    justify-content: center;
     color: white;
     font-size: medium;
-    font-weight: bold;
-    
-    height: 50px;
-    width: 200px;
-    border-radius: 7px;
+    font-weight: normal;
+    height: 3vmax;
+    width: 18vmax;
+    margin-top: 3%;
+    margin-right: 20%;
+    align-self: center;
+    border-radius: 5px;
+    border: 1px solid #2F220A;
     font-family: 'Montserrat Ace', sans-serif;
     cursor: pointer
 
@@ -263,6 +369,8 @@ a {
 }
 
 .final{
+    display: flex;
+    margin-top: 5%;
     background-color: #36290D;
     color: white;
     height: 60px;

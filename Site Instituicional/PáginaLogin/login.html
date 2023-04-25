@@ -26,7 +26,6 @@
                     <span id="span_erro">E-mail ou senha inválido(a)</span>
                 </div>
                 <div class="botoes">
-                    <button id="cadastro" onclick="cadastrar()">Criar conta</a></button>
                     <button id="entrar" onclick="login()">Entrar</button>
                 </div>
             </div>
@@ -39,12 +38,8 @@
 </html>
 
 <script>
-
-
-    function cadastrar() {
-        window.location.href = "../PáginaCadastro/cadastro.html"
-    }
-
+input_email.value = 'fernando.brandao@sptech.school'
+input_senha.value = '@12345678'
     function login() {
         var email = input_email.value;
         var senha = input_senha.value;
@@ -55,7 +50,8 @@
         || (email == "guilherme.nardi@sptech.school")
         || (email == "matheus.santiago@sptech.school")
         || (email == "douglas.queiroz@sptech.school")
-        || (email == "fernando.brandao@sptech.school"));
+        || (email == "fernando.brandao@sptech.school")
+        || (email == "museudoipiranga@ipiranga.com"));
 
         var validacao_senha = (senha == `@12345678`); 
         var validacao_login = (validacao_email && validacao_senha);

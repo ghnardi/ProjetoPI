@@ -123,5 +123,17 @@ function dashboardIcon() {
 }
 
 function gerenciarconta(){
-    window.location.href = '/PaginaGerenciarConta/gerenciar.html'
+    window.location.href = "../PaginaGerenciarConta/gerenciar.html"
+}
+
+function logout(){
+    window.location.href = "../PáginaInicial/home.html"
+}
+
+function home() {
+    window.location.href = "../PáginaInicial/home.html"
+}
+
+function cadastrar() {
+    window.location.href = "../PáginaCadastro/cadastro.html"
 }

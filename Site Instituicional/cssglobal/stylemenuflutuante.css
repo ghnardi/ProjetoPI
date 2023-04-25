@@ -71,6 +71,16 @@
     color: #FFAD00;
 }
 
+.cadastrarusuario{
+    position: absolute;
+    font-weight: 300;
+    font-size: 100%;
+    line-height: 18px;
+    color: #C6B082;
+    top: 50%;
+    left: 6.5%;
+    cursor: pointer;
+}
 .gerenciarconta{
     position: absolute;
     font-weight: 300;
@@ -109,4 +119,5 @@
     color: #C6B082;
     top: 88%;
     left: 6.5%;
+    cursor: pointer;
 }

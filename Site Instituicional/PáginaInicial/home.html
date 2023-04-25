@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Inicial - Arttceh</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+
 <body>
     <!-- NAVBAR -->
     <div class="header">
         <div class="navbar">
-            <img src="./img/arttech.png" class="logo" alt="">
+            <img src="./img/arttech.png" class="logo" alt="" onclick="home()">
             <div id="textonavbar">
                 <li><a href="../PáginaInicial/home.html">HOME</a></li>
                 <li><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
                 <li><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
                 <li><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
                 <li>|</li>
-                <li><a href="../PáginaCadastro/cadastro.html">CADASTRAR</a></li>
-                <li><button class="bt_login" onclick="entrar()">ENTRAR</button></li>
+                <li><button class="bt_login" onclick="entrar()">FAÇA LOGIN</button></li>
             </div>
-       
+
         </div>
-       
+
     </div>
 
 
     <!-- FUNDO IMAGEM MUSEU -->
+    <div class="gradiente"></div>
     <div class="banner">
         <div class="container">
-            <h1 class="escrita1">MONITORAMENTO DE OBRAS COM EFICÁCIA</h1> <br>
-            <h3 class="escrita2">Arttech é especialista em garantir que <br>a preservação de obras de arte em todos os </h3>
-            <button class="btSM"> <a href="../PáginaSobre/pagina-sobre.html">SAIBA MAIS</a></button>
+            <div class="bannerTexto">
+                <span class="vocesabiatexto">Você sabia que?</span>
+                <span class="escrita1">A FALTA DE MONITORAMENTO DE TEMPERATURA E UMIDADE</span>
+                <span class="escrita2">Pode causar danos irreparáveis ​​às obras de arte. Imagine ver sua coleção de arte valiosa desaparecer diante de seus olhos por causa de um ambiente inadequado. Não permita que isso aconteça!
+                </span>
+
+            </div>
         </div>
     </div>
 
@@ -42,45 +49,59 @@
             <div class="frase">
                 <h1 class="subtitulo">A Arttech garante para você:</h1>
                 <div class="boxes">
-                
+
                     <div class="box">
-                        <img src="img/headfone-removebg-preview.png" alt="">
+                        <span class="material-symbols-outlined" id="headsetIcon">
+                            headset_mic
+                            </span>
                         <h4>Suporte 24/7</h4>
                         <p>Suporte disponível para te ajudar e tirar dúvidas sobre o nosso produto.</p>
                     </div>
 
                     <div class="box">
-                        <img src="img/Capturar-removebg-preview.png" alt="">
+                        <span class="material-symbols-outlined" id="escudoIcon">
+                            shield 
+                            </span>
                         <h4>Proteção de dados</h4>
                         <p>Segurança, confidencialidade integridade e disponibilidade.</p>
                     </div>
                     <div class="box">
-                        <img src="img/uni-removebg-preview.png" alt="">
+                        <span class="material-symbols-outlined" id="tagIcon">
+                            sell
+                            </span>
                         <h4>Universalidade</h4>
                         <p>Nossa solução abrange todos os tipos de obras de arte.</p>
                     </div>
                 </div>
                 <div class="boxes">
-                
+
                     <div class="box">
-                        <img src="img/alertass-removebg-preview.png" alt="">
+                        <span class="material-symbols-outlined" id="alertaIcon">
+                            campaign
+                            </span>
                         <h4>Alertas</h4>
-                        <p>Caso o sensor detectar uma temperatura e umidade fora do normal um alerta será emitido automaticamente.</p>
+                        <p>Caso o sensor detectar uma temperatura e umidade fora do normal um alerta será emitido
+                            automaticamente.</p>
                     </div>
                     <div class="box">
-                        <img src="img/interaçao-removebg-preview.png" id="img1" alt="">
+                        <span class="material-symbols-outlined" id="compartilharIcon">
+                            share
+                            </span>
                         <h4>Interação</h4>
                         <p>Interação entre todas as suas galerias.</p>
                     </div>
                     <div class="box">
-                        <img src="img/dados-removebg-preview.png"  alt="">
-                        <h4>Backup de Dados</h4>
-                        <p>Banco completo de dados com informações em nuvem com acesso em tempo real em qualquer lugar.</p>
+                        <span class="material-symbols-outlined" id="databaseIcon">
+                            database
+                            </span>
+                        <h4>Banco de Dados</h4>
+                        <p>Banco completo de dados com informações em nuvem com acesso em tempo real em qualquer lugar.
+                        </p>
                     </div>
                 </div>
-                    
+
             </div>
-            
+
         </div>
     </div>
 
@@ -89,36 +110,41 @@
     <div class="infor">
         <div class="container">
             <div class="resumo">
-                <h3 id="subtNos">Objetivos Arttech.</h3>
-                <h5 id="escritaNos">Nós da Arttech temos o objetivo de garantir a 
+                <span id="subtNos">Principais objetivos da Arttech</span>
+                <span id="escritaNos">Nós da Arttech temos o objetivo de garantir a
                     conservação de obras de arte e preservação adequada das mesmas, e outros
                     materiais históricos armazenados em museus, galerias de arte, bibliotecas, arquivos históricos
-                    e outras instituições. </h5>
-                <a href="../PáginaSobre/pagina-sobre.html"><button id="bthis">CONHEÇA NOSSA HISTÓRIA</button></a>
+                    e outras instituições. </span>
+                <button id="bthis" onclick="botaoSM()">CONHEÇA NOSSA HISTÓRIA</button></a>
+                
             </div>
-            <img src="img/informações.png" id="fotoInfo">
-           
+            <img src="img/informações.png" alt="" id="fotoInfo">
         </div>
     </div>
 
 
 
-   <!-- RODAPÉ -->
-   <div class="">
-        <div class="rodapé">
-            <hr>
-            <div id="linha-vertical"></div>
-       
-        </div>
-        
-   </div>
-   <div class="final">Copyright © 2023 - 2023 Arttech. Todos os direitos reservados. | Termos de uso | Política de privacidade | Definições de cookies | Mapa do site</div>
+    <!-- RODAPÉ -->
+
+
+    </div>
+    <div class="final">Copyright © 2023 - 2023 Arttech. Todos os direitos reservados. | Termos de uso | Política de
+        privacidade | Definições de cookies | Mapa do site</div>
 </body>
+
 </html>
 
 <script>
 
-    function entrar(){
-        window.location.href = "../PáginaLogin/login.html";    }
+    function entrar() {
+        window.location.href = "../PáginaLogin/login.html";
+    }
 
+    function botaoSM() {
+        window.location.href = "../PáginaSobre/pagina-sobre.html"
+    }
+
+    function home() {
+        window.location.href = "../PáginaInicial/home.html"
+    }
 </script>
