@@ -338,8 +338,9 @@ a:active {
 
 #categoriaExibida {
   display: flex;
+  align-self: center;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 50px;
   color: white;
   margin-left: 5%;
   margin-top: 5%;
@@ -348,8 +349,11 @@ a:active {
 #fraseExibida {
   display: flex;
   font-weight: 400;
-  font-size: 20px;
-  width: 90%;
+  text-align: center;
+  align-self: center;
+  font-size: 32px;
+  line-height: 50px;
+  width: 80%;
   color: white;
   margin-top: 1%;
   margin-left: 5%;
