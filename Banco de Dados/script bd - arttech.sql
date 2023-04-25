@@ -16,8 +16,6 @@ email varchar(45),
 senha varchar(45),
 isAdmin int,
 fkEmpresa int,
-fkAdmin int,
-constraint chkisAdmin check (isAdmin in (0,1)), 
 constraint fkAdmin foreign key (fkAdmin) references usuario(idUsuario),
 constraint fkEmpresa foreign key (fkEmpresa) references empresa(idEmpresa),
 primary key (idUsuario, fkEmpresa)
@@ -65,12 +63,12 @@ select * from empresa;
 
 -- USUARIO ADM
 insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 1,  2,'09581-310', null);
+(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2,'09581-310', null);
 -- USUARIO COMUM
 insert into usuario values 
-(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 0 , 1, 100),
-(null,'Guilherme', 'guilherme.queiroz@sptech.school', '@12345678', 0, 2, 100),
-(null,'Lucas', 'lucas.queiroz@sptech.school', '@12345678', 0,  3, 100);
+(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
+(null,'Guilherme', 'guilherme.queiroz@sptech.school', '@12345678',2, 100),
+(null,'Lucas', 'lucas.queiroz@sptech.school', '@12345678', 3, 100);
 
 select * from usuario;
 
