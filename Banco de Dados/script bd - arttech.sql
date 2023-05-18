@@ -8,7 +8,9 @@ cnpj char (14),
 email varchar(50),
 cep char(9)
 );
-
+create user 'arttech'@'10.18.32.239' identified by 'sptech';
+grant all privileges on arttech.registro to 'arttech'@'10.18.32.239';
+select * from usuario;
 create table usuario (
 idUsuario int auto_increment,
 nome varchar(45),
@@ -47,9 +49,17 @@ fkSensor int,
 constraint fkRegistroSensor foreign key (fkSensor) references sensores(idSensor),
 primary key (idRegistro, fkSensor)
 );
+select * from registro;
 
 
-
+select umidade, temperatura, dataHora from registro where fkSensor = 1 order by idRegistro desc limit 6;
+insert into registro(umidade, temperatura, dataHora, fkSensor) values
+	(90,10, now(), 1),
+    (52,0, now(), 1),
+    (11,70, now(), 1),
+    (16,90, now(),1 ),
+    (99,20, now(), 1),
+    (10,50, now(), 1);
 
 
 -- INSERINDO EMPRESAS

@@ -1,3 +1,18 @@
+window.onload = atualizarGrafico()
+
+var alimentar_umidade_grafico1 = [];
+var alimentar_temperatura_grafico1 = [];
+var alimentar_datahora_grafico1 = [];
+
+
+setInterval(atualizarGrafico, 500);
+
+
+
+
+
+
+
 // CONSTANTE É QUASE A MESMA COISA QUE UM VAR(íavel), A DIFERENÇA É QUE UMA CONSTANTE AO RECEBER UM VALOR, 
 // NÃO PODE SER ALTERADO DEPOIS, TORNANDO MAIS "SEGURO" DE SER USADO EM UM PROJETO COM MUITOS VALORES.
 
@@ -51,13 +66,16 @@ const labels_linha = [
     '17:00',
 ];
 
+
 // GRÁFICO SETOR 1   
 const setor1 = document.getElementById('graficosetor1');
 setor1.style.display = 'block';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor1 = [21, 20, 20, 19, 18, 20];
-const umidade_setor1 = [54, 55, 56, 57, 58, 58];
+const temperatura_setor1 = alimentar_temperatura_grafico1;
+const umidade_setor1 = alimentar_umidade_grafico1;
+
+console.log(umidade_setor1)
 
 const data_setor1 = {
     labels: labels_linha,
@@ -138,6 +156,59 @@ const config_setor1 = {
 };
 
 const grafico_linha_setor1 = new Chart(setor1, config_setor1);
+
+function atualizarGrafico (){
+
+    fetch("/usuarios/atualizarGrafico", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+
+    .then(function (resposta) {         
+        console.log("ESTOU NO THEN DO Ellie()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+              for (i = 0; i < 6; i++) {
+                if (alimentar_umidade_grafico1.length <= 6){
+                    alimentar_umidade_grafico1[i] = (json[i].umidade)
+                } else {
+                    alimentar_umidade_grafico1[5] = (json[i].umidade);
+                    alimentar_datahora_grafico1[5] = (json[i].dataHora);
+                    alimentar_temperatura_grafico1[5] = (json[i].temperatura);
+                }
+              }
+            });
+            plotarGrafico()
+        } else {
+
+            console.log("Houve um erro ao tentar enviar o grafico dados!");
+
+
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+    
+    return false;
+
+}
+
+function plotarGrafico() {
+    const atualizacao_grafico = alimentar_umidade_grafico1
+    data_setor1.datasets[1].data = atualizacao_grafico;
+    grafico_linha_setor1.update()
+}
+
 
 // GRÁFICO SETOR 2
 const setor2 = document.getElementById('graficosetor2');

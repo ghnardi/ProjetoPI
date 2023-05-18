@@ -96,7 +96,7 @@ function cadastrar(req, res) {
 
 function atualizarGrafico (req, res){
 
-    const limite_linhas = 6
+    const limite_linhas = 6;
     usuarioModel.atualizarGrafico(limite_linhas)
     .then(
         function (resultado) {
