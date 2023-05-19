@@ -1,15 +1,18 @@
 window.onload = atualizarGrafico()
 
-var alimentar_umidade_grafico1 = [];
-var alimentar_temperatura_grafico1 = [];
-var alimentar_datahora_grafico1 = [];
-
-
 setInterval(atualizarGrafico, 500);
 
 
+const temperaturas = [temperatura_setor1, temperatura_setor2,temperatura_setor3, temperatura_setor4,temperatura_setor5, temperatura_setor6];
+const umidades = [umidade_setor1, umidade_setor2,umidade_setor3, umidade_setor4,umidade_setor5, umidade_setor6];
+const dataHora = [dataHora_setor1, dataHora_setor2,dataHora_setor3, dataHora_setor4,dataHora_setor5, dataHora_setor6];
 
-
+var dataHora_setor1 = [];
+var dataHora_setor2 = [];
+var dataHora_setor3 = [];
+var dataHora_setor4 = [];
+var dataHora_setor5 = [];
+var dataHora_setor6 = [];
 
 
 
@@ -72,8 +75,8 @@ const setor1 = document.getElementById('graficosetor1');
 setor1.style.display = 'block';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor1 = alimentar_temperatura_grafico1;
-const umidade_setor1 = alimentar_umidade_grafico1;
+var temperatura_setor1 = [];
+var umidade_setor1 = [];
 
 console.log(umidade_setor1)
 
@@ -157,7 +160,7 @@ const config_setor1 = {
 
 const grafico_linha_setor1 = new Chart(setor1, config_setor1);
 
-function atualizarGrafico (){
+function atualizarGrafico (n){
 
     fetch("/usuarios/atualizarGrafico", {
         method: "POST",
@@ -174,16 +177,14 @@ function atualizarGrafico (){
 
             resposta.json().then(json => {
               for (i = 0; i < 6; i++) {
-                if (alimentar_umidade_grafico1.length <= 6){
-                    alimentar_umidade_grafico1[i] = (json[i].umidade)
+                if (umidades[n].length <= 6){
+                    umidades[n][i] = (json[i].umidade)
                 } else {
-                    alimentar_umidade_grafico1[5] = (json[i].umidade);
-                    alimentar_datahora_grafico1[5] = (json[i].dataHora);
-                    alimentar_temperatura_grafico1[5] = (json[i].temperatura);
+                    umidades[n][5] = (json[i].umidade);
                 }
               }
             });
-            plotarGrafico()
+            plotarGrafico(n)
         } else {
 
             console.log("Houve um erro ao tentar enviar o grafico dados!");
@@ -203,9 +204,11 @@ function atualizarGrafico (){
 
 }
 
-function plotarGrafico() {
-    const atualizacao_grafico = alimentar_umidade_grafico1
-    data_setor1.datasets[1].data = atualizacao_grafico;
+function plotarGrafico(n) {
+    const atualizacao_grafico_temperatura = temperaturas[n]
+    const atualizacao_grafico_umidade = umidades[n]
+    data_setor1.datasets[0].data = atualizacao_grafico_temperatura;
+    data_setor1.datasets[1].data = atualizacao_grafico_umidade
     grafico_linha_setor1.update()
 }
 
@@ -215,8 +218,8 @@ const setor2 = document.getElementById('graficosetor2');
 setor2.style.display = 'none';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor2 = [17, 19, 22, 23, 29, 20];
-const umidade_setor2 = [46, 50, 49, 45, 55, 50];
+var temperatura_setor2 = [];
+var umidade_setor2 = [];
 
 const data_setor2 = {
     labels: labels_linha,
@@ -304,8 +307,8 @@ const setor3 = document.getElementById('graficosetor3');
 setor3.style.display = 'none';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor3 = [18, 26, 29, 27, 15, 30];
-const umidade_setor3 = [40, 55, 49, 43, 49, 55];
+var temperatura_setor3 = [];
+var umidade_setor3 = [];
 
 const data_setor3 = {
     labels: labels_linha,
@@ -389,8 +392,8 @@ const setor4 = document.getElementById('graficosetor4');
 setor4.style.display = 'none';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor4 = [25, 24, 24, 26, 23, 24]
-const umidade_setor4 = [55, 56, 56, 55, 57, 58];
+var temperatura_setor4 = []
+var umidade_setor4 = [];
 
 const data_setor4 = {
     labels: labels_linha,
@@ -474,8 +477,8 @@ const setor5 = document.getElementById('graficosetor5');
 setor5.style.display = 'none';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor5 = [18, 19, 19, 20, 22, 23];
-const umidade_setor5 = [45, 45, 47, 48, 54, 55];
+var temperatura_setor5 = [];
+var umidade_setor5 = [];
 
 const data_setor5 = {
     labels: labels_linha,
@@ -559,8 +562,8 @@ const setor6 = document.getElementById('graficosetor6');
 setor6.style.display = 'none';
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor6 = [22, 22, 21, 20, 18, 20];
-const umidade_setor6 = [55, 55, 56, 57, 57, 59];
+var temperatura_setor6 = [];
+var umidade_setor6 = [];
 
 const data_setor6 = {
     labels: labels_linha,
@@ -900,6 +903,21 @@ const config_grafico_barra = {
                 graficosetor4.style.display = 'none';
                 graficosetor5.style.display = 'none';
                 graficosetor6.style.display = 'none';
+
+                switch(index) {
+                    case 0:
+                        atualizarGrafico(0)
+                    case 1:
+                        atualizarGrafico(1)                        
+                    case 2:
+                        atualizarGrafico(2)                    
+                    case 3:
+                        atualizarGrafico(3)                    
+                    case 4:
+                        atualizarGrafico(4)                    
+                    case 5:
+                        atualizarGrafico(5)                    
+                }
 
                 // Dependendo da posição escolhida, exibe o gráfico de linha correspondente
                 // mudando o display de "none", para "block".
