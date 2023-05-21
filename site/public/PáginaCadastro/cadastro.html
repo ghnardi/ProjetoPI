@@ -36,45 +36,95 @@
 </html>
 
 <script>
-input_nome.value = 'Fernando Brandão'
-input_email.value = 'fernando.brandao@sptech.school'
-input_senha.value = '@12345678'
-input_confirmarSenha.value = '@12345678'
-    function cadastrar() {
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirmarSenha = input_confirmarSenha.value
-        var nome = input_nome.value;
-        var spanErro = document.getElementById('span_erro');
 
-        var indice_arroba = email.indexOf("@")
-        var validacao_arroba = (indice_arroba >= 0);
-        var validacao_fim_email = (email.endsWith("sptech.school") || email.endsWith(".com") || email.endsWith(".com.br"))
-        var validacao_especial = (senha.startsWith("#") || senha.startsWith("+") 
-        || senha.startsWith("-") || senha.startsWith("[") 
-        || senha.startsWith("]") || senha.startsWith("*")
-        || senha.startsWith("~") || senha.startsWith("_")
-        || senha.startsWith("@") || senha.startsWith(":")
-        || senha.startsWith("?"));
-
-        var validacao_mesma_senha = (senha == confirmarSenha)
-        var validacao_tamanho_senha = (senha.length >= 8);
-
-
-        if (validacao_arroba && validacao_fim_email && validacao_especial && validacao_tamanho_senha && validacao_mesma_senha) {
-            window.location.href = "../PáginaLogin/login.html"
-        } else if (!validacao_arroba || !validacao_fim_email) {
-            spanErro.innerHTML = `E-mail inválido!`
-            spanErro.style.visibility = `visible`;
-        } else if (!validacao_especial) {
-            spanErro.innerHTML = `É necessário ter um caracter especial na senha!`
-            spanErro.style.visibility = `visible`;
-        } else if (!validacao_tamanho_senha){
-            spanErro.innerHTML = `É necessário que a sua senha tenha no mínimo 8 caracteres.`
-            spanErro.style.visibility = `visible`;
-        } else if (!validacao_mesma_senha) {
-            spanErro.innerHTML = `As senhas não coincidem!`
-            spanErro.style.visibility = `visible`;
-        }
+    function verificaremail(email, callback) {
+  fetch("/usuarios/verificaremail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      emailServer: email
+    })
+  })
+  .then(function(response) {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Erro na verificação do e-mail");
     }
+  })
+  .then(function(data) {
+    callback(null, data.emailCadastrado);
+  })
+  .catch(function(error) {
+    console.error(error);
+    callback(error);
+  });
+}
+
+function cadastrar() {
+  var nomeVar = input_nome.value;
+  var emailVar = input_email.value;
+  var senhaVar = input_senha.value;
+  var confirmarsenhaVar = input_confirmarSenha.value;
+  const spanErro = document.getElementById("span_erro")
+
+  if (nomeVar === "" || emailVar === "" || senhaVar === "" || confirmarsenhaVar == "") {
+    spanErro.style.display = "block";
+    spanErro.innerHTML = "Todos os campos devem estar preenchidos";
+  } else if (emailVar.indexOf("@") === -1 || emailVar.indexOf(".") === -1) {
+    spanErro.style.display = "block";
+    spanErro.innerHTML = "O e-mail deve conter @ e .";
+  } else if (senhaVar.length < 6) {
+    spanErro.style.display = "block";
+    spanErro.innerHTML = "A senha deve conter no mínimo 6 caracteres";
+  } else if (senhaVar.indexOf("@") == -1 || senhaVar.indexOf("!") == -1 || senhaVar.indexOf("$") == -1 || senhaVar.indexOf("%") == -1 || senhaVar.indexOf("&") == -1 || senhaVar.indexOf("*") == -1 || senhaVar.indexOf("_") == -1 || senhaVar.indexOf("#") == -1) {
+    spanErro.style.display = "block";
+    spanErro.innerHTML = "A senha precisa ter um caractere especial";
+  } else if (senhaVar != confirmarsenhaVar) {
+    spanErro.style.display = "block";
+    spanErro.innerHTML = "As senhas não coincidem";
+  } else {
+    verificaremail(emailVar, function(error, emailCadastrado) {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      if (emailCadastrado) {
+        spanErro.style.display = "block";
+        spanErro.innerHTML = "O email já está cadastrado.";
+      } else {
+        fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+          })
+        })
+        .then(function(resposta) {
+          if (resposta.ok) {
+            setTimeout(function() {
+              window.location = "../PáginaLogin/login.html";
+            }, 500);
+
+            limparSessao();
+          } else {
+            throw new Error("Houve um erro ao tentar realizar o cadastro!");
+          }
+        })
+        .catch(function(resposta) {
+          console.log("#ERRO: " + resposta);
+        });
+
+        return false;
+      }
+    });
+  }
+}
 </script>

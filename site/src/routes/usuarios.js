@@ -24,4 +24,8 @@ router.post("/atualizarGrafico", function (req, res) {
     usuarioController.atualizarGrafico(req, res);
 });
 
+router.post("/verificaremail", function (req, res) {
+    usuarioController.verificaremail(req, res);
+});
+
 module.exports = router;

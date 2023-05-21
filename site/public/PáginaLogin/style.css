@@ -91,7 +91,7 @@ span a {
     width: 100%;
     font-family: 'Montserrat Ace';
     font-size: 1vmax;
-    visibility: hidden;
+    display: none;
 }
 
 

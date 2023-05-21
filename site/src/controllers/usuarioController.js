@@ -94,6 +94,32 @@ function cadastrar(req, res) {
     }
 }
 
+function verificaremail(req, res) {
+    var email = req.body.emailServer;
+  
+    if (email == undefined) {
+      res.status(400).send("O email está indefinido!");
+    } else {
+      usuarioModel
+        .verificaremail(email)
+        .then(function (resultado) {
+          if (resultado.length > 0) {
+            res.json({ emailCadastrado: true });
+          } else {
+            res.json({ emailCadastrado: false });
+          }
+        })
+        .catch(function (erro) {
+          console.log(erro);
+          console.log(
+            "\nHouve um erro ao verificar o email! Erro: ",
+            erro.sqlMessage
+          );
+          res.status(500).json(erro.sqlMessage);
+        });
+    }
+  }
+
 function atualizarGrafico (req, res){
 
     const limite_linhas = 6;
@@ -120,5 +146,6 @@ module.exports = {
     cadastrar,
     listar,
     testar,
+    verificaremail,
     atualizarGrafico
 }

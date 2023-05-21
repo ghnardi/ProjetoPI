@@ -23,10 +23,10 @@
                     <span id="b">Senha:</span>
                     <input id="input_senha" type="password">
                     <span><a href="">Esqueceu sua senha?</a></span>
-                    <span id="span_erro">E-mail ou senha inválido(a)</span>
+                    <span id="span_erro"></span>
                 </div>
                 <div class="botoes">
-                    <button id="entrar" onclick="login()">Entrar</button>
+                    <button id="entrar" onclick="entrar()">Entrar</button>
                 </div>
             </div>
             <div class="containeramarelo"></div>
@@ -38,30 +38,63 @@
 </html>
 
 <script>
-input_email.value = 'fernando.brandao@sptech.school'
-input_senha.value = '@12345678'
-    function login() {
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var spanErro = document.getElementById('span_erro');
-        var validacao_email = ((email == "lucas.flima@sptech.school")
-        || (email == "thiago.romaris@sptech.school")
-        || (email == "gabriella.roman@sptech.school")
-        || (email == "guilherme.nardi@sptech.school")
-        || (email == "matheus.santiago@sptech.school")
-        || (email == "douglas.queiroz@sptech.school")
-        || (email == "fernando.brandao@sptech.school")
-        || (email == "museudoipiranga@ipiranga.com"));
 
-        var validacao_senha = (senha == `@12345678`); 
-        var validacao_login = (validacao_email && validacao_senha);
+function entrar() {
 
-        if (validacao_login) {
-            window.location.href = "../PaginadeConsulta/consulta.html";
-        } else {
-            spanErro.style.visibility = `visible`
-        }
+var emailVar = input_email.value;
+var senhaVar = input_senha.value;
+const spanErro = document.getElementById("span_erro")
 
+if (emailVar == "" || senhaVar == "") {
+    spanErro.style.display = "block"
+    spanErro.innerHTML = "Preencha os campos corretamente";
+}
+
+
+fetch("/usuarios/autenticar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+    })
+}).then(function (resposta) {
+    console.log("ESTOU NO THEN DO entrar()!")
+
+    if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.idUsuario;
+
+            setTimeout(function () {
+                window.location = "../PáginaInicial/home.html";
+            }, 1000);
+
+        });
+
+    } else {
+        spanErro.style.display = "block"
+        spanErro.innerHTML = "E-mail ou senha inválido";
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+            console.error(texto);
+        });
     }
+
+}).catch(function (erro) {
+    console.log(erro);
+})
+
+return false;
+}
 
 </script>

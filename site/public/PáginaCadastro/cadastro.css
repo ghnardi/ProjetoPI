@@ -133,7 +133,7 @@ span {
 }
 
 #span_erro {
-    visibility: hidden;
+    display: none;
     color: red;
     font-size: 1vmax;
 }

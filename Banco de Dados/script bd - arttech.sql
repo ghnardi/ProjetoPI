@@ -8,8 +8,10 @@ cnpj char (14),
 email varchar(50),
 cep char(9)
 );
+
 create user 'arttech'@'10.18.32.239' identified by 'sptech';
 grant all privileges on arttech.registro to 'arttech'@'10.18.32.239';
+
 select * from usuario;
 create table usuario (
 idUsuario int auto_increment,
@@ -77,8 +79,8 @@ insert into usuario values
 -- USUARIO COMUM
 insert into usuario values 
 (null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
-(null,'Guilherme', 'guilherme.queiroz@sptech.school', '@12345678',2, 100),
-(null,'Lucas', 'lucas.queiroz@sptech.school', '@12345678', 3, 100);
+(null,'Thiago','thiago.garcia@sptech.school' '@12345678',2, 100),
+(null,'Lucas', 'lucas.flima@sptech.school', '21102002', 3, 100);
 
 select * from usuario;
 

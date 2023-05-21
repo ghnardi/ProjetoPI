@@ -25,10 +25,16 @@ function cadastrar(nome, email, senha) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (nome, email, senha) VALUES ('${nome}', '${email}', '${senha}');
+        INSERT INTO usuario (nome, email, senha, fkEmpresa) VALUES ('${nome}', '${email}', '${senha}', 1);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
+}
+
+function verificaremail(email) {
+  var instrucao = `SELECT * FROM usuario WHERE email = '${email}'`;
+  console.log("Executando verificação de e-mail: \n" + instrucao);
+  return database.executar(instrucao);
 }
 
 
@@ -55,5 +61,6 @@ module.exports = {
     entrar,
     cadastrar,
     listar,
-    atualizarGrafico
+    atualizarGrafico,
+    verificaremail
 };
