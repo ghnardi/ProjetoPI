@@ -309,28 +309,8 @@
     border-radius: 10px;
 }
 
-#graficosetor1 {
+#grafico_setor {
     display: block;
-    animation: clarear .6s;
-}
-
-#graficosetor2 {
-    animation: clarear .6s;
-}
-
-#graficosetor3 {
-    animation: clarear .6s;
-}
-
-#graficosetor4 {
-    animation: clarear .6s;
-}
-
-#graficosetor5 {
-    animation: clarear .6s;
-}
-
-#graficosetor6 {
     animation: clarear .6s;
 }
 

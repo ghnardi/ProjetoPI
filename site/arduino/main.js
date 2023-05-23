@@ -11,7 +11,7 @@ const SERVIDOR_PORTA = 3300;
 // configure a linha abaixo caso queira que os dados capturados sejam inseridos no banco de dados.
 // false -> nao insere
 // true -> insere
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
@@ -30,7 +30,7 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'arttech',
+                user: 'aluno',
                 password: 'sptech',
                 database: 'arttech'
             }
@@ -96,10 +96,10 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fk_Sensor) VALUES (?, ?, now(), 1)',
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 1)',
                     [dht11Umidade, dht11Temperatura]
                 );
-                console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
+                console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura)
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
@@ -113,7 +113,7 @@ const serial = async (
 
 
 // não altere!
-const servidor = (
+const servidor =(
     valoresDht11Umidade,
     valoresDht11Temperatura,
 ) => {

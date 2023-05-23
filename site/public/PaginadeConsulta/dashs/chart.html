@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
-  <body onload="atualizarGrafico()">
+  <body>
     <div class="header">
       <div class="navbar">
         <img src="../assets/logo.png" class="logo" alt="" onclick="home()" />
@@ -154,12 +154,7 @@
             <canvas id="graficobarra"></canvas>
           </div>
           <div class="blocoMarromDireita2">
-            <canvas id="graficosetor1"></canvas>
-            <canvas id="graficosetor2"></canvas>
-            <canvas id="graficosetor3"></canvas>
-            <canvas id="graficosetor4"></canvas>
-            <canvas id="graficosetor5"></canvas>
-            <canvas id="graficosetor6"></canvas>
+            <canvas id="grafico_setor"></canvas>
           </div>
         </div>
       </div>
@@ -171,56 +166,4 @@
   </body>
 </html>
 
-<script>
-
-
-var alimentar_umidade_grafico1 = [];
-var alimentar_temperatura_grafico1 = [];
-var alimentar_datahora_grafico1 = [];
-
-
-function atualizarGrafico (){
-    fetch("/usuarios/atualizarGrafico", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-
-    .then(function (resposta) {         
-        console.log("ESTOU NO THEN DO Ellie()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-
-            resposta.json().then(json => {
-              for (i = 0; i < 6; i++) {
-                alimentar_umidade_grafico1.push(json[i].umidade);
-                alimentar_temperatura_grafico1.push(json[i].temperatura);
-                alimentar_datahora_grafico1.push(json[i].dataHora);
-              }
-              console.log(alimentar_umidade_grafico1)
-              
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar enviar o grafico dados!");
-
-
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-    return false;
-
-}
-</script>
-
-<script type="text/javascript" src="./chart.js"></script>
+<script type="text/javascript" src="./chartnovo.js"></script>

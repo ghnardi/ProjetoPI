@@ -812,6 +812,12 @@ const config_grafico_barra = {
                         const datasetIndex = [context[0].datasetIndex]
 
 
+                        switch (dataIndex) {
+                            case 0: 
+                                atualizarGrafico(0);
+                            case 1:
+                                atualizarGrafico(1)
+                        }
                         // VALIDADAÇÕES DA FAIXA DE TEMPERATURA
                         const faixa_temperatura_ideal = valor_temp_array[dataIndex] >= 18.47 && valor_temp_array[dataIndex] <= 20.6
                         const faixa_temperatura_alerta = (valor_temp_array[dataIndex] >= 18.05 && valor_temp_array[dataIndex] < 18.47) || (valor_temp_array[dataIndex] > 20.6 && valor_temp_array[dataIndex] <= 22)
