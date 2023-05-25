@@ -79,7 +79,7 @@ insert into usuario values
 -- USUARIO COMUM
 insert into usuario values 
 (null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
-(null,'Thiago','thiago.garcia@sptech.school' '@12345678',2, 100),
+(null,'Thiago','thiago.garcia@sptech.school' ,'@12345678',2, 100),
 (null,'Lucas', 'lucas.flima@sptech.school', '21102002', 3, 100);
 
 select * from usuario;
@@ -97,9 +97,8 @@ insert into localInstalacao values
 (null, 'ala2', 2);
 select * from localInstalacao;
 
-
 -- INSERINDO SENSOR
-
+select * from registro;
 insert into sensores values 
 (null, 'DHT11',1),
 (null, 'DHT11',1),

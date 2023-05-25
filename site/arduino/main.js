@@ -21,6 +21,7 @@ const AMBIENTE = 'desenvolvimento';
 const serial = async (
     valoresDht11Umidade,
     valoresDht11Temperatura,
+    valoresfkSensor
 ) => {
     let poolBancoDados = ''
 
@@ -61,9 +62,14 @@ const serial = async (
         const valores = data.split(';');
         const dht11Umidade = parseFloat(valores[0]);
         const dht11Temperatura = parseFloat(valores[1]);
+        const fkSensor = parseFloat(valores[2]);
 
         valoresDht11Umidade.push(dht11Umidade);
         valoresDht11Temperatura.push(dht11Temperatura);
+        valoresfkSensor.push(fkSensor);
+
+        console.log(valoresDht11Umidade);
+        console.log(valoresDht11Temperatura);
 
         if (HABILITAR_OPERACAO_INSERIR) {
             if (AMBIENTE == 'producao') {
@@ -96,8 +102,8 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 1)',
-                    [dht11Umidade, dht11Temperatura]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)',
+                    [dht11Umidade, dht11Temperatura, fkSensor]
                 );
                 console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura)
 
@@ -137,12 +143,16 @@ const servidor =(
 (async () => {
     const valoresDht11Umidade = [];
     const valoresDht11Temperatura = [];
+    const fkSensor = [];
     await serial(
         valoresDht11Umidade,
         valoresDht11Temperatura,
+        fkSensor,
+        
     );
     servidor(
         valoresDht11Umidade,
         valoresDht11Temperatura,
+        fkSensor,
     );
 })();

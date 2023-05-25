@@ -27,7 +27,7 @@ function cadastrar() {
 function atualizarGrafico (n){
 
     fetch("/usuarios/atualizarGrafico", {
-        method: "POST",
+        method: "GET",
         headers: {
             "Content-Type": "application/json"
         }
@@ -45,12 +45,15 @@ function atualizarGrafico (n){
                 if (umidades[0].length < 6){
                     umidades[0][i] = (resposta[i].umidade)
                 } 
-                if(temperaturas[0].length < 6) {
+                if (temperaturas[0].length < 6){
                     temperaturas[0][i] = (resposta[i].temperatura)
-                }
+                } 
               }
+              console.log(resposta)
             });
             plotarGrafico(0)
+   //         console.log(temperaturas[0])
+     //       console.log(umidades[0])
         } else {
 
             console.log("Houve um erro ao tentar enviar o grafico dados!");
@@ -70,36 +73,42 @@ function atualizarGrafico (n){
 
 }
 
+
 function plotarGrafico(n) {
+    data_setor.datasets[0].data = temperaturas[n].slice(0,6);
+    data_setor.datasets[1].data = umidades[n].slice(0,6);
+
+    grafico_barra.update();
     grafico_linha_setor.update()
-    data_setor.datasets[0].data = umidades[n].shift();
-    data_setor.datasets[1].data = temperaturas[n].shift();
+
+    umidades[n].shift();
+    temperaturas[n].shift();
 }
 
 
 const setor_linha = document.getElementById('grafico_setor');
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-var temperatura_setor1 = [];
-var temperatura_setor2 = [];
-var temperatura_setor3 = [];
-var temperatura_setor4 = [];
-var temperatura_setor5 = [];
-var temperatura_setor6 = [];
+const temperatura_setor1 = [];
+const temperatura_setor2 = [];
+const temperatura_setor3 = [];
+const temperatura_setor4 = [];
+const temperatura_setor5 = [];
+const temperatura_setor6 = [];
 
-var umidade_setor1 = [];
-var umidade_setor2 = [];
-var umidade_setor3 = [];
-var umidade_setor4 = [];
-var umidade_setor5 = [];
-var umidade_setor6 = [];
+const umidade_setor1 = [];
+const umidade_setor2 = [];
+const umidade_setor3 = [];
+const umidade_setor4 = [];
+const umidade_setor5 = [];
+const umidade_setor6 = [];
 
-var dataHora_setor1 = [];
-var dataHora_setor2 = [];
-var dataHora_setor3 = [];
-var dataHora_setor4 = [];
-var dataHora_setor5 = [];
-var dataHora_setor6 = [];
+const dataHora_setor1 = [];
+const dataHora_setor2 = [];
+const dataHora_setor3 = [];
+const dataHora_setor4 = [];
+const dataHora_setor5 = [];
+const dataHora_setor6 = [];
 
 
 
@@ -112,22 +121,22 @@ const dataHora = [dataHora_setor1,dataHora_setor2,dataHora_setor3,dataHora_setor
 
 
 const data_setor = {
-    labels: dataHora,
-    datasets: [{
-        label: 'Temperatura',
-        data: temperaturas[0],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 2
-
-    }, {
-
-        label: 'Umidade',
-        data: umidades[0],
-        backgroundColor: '#1d8d8e',
-        borderColor: '#1d8d8e',
-        borderWidth: 2
-    }
+    labels: ["a","b","c","d","e","f",],
+    datasets: [
+        {
+            label: 'Temperatura',
+            data: temperaturas[0],
+            backgroundColor: 'red',
+            borderColor: 'red',
+            borderWidth: 2
+        }, 
+        {
+            label: 'Umidade',
+            data: umidades[0],
+            backgroundColor: 'blue',
+            borderColor: 'blue',
+            borderWidth: 2
+        }
     ]
 };
 
@@ -213,7 +222,7 @@ function mediaArray(vetor) {
 }
 
 const temperatura_grafico_barra = [];
-const umidade_grafico_barra = [];
+const umidade_grafico_barra = []
 
 const data_grafico_barra = {
     labels: labels_barra,

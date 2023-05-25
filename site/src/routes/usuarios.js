@@ -20,7 +20,7 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
-router.post("/atualizarGrafico", function (req, res) {
+router.get("/atualizarGrafico", function (req, res) {
     usuarioController.atualizarGrafico(req, res);
 });
 

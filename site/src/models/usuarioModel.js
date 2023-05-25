@@ -38,22 +38,19 @@ function verificaremail(email) {
 }
 
 
-function atualizarGrafico(limite_linhas) {
+function atualizarGrafico(limite_linhas,n) {
 
     instrucaoSql = ''
-
-    for (i = 0; i < 6; i++) {
 
         if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
             instrucaoSql = `select umidade,
             temperatura,
             dataHora from registro
-            where fkSensor = ${i} order by idRegistro desc limit ${limite_linhas};`;
+            where fkSensor = ${n} order by idRegistro desc limit ${limite_linhas};`;
         } else {
             console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
             return
         }
-    }
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
