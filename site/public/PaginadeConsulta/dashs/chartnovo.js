@@ -40,7 +40,7 @@ function atualizarGrafico (n){
             console.log(resposta);
             resposta.json().then(resposta => {
                 resposta.reverse();
-
+                console.log(resposta)
               for (i = 0; i < 6; i++) {
                 if (umidades[0].length < 6){
                     umidades[0][i] = (resposta[i].umidade)

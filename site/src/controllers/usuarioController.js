@@ -122,6 +122,7 @@ function verificaremail(req, res) {
 
 function atualizarGrafico (req, res){
 
+    // var fkSensor = req.body.fkSensor;
     const limite_linhas = 6;
     usuarioModel.atualizarGrafico(limite_linhas)
     .then(
