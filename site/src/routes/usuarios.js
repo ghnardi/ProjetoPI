@@ -28,4 +28,8 @@ router.post("/verificaremail", function (req, res) {
     usuarioController.verificaremail(req, res);
 });
 
+router.post("/insertregistro", function (req, res) {
+    usuarioController.insertregistro(req, res);
+});
+
 module.exports = router;

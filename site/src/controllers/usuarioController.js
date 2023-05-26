@@ -122,7 +122,7 @@ function verificaremail(req, res) {
 
 function atualizarGrafico (req, res){
 
-    // var fkSensor = req.body.fkSensor;
+    // var fkSensor = req.body.fkSensorServer;
     const limite_linhas = 6;
     usuarioModel.atualizarGrafico(limite_linhas)
     .then(
@@ -141,6 +141,29 @@ function atualizarGrafico (req, res){
     );
 }
 
+function insertregistro (req, res){
+
+    var valor_aleatorio = req.body.valor_aleatorioServer;
+    var valor_aleatorio2 = req.body.valor_aleatorioServer2;
+    var valor_aleatorio_fkSensor = req.body.valor_aleatorio_fkSensorServer;
+
+    usuarioModel.insertregistro(valor_aleatorio, valor_aleatorio2, valor_aleatorio_fkSensor)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao dar insert ficticio na tabela! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 
 module.exports = {
     entrar,
@@ -148,5 +171,6 @@ module.exports = {
     listar,
     testar,
     verificaremail,
-    atualizarGrafico
+    atualizarGrafico,
+    insertregistro
 }
