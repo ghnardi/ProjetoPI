@@ -21,7 +21,7 @@ const AMBIENTE = 'desenvolvimento';
 const serial = async (
     valoresDht11Umidade,
     valoresDht11Temperatura,
-    valoresfkSensor
+    // valoresfkSensor
 ) => {
     let poolBancoDados = ''
 
@@ -60,13 +60,33 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         //console.log(data);
         const valores = data.split(';');
-        const dht11Umidade = parseFloat(valores[0]);
-        const dht11Temperatura = parseFloat(valores[1]);
-        const fkSensor = parseFloat(valores[2]);
+        
+        var dht11Umidade1 = parseFloat(valores[0]);
+        var dht11Temperatura1 = parseFloat(valores[1]);
 
-        valoresDht11Umidade.push(dht11Umidade);
-        valoresDht11Temperatura.push(dht11Temperatura);
-        valoresfkSensor.push(fkSensor);
+        var dht11Umidade2 = parseFloat(valores[3]);
+        var dht11Temperatura2 = parseFloat(valores[4]);
+
+        var dht11Umidade3 = parseFloat(valores[6]);
+        var dht11Temperatura3 = parseFloat(valores[7]);
+
+        var dht11Umidade4 = parseFloat(valores[9]);
+        var dht11Temperatura4 = parseFloat(valores[10]);
+
+        var dht11Umidade5 = parseFloat(valores[12]);
+        var dht11Temperatura5 = parseFloat(valores[13]);
+
+        var dht11Umidade6 = parseFloat(valores[15]);
+        var dht11Temperatura6 = parseFloat(valores[16]);
+
+        console.log(data)
+
+        
+        
+
+        valoresDht11Umidade.push(dht11Umidade1,dht11Umidade2,dht11Umidade3,dht11Umidade4,dht11Umidade5,dht11Umidade6);
+        valoresDht11Temperatura.push(dht11Temperatura1);
+        // valoresfkSensor.push(fkSensor);
 
         console.log(valoresDht11Umidade);
         console.log(valoresDht11Temperatura);
@@ -87,7 +107,7 @@ const serial = async (
 
                 function inserirComando(conn, sqlquery) {
                     conn.query(sqlquery);
-                    console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
+                    console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + fkSensor)
                 }
 
                 sql.connect(connStr)
@@ -102,10 +122,24 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)',
-                    [dht11Umidade, dht11Temperatura, fkSensor]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 1)', [dht11Umidade1, dht11Temperatura1]
                 );
-                console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura)
+                await poolBancoDados.execute(
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 2)', [dht11Umidade2, dht11Temperatura2]
+                );
+                await poolBancoDados.execute(
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 3)', [dht11Umidade3, dht11Temperatura3]
+                );
+                await poolBancoDados.execute(
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 4)', [dht11Umidade4, dht11Temperatura4]
+                );
+                await poolBancoDados.execute(
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 5)', [dht11Umidade5, dht11Temperatura5]
+                );
+                await poolBancoDados.execute(
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 6)', [dht11Umidade6, dht11Temperatura6]
+                );
+                console.log("valores inseridos no banco: ")
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
@@ -143,16 +177,16 @@ const servidor =(
 (async () => {
     const valoresDht11Umidade = [];
     const valoresDht11Temperatura = [];
-    const fkSensor = [];
+    // var fkSensor = [];
     await serial(
         valoresDht11Umidade,
         valoresDht11Temperatura,
-        fkSensor,
+        // fkSensor,
         
     );
     servidor(
         valoresDht11Umidade,
         valoresDht11Temperatura,
-        fkSensor,
+        // fkSensor,
     );
 })();

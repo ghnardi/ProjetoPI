@@ -70,9 +70,12 @@ function insertregistro() {
 }
 
 
-function atualizarGrafico() {
+function atualizarGrafico(n) {
 
-    insertregistro()
+    // insertregistro()
+  
+    n = 1;
+    console.log("GRÁFICO ESCOLHIDO", n)
 
     fetch("/usuarios/atualizarGrafico", {
         method: "GET",
@@ -89,7 +92,8 @@ function atualizarGrafico() {
                 resposta.json().then(resposta => {
                     resposta.reverse();
 
-                    /*  resposta.forEach((sensor) => {
+                    
+                      resposta.forEach((sensor) => {
                           sensor.forEach((objeto) => {
                             const { fkSensor, temperatura, umidade } = objeto;
                         
@@ -113,21 +117,11 @@ function atualizarGrafico() {
                               umidade_setor6.push(umidade);
                             }
                           });
-                        }); */
-
-                    /* for (j = 0; j < 36; j++) {
-                          var sensorIndex = Math.floor(j / 6); // Índice do vetor do sensor
-  
-                          if (umidades[sensorIndex].length < 6) {
-                              umidades[sensorIndex].push(resposta[j][j].umidade);
-                        }
-                            if (temperaturas[sensorIndex].length < 6) {
-                              temperaturas[sensorIndex].push(resposta[j][j].temperatura);
-                          }
-                     } */
+                        }); 
                     console.log(resposta)
                 });
-                plotarGrafico(0)
+                plotarGrafico(n)
+                
                 //         console.log(temperaturas[0])
                 //       console.log(umidades[0])
             } else {
@@ -155,6 +149,7 @@ function plotarGrafico(n) {
     data_setor.datasets[1].data = umidades[n].slice(0, 6);
 
     data_grafico_barra.datasets[0].data = [mediaArray(umidades[0]), mediaArray(umidades[1]), mediaArray(umidades[2]), mediaArray(umidades[3]), mediaArray(umidades[4]), mediaArray(umidades[5])];
+
     data_grafico_barra.datasets[1].data = [mediaArray(temperaturas[0]), mediaArray(temperaturas[1]), mediaArray(temperaturas[2]), mediaArray(temperaturas[3]), mediaArray(temperaturas[4]), mediaArray(temperaturas[5])];;
 
     grafico_barra.update();
@@ -271,7 +266,30 @@ const config_setor = {
                     }
                 }
             }
-        }
+        },
+                    // FUNCÃO QUE AO CLICAR EM UM PONTO DO GRÁFICO DE BARRAS, MOSTRAR O GRÁFICO DE LINHA RESPECTIVO DO SETOR.
+        onClick: function (events, elements) {
+            
+            if (elements.length > 0) {
+                // Constante para receber a posição na qual será efetuado o click.
+                const index = elements[0].index;
+
+                switch(index) {
+                    case 0:
+                        atualizarGrafico(0)
+                    case 1:
+                        atualizarGrafico(1)                        
+                    case 2:
+                        atualizarGrafico(2)                    
+                    case 3:
+                        atualizarGrafico(3)                    
+                    case 4:
+                        atualizarGrafico(4)                    
+                    case 5:
+                        atualizarGrafico(5)                    
+                }
+            }
+        },
     }
 };
 

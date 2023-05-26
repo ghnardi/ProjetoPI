@@ -8,7 +8,7 @@ cnpj char (14),
 email varchar(50),
 cep char(9)
 );
-
+select * from registro;
 create user 'arttech'@'10.18.32.239' identified by 'sptech';
 grant all privileges on arttech.registro to 'arttech'@'10.18.32.239';
 
@@ -52,6 +52,7 @@ constraint fkRegistroSensor foreign key (fkSensor) references sensores(idSensor)
 primary key (idRegistro, fkSensor)
 );
 select * from registro;
+
 
 
 select umidade, temperatura, dataHora from registro where fkSensor = 1 order by idRegistro desc limit 6;
