@@ -1,4 +1,6 @@
+
 setInterval(atualizarGrafico, 1000);
+
 
 function dashboard() {
     window.location.href = "../consulta.html"
@@ -26,7 +28,7 @@ function cadastrar() {
 
 function insertregistro() {
 
-    var valor_aleatorio = Math.random() * 60;
+    var valor_aleatorio = Math.random() * 1000;
     var valor_aleatorio2 = Math.random() * 30;
 
     var min = 1;
@@ -70,94 +72,143 @@ function insertregistro() {
 }
 
 
-function atualizarGrafico(n) {
+function atualizarGrafico() {
 
-    // insertregistro()
-  
-    n = 1;
-    console.log("GRÁFICO ESCOLHIDO", n)
+    insertregistro();
 
     fetch("/usuarios/atualizarGrafico", {
         method: "GET",
         headers: {
-            "Content-Type": "application/json"
-        }
+            "Content-Type": "application/json",
+        },
     })
-
         .then(function (resposta) {
-            console.log("ESTOU NO THEN DO Ellie()!")
+            console.log("ESTOU NO THEN DO Ellie()!");
 
             if (resposta.ok) {
                 console.log(resposta);
-                resposta.json().then(resposta => {
+                resposta.json().then((resposta) => {
                     resposta.reverse();
 
-                    
-                      resposta.forEach((sensor) => {
-                          sensor.forEach((objeto) => {
+                    resposta.forEach((sensor) => {
+                        sensor.forEach((objeto) => {
                             const { fkSensor, temperatura, umidade } = objeto;
-                        
-                            if (fkSensor === 1) {
-                              temperatura_setor1.push(temperatura);
-                              umidade_setor1.push(umidade);
-                            } else if (fkSensor === 2) {
-                              temperatura_setor2.push(temperatura);
-                              umidade_setor2.push(umidade);
-                            } else if (fkSensor === 3) {
-                              temperatura_setor3.push(temperatura);
-                              umidade_setor3.push(umidade);
-                            } else if (fkSensor === 4) {
-                              temperatura_setor4.push(temperatura);
-                              umidade_setor4.push(umidade);
-                            } else if (fkSensor === 5) {
-                              temperatura_setor5.push(temperatura);
-                              umidade_setor5.push(umidade);
-                            } else if (fkSensor === 6) {
-                              temperatura_setor6.push(temperatura);
-                              umidade_setor6.push(umidade);
-                            }
-                          });
-                        }); 
-                    console.log(resposta)
-                });
-                plotarGrafico(n)
-                
-                //         console.log(temperaturas[0])
-                //       console.log(umidades[0])
-            } else {
 
+                            if (fkSensor === 1) {
+                                if (temperatura_setor1.length >= 6) {
+                                    temperatura_setor1.shift();
+                                    umidade_setor1.shift();
+                                }
+                                temperatura_setor1.push(temperatura);
+                                umidade_setor1.push(umidade);
+                            } else if (fkSensor === 2) {
+                                if (temperatura_setor2.length >= 6) {
+                                    temperatura_setor2.shift();
+                                    umidade_setor2.shift();
+                                }
+                                temperatura_setor2.push(temperatura);
+                                umidade_setor2.push(umidade);
+                            } else if (fkSensor === 3) {
+                                if (temperatura_setor3.length >= 6) {
+                                    temperatura_setor3.shift();
+                                    umidade_setor3.shift();
+                                }
+                                temperatura_setor3.push(temperatura);
+                                umidade_setor3.push(umidade);
+                            } else if (fkSensor === 4) {
+                                if (temperatura_setor4.length >= 6) {
+                                    temperatura_setor4.shift();
+                                    umidade_setor4.shift();
+                                }
+                                temperatura_setor4.push(temperatura);
+                                umidade_setor4.push(umidade);
+                            } else if (fkSensor === 5) {
+                                if (temperatura_setor5.length >= 6) {
+                                    temperatura_setor5.shift();
+                                    umidade_setor5.shift();
+                                }
+                                temperatura_setor5.push(temperatura);
+                                umidade_setor5.push(umidade);
+                            } else if (fkSensor === 6) {
+                                if (temperatura_setor6.length >= 6) {
+                                    temperatura_setor6.shift();
+                                    umidade_setor6.shift();
+                                }
+                                temperatura_setor6.push(temperatura);
+                                umidade_setor6.push(umidade);
+                            }
+                        });
+                    });
+
+                    temperatura_grafico_barra = [mediaArray(temperaturas[0]), mediaArray(temperaturas[1]), mediaArray(temperaturas[2]), mediaArray(temperaturas[3]), mediaArray(temperaturas[4]), mediaArray(temperaturas[5])];
+
+                    umidade_grafico_barra = [mediaArray(umidades[0]), mediaArray(umidades[1]), mediaArray(umidades[2]), mediaArray(umidades[3]), mediaArray(umidades[4]), mediaArray(umidades[5])];
+
+                    data_grafico_barra.datasets[0].data = temperatura_grafico_barra;
+
+                    data_grafico_barra.datasets[1].data = umidade_grafico_barra;
+
+                    grafico_barra.update();
+                    console.log(resposta);
+                });
+            } else {
                 console.log("Houve um erro ao tentar enviar o grafico dados!");
 
-
-
-                resposta.text().then(texto => {
+                resposta.text().then((texto) => {
                     console.error(texto);
                 });
             }
-
-        }).catch(function (erro) {
-            console.log(erro);
         })
+        .catch(function (erro) {
+            console.log(erro);
+        });
 
     return false;
-
 }
 
 
+// Defina a função plotarGrafico
 function plotarGrafico(n) {
+    temperatura_setor1.reverse();
+    umidade_setor1.reverse();
+    temperatura_setor2.reverse();
+    umidade_setor2.reverse();
+    temperatura_setor3.reverse();
+    umidade_setor3.reverse();
+    temperatura_setor4.reverse();
+    umidade_setor4.reverse();
+    temperatura_setor5.reverse();
+    umidade_setor5.reverse();
+    temperatura_setor6.reverse();
+    umidade_setor6.reverse();
+
     data_setor.datasets[0].data = temperaturas[n].slice(0, 6);
     data_setor.datasets[1].data = umidades[n].slice(0, 6);
 
-    data_grafico_barra.datasets[0].data = [mediaArray(umidades[0]), mediaArray(umidades[1]), mediaArray(umidades[2]), mediaArray(umidades[3]), mediaArray(umidades[4]), mediaArray(umidades[5])];
-
-    data_grafico_barra.datasets[1].data = [mediaArray(temperaturas[0]), mediaArray(temperaturas[1]), mediaArray(temperaturas[2]), mediaArray(temperaturas[3]), mediaArray(temperaturas[4]), mediaArray(temperaturas[5])];;
-
-    grafico_barra.update();
-    grafico_linha_setor.update()
+    grafico_linha_setor.update();
 
     umidades[n].shift();
     temperaturas[n].shift();
 }
+
+const intervalo = 2000; // Intervalo de 5 segundos
+
+// Variável para armazenar o valor de n
+var valorN = 0;
+
+// Função para executar o plotarGrafico indefinidamente
+function executarPlotarGrafico() {
+    // Chame a função plotarGrafico com o valor de valorN
+    plotarGrafico(valorN);
+}
+
+// Agende a próxima execução após o intervalo de tempo
+setInterval(function () {
+    executarPlotarGrafico();
+}, intervalo);
+
+
+
 
 
 const setor_linha = document.getElementById('grafico_setor');
@@ -266,30 +317,7 @@ const config_setor = {
                     }
                 }
             }
-        },
-                    // FUNCÃO QUE AO CLICAR EM UM PONTO DO GRÁFICO DE BARRAS, MOSTRAR O GRÁFICO DE LINHA RESPECTIVO DO SETOR.
-        onClick: function (events, elements) {
-            
-            if (elements.length > 0) {
-                // Constante para receber a posição na qual será efetuado o click.
-                const index = elements[0].index;
-
-                switch(index) {
-                    case 0:
-                        atualizarGrafico(0)
-                    case 1:
-                        atualizarGrafico(1)                        
-                    case 2:
-                        atualizarGrafico(2)                    
-                    case 3:
-                        atualizarGrafico(3)                    
-                    case 4:
-                        atualizarGrafico(4)                    
-                    case 5:
-                        atualizarGrafico(5)                    
-                }
-            }
-        },
+        }
     }
 };
 
@@ -318,8 +346,8 @@ function mediaArray(vetor) {
     return soma / vetor.length;
 }
 
-const temperatura_grafico_barra = []
-const umidade_grafico_barra = []
+var temperatura_grafico_barra = []
+var umidade_grafico_barra = []
 console.log(temperatura_grafico_barra, umidade_grafico_barra);
 
 const data_grafico_barra = {
@@ -386,7 +414,48 @@ const config_grafico_barra = {
                     }
                 }
             }
-        }
+        },
+
+        onClick: function (events, elements) {
+
+            if (elements.length > 0) {
+                // Constante para receber a posição na qual será efetuado o click.
+                const index = elements[0].index;
+
+                switch (index) {
+                    case 0:
+                        executarPlotarGrafico(0)
+                        valorN = 0; 
+                        console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        break;
+                    case 1:
+                        executarPlotarGrafico(1)
+                        valorN = 1; 
+                        console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        break;
+                    case 2:
+                        executarPlotarGrafico(2)
+                        valorN = 2; 
+                        console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        break;
+                    case 3:
+                        executarPlotarGrafico(3)
+                        valorN = 3; 
+                        console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        break;
+                    case 4:
+                        executarPlotarGrafico(4)
+                        valorN = 4; 
+                        console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        break;
+                    case 5:
+                        executarPlotarGrafico(5)
+                        valorN = 5; 
+                        console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        break;
+                }
+            }
+        },
     }
 }
 
