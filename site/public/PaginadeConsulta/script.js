@@ -7,8 +7,20 @@ menuleft2.style.display = 'flex'
 menuleft3.style.display = 'flex'
 menuleft4.style.display = 'flex'
 dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
+dashGeral.style.display = 'flex'
+conteudo.style.display = 'none'
 
 
+function mostrarDashLocalizada() {
+
+        if(dashGeral.style.display == 'flex') {
+            dashGeral.style.display = 'none'
+            conteudo.style.display = 'flex'
+        } else {
+            dashGeral.style.display = 'flex'
+            conteudo.style.display = 'none'
+        }
+}
 
 
 function clickMenuLeft() {

@@ -95,7 +95,174 @@ body {
 
 
 .conteudo{
-    display: flex;
+    display: none;
     width: 100%;
     height: auto;
 }
+
+/* GABRIELLA FAZENDO DASH GERAL */
+
+.dashGeral {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    background-color: #493510;
+    height: 111%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blocoTitulo{
+    display: flex;
+    width: 100%;
+    height: 7%;
+    background-color: #342811;
+    justify-content: center;
+    align-items: center;
+}
+
+#tituloDoBloco {
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 2vmax;
+}
+
+.conteudoDashGeral {
+    display: flex;
+    background-color: #C6B082;
+    height: 85%;
+    width: 90%;
+    margin-top: 2%;
+    border-radius: 1vmax;
+    flex-direction: column;
+}
+
+.blocoParaNome{
+    display: flex;
+    background-color: #2F220A;
+    width: 100%;
+    height: 10%;
+    border-radius: 1vmax;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#nomeLocal{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1.5vmax;
+}
+
+.blocoDireita{
+    display: flex;
+    background-color: #6D4A00;
+    width: 6%;
+    height: 8.5%;
+    border-radius: 1vmax;
+    position: absolute;
+    left: 89%;
+}
+
+#imgGrafico {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmax;
+    color: #C6B082;
+}
+
+.dashGeralInterno{
+    height: 70%;
+    width: 60%;
+    margin-top: 2%;
+    margin-left: 4%;
+    gap: 10%;
+}
+
+#buttonParaDash{
+    border: 0;
+    background-color: #6D4A00;
+    width: 50%;
+    height: 20%;
+    border-radius: 1vmax;
+    color: #C6B082;
+    font-weight: 800;
+    margin-top: 5%;
+    margin-left: 22%;
+    cursor: pointer;
+    font-family: 'Montserrat Ace';
+    font-size: 1.2vmax;
+}
+
+.muralAvisos{
+    display: flex;
+    position: absolute;
+    width: 30%;
+    height: 65%;
+    background-color: #493510;
+    right:10%;
+    top: 24.6%;
+    border-radius: 1vmax;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloMural{
+    display: flex;
+    background-color:#2F220A;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    border-radius: 1vmax;
+}
+
+#tituloMural{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1.5vmax;
+}
+
+#buttonDashGeral{
+    background-color: #6D4A00;
+    border: 0;
+    border-radius: 0.8vmax;
+    color: #C6B082;
+    font-weight: 800;
+    margin-top: 8%;
+    cursor: pointer;
+    width: 80%;
+    height: 6%;
+}
+
+.cardAviso{
+    display: flex;
+    height: 10%;
+    width: 90%;
+    background-color: #6D4A00;
+    margin-top: 4%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vmax;
+}
+
+#informcacaoMural{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1vmax;
+}
+
+.conteudoMural{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+    overflow: auto;
+}
+
+
