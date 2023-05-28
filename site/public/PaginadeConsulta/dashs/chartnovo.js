@@ -1,6 +1,4 @@
-
 setInterval(atualizarGrafico, 1000);
-
 
 function dashboard() {
     window.location.href = "../consulta.html"
@@ -27,9 +25,13 @@ function cadastrar() {
 }
 
 function insertregistro() {
+    var min2 = 40;
+    var max2 = 60;
+    var valor_aleatorio = Math.random() * (max2 - min2 + 1) + min2
 
-    var valor_aleatorio = Math.random() * 1000;
-    var valor_aleatorio2 = Math.random() * 30;
+    var min3 = 15;
+    var max3 = 25;
+    var valor_aleatorio2 = Math.random() * (max3 - min3 + 1) + min3
 
     var min = 1;
     var max = 6;
@@ -50,7 +52,7 @@ function insertregistro() {
     })
 
         .then(function (resposta) {
-            console.log("ESTOU NO THEN DO Ellie()!")
+            console.log("ESTOU INSERTANDO DADOS FICTICIOS!")
 
             if (resposta.ok) {
                 console.log(resposta);
@@ -92,50 +94,66 @@ function atualizarGrafico() {
 
                     resposta.forEach((sensor) => {
                         sensor.forEach((objeto) => {
-                            const { fkSensor, temperatura, umidade } = objeto;
+                            const { fkSensor, temperatura, dataHora, umidade } = objeto;
+
+                            const hora = dataHora.substring(11, 13);    // Extrai a hora da dataHora
+                            const minuto = dataHora.substring(14, 16);  // Extrai o minuto da dataHora
+                            const segundo = dataHora.substring(17, 19); // Extrai o segundo da dataHora
 
                             if (fkSensor === 1) {
                                 if (temperatura_setor1.length >= 6) {
                                     temperatura_setor1.shift();
                                     umidade_setor1.shift();
+                                    dataHora_setor1.shift();
                                 }
                                 temperatura_setor1.push(temperatura);
                                 umidade_setor1.push(umidade);
+                                dataHora_setor1.push(`${hora}:${minuto}:${segundo}`)
                             } else if (fkSensor === 2) {
                                 if (temperatura_setor2.length >= 6) {
                                     temperatura_setor2.shift();
                                     umidade_setor2.shift();
+                                    dataHora_setor2.shift();
                                 }
                                 temperatura_setor2.push(temperatura);
                                 umidade_setor2.push(umidade);
+                                dataHora_setor2.push(`${hora}:${minuto}:${segundo}`)
                             } else if (fkSensor === 3) {
                                 if (temperatura_setor3.length >= 6) {
                                     temperatura_setor3.shift();
                                     umidade_setor3.shift();
+                                    dataHora_setor3.shift();
                                 }
                                 temperatura_setor3.push(temperatura);
                                 umidade_setor3.push(umidade);
+                                dataHora_setor3.push(`${hora}:${minuto}:${segundo}`)
                             } else if (fkSensor === 4) {
                                 if (temperatura_setor4.length >= 6) {
                                     temperatura_setor4.shift();
                                     umidade_setor4.shift();
+                                    dataHora_setor4.shift();
                                 }
                                 temperatura_setor4.push(temperatura);
                                 umidade_setor4.push(umidade);
+                                dataHora_setor4.push(`${hora}:${minuto}:${segundo}`)
                             } else if (fkSensor === 5) {
                                 if (temperatura_setor5.length >= 6) {
                                     temperatura_setor5.shift();
                                     umidade_setor5.shift();
+                                    dataHora_setor5.shift();
                                 }
                                 temperatura_setor5.push(temperatura);
                                 umidade_setor5.push(umidade);
+                                dataHora_setor5.push(`${hora}:${minuto}:${segundo}`)
                             } else if (fkSensor === 6) {
                                 if (temperatura_setor6.length >= 6) {
                                     temperatura_setor6.shift();
                                     umidade_setor6.shift();
+                                    dataHora_setor6.shift();
                                 }
                                 temperatura_setor6.push(temperatura);
                                 umidade_setor6.push(umidade);
+                                dataHora_setor6.push(`${hora}:${minuto}:${segundo}`)
                             }
                         });
                     });
@@ -181,14 +199,29 @@ function plotarGrafico(n) {
     umidade_setor5.reverse();
     temperatura_setor6.reverse();
     umidade_setor6.reverse();
+    dataHora_setor1.reverse();
+    dataHora_setor2.reverse();
+    dataHora_setor3.reverse();
+    dataHora_setor4.reverse();
+    dataHora_setor5.reverse();
+    dataHora_setor6.reverse();
 
     data_setor.datasets[0].data = temperaturas[n].slice(0, 6);
     data_setor.datasets[1].data = umidades[n].slice(0, 6);
+    data_setor.labels = dataHora[n].slice(0, 6);
 
     grafico_linha_setor.update();
 
     umidades[n].shift();
     temperaturas[n].shift();
+    dataHora[n].shift();
+
+    headerinfotexto.innerHTML = `${umidades[n][4].toFixed(1)}%`;
+    headerinfotexto2.innerHTML = `${temperaturas[n][4].toFixed(1)}ºC`;
+    headerinfotexto3.innerHTML = `${mediaArray(temperaturas[n]).toFixed(1)}ºC`;
+    headerinfotexto4.innerHTML = `${mediaArray(umidades[n]).toFixed(1)}%`;
+
+    validacao_cores_cards(n);
 }
 
 const intervalo = 2000; // Intervalo de 5 segundos
@@ -246,7 +279,7 @@ const dataHora = [dataHora_setor1, dataHora_setor2, dataHora_setor3, dataHora_se
 
 
 const data_setor = {
-    labels: ["a", "b", "c", "d", "e", "f",],
+    labels: dataHora[0],
     datasets: [
         {
             label: 'Temperatura',
@@ -299,7 +332,7 @@ const config_setor = {
         plugins: {
             title: {
                 display: true,
-                text: 'SETOR 2',
+                text: 'SETOR 1',
                 font: {
                     size: 18,
                     color: 'black',
@@ -348,7 +381,6 @@ function mediaArray(vetor) {
 
 var temperatura_grafico_barra = []
 var umidade_grafico_barra = []
-console.log(temperatura_grafico_barra, umidade_grafico_barra);
 
 const data_grafico_barra = {
     labels: labels_barra,
@@ -421,36 +453,67 @@ const config_grafico_barra = {
             if (elements.length > 0) {
                 // Constante para receber a posição na qual será efetuado o click.
                 const index = elements[0].index;
+                var titulo_grafico = "";
 
                 switch (index) {
                     case 0:
                         executarPlotarGrafico(0)
-                        valorN = 0; 
+                        atualizarTextoTitulo("SETOR 1")
+                        valorN = 0;
                         console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
+                        headerinfosetor.innerHTML = "SETOR 1";
+                        headerinfosetor2.innerHTML = "SETOR 1";
+                        headerinfosetor3.innerHTML = "SETOR 1";
+                        headerinfosetor4.innerHTML = "SETOR 1";
                         break;
                     case 1:
                         executarPlotarGrafico(1)
-                        valorN = 1; 
+                        atualizarTextoTitulo("SETOR 2")
+                        valorN = 1;
+                        headerinfosetor.innerHTML = "SETOR 2";
+                        headerinfosetor2.innerHTML = "SETOR 2";
+                        headerinfosetor3.innerHTML = "SETOR 2";
+                        headerinfosetor4.innerHTML = "SETOR 2";
                         console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
                         break;
                     case 2:
                         executarPlotarGrafico(2)
-                        valorN = 2; 
+                        atualizarTextoTitulo("SETOR 3")
+                        valorN = 2;
+                        headerinfosetor.innerHTML = "SETOR 3";
+                        headerinfosetor2.innerHTML = "SETOR 3";
+                        headerinfosetor3.innerHTML = "SETOR 3";
+                        headerinfosetor4.innerHTML = "SETOR 3";
                         console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
                         break;
                     case 3:
                         executarPlotarGrafico(3)
-                        valorN = 3; 
+                        atualizarTextoTitulo("SETOR 4")
+                        valorN = 3;
+                        headerinfosetor.innerHTML = "SETOR 4";
+                        headerinfosetor2.innerHTML = "SETOR 4";
+                        headerinfosetor3.innerHTML = "SETOR 4";
+                        headerinfosetor4.innerHTML = "SETOR 4";
                         console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
                         break;
                     case 4:
                         executarPlotarGrafico(4)
-                        valorN = 4; 
+                        atualizarTextoTitulo("SETOR 5")
+                        valorN = 4;
+                        headerinfosetor.innerHTML = "SETOR 5";
+                        headerinfosetor2.innerHTML = "SETOR 5";
+                        headerinfosetor3.innerHTML = "SETOR 5";
+                        headerinfosetor4.innerHTML = "SETOR 5";
                         console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
                         break;
                     case 5:
                         executarPlotarGrafico(5)
-                        valorN = 5; 
+                        atualizarTextoTitulo("SETOR 6")
+                        valorN = 5;
+                        headerinfosetor.innerHTML = "SETOR 6";
+                        headerinfosetor2.innerHTML = "SETOR 6";
+                        headerinfosetor3.innerHTML = "SETOR 6";
+                        headerinfosetor4.innerHTML = "SETOR 6";
                         console.log("CLIQUEI NO GRÁFICO AO LADO PARCAAAA")
                         break;
                 }
@@ -460,3 +523,159 @@ const config_grafico_barra = {
 }
 
 const grafico_barra = new Chart(grafico_barra_canva, config_grafico_barra);
+
+function atualizarTextoTitulo(texto) {
+    grafico_linha_setor.options.plugins.title.text = texto;
+    grafico_linha_setor.update();
+}
+
+function validacao_cores_cards(n){
+    var umidade_atual_critica = umidades[n][4] < 45 || umidades[n][4] > 55;
+    var temperatura_atual_critica = temperaturas[n][4] < 18 || temperaturas[n][4] > 22;
+    var umidade_atual_alerta = umidades[n][4] < 46.2 || umidades[n][4] > 52.6;
+    var temperatura_atual_alerta = temperaturas[n][4] < 18.47 || temperaturas[n][4] > 20.6;
+
+    var umidade_media_critica = mediaArray(umidades[n]) < 45 || mediaArray(umidades[n]) > 55;
+    var temperatura_media_critica = mediaArray(temperaturas[n]) < 18 || mediaArray(temperaturas[n]) > 22;
+    var umidade_media_alerta = mediaArray(umidades[n]) < 46.2 || mediaArray(umidades[n]) > 52.6;
+    var temperatura_media_alerta = mediaArray(temperaturas[n]) < 18.47 || mediaArray(temperaturas[n]) > 20.6;
+
+
+
+    var cor_marrom_escuro = "#6D4A00";
+    var cor_marrom_claro = "#F3EAD8"
+    var cor_vermelho_escuro = "#972648";
+    var cor_vermelho_claro = "#FF004D";
+    var cor_amarelo_escuro = "#FFB800";
+    var cor_amarelo_claro = "#FFD700";
+    var cor_branco = "#FFFFFF"
+
+
+    if (umidade_atual_critica) {
+        headerinfo_primeirobloco.style.backgroundColor = cor_vermelho_escuro
+        headertexto1.style.color = cor_branco
+
+        primeirobloco.style.backgroundColor = cor_vermelho_claro
+        headerinfotexto.style.color = cor_branco;
+        headerinfosetor.style.color = cor_branco;
+
+        headericon1.style.display = "flex"
+        headericon2.style.display = "flex"
+    } else if (umidade_atual_alerta) {
+        headerinfo_primeirobloco.style.backgroundColor = cor_amarelo_escuro
+        headertexto1.style.color = cor_branco
+
+        primeirobloco.style.backgroundColor = cor_amarelo_claro
+        headerinfotexto.style.color = cor_branco;
+        headerinfosetor.style.color = cor_branco;
+
+        headericon1.style.display = "flex"
+        headericon2.style.display = "flex"
+    } else {
+        headerinfo_primeirobloco.style.backgroundColor = cor_marrom_escuro
+        headertexto1.style.color = cor_marrom_claro
+
+        primeirobloco.style.backgroundColor = cor_marrom_claro
+        headerinfotexto.style.color = cor_marrom_escuro;
+        headerinfosetor.style.color = cor_marrom_escuro;
+
+        headericon1.style.display = "none"
+        headericon2.style.display = "none"
+    }
+
+    if (temperatura_atual_critica) {
+        headerinfo_segundobloco.style.backgroundColor = cor_vermelho_escuro
+        headertexto2.style.color = cor_branco
+
+        segundobloco.style.backgroundColor = cor_vermelho_claro
+        headerinfotexto2.style.color = cor_branco;
+        headerinfosetor2.style.color = cor_branco;
+
+        headericon3.style.display = "flex"
+        headericon4.style.display = "flex"
+    } else if (temperatura_atual_alerta) {
+        headerinfo_segundobloco.style.backgroundColor = cor_amarelo_escuro
+        headertexto2.style.color = cor_branco
+
+        segundobloco.style.backgroundColor = cor_amarelo_claro
+        headerinfotexto2.style.color = cor_branco;
+        headerinfosetor2.style.color = cor_branco;
+
+        headericon3.style.display = "flex"
+        headericon4.style.display = "flex"
+    } else {
+        headerinfo_segundobloco.style.backgroundColor = cor_marrom_escuro
+        headertexto2.style.color = cor_marrom_claro
+
+        segundobloco.style.backgroundColor = cor_marrom_claro
+        headerinfotexto2.style.color = cor_marrom_escuro;
+        headerinfosetor2.style.color = cor_marrom_escuro;
+
+        headericon3.style.display = "none"
+        headericon4.style.display = "none"
+    }
+
+    if (temperatura_media_critica) {
+        headerinfo_terceirobloco.style.backgroundColor = cor_vermelho_escuro
+        headertexto3.style.color = cor_branco
+
+        terceirobloco.style.backgroundColor = cor_vermelho_claro
+        headerinfotexto3.style.color = cor_branco;
+        headerinfosetor3.style.color = cor_branco;
+
+        headericon5.style.display = "flex"
+        headericon6.style.display = "flex"
+    } else if (temperatura_media_alerta) {
+        headerinfo_terceirobloco.style.backgroundColor = cor_amarelo_escuro
+        headertexto3.style.color = cor_branco
+
+        terceirobloco.style.backgroundColor = cor_amarelo_claro
+        headerinfotexto3.style.color = cor_branco;
+        headerinfosetor3.style.color = cor_branco;
+
+        headericon5.style.display = "flex"
+        headericon6.style.display = "flex"
+    } else {
+        headerinfo_terceirobloco.style.backgroundColor = cor_marrom_escuro
+        headertexto3.style.color = cor_marrom_claro
+
+        terceirobloco.style.backgroundColor = cor_marrom_claro
+        headerinfotexto3.style.color = cor_marrom_escuro;
+        headerinfosetor3.style.color = cor_marrom_escuro;
+
+        headericon5.style.display = "none"
+        headericon6.style.display = "none"
+    }
+
+    if (umidade_media_critica) {
+        headerinfo_quartobloco.style.backgroundColor = cor_vermelho_escuro
+        headertexto4.style.color = cor_branco
+
+        quartobloco.style.backgroundColor = cor_vermelho_claro
+        headerinfotexto4.style.color = cor_branco;
+        headerinfosetor4.style.color = cor_branco;
+
+        headericon7.style.display = "flex"
+        headericon8.style.display = "flex"
+    } else if (umidade_media_alerta) {
+        headerinfo_quartobloco.style.backgroundColor = cor_amarelo_escuro
+        headertexto4.style.color = cor_branco
+
+        quartobloco.style.backgroundColor = cor_amarelo_claro
+        headerinfotexto4.style.color = cor_branco;
+        headerinfosetor4.style.color = cor_branco;
+
+        headericon7.style.display = "flex"
+        headericon8.style.display = "flex"
+    } else {
+        headerinfo_quartobloco.style.backgroundColor = cor_marrom_escuro
+        headertexto4.style.color = cor_marrom_claro
+
+        quartobloco.style.backgroundColor = cor_marrom_claro
+        headerinfotexto4.style.color = cor_marrom_escuro;
+        headerinfosetor4.style.color = cor_marrom_escuro;
+
+        headericon7.style.display = "none"
+        headericon8.style.display = "none"
+    }
+}
