@@ -1,5 +1,6 @@
 setInterval(atualizarGrafico, 1000);
 
+
 function dashboard() {
     window.location.href = "../consulta.html"
 }
@@ -166,8 +167,15 @@ function atualizarGrafico() {
 
                     data_grafico_barra.datasets[1].data = umidade_grafico_barra;
 
+                    sessionStorage.DADO_GRAFICO = temperatura_grafico_barra[0]
+
+                    const dashinfobloquinho = document.getElementById("dashinfobloquinho")
+        
+                        dashinfobloquinho.innerHTML = `${parseInt(sessionStorage.DADO_GRAFICO)}ºC`
+
                     grafico_barra.update();
                     console.log(resposta);
+                    
                 });
             } else {
                 console.log("Houve um erro ao tentar enviar o grafico dados!");
@@ -183,7 +191,6 @@ function atualizarGrafico() {
 
     return false;
 }
-
 
 // Defina a função plotarGrafico
 function plotarGrafico(n) {
@@ -521,6 +528,8 @@ const config_grafico_barra = {
         },
     }
 }
+
+
 
 const grafico_barra = new Chart(grafico_barra_canva, config_grafico_barra);
 

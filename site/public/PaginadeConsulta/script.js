@@ -11,6 +11,8 @@ dashGeral.style.display = 'flex'
 conteudo.style.display = 'none'
 
 
+
+
 function mostrarDashLocalizada() {
 
         if(dashGeral.style.display == 'flex') {
