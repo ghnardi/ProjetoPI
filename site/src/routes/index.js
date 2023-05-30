@@ -11,6 +11,6 @@ router.get("/", function (req, res) {
 });
 
 // Função para setar o diretorio raiz do home.html(no meu caso), assim ele conseguirá carregar o CSS e o JS das paginas
-router.use(express.static(path.join(__dirname, "../../public/")));
+router.use(express.static(path.join(__dirname, "../../public/PáginaInicial")));
 
 module.exports = router;

@@ -81,12 +81,7 @@ a {
     justify-content: flex-end;
 }
 
-.header #iconmenuperfil {
-    display: flex;
-    color: rgb(147, 107, 47);
-    cursor: pointer;
-}
-
+/* LOGIN */
 
 .bt_login{
     border-radius: 5px;
@@ -99,7 +94,15 @@ a {
     align-items: center;
     color: white;
     font-weight: bold;
-    
+    cursor: pointer;
+}
+
+#textomenuperfil{
+    display: none;
+}
+#iconmenuperfil {
+    display: none;
+    color: rgb(147, 107, 47);
     cursor: pointer;
 }
 

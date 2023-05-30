@@ -7,10 +7,11 @@
     <title>Fale Conosco | Arttech</title>
     <link rel="stylesheet" href="styleFC.css">
     <link rel="stylesheet" href="../cssglobal/stylemenuflutuante.css">
+    <script src="../js/funcoes.js"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body>
+<body onload="validarSessao()">
     <div class="header">
         <div class="navbar">
             <img src="./imgs/logo.png" class="logo" alt="" onclick="home()">
@@ -20,9 +21,9 @@
                 <li id="ajudahover"><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
                 <li id="falehover"><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
                 <li>|</li>
-                <li>ID_PERFIL</li>
-                <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>
-            </div>
+                <li id="botaoLogin"><button class="bt_login" onclick="entrar()">FAÇA LOGIN</button></li>
+                <li id="textomenuperfil">ID_PERFIL</li>
+                <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>            </div>
        
         </div>
        
@@ -31,7 +32,6 @@
     <div class="menuflutuante" id="subsub">
         <span class="blocomenuflu"></span>
         <span class="conta">CONTA</span>
-        <span class="imagemperfil"></span>
         <span class="nomeconta">Museu Ipiranga</span>
         <span class="adminconta">(admin)</span>
         <span class="contaemail">museudoipiranga@ipiranga.com</span>

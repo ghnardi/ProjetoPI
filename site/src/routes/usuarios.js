@@ -32,4 +32,9 @@ router.post("/insertregistro", function (req, res) {
     usuarioController.insertregistro(req, res);
 });
 
+router.post("/verificarAdmin", function (req, res) {
+    usuarioController.verificarAdmin(req, res);
+});
+
+
 module.exports = router;
