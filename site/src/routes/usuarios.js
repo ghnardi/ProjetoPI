@@ -24,6 +24,10 @@ router.get("/atualizarGrafico", function (req, res) {
     usuarioController.atualizarGrafico(req, res);
 });
 
+router.get("/atualizarDashboard", function (req, res) {
+    usuarioController.atualizarDashboard(req, res);
+});
+
 router.post("/verificaremail", function (req, res) {
     usuarioController.verificaremail(req, res);
 });

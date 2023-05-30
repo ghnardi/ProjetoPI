@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arttech | Página de Consulta</title>
     <link rel="stylesheet" href="./style.css">
-    <script type="text/javascript" src="dashs/chartnovo.js"></script>
     <link rel="stylesheet" href="./stylemenuleft.css">
     <link rel="stylesheet" href="./styledashboard.css">
     <link rel="stylesheet" href="../cssglobal/stylemenuflutuante.css">
@@ -16,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body onload="atualizarGrafico()">
+<body onload="atualizarDashboard()">
 
     <div class="header">
         <div class="navbar">
@@ -30,9 +28,9 @@
                 <li>ID_PERFIL</li>
                 <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>
             </div>
-       
+
         </div>
-       
+
     </div>
 
     <div class="menuflutuante" id="subsub">
@@ -43,38 +41,41 @@
         <span class="adminconta">(admin)</span>
         <span class="contaemail">museudoipiranga@ipiranga.com</span>
         <span class="cadastrarusuario" onclick="cadastrar()">Cadastrar Usuario</span>
-        <span class="gerenciarconta"onclick="gerenciarconta()">Gerenciar conta</span>
+        <span class="gerenciarconta" onclick="gerenciarconta()">Gerenciar conta</span>
         <span class="contadashboard" onclick="dashboard()">Dashboard</span>
         <span class="contalinha"></span>
         <span class="contalogout" onclick="logout()">Fazer Logout</span>
     </div>
 
-    
+
     <div id="dashGeral" class="dashGeral">
         <div class="blocoTitulo"><span id="tituloDoBloco">DASHBOARD GERAL</span></div>
         <div class="conteudoDashGeral">
-            <div class="blocoParaNome"><span id="nomeLocal">NOME DA EMPRESA</span><div class="blocoDireita"><span class="material-symbols-outlined" id="imgGrafico">monitoring</span></div></div>
+            <div class="blocoParaNome"><span id="nomeLocal">NOME DA EMPRESA</span>
+                <div class="blocoDireita"><span class="material-symbols-outlined" id="imgGrafico">monitoring</span>
+                </div>
+            </div>
 
             <div class="dashGeralInterno">
                 <div class="dashinfo">
                     <span id="dashinfotexto">Temperatura Atual:</span>
-                     <span id="dashinfobloquinho">35°C</span>
+                    <span id="dashinfobloquinho">35°C</span>
                 </div>
                 <div class="dashinfo">
                     <span id="dashinfotexto">Umidade Atual:</span>
-                     <span id="dashinfobloquinho">40%</span>
+                    <span id="dashinfobloquinho">40%</span>
                 </div>
                 <div class="dashinfo">
                     <span id="dashinfotextoALERTA">
-                        <span id="dashinfoicon"class="material-symbols-outlined">
+                        <span id="dashinfoicon" class="material-symbols-outlined">
                             warning
-                            </span>
+                        </span>
                         Média de Umidade (hoje):</span>
-                     <span id="dashinfobloquinhoALERTA">20%</span>
+                    <span id="dashinfobloquinhoALERTA">20%</span>
                 </div>
                 <div class="dashinfo">
                     <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                     <span id="dashinfobloquinho">35°C</span>
+                    <span id="dashinfobloquinho">35°C</span>
                 </div>
 
                 <button id="buttonParaDash" onclick="mostrarDashLocalizada()">IR PARA DASHBOARDS<br>LOCALIZADAS</button>
@@ -85,7 +86,7 @@
                 <div class="conteudoMural">
                     <div class="cardAviso"><span id="informcacaoMural"></span></div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -148,23 +149,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -179,23 +180,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
-                                Média de Umidade (hoje):</span>
-                                <span id="dashinfobloquinhoALERTA">20%</span>
+                            </span>
+                            Média de Umidade (hoje):</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -210,23 +211,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
-                                Média de Umidade (hoje):</span>
-                                <span id="dashinfobloquinhoALERTA">20%</span>
+                            </span>
+                            Média de Umidade (hoje):</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -241,26 +242,26 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
-                                Média de Umidade (hoje):</span>
-                                <span id="dashinfobloquinhoALERTA">20%</span>
+                            </span>
+                            Média de Umidade (hoje):</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="dashboardAla2" id="dashdash2">
@@ -276,23 +277,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -307,23 +308,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -338,23 +339,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -369,28 +370,28 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <div class="dashboardAla3" id="dashdash3">
 
                 <div class="dash">
@@ -404,23 +405,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -435,23 +436,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -466,23 +467,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -497,26 +498,26 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="dashboardAla4" id="dashdash4">
@@ -532,23 +533,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -563,23 +564,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -594,23 +595,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -625,30 +626,30 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
-                       <span id="dashinfotexto">Umidade Atual:</span>
-                         <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfotexto">Umidade Atual:</span>
+                        <span id="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon"class="material-symbols-outlined">
+                            <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
-                                </span>
+                            </span>
                             Média de Umidade (hoje):</span>
-                         <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                         <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
-                
-            </div>
-    </div>
 
-    
+            </div>
+        </div>
+
+
 
     </div>
 </body>

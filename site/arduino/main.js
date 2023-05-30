@@ -60,32 +60,32 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         //console.log(data);
         const valores = data.split(';');
-        
-        var dht11Umidade1 = parseFloat(valores[0]);
-        var dht11Temperatura1 = parseFloat(valores[1]);
 
-        var dht11Umidade2 = parseFloat(valores[3]);
-        var dht11Temperatura2 = parseFloat(valores[4]);
+        var dht11Umidade1 = parseFloat(valores[1]);
+        var dht11Temperatura1 = parseFloat(valores[0]);
 
-        var dht11Umidade3 = parseFloat(valores[6]);
-        var dht11Temperatura3 = parseFloat(valores[7]);
+        var dht11Umidade2 = parseFloat(valores[4]);
+        var dht11Temperatura2 = parseFloat(valores[3]);
 
-        var dht11Umidade4 = parseFloat(valores[9]);
-        var dht11Temperatura4 = parseFloat(valores[10]);
+        var dht11Umidade3 = parseFloat(valores[7]);
+        var dht11Temperatura3 = parseFloat(valores[6]);
 
-        var dht11Umidade5 = parseFloat(valores[12]);
-        var dht11Temperatura5 = parseFloat(valores[13]);
+        var dht11Umidade4 = parseFloat(valores[10]);
+        var dht11Temperatura4 = parseFloat(valores[9]);
 
-        var dht11Umidade6 = parseFloat(valores[15]);
-        var dht11Temperatura6 = parseFloat(valores[16]);
+        var dht11Umidade5 = parseFloat(valores[13]);
+        var dht11Temperatura5 = parseFloat(valores[12]);
+
+        var dht11Umidade6 = parseFloat(valores[16]);
+        var dht11Temperatura6 = parseFloat(valores[15]);
 
         console.log(data)
 
-        
-        
 
-        valoresDht11Umidade.push(dht11Umidade1,dht11Umidade2,dht11Umidade3,dht11Umidade4,dht11Umidade5,dht11Umidade6);
-        valoresDht11Temperatura.push(dht11Temperatura1);
+
+
+        valoresDht11Umidade.push(dht11Umidade1, dht11Umidade2, dht11Umidade3, dht11Umidade4, dht11Umidade5, dht11Umidade6);
+        valoresDht11Temperatura.push(dht11Temperatura1, dht11Temperatura2, dht11Temperatura3, dht11Temperatura4, dht11Temperatura5, dht11Temperatura6);
         // valoresfkSensor.push(fkSensor);
 
         console.log(valoresDht11Umidade);
@@ -153,7 +153,7 @@ const serial = async (
 
 
 // não altere!
-const servidor =(
+const servidor = (
     valoresDht11Umidade,
     valoresDht11Temperatura,
 ) => {
@@ -182,7 +182,7 @@ const servidor =(
         valoresDht11Umidade,
         valoresDht11Temperatura,
         // fkSensor,
-        
+
     );
     servidor(
         valoresDht11Umidade,

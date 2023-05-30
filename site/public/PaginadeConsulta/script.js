@@ -1,3 +1,5 @@
+setInterval(atualizarDashboard, 1000);
+
 dashdash1.style.display = 'flex'
 dashdash2.style.display = 'none'
 dashdash3.style.display = 'none'
@@ -10,18 +12,203 @@ dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
 dashGeral.style.display = 'flex'
 conteudo.style.display = 'none'
 
+var temperatura_media_setores = []
+var umidade_media_setores = []
+var temperatura_media_sala = [];
+var umidade_media_sala = [];
+
+var temperatura_setor1 = [];
+var temperatura_setor2 = [];
+var temperatura_setor3 = [];
+var temperatura_setor4 = [];
+var temperatura_setor5 = [];
+var temperatura_setor6 = [];
+
+var umidade_setor1 = [];
+var umidade_setor2 = [];
+var umidade_setor3 = [];
+var umidade_setor4 = [];
+var umidade_setor5 = [];
+var umidade_setor6 = [];
+
+var temperaturas = [temperatura_setor1, temperatura_setor2, temperatura_setor3, temperatura_setor4, temperatura_setor5, temperatura_setor6]
+var umidades = [umidade_setor1, umidade_setor2, umidade_setor3, umidade_setor4, umidade_setor5, umidade_setor6]
+
+function insertregistro() {
+    var min2 = 40;
+    var max2 = 60;
+    var valor_aleatorio = Math.random() * (max2 - min2 + 1) + min2
+
+    var min3 = 15;
+    var max3 = 25;
+    var valor_aleatorio2 = Math.random() * (max3 - min3 + 1) + min3
+
+    var min = 1;
+    var max = 6;
+    var intervalo = max - min + 1;
+    var valor_aleatorio_sensor_quebrado = Math.random() * intervalo + min
+    var valor_aleatorio_fkSensor = parseInt(valor_aleatorio_sensor_quebrado);
+
+    fetch("/usuarios/insertregistro", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            valor_aleatorioServer: valor_aleatorio,
+            valor_aleatorioServer2: valor_aleatorio2,
+            valor_aleatorio_fkSensorServer: valor_aleatorio_fkSensor
+        })
+    })
+
+        .then(function (resposta) {
+            console.log("ESTOU INSERTANDO DADOS FICTICIOS!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+            } else {
+
+                console.log("Houve um erro ao dar insert ficticios");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+    return false;
+
+}
+
+
+function atualizarDashboard() {
+
+    insertregistro();
+
+    fetch("/usuarios/atualizarDashboard", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then(function (resposta) {
+            console.log("ESTOU RECEBENDO DADOS PARA A DASHBOARD!");
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then((resposta) => {
+                    resposta.reverse();
+
+                    resposta.forEach((sensor) => {
+                        sensor.forEach((objeto) => {
+                            const { fkSensor, temperatura, umidade } = objeto;
+
+
+                            if (fkSensor === 1) {
+                                if (temperatura_setor1.length >= 6) {
+                                    temperatura_setor1.shift();
+                                    umidade_setor1.shift();
+                                }
+                                temperatura_setor1.push(temperatura);
+                                umidade_setor1.push(umidade);
+                            } else if (fkSensor === 2) {
+                                if (temperatura_setor2.length >= 6) {
+                                    temperatura_setor2.shift();
+                                    umidade_setor2.shift();
+                                }
+                                temperatura_setor2.push(temperatura);
+                                umidade_setor2.push(umidade);
+                            } else if (fkSensor === 3) {
+                                if (temperatura_setor3.length >= 6) {
+                                    temperatura_setor3.shift();
+                                    umidade_setor3.shift();
+                                }
+                                temperatura_setor3.push(temperatura);
+                                umidade_setor3.push(umidade);
+                            } else if (fkSensor === 4) {
+                                if (temperatura_setor4.length >= 6) {
+                                    temperatura_setor4.shift();
+                                    umidade_setor4.shift();
+                                }
+                                temperatura_setor4.push(temperatura);
+                                umidade_setor4.push(umidade);
+                            } else if (fkSensor === 5) {
+                                if (temperatura_setor5.length >= 6) {
+                                    temperatura_setor5.shift();
+                                    umidade_setor5.shift();
+                                }
+                                temperatura_setor5.push(temperatura);
+                                umidade_setor5.push(umidade);
+                            } else if (fkSensor === 6) {
+                                if (temperatura_setor6.length >= 6) {
+                                    temperatura_setor6.shift();
+                                    umidade_setor6.shift();
+                                }
+                                temperatura_setor6.push(temperatura);
+                                umidade_setor6.push(umidade);
+                            }
+                        });
+                    });
+
+                    temperatura_media_setores = [mediaArray(temperaturas[0]), mediaArray(temperaturas[1]), mediaArray(temperaturas[2]), mediaArray(temperaturas[3]), mediaArray(temperaturas[4]), mediaArray(temperaturas[5])];
+
+                    umidade_media_setores = [mediaArray(umidades[0]), mediaArray(umidades[1]), mediaArray(umidades[2]), mediaArray(umidades[3]), mediaArray(umidades[4]), mediaArray(umidades[5])];
+
+                    umidade_media_sala = mediaArray(umidade_media_setores)
+                    temperatura_media_sala = mediaArray(temperatura_media_setores)
+
+                    console.log(umidade_media_sala, temperatura_media_sala)
+
+                    const dashinfobloquinho = document.getElementById("dashinfobloquinho");
+
+                    dashinfobloquinho.innerHTML = `${temperatura_media_sala.toFixed(1)}ºC`
+
+
+
+                    console.log(resposta);
+
+                });
+            } else {
+                console.log("Houve um erro ao tentar atualizar a dashboard!");
+
+                resposta.text().then((texto) => {
+                    console.error(texto);
+                });
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+    return false;
+}
+
+function mediaArray(vetor) {
+    let soma = 0;
+    for (let i = 0; i < vetor.length; i++) {
+        soma += vetor[i];
+    }
+    return soma / vetor.length;
+}
+
+
+
+
 
 
 
 function mostrarDashLocalizada() {
 
-        if(dashGeral.style.display == 'flex') {
-            dashGeral.style.display = 'none'
-            conteudo.style.display = 'flex'
-        } else {
-            dashGeral.style.display = 'flex'
-            conteudo.style.display = 'none'
-        }
+    if (dashGeral.style.display == 'flex') {
+        dashGeral.style.display = 'none'
+        conteudo.style.display = 'flex'
+    } else {
+        dashGeral.style.display = 'flex'
+        conteudo.style.display = 'none'
+    }
 }
 
 
@@ -64,13 +251,13 @@ function clickBloco1() {
 
         menuleft1.style.backgroundColor = '#775201'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
-    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'none' && dashdash4.style.display == 'none' && dashdash1.style.display == 'flex'){
+    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'none' && dashdash4.style.display == 'none' && dashdash1.style.display == 'flex') {
     }
 
 }
 
 function clickBloco2() {
-    
+
     if (dashdash2.style.display == 'none') {
         menuleft1.style.backgroundColor = '#2E2109'
         menuleft3.style.backgroundColor = '#2E2109'
@@ -83,7 +270,7 @@ function clickBloco2() {
         dashdash2.style.display = 'flex'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 2`
 
-    } else if (dashdash2.style.display == 'flex' && dashdash3.style.display == 'none' && dashdash4.style.display == 'none' && dashdash1.style.display == 'none'){
+    } else if (dashdash2.style.display == 'flex' && dashdash3.style.display == 'none' && dashdash4.style.display == 'none' && dashdash1.style.display == 'none') {
     }
 
 }
@@ -100,7 +287,7 @@ function clickBloco3() {
         dashdash3.style.display = 'flex'
         menuleft3.style.backgroundColor = '#775201'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 3`
-    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'flex' && dashdash4.style.display == 'none' && dashdash1.style.display == 'none'){
+    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'flex' && dashdash4.style.display == 'none' && dashdash1.style.display == 'none') {
     }
 
 }
@@ -116,7 +303,7 @@ function clickBloco4() {
         dashdash4.style.display = 'flex'
         menuleft4.style.backgroundColor = '#775201'
         dashdashtexto.innerHTML = `DASHBOARD DA ALA 4`
-    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'none' && dashdash4.style.display == 'flex' && dashdash1.style.display == 'none'){
+    } else if (dashdash2.style.display == 'none' && dashdash3.style.display == 'none' && dashdash4.style.display == 'flex' && dashdash1.style.display == 'none') {
     }
 
 }
@@ -136,11 +323,11 @@ function dashboardIcon() {
     window.location.href = "./dashs/chart.html"
 }
 
-function gerenciarconta(){
+function gerenciarconta() {
     window.location.href = "../PaginaGerenciarConta/gerenciar.html"
 }
 
-function logout(){
+function logout() {
     window.location.href = "../PáginaInicial/home.html"
 }
 

@@ -80,6 +80,39 @@ function atualizarGrafico(limite_linhas) {
     });
 }
 
+function atualizarDashboard(limite_linhas) {
+
+
+
+
+    return new Promise(function (resolve, reject) {
+        var instrucao1 = `SELECT umidade, temperatura, dataHora, fkSensor FROM registro WHERE fkSensor = 1 ORDER BY idRegistro DESC LIMIT ${limite_linhas};`;
+        var instrucao2 = `SELECT umidade, temperatura, dataHora, fkSensor FROM registro WHERE fkSensor = 2 ORDER BY idRegistro DESC LIMIT ${limite_linhas};`;
+        var instrucao3 = `SELECT umidade, temperatura, dataHora, fkSensor FROM registro WHERE fkSensor = 3 ORDER BY idRegistro DESC LIMIT ${limite_linhas};`;
+        var instrucao4 = `SELECT umidade, temperatura, dataHora, fkSensor FROM registro WHERE fkSensor = 4 ORDER BY idRegistro DESC LIMIT ${limite_linhas};`;
+        var instrucao5 = `SELECT umidade, temperatura, dataHora, fkSensor FROM registro WHERE fkSensor = 5 ORDER BY idRegistro DESC LIMIT ${limite_linhas};`;
+        var instrucao6 = `SELECT umidade, temperatura, dataHora, fkSensor FROM registro WHERE fkSensor = 6 ORDER BY idRegistro DESC LIMIT ${limite_linhas};`;
+
+        console.log("Executando as instruções SQL...");
+        var selects = [];
+
+        selects.push(database.executar(instrucao1));
+        selects.push(database.executar(instrucao2));
+        selects.push(database.executar(instrucao3));
+        selects.push(database.executar(instrucao4));
+        selects.push(database.executar(instrucao5));
+        selects.push(database.executar(instrucao6));
+
+        Promise.all(selects)
+            .then(function (res) {
+                resolve(res);
+            })
+            .catch(function (error) {
+                reject(error);
+            });
+    });
+}
+
 
 
 module.exports = {
@@ -88,5 +121,6 @@ module.exports = {
     listar,
     atualizarGrafico,
     verificaremail,
-    insertregistro
+    insertregistro,
+    atualizarDashboard
 };
