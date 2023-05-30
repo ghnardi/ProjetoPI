@@ -69,9 +69,27 @@ a:active {
     justify-content: flex-end;
 }
 
+/* LOGIN */
 
-.header #iconmenuperfil {
-    display: flex;
+.bt_login{
+    border-radius: 5px;
+    background-color: rgba(109, 70, 11, 0.885);
+    /* border-bottom: 6px; */
+    border: 0px;
+    width: 100%;
+    white-space: nowrap;
+    height: 23px;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#textomenuperfil{
+    display: none;
+}
+#iconmenuperfil {
+    display: none;
     color: rgb(147, 107, 47);
     cursor: pointer;
 }

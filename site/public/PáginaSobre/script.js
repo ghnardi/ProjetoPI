@@ -20,6 +20,7 @@ function gerenciarconta(){
 
 function logout(){
     window.location.href = "../PáginaInicial/home.html"
+    sessionStorage.clear()
 }
 
 function home() {
@@ -29,6 +30,11 @@ function home() {
 function cadastrar() {
     window.location.href = "../PáginaCadastro/cadastro.html"
 }
+
+function entrar() {
+    window.location.href = "../PáginaLogin/login.html";
+}
+    
 
 financeiro1.style.display = 'none'
 function ir_financeiro() {
@@ -43,12 +49,7 @@ function ir_financeiro() {
 }
 
 
-// FUNÇÃO DO SIMULADOR EM SI
-
-
-
-
-
+// FUNÇÃO DO SIMULADOR
 function calcular() {
 
     /* Variáveis de captação dos dados do usuário */

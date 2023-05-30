@@ -21,6 +21,7 @@ function gerenciarconta(){
 
 function logout(){
     window.location.href = "../PáginaInicial/home.html"
+    sessionStorage.clear()
 }
 function home() {
     window.location.href = "../PáginaInicial/home.html"
@@ -28,6 +29,10 @@ function home() {
 
 function cadastrar() {
     window.location.href = "../PáginaCadastro/cadastro.html"
+}
+
+function entrar() {
+    window.location.href = "../PáginaLogin/login.html";
 }
 
 tecnologiaBloco.style.backgroundColor = '#F0EBDF'

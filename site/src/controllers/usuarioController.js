@@ -185,6 +185,35 @@ function insertregistro(req, res) {
         );
 }
 
+function verificarAdmin(req, res) {
+    var id = req.body.idServer
+    if (id == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else {
+        
+        usuarioModel.verificarAdmin(id)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                    if (resultado.length > 0) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
 
 module.exports = {
     entrar,
@@ -194,5 +223,6 @@ module.exports = {
     verificaremail,
     atualizarGrafico,
     insertregistro,
-    atualizarDashboard
+    atualizarDashboard,
+    verificarAdmin
 }
