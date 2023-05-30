@@ -58,34 +58,23 @@
             </div>
 
             <div class="dashGeralInterno">
-                <div class="dashinfo">
-                    <span id="dashinfotexto">Temperatura Atual:</span>
-                    <span id="dashinfobloquinho">35°C</span>
+                <div class="dashinfoGeral">
+                    <div class="topoDashInfo"><span id="titulotopo">TEMPERATURA MÉDIA(hoje)</span></div>
+                    <div class="blocoDash"><span id="dadosGeraisTemperatura">24</span>°C</div>
                 </div>
-                <div class="dashinfo">
-                    <span id="dashinfotexto">Umidade Atual:</span>
-                    <span id="dashinfobloquinho">40%</span>
-                </div>
-                <div class="dashinfo">
-                    <span id="dashinfotextoALERTA">
-                        <span id="dashinfoicon" class="material-symbols-outlined">
-                            warning
-                        </span>
-                        Média de Umidade (hoje):</span>
-                    <span id="dashinfobloquinhoALERTA">20%</span>
-                </div>
-                <div class="dashinfo">
-                    <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                    <span id="dashinfobloquinho">35°C</span>
+                <div class="dashinfoGeral">
+                    <div class="topoDashInfo"><span id="titulotopo">UMIDADE MÉDIA(hoje)</span></div>
+                    <div class="blocoDash"><span id="dadosGeraisUmidade">24</span>%</div>
                 </div>
 
-                <button id="buttonParaDash" onclick="mostrarDashLocalizada()">IR PARA DASHBOARDS<br>LOCALIZADAS</button>
+                
             </div>
+            <button id="buttonParaDash" onclick="mostrarDashLocalizada()">IR PARA DASHBOARDS<br>LOCALIZADAS</button>
 
             <div class="muralAvisos">
                 <div class="tituloMural"><span id="tituloMural">MURAL DE ALERTAS:</span></div>
                 <div class="conteudoMural">
-                    <div class="cardAviso"><span id="informcacaoMural"></span></div>
+                    <div class="cardAviso"><span id="informacaoMural"></span></div>
                 </div>
 
             </div>
@@ -104,7 +93,7 @@
     <div id="conteudo" class="conteudo">
         <div class="menuleft" id="menumenu">
             <div class="containermenuleft">
-                <button id="buttonDashGeral" onclick="mostrarDashLocalizada()">VOLTAR PARA DASHBOARD GERAL</button>
+                <button id="buttonDashGeral" onclick="mostrarDashLocalizada()">DASHBOARD GERAL</button>
                 <span id="menulefttexto">MUSEU IPIRANGA
                     <i id="iconmenuleft" class="material-symbols-outlined" onclick="clickMenuLeft()">expand_more</i>
                 </span>
@@ -112,21 +101,6 @@
                 <div class="blocoala1" id="menuleft1" onclick="clickBloco1()">
                     <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
                     <span class="textomenuleft">Ala 1</span>
-                </div>
-
-                <div class="blocoala2" id="menuleft2" onclick="clickBloco2()">
-                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
-                    <span class="textomenuleft">Ala 2</span>
-                </div>
-
-                <div class="blocoala3" id="menuleft3" onclick="clickBloco3()">
-                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
-                    <span class="textomenuleft">Ala 3</span>
-                </div>
-
-                <div class="blocoala4" id="menuleft4" onclick="clickBloco4()">
-                    <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft">
-                    <span class="textomenuleft">Ala 4</span>
                 </div>
             </div>
             <div class="menuleftlinha"></div>
@@ -150,23 +124,23 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho1" class="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfobloquinho2" class="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
+                        <span class="dashinfotextoALERTA">
                             <span id="dashinfoicon" class="material-symbols-outlined">
                                 warning
                             </span>
                             Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinho3" class="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho4" class="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -181,11 +155,11 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho5" class="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfobloquinho6" class="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
@@ -193,11 +167,11 @@
                                 warning
                             </span>
                             Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinho7" class="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho8" class="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -212,11 +186,11 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho9" class="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfobloquinho10" class="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
@@ -224,11 +198,11 @@
                                 warning
                             </span>
                             Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinho11" id="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho12" class="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
@@ -243,11 +217,11 @@
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho13" class="dashinfobloquinho">35°C</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
+                        <span id="dashinfobloquinho14" class="dashinfobloquinho">40%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotextoALERTA">
@@ -255,399 +229,16 @@
                                 warning
                             </span>
                             Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
+                        <span id="dashinfobloquinho15" class="dashinfobloquinhoALERTA">20%</span>
                     </div>
                     <div class="dashinfo">
                         <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
+                        <span id="dashinfobloquinho16" class="dashinfobloquinho">35°C</span>
                     </div>
                 </div>
 
             </div>
-
-            <div class="dashboardAla2" id="dashdash2">
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 5</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 6</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 7</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 8</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="dashboardAla3" id="dashdash3">
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 9</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 10</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 11</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 12</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="dashboardAla4" id="dashdash4">
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 13</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 14</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 15</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-                <div class="dash">
-                    <div id="dashmarrom">
-                        <span id="dashtexto">N° da Sala: 16</span>
-                        <span class="dashiconfundo">
-                            <span id="iconflecha" onclick="dashboardIcon()" class="material-symbols-outlined md-30">
-                                arrow_outward
-                            </span>
-                        </span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Temperatura Atual:</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Umidade Atual:</span>
-                        <span id="dashinfobloquinho">40%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotextoALERTA">
-                            <span id="dashinfoicon" class="material-symbols-outlined">
-                                warning
-                            </span>
-                            Média de Umidade (hoje):</span>
-                        <span id="dashinfobloquinhoALERTA">20%</span>
-                    </div>
-                    <div class="dashinfo">
-                        <span id="dashinfotexto">Média de Temperatura (hoje):</span>
-                        <span id="dashinfobloquinho">35°C</span>
-                    </div>
-                </div>
-
-            </div>
+            
         </div>
 
 

@@ -97,7 +97,7 @@
   margin-left: 4%;
 }
 
-#dashinfobloquinho {
+.dashinfobloquinho {
   display: flex;
   margin-left: auto;
   width: 16.5%;
@@ -114,7 +114,7 @@
   color: #6eb47d;
 }
 
-#dashinfotextoALERTA {
+.dashinfotextoALERTA {
   display: flex;
   font-size: 24px;
   font-weight: 700;
