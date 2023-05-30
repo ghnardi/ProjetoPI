@@ -38,7 +38,7 @@ function insertregistro() {
     var max = 6;
     var intervalo = max - min + 1;
     var valor_aleatorio_sensor_quebrado = Math.random() * intervalo + min
-    var valor_aleatorio_fkSensor = parseInt(valor_aleatorio_sensor_quebrado)
+    var valor_aleatorio_fkSensor = parseInt(valor_aleatorio_sensor_quebrado);
 
     fetch("/usuarios/insertregistro", {
         method: "post",
@@ -167,15 +167,9 @@ function atualizarGrafico() {
 
                     data_grafico_barra.datasets[1].data = umidade_grafico_barra;
 
-                    sessionStorage.DADO_GRAFICO = temperatura_grafico_barra[0]
-
-                    const dashinfobloquinho = document.getElementById("dashinfobloquinho")
-        
-                        dashinfobloquinho.innerHTML = `${parseInt(sessionStorage.DADO_GRAFICO)}ºC`
-
                     grafico_barra.update();
                     console.log(resposta);
-                    
+
                 });
             } else {
                 console.log("Houve um erro ao tentar enviar o grafico dados!");
@@ -254,32 +248,32 @@ setInterval(function () {
 const setor_linha = document.getElementById('grafico_setor');
 
 // A CONSTANTE ABAIXO RECEBERÁ FUTURAMENTE OS VALORES DO ARDUÍNO, ATUALMENTE SÃO VALORES MANUAIS PARA DEMOSNTRAÇÃO.
-const temperatura_setor1 = [];
-const temperatura_setor2 = [];
-const temperatura_setor3 = [];
-const temperatura_setor4 = [];
-const temperatura_setor5 = [];
-const temperatura_setor6 = [];
+var temperatura_setor1 = [];
+var temperatura_setor2 = [];
+var temperatura_setor3 = [];
+var temperatura_setor4 = [];
+var temperatura_setor5 = [];
+var temperatura_setor6 = [];
 
-const umidade_setor1 = [];
-const umidade_setor2 = [];
-const umidade_setor3 = [];
-const umidade_setor4 = [];
-const umidade_setor5 = [];
-const umidade_setor6 = [];
+var umidade_setor1 = [];
+var umidade_setor2 = [];
+var umidade_setor3 = [];
+var umidade_setor4 = [];
+var umidade_setor5 = [];
+var umidade_setor6 = [];
 
-const dataHora_setor1 = [];
-const dataHora_setor2 = [];
-const dataHora_setor3 = [];
-const dataHora_setor4 = [];
-const dataHora_setor5 = [];
-const dataHora_setor6 = [];
+var dataHora_setor1 = [];
+var dataHora_setor2 = [];
+var dataHora_setor3 = [];
+var dataHora_setor4 = [];
+var dataHora_setor5 = [];
+var dataHora_setor6 = [];
 
 
 
-const temperaturas = [temperatura_setor1, temperatura_setor2, temperatura_setor3, temperatura_setor4, temperatura_setor5, temperatura_setor6]
-const umidades = [umidade_setor1, umidade_setor2, umidade_setor3, umidade_setor4, umidade_setor5, umidade_setor6]
-const dataHora = [dataHora_setor1, dataHora_setor2, dataHora_setor3, dataHora_setor4, dataHora_setor5, dataHora_setor6]
+var temperaturas = [temperatura_setor1, temperatura_setor2, temperatura_setor3, temperatura_setor4, temperatura_setor5, temperatura_setor6]
+var umidades = [umidade_setor1, umidade_setor2, umidade_setor3, umidade_setor4, umidade_setor5, umidade_setor6]
+var dataHora = [dataHora_setor1, dataHora_setor2, dataHora_setor3, dataHora_setor4, dataHora_setor5, dataHora_setor6]
 
 
 
@@ -538,7 +532,7 @@ function atualizarTextoTitulo(texto) {
     grafico_linha_setor.update();
 }
 
-function validacao_cores_cards(n){
+function validacao_cores_cards(n) {
     var umidade_atual_critica = umidades[n][4] < 45 || umidades[n][4] > 55;
     var temperatura_atual_critica = temperaturas[n][4] < 18 || temperaturas[n][4] > 22;
     var umidade_atual_alerta = umidades[n][4] < 46.2 || umidades[n][4] > 52.6;

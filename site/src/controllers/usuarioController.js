@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -74,7 +74,7 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha)
             .then(
@@ -96,72 +96,93 @@ function cadastrar(req, res) {
 
 function verificaremail(req, res) {
     var email = req.body.emailServer;
-  
-    if (email == undefined) {
-      res.status(400).send("O email está indefinido!");
-    } else {
-      usuarioModel
-        .verificaremail(email)
-        .then(function (resultado) {
-          if (resultado.length > 0) {
-            res.json({ emailCadastrado: true });
-          } else {
-            res.json({ emailCadastrado: false });
-          }
-        })
-        .catch(function (erro) {
-          console.log(erro);
-          console.log(
-            "\nHouve um erro ao verificar o email! Erro: ",
-            erro.sqlMessage
-          );
-          res.status(500).json(erro.sqlMessage);
-        });
-    }
-  }
 
-function atualizarGrafico (req, res){
+    if (email == undefined) {
+        res.status(400).send("O email está indefinido!");
+    } else {
+        usuarioModel
+            .verificaremail(email)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.json({ emailCadastrado: true });
+                } else {
+                    res.json({ emailCadastrado: false });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao verificar o email! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
+function atualizarGrafico(req, res) {
 
     // var fkSensor = req.body.fkSensorServer;
     const limite_linhas = 6;
     usuarioModel.atualizarGrafico(limite_linhas)
-    .then(
-        function (resultado) {
-            res.json(resultado);
-        }
-    ).catch(
-        function (erro) {
-            console.log(erro);
-            console.log(
-                "\nHouve um erro ao realizar o cadastro! Erro: ",
-                erro.sqlMessage
-            );
-            res.status(500).json(erro.sqlMessage);
-        }
-    );
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao atualizar o gráfico! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 }
 
-function insertregistro (req, res){
+function atualizarDashboard(req, res) {
+
+    // var fkSensor = req.body.fkSensorServer;
+    const limite_linhas = 6;
+    usuarioModel.atualizarDashboard(limite_linhas)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao atualizar a dashboard! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function insertregistro(req, res) {
 
     var valor_aleatorio = req.body.valor_aleatorioServer;
     var valor_aleatorio2 = req.body.valor_aleatorioServer2;
     var valor_aleatorio_fkSensor = req.body.valor_aleatorio_fkSensorServer;
 
     usuarioModel.insertregistro(valor_aleatorio, valor_aleatorio2, valor_aleatorio_fkSensor)
-    .then(
-        function (resultado) {
-            res.json(resultado);
-        }
-    ).catch(
-        function (erro) {
-            console.log(erro);
-            console.log(
-                "\nHouve um erro ao dar insert ficticio na tabela! Erro: ",
-                erro.sqlMessage
-            );
-            res.status(500).json(erro.sqlMessage);
-        }
-    );
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao dar insert ficticio na tabela! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 }
 
 function verificarAdmin(req, res) {
@@ -202,5 +223,6 @@ module.exports = {
     verificaremail,
     atualizarGrafico,
     insertregistro,
+    atualizarDashboard,
     verificarAdmin
 }
