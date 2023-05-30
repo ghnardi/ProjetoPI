@@ -39,8 +39,8 @@ function insertregistro() {
     var max2 = 60;
     var valor_aleatorio = Math.random() * (max2 - min2 + 1) + min2
 
-    var min3 = 15;
-    var max3 = 25;
+    var min3 = 50;
+    var max3 = 90;
     var valor_aleatorio2 = Math.random() * (max3 - min3 + 1) + min3
 
     var min = 1;
@@ -162,11 +162,15 @@ function atualizarDashboard() {
 
                     console.log(umidade_media_sala, temperatura_media_sala)
 
-                    const dashinfobloquinho = document.getElementById("dashinfobloquinho");
+                    const dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura");
 
-                    dashinfobloquinho.innerHTML = `${temperatura_media_sala.toFixed(1)}ºC`
+                    dadosGeraisTemperatura.innerHTML = `${temperatura_media_sala.toFixed(1)}ºC`
 
+                    const dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade");
 
+                    dadosGeraisUmidade.innerHTML = `${umidade_media_sala.toFixed(1)}%`
+
+                    validacao_cores_cards()
 
                     console.log(resposta);
 
@@ -195,7 +199,89 @@ function mediaArray(vetor) {
 }
 
 
+var topoDashInfo = document.getElementsByClassName("todoDashInfo")
 
+function validacao_cores_cards() {
+
+    var umidade_media_critica = umidade_media_sala < 45 || umidade_media_sala > 55;
+    var temperatura_media_critica = temperatura_media_sala < 18 || temperatura_media_sala > 22;
+    var umidade_media_alerta = umidade_media_sala < 46.2 || umidade_media_sala > 52.6;
+    var temperatura_media_alerta = temperatura_media_sala < 18.47 || temperatura_media_sala > 20.6;
+
+
+
+    var cor_marrom_escuro = "#2F220A";
+    var cor_marrom_claro = "#493510"
+    var cor_vermelho_escuro = "#972648";
+    var cor_vermelho_claro = "#FF004D";
+    var cor_amarelo_escuro = "#FFB800";
+    var cor_amarelo_claro = "#FFD700";
+    var cor_branco = "#FFFFFF"
+
+    if (temperatura_media_critica) {
+        topoDashInfo.style.backgroundColor = cor_vermelho_escuro
+        headertexto3.style.color = cor_branco
+
+        terceirobloco.style.backgroundColor = cor_vermelho_claro
+        headerinfotexto3.style.color = cor_branco;
+        headerinfosetor3.style.color = cor_branco;
+
+        headericon5.style.display = "flex"
+        headericon6.style.display = "flex"
+    } else if (temperatura_media_alerta) {
+        headerinfo_terceirobloco.style.backgroundColor = cor_amarelo_escuro
+        headertexto3.style.color = cor_branco
+
+        terceirobloco.style.backgroundColor = cor_amarelo_claro
+        headerinfotexto3.style.color = cor_branco;
+        headerinfosetor3.style.color = cor_branco;
+
+        headericon5.style.display = "flex"
+        headericon6.style.display = "flex"
+    } else {
+        headerinfo_terceirobloco.style.backgroundColor = cor_marrom_escuro
+        headertexto3.style.color = cor_marrom_claro
+
+        terceirobloco.style.backgroundColor = cor_marrom_claro
+        headerinfotexto3.style.color = cor_marrom_escuro;
+        headerinfosetor3.style.color = cor_marrom_escuro;
+
+        headericon5.style.display = "none"
+        headericon6.style.display = "none"
+    }
+
+    if (umidade_media_critica) {
+        headerinfo_quartobloco.style.backgroundColor = cor_vermelho_escuro
+        headertexto4.style.color = cor_branco
+
+        quartobloco.style.backgroundColor = cor_vermelho_claro
+        headerinfotexto4.style.color = cor_branco;
+        headerinfosetor4.style.color = cor_branco;
+
+        headericon7.style.display = "flex"
+        headericon8.style.display = "flex"
+    } else if (umidade_media_alerta) {
+        headerinfo_quartobloco.style.backgroundColor = cor_amarelo_escuro
+        headertexto4.style.color = cor_branco
+
+        quartobloco.style.backgroundColor = cor_amarelo_claro
+        headerinfotexto4.style.color = cor_branco;
+        headerinfosetor4.style.color = cor_branco;
+
+        headericon7.style.display = "flex"
+        headericon8.style.display = "flex"
+    } else {
+        headerinfo_quartobloco.style.backgroundColor = cor_marrom_escuro
+        headertexto4.style.color = cor_marrom_claro
+
+        quartobloco.style.backgroundColor = cor_marrom_claro
+        headerinfotexto4.style.color = cor_marrom_escuro;
+        headerinfosetor4.style.color = cor_marrom_escuro;
+
+        headericon7.style.display = "none"
+        headericon8.style.display = "none"
+    }
+}
 
 
 
