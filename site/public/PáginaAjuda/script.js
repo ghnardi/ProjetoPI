@@ -6,8 +6,6 @@ function clickPerfil() {
     } else {
         subsub.style.display = 'flex'
     }
-
-
 }
 
 

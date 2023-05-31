@@ -1,5 +1,13 @@
 setInterval(atualizarGrafico, 1000);
 
+function clickPerfil() {
+    if (subsub.style.display == 'flex') {
+        subsub.style.display = 'none'
+    } else {
+        subsub.style.display = 'flex'
+    }
+}
+
 
 function dashboard() {
     window.location.href = "../consulta.html"

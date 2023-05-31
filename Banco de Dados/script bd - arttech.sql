@@ -54,7 +54,6 @@ primary key (idRegistro, fkSensor)
 select * from registro;
 
 
-
 select umidade, temperatura, dataHora from registro where fkSensor = 1 order by idRegistro desc limit 6;
 insert into registro(umidade, temperatura, dataHora, fkSensor) values
 	(90,10, now(), 1),
@@ -77,6 +76,8 @@ select * from empresa;
 -- USUARIO ADM
 insert into usuario values 
 (null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2, null);
+insert into usuario values 
+(null,'Matheus', 'matheus.santiago@sptech.school', '12345678', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
 (null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
@@ -84,6 +85,7 @@ insert into usuario values
 (null,'Lucas', 'lucas.flima@sptech.school', '21102002', 3, 100);
 
 select * from usuario;
+select * from registro;
 
 -- INSERINDO ALAS
 insert into localInstalacao values 

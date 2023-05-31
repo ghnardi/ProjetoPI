@@ -1,13 +1,7 @@
 setInterval(atualizarDashboard, 1000);
 
 dashdash1.style.display = 'flex'
-dashdash2.style.display = 'none'
-dashdash3.style.display = 'none'
-dashdash4.style.display = 'none'
 menuleft1.style.display = 'flex'
-menuleft2.style.display = 'flex'
-menuleft3.style.display = 'flex'
-menuleft4.style.display = 'flex'
 dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
 dashGeral.style.display = 'flex'
 conteudo.style.display = 'none'
@@ -39,8 +33,8 @@ function insertregistro() {
     var max2 = 60;
     var valor_aleatorio = Math.random() * (max2 - min2 + 1) + min2
 
-    var min3 = 50;
-    var max3 = 90;
+    var min3 = 15;
+    var max3 = 25;
     var valor_aleatorio2 = Math.random() * (max3 - min3 + 1) + min3
 
     var min = 1;
@@ -142,6 +136,7 @@ function atualizarDashboard() {
                                 }
                                 temperatura_setor5.push(temperatura);
                                 umidade_setor5.push(umidade);
+                                console.log(temperatura_setor6)
                             } else if (fkSensor === 6) {
                                 if (temperatura_setor6.length >= 6) {
                                     temperatura_setor6.shift();
@@ -162,17 +157,17 @@ function atualizarDashboard() {
 
                     console.log(umidade_media_sala, temperatura_media_sala)
 
-                    const dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura");
+                    var dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura");
 
                     dadosGeraisTemperatura.innerHTML = `${temperatura_media_sala.toFixed(1)}ºC`
 
-                    const dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade");
+                    var dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade");
 
                     dadosGeraisUmidade.innerHTML = `${umidade_media_sala.toFixed(1)}%`
 
-                    validacao_cores_cards()
-
                     console.log(resposta);
+
+                    validacao_cores_cards()
 
                 });
             } else {
@@ -198,8 +193,26 @@ function mediaArray(vetor) {
     return soma / vetor.length;
 }
 
+function executar_validar_cores_cards(){
+    validacao_cores_cards()
+}
 
-var topoDashInfo = document.getElementsByClassName("todoDashInfo")
+var dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura")
+var dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade")
+const topoDashInfo = document.getElementById("topoDashInfo");
+const titulotopo = document.getElementById("titulotopo");
+const topoDashInfo2 = document.getElementById("topoDashInfo2");
+const titulotopo2 = document.getElementById("titulotopo2");
+
+const dashinfoicon1 = document.getElementById("dashinfoicon1")
+const dashinfoicon2 = document.getElementById("dashinfoicon2")
+
+const dashinfoGeral = document.getElementById("dashinfoGeral")
+const dashinfoGeral2 = document.getElementById("dashinfoGeral2")
+
+
+const blocoDash = document.getElementById("blocoDash")
+const blocoDash2 = document.getElementById("blocoDash2")
 
 function validacao_cores_cards() {
 
@@ -220,66 +233,72 @@ function validacao_cores_cards() {
 
     if (temperatura_media_critica) {
         topoDashInfo.style.backgroundColor = cor_vermelho_escuro
-        headertexto3.style.color = cor_branco
+        titulotopo.style.color = cor_branco
 
-        terceirobloco.style.backgroundColor = cor_vermelho_claro
-        headerinfotexto3.style.color = cor_branco;
-        headerinfosetor3.style.color = cor_branco;
+        blocoDash.style.backgroundColor = cor_vermelho_claro
+        dashinfoGeral.style.backgroundColor = cor_vermelho_claro
+        dashinfoicon1.style.color = cor_branco
+        
+        dadosGeraisTemperatura.style.color = cor_branco
 
-        headericon5.style.display = "flex"
-        headericon6.style.display = "flex"
+        dashinfoicon1.style.display = "flex";
     } else if (temperatura_media_alerta) {
-        headerinfo_terceirobloco.style.backgroundColor = cor_amarelo_escuro
-        headertexto3.style.color = cor_branco
+        topoDashInfo.style.backgroundColor = cor_amarelo_escuro
+        titulotopo.style.color = cor_branco
 
-        terceirobloco.style.backgroundColor = cor_amarelo_claro
-        headerinfotexto3.style.color = cor_branco;
-        headerinfosetor3.style.color = cor_branco;
+        blocoDash.style.backgroundColor = cor_amarelo_claro
+        dashinfoGeral.style.backgroundColor = cor_amarelo_claro
+        dashinfoicon1.style.color = cor_branco
+        
+        dadosGeraisTemperatura.style.color = cor_branco
 
-        headericon5.style.display = "flex"
-        headericon6.style.display = "flex"
+        dashinfoicon1.style.display = "flex";
     } else {
-        headerinfo_terceirobloco.style.backgroundColor = cor_marrom_escuro
-        headertexto3.style.color = cor_marrom_claro
+        topoDashInfo.style.backgroundColor = cor_marrom_escuro
+        titulotopo.style.color = cor_branco
 
-        terceirobloco.style.backgroundColor = cor_marrom_claro
-        headerinfotexto3.style.color = cor_marrom_escuro;
-        headerinfosetor3.style.color = cor_marrom_escuro;
+        blocoDash.style.backgroundColor = cor_marrom_claro
+        dashinfoGeral.style.backgroundColor = cor_marrom_claro
+        dashinfoicon1.style.color = cor_branco
+        
+        dadosGeraisTemperatura.style.color = cor_branco
 
-        headericon5.style.display = "none"
-        headericon6.style.display = "none"
+        dashinfoicon1.style.display = "none";
     }
 
     if (umidade_media_critica) {
-        headerinfo_quartobloco.style.backgroundColor = cor_vermelho_escuro
-        headertexto4.style.color = cor_branco
+        topoDashInfo2.style.backgroundColor = cor_vermelho_escuro
+        titulotopo2.style.color = cor_branco
 
-        quartobloco.style.backgroundColor = cor_vermelho_claro
-        headerinfotexto4.style.color = cor_branco;
-        headerinfosetor4.style.color = cor_branco;
+        blocoDash2.style.backgroundColor = cor_vermelho_claro
+        dashinfoGeral2.style.backgroundColor = cor_vermelho_claro
+        dashinfoicon2.style.color = cor_branco
+        
+        dadosGeraisUmidade.style.color = cor_branco
 
-        headericon7.style.display = "flex"
-        headericon8.style.display = "flex"
+        dashinfoicon2.style.display = "flex";
     } else if (umidade_media_alerta) {
-        headerinfo_quartobloco.style.backgroundColor = cor_amarelo_escuro
-        headertexto4.style.color = cor_branco
+        topoDashInfo2.style.backgroundColor = cor_amarelo_escuro
+        titulotopo2.style.color = cor_branco
 
-        quartobloco.style.backgroundColor = cor_amarelo_claro
-        headerinfotexto4.style.color = cor_branco;
-        headerinfosetor4.style.color = cor_branco;
+        blocoDash2.style.backgroundColor = cor_amarelo_claro
+        dashinfoGeral2.style.backgroundColor = cor_amarelo_claro
+        dashinfoicon2.style.color = cor_branco
+        
+        dadosGeraisUmidade.style.color = cor_branco
 
-        headericon7.style.display = "flex"
-        headericon8.style.display = "flex"
+        dashinfoicon2.style.display = "flex";
     } else {
-        headerinfo_quartobloco.style.backgroundColor = cor_marrom_escuro
-        headertexto4.style.color = cor_marrom_claro
+        topoDashInfo2.style.backgroundColor = cor_marrom_escuro
+        titulotopo2.style.color = cor_branco
 
-        quartobloco.style.backgroundColor = cor_marrom_claro
-        headerinfotexto4.style.color = cor_marrom_escuro;
-        headerinfosetor4.style.color = cor_marrom_escuro;
+        blocoDash2.style.backgroundColor = cor_marrom_claro
+        dashinfoGeral2.style.backgroundColor = cor_marrom_claro
+        dashinfoicon2.style.color = cor_branco
+        
+        dadosGeraisUmidade.style.color = cor_branco
 
-        headericon7.style.display = "none"
-        headericon8.style.display = "none"
+        dashinfoicon2.style.display = "none";
     }
 }
 
