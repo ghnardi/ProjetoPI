@@ -79,12 +79,14 @@ insert into usuario values
 (null,'Matheus', 'matheus.santiago@sptech.school', sha2('@12345678', 256), '2004-12-09', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
-(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678','2005-05-02', 1, 100),
-(null,'Thiago','thiago.garcia@sptech.school' ,'@12345678', '2002-09-02',2, 100),
-(null,'Lucas', 'lucas.flima@sptech.school', '21102002','2002-10-21', 3, 100),
-(null,'Gabriella', 'gabriella.roman@sptech.school', '@12345678','2005-03-02', 3, 100);
+(null,'Douglas', 'douglas.queiroz@sptech.school', sha2('@12345678', 256), '2005-05-02', 1, 100),
+(null,'Thiago','thiago.garcia@sptech.school' , sha2('@12345678', 256), '2002-09-02', 2, 100),
+(null,'Lucas', 'lucas.flima@sptech.school', sha2('@12345678', 256) , '2002-10-21', 3, 100),
+(null,'Gabriella', 'gabriella.roman@sptech.school', sha2('@12345678', 256), '2005-03-02', 3, 100);
 select * from registro;
 select * from usuario;
+
+SELECT * FROM usuario WHERE senha = sha2('@12345678', 256) AND idUsuario = 101;
 
 -- INSERINDO ALAS
 insert into localInstalacao values 
