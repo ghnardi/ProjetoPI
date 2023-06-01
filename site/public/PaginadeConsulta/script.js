@@ -617,8 +617,7 @@ const dashinfotexto16 = document.getElementById("dashinfotexto16");
 function atualizarDadosDashboardsLocalizadas() {
     calcularMediasUltimoRegistro()
 
-    for (var i = 0; i < temperaturas_sala1.length; i++) {
-        dashinfobloquinho1.innerHTML = `${media_ultima_temperatura_sala1.toFixed(1)}ºC`
+    dashinfobloquinho1.innerHTML = `${media_ultima_temperatura_sala1.toFixed(1)}ºC`
         dashinfobloquinho2.innerHTML = `${media_ultima_umidade_sala1.toFixed(1)}%`
         dashinfobloquinho3.innerHTML = `${mediaArray(temperatura_media_sala1).toFixed(1)}ºC`
         dashinfobloquinho4.innerHTML = `${mediaArray(umidade_media_sala1).toFixed(1)}%`
@@ -640,7 +639,7 @@ function atualizarDadosDashboardsLocalizadas() {
         dashinfobloquinho15.innerHTML = `${mediaArray(temperatura_media_sala4).toFixed(1)}ºC`
         dashinfobloquinho16.innerHTML = `${mediaArray(umidade_media_sala4).toFixed(1)}%`
 
-
+    for (var i = 0; i < temperaturas_sala1.length; i++) {
         var cor_verde = "#6eb47d"
         var cor_marrom_claro = "#c6b082"
 
@@ -725,13 +724,13 @@ function atualizarDadosDashboardsLocalizadas() {
         }
 
         /* SALA 2*/
-        if (temperaturas_sala2[i][5] < 18 || temperaturas_sala2[i][5] > 22) {
+        if (media_ultima_temperatura_sala2 < 18 || media_ultima_temperatura_sala2 > 22) {
             dashinfobloquinho5.style.color = "red"
 
             dashicon5.style.color = "red"
             dashinfotexto5.style.color = "red"
             dashicon5.style.display = "flex"
-        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+        } else if (media_ultima_temperatura_sala2 < 18.47 || media_ultima_temperatura_sala2 > 20.6) {
             dashinfobloquinho5.style.color = "yellow"
 
             dashicon5.style.color = "yellow"
@@ -803,13 +802,13 @@ function atualizarDadosDashboardsLocalizadas() {
         }
 
         /* SALA 3*/
-        if (temperaturas_sala3[i][5] < 18 || temperaturas_sala3[i][5] > 22) {
+        if (media_ultima_temperatura_sala3 < 18 || media_ultima_temperatura_sala3 > 22) {
             dashinfobloquinho9.style.color = "red"
 
             dashicon9.style.color = "red"
             dashinfotexto9.style.color = "red"
             dashicon9.style.display = "flex"
-        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+        } else if (media_ultima_temperatura_sala3 < 18.47 || media_ultima_temperatura_sala3 > 20.6) {
             dashinfobloquinho9.style.color = "yellow"
 
             dashicon9.style.color = "yellow"
@@ -881,13 +880,13 @@ function atualizarDadosDashboardsLocalizadas() {
         }
 
         /* SALA 4*/
-        if (temperaturas_sala4[i][5] < 18 || temperaturas_sala4[i][5] > 22) {
+        if (media_ultima_temperatura_sala4 < 18 || media_ultima_temperatura_sala4 > 22) {
             dashinfobloquinho13.style.color = "red"
 
             dashicon13.style.color = "red"
             dashinfotexto13.style.color = "red"
             dashicon13.style.display = "flex"
-        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+        } else if (media_ultima_temperatura_sala4 < 18.47 || media_ultima_temperatura_sala4 > 20.6) {
             dashinfobloquinho13.style.color = "yellow"
 
             dashicon13.style.color = "yellow"
