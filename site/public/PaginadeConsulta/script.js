@@ -106,16 +106,16 @@ function insertregistro() {
     var valor_aleatorio_fkLocal = parseInt(valor_aleatorio_local_quebrado);
 
     if (valor_aleatorio_fkLocal == 2) {
-        valor_aleatorio *= 1.2;
-        valor_aleatorio2 *= 1.2;
+        valor_aleatorio *= 1.05;
+        valor_aleatorio2 *= 1.05;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 6
     } else if (valor_aleatorio_fkLocal == 3) {
-        valor_aleatorio *= 0.8;
-        valor_aleatorio2 *= 0.8;
+        valor_aleatorio *= 0.95;
+        valor_aleatorio2 *= 0.95;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 12
     } else if (valor_aleatorio_fkLocal == 4) {
-        valor_aleatorio *= 2;
-        valor_aleatorio2 *= 2;
+        valor_aleatorio *= 1.1;
+        valor_aleatorio2 *= 1.1;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 18
     }
 
@@ -420,6 +420,41 @@ function atualizarDadosGeraisDashboard() {
     dadosGeraisUmidade.innerHTML = `${umidade_media_empresa.toFixed(1)}%`
 }
 
+var media_ultima_temperatura_sala1 = 0;
+var media_ultima_temperatura_sala2 = 0;
+var media_ultima_temperatura_sala3 = 0;
+var media_ultima_temperatura_sala4 = 0;
+
+var media_ultima_umidade_sala1 = 0;
+var media_ultima_umidade_sala2 = 0;
+var media_ultima_umidade_sala3 = 0;
+var media_ultima_umidade_sala4 = 0;
+
+
+function calcularMediasUltimoRegistro() {
+    media_ultima_temperatura_sala1 = 0
+    media_ultima_temperatura_sala2 = 0;
+    media_ultima_temperatura_sala3 = 0;
+    media_ultima_temperatura_sala4 = 0;
+
+    media_ultima_umidade_sala1 = 0;
+    media_ultima_umidade_sala2 = 0;
+    media_ultima_umidade_sala3 = 0;
+    media_ultima_umidade_sala4 = 0;
+
+    for (i = 0; i < temperaturas_sala1[0].length; i++) {
+        media_ultima_temperatura_sala1 += temperaturas_sala1[i][5] / 6;
+        media_ultima_temperatura_sala2 += temperaturas_sala2[i][5] / 6
+        media_ultima_temperatura_sala3 += temperaturas_sala3[i][5] / 6
+        media_ultima_temperatura_sala4 += temperaturas_sala4[i][5] / 6
+
+        media_ultima_umidade_sala1 += umidades_sala1[i][5] / 6;
+        media_ultima_umidade_sala2 += umidades_sala2[i][5] / 6
+        media_ultima_umidade_sala3 += umidades_sala3[i][5] / 6
+        media_ultima_umidade_sala4 += umidades_sala4[i][5] / 6
+    }
+    console.log(media_ultima_temperatura_sala1)
+}
 
 var dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura")
 var dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade")
@@ -580,53 +615,113 @@ const dashinfotexto16 = document.getElementById("dashinfotexto16");
 
 
 function atualizarDadosDashboardsLocalizadas() {
+    calcularMediasUltimoRegistro()
+
     for (var i = 0; i < temperaturas_sala1.length; i++) {
-        dashinfobloquinho1.innerHTML = `${temperaturas_sala1[i][5].toFixed(1)}ºC`
-        dashinfobloquinho2.innerHTML = `${umidades_sala1[i][5].toFixed(1)}%`
-        dashinfobloquinho3.innerHTML = `${temperatura_media_sala1[i].toFixed(1)}ºC`
-        dashinfobloquinho4.innerHTML = `${umidade_media_sala1[i].toFixed(1)}%`
-    
-        dashinfobloquinho5.innerHTML = `${temperaturas_sala2[i][5].toFixed(1)}ºC`
-        dashinfobloquinho6.innerHTML = `${umidades_sala2[i][5].toFixed(1)}%`
-        dashinfobloquinho7.innerHTML = `${temperatura_media_sala2[i].toFixed(1)}ºC`
-        dashinfobloquinho8.innerHTML = `${umidade_media_sala2[i].toFixed(1)}%`
-    
-    
-        dashinfobloquinho9.innerHTML = `${temperaturas_sala3[i][5].toFixed(1)}ºC`
-        dashinfobloquinho10.innerHTML = `${umidades_sala3[i][5].toFixed(1)}%`
-        dashinfobloquinho11.innerHTML = `${temperatura_media_sala3[i].toFixed(1)}ºC`
-        dashinfobloquinho12.innerHTML = `${umidade_media_sala3[i].toFixed(1)}%`
-    
-    
-        dashinfobloquinho13.innerHTML = `${temperaturas_sala4[i][5].toFixed(1)}ºC`
-        dashinfobloquinho14.innerHTML = `${umidades_sala4[i][5].toFixed(1)}%`
-        dashinfobloquinho15.innerHTML = `${temperatura_media_sala4[i].toFixed(1)}ºC`
-        dashinfobloquinho16.innerHTML = `${umidade_media_sala4[i].toFixed(1)}%`
+        dashinfobloquinho1.innerHTML = `${media_ultima_temperatura_sala1.toFixed(1)}ºC`
+        dashinfobloquinho2.innerHTML = `${media_ultima_umidade_sala1.toFixed(1)}%`
+        dashinfobloquinho3.innerHTML = `${mediaArray(temperatura_media_sala1).toFixed(1)}ºC`
+        dashinfobloquinho4.innerHTML = `${mediaArray(umidade_media_sala1).toFixed(1)}%`
+
+        dashinfobloquinho5.innerHTML = `${media_ultima_temperatura_sala2.toFixed(1)}ºC`
+        dashinfobloquinho6.innerHTML = `${media_ultima_umidade_sala2.toFixed(1)}%`
+        dashinfobloquinho7.innerHTML = `${mediaArray(temperatura_media_sala2).toFixed(1)}ºC`
+        dashinfobloquinho8.innerHTML = `${mediaArray(umidade_media_sala2).toFixed(1)}%`
+
+
+        dashinfobloquinho9.innerHTML = `${media_ultima_temperatura_sala3.toFixed(1)}ºC`
+        dashinfobloquinho10.innerHTML = `${media_ultima_umidade_sala3.toFixed(1)}%`
+        dashinfobloquinho11.innerHTML = `${mediaArray(temperatura_media_sala3).toFixed(1)}ºC`
+        dashinfobloquinho12.innerHTML = `${mediaArray(umidade_media_sala3).toFixed(1)}%`
+
+
+        dashinfobloquinho13.innerHTML = `${media_ultima_temperatura_sala4.toFixed(1)}ºC`
+        dashinfobloquinho14.innerHTML = `${media_ultima_umidade_sala4.toFixed(1)}%`
+        dashinfobloquinho15.innerHTML = `${mediaArray(temperatura_media_sala4).toFixed(1)}ºC`
+        dashinfobloquinho16.innerHTML = `${mediaArray(umidade_media_sala4).toFixed(1)}%`
+
+
+        var cor_verde = "#6eb47d"
+        var cor_marrom_claro = "#c6b082"
 
 
         /* SALA 1*/
-        if (temperaturas_sala1[i][5] < 18 || temperaturas_sala1[i][5] > 22) {
+        /* MEDIA ULTIMOS REGISTROS */
+        if (media_ultima_temperatura_sala1 < 18 || media_ultima_temperatura_sala1 > 22) {
             dashinfobloquinho1.style.color = "red"
 
             dashicon1.style.color = "red"
             dashinfotexto1.style.color = "red"
-        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+            dashicon1.style.display = "flex"
+        } else if (media_ultima_temperatura_sala1 < 18.47 || media_ultima_temperatura_sala1 > 20.6) {
             dashinfobloquinho1.style.color = "yellow"
 
             dashicon1.style.color = "yellow"
             dashinfotexto1.style.color = "yellow"
+            dashicon1.style.display = "flex"
+        } else {
+            dashinfobloquinho1.style.color = cor_verde
+
+            dashinfotexto1.style.color = cor_marrom_claro
+            dashicon1.style.display = "none"
         }
 
-        if (umidades_sala1[i][5] < 45 || umidades_sala1[i][5] > 55) {
+        if (media_ultima_umidade_sala1 < 45 || media_ultima_umidade_sala1 > 55) {
             dashinfobloquinho2.style.color = "red"
 
             dashicon2.style.color = "red"
             dashinfotexto2.style.color = "red"
-        } else if  (umidade_media_sala1[i][5] < 46.2 || umidade_media_sala1[i][5] > 52.6) {
+            dashicon2.style.display = "flex"
+        } else if (media_ultima_umidade_sala1 < 46.2 || media_ultima_umidade_sala1 > 52.6) {
             dashinfobloquinho2.style.color = "yellow"
 
             dashicon2.style.color = "yellow"
             dashinfotexto2.style.color = "yellow"
+            dashicon2.style.display = "flex"
+        } else {
+            dashinfobloquinho2.style.color = cor_verde
+
+            dashinfotexto2.style.color = cor_marrom_claro
+            dashicon2.style.display = "none"
+        }
+
+        /* MEDIA DA SALA */
+        if (mediaArray(temperatura_media_sala1) < 18 || mediaArray(temperatura_media_sala1) > 22) {
+            dashinfobloquinho3.style.color = "red"
+
+            dashicon3.style.color = "red"
+            dashinfotexto3.style.color = "red"
+            dashicon3.style.display = "flex"
+        } else if (mediaArray(temperatura_media_sala1) < 18.47 || mediaArray(temperatura_media_sala1) > 20.6) {
+            dashinfobloquinho3.style.color = "yellow"
+
+            dashicon3.style.color = "yellow"
+            dashinfotexto3.style.color = "yellow"
+            dashicon3.style.display = "flex"
+        } else {
+            dashinfobloquinho3.style.color = cor_verde
+
+            dashinfotexto3.style.color = cor_marrom_claro
+            dashicon3.style.display = "none"
+        }
+
+        if (mediaArray(umidade_media_sala1) < 45 || mediaArray(umidade_media_sala1) > 55) {
+            dashinfobloquinho4.style.color = "red"
+
+            dashicon4.style.color = "red"
+            dashinfotexto4.style.color = "red"
+            dashicon4.style.display = "flex"
+        } else if (mediaArray(umidade_media_sala1) < 46.2 || mediaArray(umidade_media_sala1) > 52.6) {
+            dashinfobloquinho4.style.color = "yellow"
+
+            dashicon4.style.color = "yellow"
+            dashinfotexto4.style.color = "yellow"
+            dashicon4.style.display = "flex"
+        } else {
+            dashinfobloquinho4.style.color = cor_verde
+
+            dashinfotexto4.style.color = cor_marrom_claro
+            dashicon4.style.display = "none"
         }
 
         /* SALA 2*/
@@ -635,23 +730,76 @@ function atualizarDadosDashboardsLocalizadas() {
 
             dashicon5.style.color = "red"
             dashinfotexto5.style.color = "red"
+            dashicon5.style.display = "flex"
         } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
             dashinfobloquinho5.style.color = "yellow"
 
             dashicon5.style.color = "yellow"
             dashinfotexto5.style.color = "yellow"
+            dashicon5.style.display = "flex"
+        } else {
+            dashinfobloquinho5.style.color = cor_verde
+
+            dashinfotexto5.style.color = cor_marrom_claro
+            dashicon5.style.display = "none"
         }
 
-        if (umidades_sala2[i][5] < 45 || umidades_sala2[i][5] > 55) {
+        if (media_ultima_umidade_sala2 < 45 || media_ultima_umidade_sala2 > 55) {
             dashinfobloquinho6.style.color = "red"
 
             dashicon6.style.color = "red"
             dashinfotexto6.style.color = "red"
-        } else if  (umidade_media_sala2[i][5] < 46.2 || umidade_media_sala2[i][5] > 52.6) {
+            dashicon6.style.display = "flex"
+        } else if (media_ultima_umidade_sala2 < 46.2 || media_ultima_umidade_sala2 > 52.6) {
             dashinfobloquinho6.style.color = "yellow"
 
             dashicon6.style.color = "yellow"
             dashinfotexto6.style.color = "yellow"
+            dashicon6.style.display = "flex"
+        } else {
+            dashinfobloquinho6.style.color = cor_verde
+
+            dashinfotexto6.style.color = cor_marrom_claro
+            dashicon6.style.display = "none"
+        }
+
+        /* MEDIA DA SALA */
+        if (mediaArray(temperatura_media_sala2) < 18 || mediaArray(temperatura_media_sala2) > 22) {
+            dashinfobloquinho7.style.color = "red"
+
+            dashicon7.style.color = "red"
+            dashinfotexto7.style.color = "red"
+            dashicon7.style.display = "flex"
+        } else if (mediaArray(temperatura_media_sala2) < 18.47 || mediaArray(temperatura_media_sala2) > 20.6) {
+            dashinfobloquinho7.style.color = "yellow"
+
+            dashicon7.style.color = "yellow"
+            dashinfotexto7.style.color = "yellow"
+            dashicon7.style.display = "flex"
+        } else {
+            dashinfobloquinho7.style.color = cor_verde
+
+            dashinfotexto7.style.color = cor_marrom_claro
+            dashicon7.style.display = "none"
+        }
+
+        if (mediaArray(umidade_media_sala2) < 45 || mediaArray(umidade_media_sala2) > 55) {
+            dashinfobloquinho8.style.color = "red"
+
+            dashicon8.style.color = "red"
+            dashinfotexto8.style.color = "red"
+            dashicon8.style.display = "flex"
+        } else if (mediaArray(umidade_media_sala2) < 46.2 || mediaArray(umidade_media_sala2) > 52.6) {
+            dashinfobloquinho8.style.color = "yellow"
+
+            dashicon8.style.color = "yellow"
+            dashinfotexto8.style.color = "yellow"
+            dashicon8.style.display = "flex"
+        } else {
+            dashinfobloquinho8.style.color = cor_verde
+
+            dashinfotexto8.style.color = cor_marrom_claro
+            dashicon8.style.display = "none"
         }
 
         /* SALA 3*/
@@ -660,23 +808,76 @@ function atualizarDadosDashboardsLocalizadas() {
 
             dashicon9.style.color = "red"
             dashinfotexto9.style.color = "red"
+            dashicon9.style.display = "flex"
         } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
             dashinfobloquinho9.style.color = "yellow"
 
             dashicon9.style.color = "yellow"
             dashinfotexto9.style.color = "yellow"
+            dashicon9.style.display = "flex"
+        } else {
+            dashinfobloquinho9.style.color = cor_verde
+
+            dashinfotexto9.style.color = cor_marrom_claro
+            dashicon9.style.display = "none"
         }
 
-        if (umidades_sala3[i][5] < 45 || umidades_sala3[i][5] > 55) {
+        if (media_ultima_umidade_sala3 < 45 || media_ultima_umidade_sala3 > 55) {
             dashinfobloquinho10.style.color = "red"
 
             dashicon10.style.color = "red"
             dashinfotexto10.style.color = "red"
-        } else if  (umidade_media_sala3[i][5] < 46.2 || umidade_media_sala3[i][5] > 52.6) {
+            dashicon10.style.display = "flex"
+        } else if (media_ultima_umidade_sala3 < 46.2 || media_ultima_umidade_sala3 > 52.6) {
             dashinfobloquinho10.style.color = "yellow"
 
             dashicon10.style.color = "yellow"
             dashinfotexto10.style.color = "yellow"
+            dashicon10.style.display = "flex"
+        } else {
+            dashinfobloquinho10.style.color = cor_verde
+
+            dashinfotexto10.style.color = cor_marrom_claro
+            dashicon10.style.display = "none"
+        }
+
+        /* MEDIA DA SALA */
+        if (mediaArray(temperatura_media_sala3) < 18 || mediaArray(temperatura_media_sala3) > 22) {
+            dashinfobloquinho11.style.color = "red"
+
+            dashicon11.style.color = "red"
+            dashinfotexto11.style.color = "red"
+            dashicon11.style.display = "flex"
+        } else if (mediaArray(temperatura_media_sala3) < 18.47 || mediaArray(temperatura_media_sala3) > 20.6) {
+            dashinfobloquinho11.style.color = "yellow"
+
+            dashicon11.style.color = "yellow"
+            dashinfotexto11.style.color = "yellow"
+            dashicon11.style.display = "flex"
+        } else {
+            dashinfobloquinho11.style.color = cor_verde
+
+            dashinfotexto11.style.color = cor_marrom_claro
+            dashicon11.style.display = "none"
+        }
+
+        if (mediaArray(umidade_media_sala3) < 45 || mediaArray(umidade_media_sala3) > 55) {
+            dashinfobloquinho12.style.color = "red"
+
+            dashicon12.style.color = "red"
+            dashinfotexto12.style.color = "red"
+            dashicon12.style.display = "flex"
+        } else if (mediaArray(umidade_media_sala3) < 46.2 || mediaArray(umidade_media_sala3) > 52.6) {
+            dashinfobloquinho12.style.color = "yellow"
+
+            dashicon12.style.color = "yellow"
+            dashinfotexto12.style.color = "yellow"
+            dashicon12.style.display = "flex"
+        } else {
+            dashinfobloquinho12.style.color = cor_verde
+
+            dashinfotexto12.style.color = cor_marrom_claro
+            dashicon12.style.display = "none"
         }
 
         /* SALA 4*/
@@ -685,23 +886,76 @@ function atualizarDadosDashboardsLocalizadas() {
 
             dashicon13.style.color = "red"
             dashinfotexto13.style.color = "red"
+            dashicon13.style.display = "flex"
         } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
             dashinfobloquinho13.style.color = "yellow"
 
             dashicon13.style.color = "yellow"
             dashinfotexto13.style.color = "yellow"
+            dashicon13.style.display = "flex"
+        } else {
+            dashinfobloquinho13.style.color = cor_verde
+
+            dashinfotexto13.style.color = cor_marrom_claro
+            dashicon13.style.display = "none"
         }
 
-        if (umidades_sala4[i][5] < 45 || umidades_sala4[i][5] > 55) {
+        if (media_ultima_umidade_sala4 < 45 || media_ultima_umidade_sala4 > 55) {
             dashinfobloquinho14.style.color = "red"
 
             dashicon14.style.color = "red"
             dashinfotexto14.style.color = "red"
-        } else if  (umidade_media_sala4[i][5] < 46.2 || umidade_media_sala4[i][5] > 52.6) {
+            dashicon14.style.display = "flex"
+        } else if (media_ultima_umidade_sala4 < 46.2 || media_ultima_umidade_sala4 > 52.6) {
             dashinfobloquinho14.style.color = "yellow"
 
             dashicon14.style.color = "yellow"
             dashinfotexto14.style.color = "yellow"
+            dashicon14.style.display = "flex"
+        } else {
+            dashinfobloquinho14.style.color = cor_verde
+
+            dashinfotexto14.style.color = cor_marrom_claro
+            dashicon14.style.display = "none"
+        }
+
+        /* MEDIA DA SALA */
+        if (mediaArray(temperatura_media_sala4) < 18 || mediaArray(temperatura_media_sala4) > 22) {
+            dashinfobloquinho15.style.color = "red"
+
+            dashicon15.style.color = "red"
+            dashinfotexto15.style.color = "red"
+            dashicon15.style.display = "flex"
+        } else if (mediaArray(temperatura_media_sala4) < 18.47 || mediaArray(temperatura_media_sala4) > 20.6) {
+            dashinfobloquinho15.style.color = "yellow"
+
+            dashicon15.style.color = "yellow"
+            dashinfotexto15.style.color = "yellow"
+            dashicon15.style.display = "flex"
+        } else {
+            dashinfobloquinho15.style.color = cor_verde
+
+            dashinfotexto15.style.color = cor_marrom_claro
+            dashicon15.style.display = "none"
+        }
+
+        if (mediaArray(umidade_media_sala4) < 45 || mediaArray(umidade_media_sala4) > 55) {
+            dashinfobloquinho16.style.color = "red"
+
+            dashicon16.style.color = "red"
+            dashinfotexto16.style.color = "red"
+            dashicon16.style.display = "flex"
+        } else if (mediaArray(umidade_media_sala4) < 46.2 || mediaArray(umidade_media_sala4) > 52.6) {
+            dashinfobloquinho16.style.color = "yellow"
+
+            dashicon16.style.color = "yellow"
+            dashinfotexto16.style.color = "yellow"
+            dashicon16.style.display = "flex"
+        } else {
+            dashinfobloquinho16.style.color = cor_verde
+
+            dashinfotexto16.style.color = cor_marrom_claro
+            dashicon16.style.display = "none"
         }
     }
 }

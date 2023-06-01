@@ -68,8 +68,8 @@ insert into registro(umidade, temperatura, dataHora, fkSensor) values
 -- INSERINDO EMPRESAS
 insert into empresa values 
 (null,'museu1','12345678912345','museu1@sptech.school', '09581-310'),
-(null,'museu2','12345678912345','museu1@sptech.school', '09581-310'),
-(null,'museu3','12345678912345','museu1@sptech.school', '09581-310');
+(null,'museu2','12345678912345','museu2@sptech.school', '09581-310'),
+(null,'museu3','12345678912345','museu3@sptech.school', '09581-310');
 
 select * from empresa;
 -- INSERINDO USUARIOS
