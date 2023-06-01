@@ -122,7 +122,7 @@ function getQueryParam(param) {
 
 function atualizarGrafico() {
 
-    insertregistro();
+    // insertregistro();
 
     fetch("/usuarios/atualizarGrafico", {
         method: "GET",

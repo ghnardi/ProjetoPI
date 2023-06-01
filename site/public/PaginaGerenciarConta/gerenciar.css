@@ -67,7 +67,7 @@ body {
 .infopessoaisBloco {
     display: flex;
     background-color: #392D12;
-    height: 30%;
+    height: 25%;
     width: 80%;
     margin-left: 10%;
     margin-top: 4%;
@@ -112,7 +112,7 @@ body {
     display: flex;
     border-left: 1px solid #AE8406;
     width: 32vmax;
-    height: 47.3vh;
+    height: 70vh;
     flex-direction: column;
 }
 
@@ -225,7 +225,26 @@ body {
 #btn_salvar {
     display: flex;
     margin-left: 64.5%;
-    margin-top: 5%;
+    height: 4vh;
+    width: 18vh;
+    background: #FF9300;
+    border: 1px solid #BD8500;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat Ace';
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.8vmax;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+#btn_salvar2 {
+    display: flex;
+    margin-left: 64.5%;
     height: 4vh;
     width: 18vh;
     background: #FF9300;
@@ -271,7 +290,7 @@ body {
 .alterarEmail{
     display: flex;
     width: 93%;
-    height: 25vh;
+    height: 20vh;
     margin-top: 8%;
     margin-left: 7%;
     flex-direction: column;
@@ -374,9 +393,10 @@ body {
 .alterarSenha{
     display: flex;
     width: 93%;
-    height: 40vh;
+    height: 30vh;
     margin-left: 7%;
     flex-direction: column;
+    margin-top: 8%;
 
 }
 
@@ -492,4 +512,12 @@ body {
     text-align: center;
     font-size: 0.8vmax;
     cursor: pointer;
+}
+
+#span_erro {
+    color: red;
+    width: 100%;
+    font-family: 'Montserrat Ace';
+    font-size: 1vmax;
+    display: flex;
 }
