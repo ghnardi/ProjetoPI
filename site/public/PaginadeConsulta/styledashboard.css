@@ -87,7 +87,7 @@
   background-color: #2f220a;
 }
 
-#dashinfotexto {
+.dashinfotexto {
   display: flex;
   font-size: 24px;
   font-weight: 700;

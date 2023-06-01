@@ -1,3 +1,8 @@
+function dashboardIcon(n) {
+    window.location.href = "./dashs/chart.html?parametro=" + n;
+  }
+
+
 function validarSessao(){
     var email = sessionStorage.EMAIL_USUARIO
     var nome = sessionStorage.NOME_USUARIO

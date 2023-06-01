@@ -1,4 +1,5 @@
-setInterval(atualizarGrafico, 1000);
+setInterval(atualizarGrafico, 1000)
+  
 
 function clickPerfil() {
     if (subsub.style.display == 'flex') {
@@ -48,6 +49,25 @@ function insertregistro() {
     var valor_aleatorio_sensor_quebrado = Math.random() * intervalo + min
     var valor_aleatorio_fkSensor = parseInt(valor_aleatorio_sensor_quebrado);
 
+    var min4 = 1;
+    var max4 = 4;
+    var valor_aleatorio_local_quebrado = Math.random() * (max4 - min4 + 1) + min;
+    var valor_aleatorio_fkLocal = parseInt(valor_aleatorio_local_quebrado);
+
+    if (valor_aleatorio_fkLocal == 2) {
+        valor_aleatorio *= 1.2;
+        valor_aleatorio2 *= 1.2;
+        valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 6
+    } else if (valor_aleatorio_fkLocal == 3) {
+        valor_aleatorio *= 0.8;
+        valor_aleatorio2 *= 0.8;
+        valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 12
+    } else if (valor_aleatorio_fkLocal == 4 ){
+        valor_aleatorio *= 2;
+        valor_aleatorio2 *= 2;
+        valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 18
+    } 
+    
     fetch("/usuarios/insertregistro", {
         method: "post",
         headers: {
@@ -82,6 +102,23 @@ function insertregistro() {
 
 }
 
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+  
+  const grafico_selecionado = getQueryParam("parametro")
+
+  var soma_sala = 0;
+  if (grafico_selecionado == 1) {
+    soma_sala = 0;
+  } else if (grafico_selecionado == 2){
+    soma_sala = 6
+  } else if (grafico_selecionado == 3){
+    soma_sala = 12
+  } else if (grafico_selecionado == 4) {
+    soma_sala = 18
+  }
 
 function atualizarGrafico() {
 
@@ -109,7 +146,7 @@ function atualizarGrafico() {
                             const minuto = dataHora.substring(14, 16);  // Extrai o minuto da dataHora
                             const segundo = dataHora.substring(17, 19); // Extrai o segundo da dataHora
 
-                            if (fkSensor === 1) {
+                            if (fkSensor == 1 + soma_sala) {
                                 if (temperatura_setor1.length >= 6) {
                                     temperatura_setor1.shift();
                                     umidade_setor1.shift();
@@ -118,7 +155,7 @@ function atualizarGrafico() {
                                 temperatura_setor1.push(temperatura);
                                 umidade_setor1.push(umidade);
                                 dataHora_setor1.push(`${hora}:${minuto}:${segundo}`)
-                            } else if (fkSensor === 2) {
+                            } else if (fkSensor == 2 + soma_sala) {
                                 if (temperatura_setor2.length >= 6) {
                                     temperatura_setor2.shift();
                                     umidade_setor2.shift();
@@ -127,7 +164,7 @@ function atualizarGrafico() {
                                 temperatura_setor2.push(temperatura);
                                 umidade_setor2.push(umidade);
                                 dataHora_setor2.push(`${hora}:${minuto}:${segundo}`)
-                            } else if (fkSensor === 3) {
+                            } else if (fkSensor == 3 + soma_sala) {
                                 if (temperatura_setor3.length >= 6) {
                                     temperatura_setor3.shift();
                                     umidade_setor3.shift();
@@ -136,7 +173,7 @@ function atualizarGrafico() {
                                 temperatura_setor3.push(temperatura);
                                 umidade_setor3.push(umidade);
                                 dataHora_setor3.push(`${hora}:${minuto}:${segundo}`)
-                            } else if (fkSensor === 4) {
+                            } else if (fkSensor == 4 + soma_sala) {
                                 if (temperatura_setor4.length >= 6) {
                                     temperatura_setor4.shift();
                                     umidade_setor4.shift();
@@ -145,7 +182,7 @@ function atualizarGrafico() {
                                 temperatura_setor4.push(temperatura);
                                 umidade_setor4.push(umidade);
                                 dataHora_setor4.push(`${hora}:${minuto}:${segundo}`)
-                            } else if (fkSensor === 5) {
+                            } else if (fkSensor == 5 + soma_sala) {
                                 if (temperatura_setor5.length >= 6) {
                                     temperatura_setor5.shift();
                                     umidade_setor5.shift();
@@ -154,7 +191,7 @@ function atualizarGrafico() {
                                 temperatura_setor5.push(temperatura);
                                 umidade_setor5.push(umidade);
                                 dataHora_setor5.push(`${hora}:${minuto}:${segundo}`)
-                            } else if (fkSensor === 6) {
+                            } else if (fkSensor == 6 + soma_sala) {
                                 if (temperatura_setor6.length >= 6) {
                                     temperatura_setor6.shift();
                                     umidade_setor6.shift();

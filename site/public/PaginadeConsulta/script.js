@@ -6,17 +6,30 @@ dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
 dashGeral.style.display = 'flex'
 conteudo.style.display = 'none'
 
-var temperatura_media_setores = []
-var umidade_media_setores = []
-var temperatura_media_sala = [];
-var umidade_media_sala = [];
-
 var temperatura_setor1 = [];
 var temperatura_setor2 = [];
 var temperatura_setor3 = [];
 var temperatura_setor4 = [];
 var temperatura_setor5 = [];
 var temperatura_setor6 = [];
+var temperatura_setor7 = [];
+var temperatura_setor8 = [];
+var temperatura_setor9 = [];
+var temperatura_setor10 = [];
+var temperatura_setor11 = [];
+var temperatura_setor12 = [];
+var temperatura_setor13 = [];
+var temperatura_setor14 = [];
+var temperatura_setor15 = [];
+var temperatura_setor16 = [];
+var temperatura_setor17 = [];
+var temperatura_setor18 = [];
+var temperatura_setor19 = [];
+var temperatura_setor20 = [];
+var temperatura_setor21 = [];
+var temperatura_setor22 = [];
+var temperatura_setor23 = [];
+var temperatura_setor24 = [];
 
 var umidade_setor1 = [];
 var umidade_setor2 = [];
@@ -24,9 +37,53 @@ var umidade_setor3 = [];
 var umidade_setor4 = [];
 var umidade_setor5 = [];
 var umidade_setor6 = [];
+var umidade_setor7 = [];
+var umidade_setor8 = [];
+var umidade_setor9 = [];
+var umidade_setor10 = [];
+var umidade_setor11 = [];
+var umidade_setor12 = [];
+var umidade_setor13 = [];
+var umidade_setor14 = [];
+var umidade_setor15 = [];
+var umidade_setor16 = [];
+var umidade_setor17 = [];
+var umidade_setor18 = [];
+var umidade_setor19 = [];
+var umidade_setor20 = [];
+var umidade_setor21 = [];
+var umidade_setor22 = [];
+var umidade_setor23 = [];
+var umidade_setor24 = [];
 
-var temperaturas = [temperatura_setor1, temperatura_setor2, temperatura_setor3, temperatura_setor4, temperatura_setor5, temperatura_setor6]
-var umidades = [umidade_setor1, umidade_setor2, umidade_setor3, umidade_setor4, umidade_setor5, umidade_setor6]
+var temperaturas_sala1 = [temperatura_setor1, temperatura_setor2, temperatura_setor3, temperatura_setor4, temperatura_setor5, temperatura_setor6]
+var umidades_sala1 = [umidade_setor1, umidade_setor2, umidade_setor3, umidade_setor4, umidade_setor5, umidade_setor6]
+
+var temperaturas_sala2 = [temperatura_setor7, temperatura_setor8, temperatura_setor9, temperatura_setor10, temperatura_setor11, temperatura_setor12]
+var umidades_sala2 = [umidade_setor7, umidade_setor8, umidade_setor9, umidade_setor10, umidade_setor11, umidade_setor12]
+
+var temperaturas_sala3 = [temperatura_setor13, temperatura_setor14, temperatura_setor15, temperatura_setor16, temperatura_setor17, temperatura_setor18]
+var umidades_sala3 = [umidade_setor13, umidade_setor14, umidade_setor15, umidade_setor16, umidade_setor17, umidade_setor18]
+
+var temperaturas_sala4 = [temperatura_setor19, temperatura_setor20, temperatura_setor21, temperatura_setor22, temperatura_setor23, temperatura_setor24]
+var umidades_sala4 = [umidade_setor19, umidade_setor20, umidade_setor21, umidade_setor22, umidade_setor23, umidade_setor24]
+
+var temperatura_media_sala1 = [];
+var temperatura_media_sala2 = [];
+var temperatura_media_sala3 = [];
+var temperatura_media_sala4 = [];
+
+
+var umidade_media_sala1 = [];
+var umidade_media_sala2 = [];
+var umidade_media_sala3 = [];
+var umidade_media_sala4 = [];
+
+var umidade_media_salas = [];
+var temperatura_media_salas = [];
+
+var umidade_media_empresa = [];
+var temperatura_media_empresa = [];
 
 function insertregistro() {
     var min2 = 40;
@@ -42,6 +99,25 @@ function insertregistro() {
     var intervalo = max - min + 1;
     var valor_aleatorio_sensor_quebrado = Math.random() * intervalo + min
     var valor_aleatorio_fkSensor = parseInt(valor_aleatorio_sensor_quebrado);
+
+    var min4 = 1;
+    var max4 = 4;
+    var valor_aleatorio_local_quebrado = Math.random() * (max4 - min4 + 1) + min;
+    var valor_aleatorio_fkLocal = parseInt(valor_aleatorio_local_quebrado);
+
+    if (valor_aleatorio_fkLocal == 2) {
+        valor_aleatorio *= 1.2;
+        valor_aleatorio2 *= 1.2;
+        valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 6
+    } else if (valor_aleatorio_fkLocal == 3) {
+        valor_aleatorio *= 0.8;
+        valor_aleatorio2 *= 0.8;
+        valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 12
+    } else if (valor_aleatorio_fkLocal == 4) {
+        valor_aleatorio *= 2;
+        valor_aleatorio2 *= 2;
+        valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 18
+    }
 
     fetch("/usuarios/insertregistro", {
         method: "post",
@@ -76,7 +152,6 @@ function insertregistro() {
     return false;
 
 }
-
 
 function atualizarDashboard() {
 
@@ -144,30 +219,144 @@ function atualizarDashboard() {
                                 }
                                 temperatura_setor6.push(temperatura);
                                 umidade_setor6.push(umidade);
+                            } else if (fkSensor === 7) {
+                                if (temperatura_setor7.length >= 6) {
+                                    temperatura_setor7.shift();
+                                    umidade_setor7.shift();
+                                }
+                                temperatura_setor7.push(temperatura);
+                                umidade_setor7.push(umidade);
+                            } else if (fkSensor === 8) {
+                                if (temperatura_setor8.length >= 6) {
+                                    temperatura_setor8.shift();
+                                    umidade_setor8.shift();
+                                }
+                                temperatura_setor8.push(temperatura);
+                                umidade_setor8.push(umidade);
+                            } else if (fkSensor === 9) {
+                                if (temperatura_setor9.length >= 6) {
+                                    temperatura_setor9.shift();
+                                    umidade_setor9.shift();
+                                }
+                                temperatura_setor9.push(temperatura);
+                                umidade_setor9.push(umidade);
+                            } else if (fkSensor === 10) {
+                                if (temperatura_setor10.length >= 6) {
+                                    temperatura_setor10.shift();
+                                    umidade_setor10.shift();
+                                }
+                                temperatura_setor10.push(temperatura);
+                                umidade_setor10.push(umidade);
+                            } else if (fkSensor === 11) {
+                                if (temperatura_setor11.length >= 6) {
+                                    temperatura_setor11.shift();
+                                    umidade_setor11.shift();
+                                }
+                                temperatura_setor11.push(temperatura);
+                                umidade_setor11.push(umidade);
+                            } else if (fkSensor === 12) {
+                                if (temperatura_setor12.length >= 6) {
+                                    temperatura_setor12.shift();
+                                    umidade_setor12.shift();
+                                }
+                                temperatura_setor12.push(temperatura);
+                                umidade_setor12.push(umidade);
+                            } else if (fkSensor === 13) {
+                                if (temperatura_setor13.length >= 6) {
+                                    temperatura_setor13.shift();
+                                    umidade_setor13.shift();
+                                }
+                                temperatura_setor13.push(temperatura);
+                                umidade_setor13.push(umidade);
+                            } else if (fkSensor === 14) {
+                                if (temperatura_setor14.length >= 6) {
+                                    temperatura_setor14.shift();
+                                    umidade_setor14.shift();
+                                }
+                                temperatura_setor14.push(temperatura);
+                                umidade_setor14.push(umidade);
+                            } else if (fkSensor === 15) {
+                                if (temperatura_setor15.length >= 6) {
+                                    temperatura_setor15.shift();
+                                    umidade_setor15.shift();
+                                }
+                                temperatura_setor15.push(temperatura);
+                                umidade_setor15.push(umidade);
+                            } else if (fkSensor === 16) {
+                                if (temperatura_setor16.length >= 6) {
+                                    temperatura_setor16.shift();
+                                    umidade_setor16.shift();
+                                }
+                                temperatura_setor16.push(temperatura);
+                                umidade_setor16.push(umidade);
+                            } else if (fkSensor === 17) {
+                                if (temperatura_setor17.length >= 6) {
+                                    temperatura_setor17.shift();
+                                    umidade_setor17.shift();
+                                }
+                                temperatura_setor17.push(temperatura);
+                                umidade_setor17.push(umidade);
+                            } else if (fkSensor === 18) {
+                                if (temperatura_setor18.length >= 6) {
+                                    temperatura_setor18.shift();
+                                    umidade_setor18.shift();
+                                }
+                                temperatura_setor18.push(temperatura);
+                                umidade_setor18.push(umidade);
+                            } else if (fkSensor === 19) {
+                                if (temperatura_setor19.length >= 6) {
+                                    temperatura_setor19.shift();
+                                    umidade_setor19.shift();
+                                }
+                                temperatura_setor19.push(temperatura);
+                                umidade_setor19.push(umidade);
+                            } else if (fkSensor === 20) {
+                                if (temperatura_setor20.length >= 6) {
+                                    temperatura_setor20.shift();
+                                    umidade_setor20.shift();
+                                }
+                                temperatura_setor20.push(temperatura);
+                                umidade_setor20.push(umidade);
+                            } else if (fkSensor === 21) {
+                                if (temperatura_setor21.length >= 6) {
+                                    temperatura_setor21.shift();
+                                    umidade_setor21.shift();
+                                }
+                                temperatura_setor21.push(temperatura);
+                                umidade_setor21.push(umidade);
+                            } else if (fkSensor === 22) {
+                                if (temperatura_setor22.length >= 6) {
+                                    temperatura_setor22.shift();
+                                    umidade_setor22.shift();
+                                }
+                                temperatura_setor22.push(temperatura);
+                                umidade_setor22.push(umidade);
+                            } else if (fkSensor === 23) {
+                                if (temperatura_setor23.length >= 6) {
+                                    temperatura_setor23.shift();
+                                    umidade_setor23.shift();
+                                }
+                                temperatura_setor23.push(temperatura);
+                                umidade_setor23.push(umidade);
+                            } else if (fkSensor === 24) {
+                                if (temperatura_setor24.length >= 6) {
+                                    temperatura_setor24.shift();
+                                    umidade_setor24.shift();
+                                }
+                                temperatura_setor24.push(temperatura);
+                                umidade_setor24.push(umidade);
                             }
                         });
                     });
 
-                    temperatura_media_setores = [mediaArray(temperaturas[0]), mediaArray(temperaturas[1]), mediaArray(temperaturas[2]), mediaArray(temperaturas[3]), mediaArray(temperaturas[4]), mediaArray(temperaturas[5])];
+                    calcularMedias()
 
-                    umidade_media_setores = [mediaArray(umidades[0]), mediaArray(umidades[1]), mediaArray(umidades[2]), mediaArray(umidades[3]), mediaArray(umidades[4]), mediaArray(umidades[5])];
 
-                    umidade_media_sala = mediaArray(umidade_media_setores)
-                    temperatura_media_sala = mediaArray(temperatura_media_setores)
-
-                    console.log(umidade_media_sala, temperatura_media_sala)
-
-                    var dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura");
-
-                    dadosGeraisTemperatura.innerHTML = `${temperatura_media_sala.toFixed(1)}ºC`
-
-                    var dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade");
-
-                    dadosGeraisUmidade.innerHTML = `${umidade_media_sala.toFixed(1)}%`
-
-                    console.log(resposta);
+                    atualizarDadosGeraisDashboard()
 
                     validacao_cores_cards()
+
+                    atualizarDadosDashboardsLocalizadas()
 
                 });
             } else {
@@ -193,9 +382,44 @@ function mediaArray(vetor) {
     return soma / vetor.length;
 }
 
-function executar_validar_cores_cards(){
-    validacao_cores_cards()
+function calcularMedias() {
+    temperatura_media_sala1 = [mediaArray(temperaturas_sala1[0]), mediaArray(temperaturas_sala1[1]), mediaArray(temperaturas_sala1[2]), mediaArray(temperaturas_sala1[3]), mediaArray(temperaturas_sala1[4]), mediaArray(temperaturas_sala1[5])];
+
+    umidade_media_sala1 = [mediaArray(umidades_sala1[0]), mediaArray(umidades_sala1[1]), mediaArray(umidades_sala1[2]), mediaArray(umidades_sala1[3]), mediaArray(umidades_sala1[4]), mediaArray(umidades_sala1[5])];
+
+    temperatura_media_sala2 = [mediaArray(temperaturas_sala2[0]), mediaArray(temperaturas_sala2[1]), mediaArray(temperaturas_sala2[2]), mediaArray(temperaturas_sala2[3]), mediaArray(temperaturas_sala2[4]), mediaArray(temperaturas_sala2[5])];
+
+    umidade_media_sala2 = [mediaArray(umidades_sala2[0]), mediaArray(umidades_sala2[1]), mediaArray(umidades_sala2[2]), mediaArray(umidades_sala2[3]), mediaArray(umidades_sala2[4]), mediaArray(umidades_sala2[5])];
+
+    temperatura_media_sala3 = [mediaArray(temperaturas_sala3[0]), mediaArray(temperaturas_sala3[1]), mediaArray(temperaturas_sala3[2]), mediaArray(temperaturas_sala3[3]), mediaArray(temperaturas_sala3[4]), mediaArray(temperaturas_sala3[5])];
+
+    umidade_media_sala3 = [mediaArray(umidades_sala3[0]), mediaArray(umidades_sala3[1]), mediaArray(umidades_sala3[2]), mediaArray(umidades_sala3[3]), mediaArray(umidades_sala3[4]), mediaArray(umidades_sala3[5])];
+
+    temperatura_media_sala4 = [mediaArray(temperaturas_sala4[0]), mediaArray(temperaturas_sala4[1]), mediaArray(temperaturas_sala4[2]), mediaArray(temperaturas_sala4[3]), mediaArray(temperaturas_sala4[4]), mediaArray(temperaturas_sala4[5])];
+
+    umidade_media_sala4 = [mediaArray(umidades_sala4[0]), mediaArray(umidades_sala4[1]), mediaArray(umidades_sala4[2]), mediaArray(umidades_sala4[3]), mediaArray(umidades_sala4[4]), mediaArray(umidades_sala4[5])];
+
+
+
+    temperatura_media_salas = [mediaArray(temperatura_media_sala1), mediaArray(temperatura_media_sala2), mediaArray(temperatura_media_sala3), mediaArray(temperatura_media_sala4)]
+
+    umidade_media_salas = [mediaArray(umidade_media_sala1), mediaArray(umidade_media_sala2), mediaArray(umidade_media_sala3), mediaArray(umidade_media_sala4)]
+
+
+    umidade_media_empresa = mediaArray(umidade_media_salas)
+    temperatura_media_empresa = mediaArray(temperatura_media_salas)
 }
+
+function atualizarDadosGeraisDashboard() {
+    var dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura");
+
+    dadosGeraisTemperatura.innerHTML = `${temperatura_media_empresa.toFixed(1)}ºC`
+
+    var dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade");
+
+    dadosGeraisUmidade.innerHTML = `${umidade_media_empresa.toFixed(1)}%`
+}
+
 
 var dadosGeraisTemperatura = document.getElementById("dadosGeraisTemperatura")
 var dadosGeraisUmidade = document.getElementById("dadosGeraisUmidade")
@@ -216,10 +440,10 @@ const blocoDash2 = document.getElementById("blocoDash2")
 
 function validacao_cores_cards() {
 
-    var umidade_media_critica = umidade_media_sala < 45 || umidade_media_sala > 55;
-    var temperatura_media_critica = temperatura_media_sala < 18 || temperatura_media_sala > 22;
-    var umidade_media_alerta = umidade_media_sala < 46.2 || umidade_media_sala > 52.6;
-    var temperatura_media_alerta = temperatura_media_sala < 18.47 || temperatura_media_sala > 20.6;
+    var umidade_media_critica = umidade_media_empresa < 45 || umidade_media_empresa > 55;
+    var temperatura_media_critica = temperatura_media_empresa < 18 || temperatura_media_empresa > 22;
+    var umidade_media_alerta = umidade_media_empresa < 46.2 || umidade_media_empresa > 52.6;
+    var temperatura_media_alerta = temperatura_media_empresa < 18.47 || temperatura_media_empresa > 20.6;
 
 
 
@@ -238,7 +462,7 @@ function validacao_cores_cards() {
         blocoDash.style.backgroundColor = cor_vermelho_claro
         dashinfoGeral.style.backgroundColor = cor_vermelho_claro
         dashinfoicon1.style.color = cor_branco
-        
+
         dadosGeraisTemperatura.style.color = cor_branco
 
         dashinfoicon1.style.display = "flex";
@@ -249,7 +473,7 @@ function validacao_cores_cards() {
         blocoDash.style.backgroundColor = cor_amarelo_claro
         dashinfoGeral.style.backgroundColor = cor_amarelo_claro
         dashinfoicon1.style.color = cor_branco
-        
+
         dadosGeraisTemperatura.style.color = cor_branco
 
         dashinfoicon1.style.display = "flex";
@@ -260,7 +484,7 @@ function validacao_cores_cards() {
         blocoDash.style.backgroundColor = cor_marrom_claro
         dashinfoGeral.style.backgroundColor = cor_marrom_claro
         dashinfoicon1.style.color = cor_branco
-        
+
         dadosGeraisTemperatura.style.color = cor_branco
 
         dashinfoicon1.style.display = "none";
@@ -273,7 +497,7 @@ function validacao_cores_cards() {
         blocoDash2.style.backgroundColor = cor_vermelho_claro
         dashinfoGeral2.style.backgroundColor = cor_vermelho_claro
         dashinfoicon2.style.color = cor_branco
-        
+
         dadosGeraisUmidade.style.color = cor_branco
 
         dashinfoicon2.style.display = "flex";
@@ -284,7 +508,7 @@ function validacao_cores_cards() {
         blocoDash2.style.backgroundColor = cor_amarelo_claro
         dashinfoGeral2.style.backgroundColor = cor_amarelo_claro
         dashinfoicon2.style.color = cor_branco
-        
+
         dadosGeraisUmidade.style.color = cor_branco
 
         dashinfoicon2.style.display = "flex";
@@ -295,10 +519,190 @@ function validacao_cores_cards() {
         blocoDash2.style.backgroundColor = cor_marrom_claro
         dashinfoGeral2.style.backgroundColor = cor_marrom_claro
         dashinfoicon2.style.color = cor_branco
-        
+
         dadosGeraisUmidade.style.color = cor_branco
 
         dashinfoicon2.style.display = "none";
+    }
+}
+
+
+const dashinfobloquinho1 = document.getElementById("dashinfobloquinho1");
+const dashinfobloquinho2 = document.getElementById("dashinfobloquinho2");
+const dashinfobloquinho3 = document.getElementById("dashinfobloquinho3");
+const dashinfobloquinho4 = document.getElementById("dashinfobloquinho4");
+const dashinfobloquinho5 = document.getElementById("dashinfobloquinho5");
+const dashinfobloquinho6 = document.getElementById("dashinfobloquinho6");
+const dashinfobloquinho7 = document.getElementById("dashinfobloquinho7");
+const dashinfobloquinho8 = document.getElementById("dashinfobloquinho8");
+const dashinfobloquinho9 = document.getElementById("dashinfobloquinho9");
+const dashinfobloquinho10 = document.getElementById("dashinfobloquinho10");
+const dashinfobloquinho11 = document.getElementById("dashinfobloquinho11");
+const dashinfobloquinho12 = document.getElementById("dashinfobloquinho12");
+const dashinfobloquinho13 = document.getElementById("dashinfobloquinho13");
+const dashinfobloquinho14 = document.getElementById("dashinfobloquinho14");
+const dashinfobloquinho15 = document.getElementById("dashinfobloquinho15");
+const dashinfobloquinho16 = document.getElementById("dashinfobloquinho16");
+
+const dashicon1 = document.getElementById("dashicon1");
+const dashicon2 = document.getElementById("dashicon2");
+const dashicon3 = document.getElementById("dashicon3");
+const dashicon4 = document.getElementById("dashicon4");
+const dashicon5 = document.getElementById("dashicon5");
+const dashicon6 = document.getElementById("dashicon6");
+const dashicon7 = document.getElementById("dashicon7");
+const dashicon8 = document.getElementById("dashicon8");
+const dashicon9 = document.getElementById("dashicon9");
+const dashicon10 = document.getElementById("dashicon10");
+const dashicon11 = document.getElementById("dashicon11");
+const dashicon12 = document.getElementById("dashicon12");
+const dashicon13 = document.getElementById("dashicon13");
+const dashicon14 = document.getElementById("dashicon14");
+const dashicon15 = document.getElementById("dashicon15");
+const dashicon16 = document.getElementById("dashicon16");
+
+const dashinfotexto1 = document.getElementById("dashinfotexto1");
+const dashinfotexto2 = document.getElementById("dashinfotexto2");
+const dashinfotexto3 = document.getElementById("dashinfotexto3");
+const dashinfotexto4 = document.getElementById("dashinfotexto4");
+const dashinfotexto5 = document.getElementById("dashinfotexto5");
+const dashinfotexto6 = document.getElementById("dashinfotexto6");
+const dashinfotexto7 = document.getElementById("dashinfotexto7");
+const dashinfotexto8 = document.getElementById("dashinfotexto8");
+const dashinfotexto9 = document.getElementById("dashinfotexto9");
+const dashinfotexto10 = document.getElementById("dashinfotexto10");
+const dashinfotexto11 = document.getElementById("dashinfotexto11");
+const dashinfotexto12 = document.getElementById("dashinfotexto12");
+const dashinfotexto13 = document.getElementById("dashinfotexto13");
+const dashinfotexto14 = document.getElementById("dashinfotexto14");
+const dashinfotexto15 = document.getElementById("dashinfotexto15");
+const dashinfotexto16 = document.getElementById("dashinfotexto16");
+
+
+function atualizarDadosDashboardsLocalizadas() {
+    for (var i = 0; i < temperaturas_sala1.length; i++) {
+        dashinfobloquinho1.innerHTML = `${temperaturas_sala1[i][5].toFixed(1)}ºC`
+        dashinfobloquinho2.innerHTML = `${umidades_sala1[i][5].toFixed(1)}%`
+        dashinfobloquinho3.innerHTML = `${temperatura_media_sala1[i].toFixed(1)}ºC`
+        dashinfobloquinho4.innerHTML = `${umidade_media_sala1[i].toFixed(1)}%`
+    
+        dashinfobloquinho5.innerHTML = `${temperaturas_sala2[i][5].toFixed(1)}ºC`
+        dashinfobloquinho6.innerHTML = `${umidades_sala2[i][5].toFixed(1)}%`
+        dashinfobloquinho7.innerHTML = `${temperatura_media_sala2[i].toFixed(1)}ºC`
+        dashinfobloquinho8.innerHTML = `${umidade_media_sala2[i].toFixed(1)}%`
+    
+    
+        dashinfobloquinho9.innerHTML = `${temperaturas_sala3[i][5].toFixed(1)}ºC`
+        dashinfobloquinho10.innerHTML = `${umidades_sala3[i][5].toFixed(1)}%`
+        dashinfobloquinho11.innerHTML = `${temperatura_media_sala3[i].toFixed(1)}ºC`
+        dashinfobloquinho12.innerHTML = `${umidade_media_sala3[i].toFixed(1)}%`
+    
+    
+        dashinfobloquinho13.innerHTML = `${temperaturas_sala4[i][5].toFixed(1)}ºC`
+        dashinfobloquinho14.innerHTML = `${umidades_sala4[i][5].toFixed(1)}%`
+        dashinfobloquinho15.innerHTML = `${temperatura_media_sala4[i].toFixed(1)}ºC`
+        dashinfobloquinho16.innerHTML = `${umidade_media_sala4[i].toFixed(1)}%`
+
+
+        /* SALA 1*/
+        if (temperaturas_sala1[i][5] < 18 || temperaturas_sala1[i][5] > 22) {
+            dashinfobloquinho1.style.color = "red"
+
+            dashicon1.style.color = "red"
+            dashinfotexto1.style.color = "red"
+        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+            dashinfobloquinho1.style.color = "yellow"
+
+            dashicon1.style.color = "yellow"
+            dashinfotexto1.style.color = "yellow"
+        }
+
+        if (umidades_sala1[i][5] < 45 || umidades_sala1[i][5] > 55) {
+            dashinfobloquinho2.style.color = "red"
+
+            dashicon2.style.color = "red"
+            dashinfotexto2.style.color = "red"
+        } else if  (umidade_media_sala1[i][5] < 46.2 || umidade_media_sala1[i][5] > 52.6) {
+            dashinfobloquinho2.style.color = "yellow"
+
+            dashicon2.style.color = "yellow"
+            dashinfotexto2.style.color = "yellow"
+        }
+
+        /* SALA 2*/
+        if (temperaturas_sala2[i][5] < 18 || temperaturas_sala2[i][5] > 22) {
+            dashinfobloquinho5.style.color = "red"
+
+            dashicon5.style.color = "red"
+            dashinfotexto5.style.color = "red"
+        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+            dashinfobloquinho5.style.color = "yellow"
+
+            dashicon5.style.color = "yellow"
+            dashinfotexto5.style.color = "yellow"
+        }
+
+        if (umidades_sala2[i][5] < 45 || umidades_sala2[i][5] > 55) {
+            dashinfobloquinho6.style.color = "red"
+
+            dashicon6.style.color = "red"
+            dashinfotexto6.style.color = "red"
+        } else if  (umidade_media_sala2[i][5] < 46.2 || umidade_media_sala2[i][5] > 52.6) {
+            dashinfobloquinho6.style.color = "yellow"
+
+            dashicon6.style.color = "yellow"
+            dashinfotexto6.style.color = "yellow"
+        }
+
+        /* SALA 3*/
+        if (temperaturas_sala3[i][5] < 18 || temperaturas_sala3[i][5] > 22) {
+            dashinfobloquinho9.style.color = "red"
+
+            dashicon9.style.color = "red"
+            dashinfotexto9.style.color = "red"
+        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+            dashinfobloquinho9.style.color = "yellow"
+
+            dashicon9.style.color = "yellow"
+            dashinfotexto9.style.color = "yellow"
+        }
+
+        if (umidades_sala3[i][5] < 45 || umidades_sala3[i][5] > 55) {
+            dashinfobloquinho10.style.color = "red"
+
+            dashicon10.style.color = "red"
+            dashinfotexto10.style.color = "red"
+        } else if  (umidade_media_sala3[i][5] < 46.2 || umidade_media_sala3[i][5] > 52.6) {
+            dashinfobloquinho10.style.color = "yellow"
+
+            dashicon10.style.color = "yellow"
+            dashinfotexto10.style.color = "yellow"
+        }
+
+        /* SALA 4*/
+        if (temperaturas_sala4[i][5] < 18 || temperaturas_sala4[i][5] > 22) {
+            dashinfobloquinho13.style.color = "red"
+
+            dashicon13.style.color = "red"
+            dashinfotexto13.style.color = "red"
+        } else if (temperaturas_sala1[i][5] < 18.47 || temperaturas_sala1[i][5] > 20.6) {
+            dashinfobloquinho13.style.color = "yellow"
+
+            dashicon13.style.color = "yellow"
+            dashinfotexto13.style.color = "yellow"
+        }
+
+        if (umidades_sala4[i][5] < 45 || umidades_sala4[i][5] > 55) {
+            dashinfobloquinho14.style.color = "red"
+
+            dashicon14.style.color = "red"
+            dashinfotexto14.style.color = "red"
+        } else if  (umidade_media_sala4[i][5] < 46.2 || umidade_media_sala4[i][5] > 52.6) {
+            dashinfobloquinho14.style.color = "yellow"
+
+            dashicon14.style.color = "yellow"
+            dashinfotexto14.style.color = "yellow"
+        }
     }
 }
 
@@ -423,10 +827,6 @@ function clickPerfil() {
 
 }
 
-
-function dashboardIcon() {
-    window.location.href = "./dashs/chart.html"
-}
 
 function gerenciarconta() {
     window.location.href = "../PaginaGerenciarConta/gerenciar.html"

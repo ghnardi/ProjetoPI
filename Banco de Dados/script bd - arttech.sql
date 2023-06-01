@@ -54,6 +54,7 @@ primary key (idRegistro, fkSensor)
 select * from registro;
 
 
+
 select umidade, temperatura, dataHora from registro where fkSensor = 1 order by idRegistro desc limit 6;
 insert into registro(umidade, temperatura, dataHora, fkSensor) values
 	(90,10, now(), 1),
@@ -76,47 +77,52 @@ select * from empresa;
 -- USUARIO ADM
 insert into usuario values 
 (null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2, null);
-insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '12345678', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
 (null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
 (null,'Thiago','thiago.garcia@sptech.school' ,'@12345678',2, 100),
 (null,'Lucas', 'lucas.flima@sptech.school', '21102002', 3, 100);
-
-select * from usuario;
 select * from registro;
+select * from usuario;
 
 -- INSERINDO ALAS
 insert into localInstalacao values 
-(null, 'ala1', 3),
-(null, 'ala2', 3),
-(null, 'ala3', 3),
-(null, 'ala4', 3),
-(null, 'ala1', 1),
-(null, 'ala2', 1),
-(null, 'ala3', 1),
-(null, 'ala1', 2),
-(null, 'ala2', 2);
+(null, 'sala1', 1),
+(null, 'sala2', 1),
+(null, 'sala3', 1),
+(null, 'sala4', 1);
+
 select * from localInstalacao;
 
 -- INSERINDO SENSOR
 select * from registro;
+truncate table registro;
 insert into sensores values 
 (null, 'DHT11',1),
 (null, 'DHT11',1),
 (null, 'DHT11',1),
+(null, 'DHT11',1),
+(null, 'DHT11',1),
+(null, 'DHT11',1),
 (null, 'DHT11',2),
 (null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
 (null, 'DHT11',3),
 (null, 'DHT11',4),
 (null, 'DHT11',4),
 (null, 'DHT11',4),
-(null, 'DHT11',5),
-(null, 'DHT11',6),
-(null, 'DHT11',7),
-(null, 'DHT11',8),
-(null, 'DHT11',9);
+(null, 'DHT11',4),
+(null, 'DHT11',4),
+(null, 'DHT11',4);
+
 select * from sensores;
 
 -- INSERINDO REGISTROS
@@ -152,12 +158,12 @@ insert into registro values
 (null, '2023-07-10', 43, 23, 5),
 (null, '2023-07-10', 45, 20, 5),
 (null, '2023-07-10', 41, 21.5, 5),
-(null, '2023-07-10', 47, 21, 6),
-(null, '2023-07-10', 42, 28, 6),
-(null, '2023-07-10', 41, 23, 6),
-(null, '2023-07-10', 47, 24, 6),
-(null, '2023-07-10', 43, 22, 6),
-(null, '2023-07-10', 44, 25, 6);
+(null, '2023-07-10', 47, 21, 16),
+(null, '2023-07-10', 42, 28, 16),
+(null, '2023-07-10', 41, 23, 16),
+(null, '2023-07-10', 47, 24, 16),
+(null, '2023-07-10', 43, 22, 16),
+(null, '2023-07-10', 44, 25, 16);
 
 
 -- SELECTs 
@@ -180,6 +186,11 @@ select sensores.idSensor, registro.*
 	from sensores join registro
 		on sensores.idSensor = registro.idRegistro
 			where dataHora = '2023-02-10';
+            
+select registro.dataHora,umidade,temperatura, sensores.idSensor, localInstalacao.nome, empresa.nome from registro 
+	join sensores on fkSensor = idSensor
+		join localInstalacao on fkLocais = idLocal
+			join empresa on fkEmpresa = idEmpresa;
             
 select sensores.idSensor, localInstalacao.nome, empresa.nome
 	from sensores join localInstalacao 
