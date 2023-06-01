@@ -26,7 +26,7 @@
                     <span id="span_erro"></span>
                 </div>
                 <div class="botoes">
-                    <button id="entrar" onclick="entrar()">Entrar</button>
+                    <button id="logar" onclick="entrar()">Entrar</button>
                 </div>
             </div>
             <div class="containeramarelo"></div>
@@ -38,6 +38,13 @@
 </html>
 
 <script>
+window.addEventListener("keyup", capturarTecla)
+function capturarTecla(event) {
+      if (event.key === "Enter") {
+        entrar();
+      }
+}
+
 
 function entrar() {
 
@@ -73,6 +80,8 @@ fetch("/usuarios/autenticar", {
             sessionStorage.EMAIL_USUARIO = json.email;
             sessionStorage.NOME_USUARIO = json.nome;
             sessionStorage.ID_USUARIO = json.idUsuario;
+            var dataNasc = json.dtNasc
+            sessionStorage.DT_NASC = dataNasc.substring(0,10)
 
             setTimeout(function () {
                 window.location = "../PáginaInicial/home.html";
@@ -96,5 +105,7 @@ fetch("/usuarios/autenticar", {
 
 return false;
 }
+
+
 
 </script>

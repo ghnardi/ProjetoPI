@@ -8,16 +8,17 @@ cnpj char (14),
 email varchar(50),
 cep char(9)
 );
-select * from registro;
+
 create user 'arttech'@'10.18.32.239' identified by 'sptech';
 grant all privileges on arttech.registro to 'arttech'@'10.18.32.239';
 
-select * from usuario;
+
 create table usuario (
 idUsuario int auto_increment,
 nome varchar(45),
 email varchar(45),
 senha varchar(45),
+dtNasc date,
 fkEmpresa int,
 fkAdmin int,
 constraint fkAdmin foreign key (fkAdmin) references usuario(idUsuario),
@@ -51,8 +52,6 @@ fkSensor int,
 constraint fkRegistroSensor foreign key (fkSensor) references sensores(idSensor),
 primary key (idRegistro, fkSensor)
 );
-select * from registro;
-
 
 
 select umidade, temperatura, dataHora from registro where fkSensor = 1 order by idRegistro desc limit 6;
@@ -76,12 +75,13 @@ select * from empresa;
 
 -- USUARIO ADM
 insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2, null);
+(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', '2004-12-09', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
-(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
-(null,'Thiago','thiago.garcia@sptech.school' ,'@12345678',2, 100),
-(null,'Lucas', 'lucas.flima@sptech.school', '21102002', 3, 100);
+(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678','2005-05-02', 1, 100),
+(null,'Thiago','thiago.garcia@sptech.school' ,'@12345678', '2002-09-02',2, 100),
+(null,'Lucas', 'lucas.flima@sptech.school', '21102002','2002-10-21', 3, 100),
+(null,'Gabriella', 'gabriella.roman@sptech.school', '@12345678','2005-03-02', 3, 100);
 select * from registro;
 select * from usuario;
 
