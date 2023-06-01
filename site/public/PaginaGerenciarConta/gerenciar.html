@@ -20,7 +20,7 @@
             
         <div class="infopessoaisBloco">
             <div class="IPparteEsquerda">
-                <span id="IPtexto">Informações pessoais</span>
+                <span id="IPtexto">Informações de Login</span>
                 <span id="IPtextoAviso">Essa informação é particular e não será compartilhada com outras pessoas. Não compartilhe a sua senha com ninguém, em caso de dúvidas entre em contato.</span>
             </div>
 
@@ -41,29 +41,10 @@
                         <span id="dtNascTexto">DATA DE NASCIMENTO</span>
                         <input type="date" id="i_dtnasc">
                     </span>
+
+                    
                 </div>
-
-                    <button id="btn_salvar">SALVAR</button>
-            </div>
-        </div>
-
-        <div class="infoLoginBloco">
-            <div class="IPparteEsquerda">
-                <span id="IPtexto">Informações de Login</span>
-                <span id="IPtextoAviso">Recomendamos que atualize sua senha periodicamente para ajudar a evitar qualquer acesso não autorizado à sua conta.</span> 
-            </div>
-
-            <div class="ILparteDireita">
-                <div class="alterarEmail">
-                    <span id="alterarEmailTexto">Alterar E-mail</span>
-                    <span id="alterarEmailAtual">ENDEREÇO DE E-MAIL ATUAL</span>
-                    <input type="text" id="i_emailatual">
-
-                    <span id="alterarEmailNovo">ENDEREÇO DE E-MAIL NOVO</span>
-                    <input type="text" id="i_emailnovo">
-
-                    <button id="btn_alterar">ALTERAR</button>
-                </div>
+                <button id="btn_salvar" onclick="atualizarDados()">SALVAR</button>
 
                 <div class="alterarSenha" id="aqui">
                     <span id="alterarSenhaTexto">Alterar Senha</span>
@@ -75,11 +56,14 @@
 
                     <span id="senhaNovaConfirmar">CONFIRMAR SENHA NOVA</span>
                     <input type="password" id="i_senhanovaconfirmar">
-
-                    <button id="btn_alterarSenha">ALTERAR</button>
+                    <span id="span_erro"></span>
                 </div>
-        </div>
+       
 
+                    <button id="btn_salvar2" onclick="atualizarSenha()">SALVAR</button>
+      
+
+            </div>
         </div>
 </div>
 

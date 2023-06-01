@@ -17,7 +17,7 @@ create table usuario (
 idUsuario int auto_increment,
 nome varchar(45),
 email varchar(45),
-senha varchar(45),
+senha varchar(200),
 dtNasc date,
 fkEmpresa int,
 fkAdmin int,
@@ -25,6 +25,7 @@ constraint fkAdmin foreign key (fkAdmin) references usuario(idUsuario),
 constraint fkEmpresa foreign key (fkEmpresa) references empresa(idEmpresa),
 primary key (idUsuario, fkEmpresa)
 )auto_increment = 100;
+
 
 create table localInstalacao (
 idLocal int auto_increment,
@@ -69,21 +70,23 @@ insert into empresa values
 (null,'museu1','12345678912345','museu1@sptech.school', '09581-310'),
 (null,'museu2','12345678912345','museu2@sptech.school', '09581-310'),
 (null,'museu3','12345678912345','museu3@sptech.school', '09581-310');
-
+select * from usuario;
 select * from empresa;
 -- INSERINDO USUARIOS
 
 -- USUARIO ADM
 insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', '2004-12-09', 2, null);
+(null,'Matheus', 'matheus.santiago@sptech.school', sha2('@12345678', 256), '2004-12-09', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
-(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678','2005-05-02', 1, 100),
-(null,'Thiago','thiago.garcia@sptech.school' ,'@12345678', '2002-09-02',2, 100),
-(null,'Lucas', 'lucas.flima@sptech.school', '21102002','2002-10-21', 3, 100),
-(null,'Gabriella', 'gabriella.roman@sptech.school', '@12345678','2005-03-02', 3, 100);
+(null,'Douglas', 'douglas.queiroz@sptech.school', sha2('@12345678', 256), '2005-05-02', 1, 100),
+(null,'Thiago','thiago.garcia@sptech.school' , sha2('@12345678', 256), '2002-09-02', 2, 100),
+(null,'Lucas', 'lucas.flima@sptech.school', sha2('@12345678', 256) , '2002-10-21', 3, 100),
+(null,'Gabriella', 'gabriella.roman@sptech.school', sha2('@12345678', 256), '2005-03-02', 3, 100);
 select * from registro;
 select * from usuario;
+
+SELECT * FROM usuario WHERE senha = sha2('@12345678', 256) AND idUsuario = 101;
 
 -- INSERINDO ALAS
 insert into localInstalacao values 

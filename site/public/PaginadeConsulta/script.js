@@ -155,7 +155,7 @@ function insertregistro() {
 
 function atualizarDashboard() {
 
-    insertregistro();
+    // insertregistro();
 
     fetch("/usuarios/atualizarDashboard", {
         method: "GET",

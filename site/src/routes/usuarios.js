@@ -40,5 +40,18 @@ router.post("/verificarAdmin", function (req, res) {
     usuarioController.verificarAdmin(req, res);
 });
 
+router.post("/atualizarDados", function (req, res) {
+    usuarioController.atualizarDados(req, res);
+});
+
+router.post("/atualizarsenha", function (req, res) {
+    usuarioController.atualizarsenha(req, res);
+});
+
+router.post("/verificarsenha", function (req, res) {
+    usuarioController.verificarsenha(req, res);
+});
+
+
 
 module.exports = router;

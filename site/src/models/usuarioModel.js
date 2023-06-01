@@ -12,20 +12,20 @@ function listar() {
 function entrar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucao = `
-        SELECT * FROM usuario WHERE email = '${email}' AND senha = '${senha}';
+        SELECT * FROM usuario WHERE email = '${email}' AND senha = sha2('${senha}', 256);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
-function cadastrar(nome, email, senha) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
+function cadastrar(nome, email, senha, fkEmpresa, fkAdmin) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha, fkEmpresa, fkAdmin);
 
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (nome, email, senha, fkEmpresa) VALUES ('${nome}', '${email}', '${senha}', 1);
+        INSERT INTO usuario (nome, email, senha, fkEmpresa, fkAdmin) VALUES ('${nome}', '${email}', sha2('${senha}', 256), '${fkEmpresa}', '${fkAdmin}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -45,6 +45,7 @@ function verificaremail(email) {
     console.log("Executando verificação de e-mail: \n" + instrucao);
     return database.executar(instrucao);
 }
+
 
 
 function atualizarGrafico(limite_linhas) {
@@ -193,7 +194,26 @@ function atualizarDashboard(limite_linhas) {
     });
 }
 
+function atualizarDados(email, nome, data, id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, nome, data, id)
+    var instrucao = `
+    UPDATE usuario SET email = '${email}', nome = '${nome}', dtNasc = '${data}' WHERE idUsuario = ${id}; ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
+function verificarsenha(senha, id) {
+    var instrucao = `SELECT * FROM usuario WHERE senha = sha2('${senha}', 256) AND idUsuario = ${id}`;
+    console.log("Executando verificação de senha: \n" + instrucao);
+    return database.executar(instrucao);
+  }
+
+function atualizarSenha(senha, id) {
+    var instrucao = `update usuario set senha = sha2('${senha}', 256) where idUsuario = ${id};`;
+    console.log("Executando alteração de senha: \n" + instrucao);
+    return database.executar(instrucao);
+  }
 
 module.exports = {
     entrar,
@@ -203,5 +223,8 @@ module.exports = {
     verificaremail,
     insertregistro,
     verificarAdmin,
-    atualizarDashboard
+    atualizarDashboard,
+    atualizarDados,
+    verificarsenha,
+    atualizarSenha
 };

@@ -65,7 +65,8 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-
+    var fkAdmin = req.body.fkAdminServer
+    var fkEmpresa = req.body.fkEmpresaServer
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -76,7 +77,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nome, email, senha, fkEmpresa, fkAdmin)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -119,6 +120,63 @@ function verificaremail(req, res) {
             });
     }
 }
+
+function verificarsenha(req, res) {
+    var senha = req.body.senha_atualServer;
+    var id = req.body.idServer
+  
+    if (senha == undefined) {
+      res.status(400).send("A senha está indefinida!");
+    } else {
+      usuarioModel
+        .verificarsenha(senha, id)
+        .then(function (resultado) {
+          if (resultado.length > 0) {
+            res.json({ senhaExiste: true });
+          } else {
+            res.json({ senhaExiste: false });
+          }
+        })
+        .catch(function (erro) {
+          console.log(erro);
+          console.log(
+            "\nHouve um erro ao verificar a senha! Erro: ",
+            erro.sqlMessage
+          );
+          res.status(500).json(erro.sqlMessage);
+        });
+    }
+  }
+
+  function atualizarsenha(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var senha_nova = req.body.senhaNovaServer;
+    var idUsuario = req.body.idServer;
+  
+    // Faça as validações dos valores
+    if (senha_nova == undefined) {
+      res.status(400).send("Sua senha está undefined!");
+    } else if (idUsuario == undefined) {
+      res.status(400).send("Usuário não logado! ID não encontrado!");
+    } else {
+      usuarioModel.atualizarSenha(senha_nova, idUsuario)
+        .then(function (resultado) {
+          if (resultado.length > 0) {
+            res.json({ atualizacao_senha_enviada: true });
+          } else {
+            res.json({ atualizacao_senha_enviada: false });
+          }
+        })
+        .catch(function (erro) {
+          console.log(erro);
+          console.log(
+            "\nHouve um erro ao realizar a atualização da senha. Erro: ",
+            erro.sqlMessage
+          );
+          res.status(500).json(erro.sqlMessage);
+        });
+    }
+  }
 
 function atualizarGrafico(req, res) {
 
@@ -214,6 +272,35 @@ function verificarAdmin(req, res) {
 
 }
 
+function atualizarDados(req, res) {
+    // Recebe as inputs aqui postas no JS da pagina de Login
+    var nome = req.body.nomeServer
+    var email = req.body.emailServer;
+    var data = req.body.dataServer
+    var id = req.body.idServer
+    if (email == undefined || nome == undefined || id == undefined || data == undefined) {
+        res.status(400).send("Seus dados estão indefinido!");
+    } else {
+        
+        usuarioModel.atualizarDados(email, nome, data, id)
+            .then(
+                function (resultado) {
+                        console.log(`\nResultados encontrados: ${resultado.length}`);
+                        console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
 
 module.exports = {
     entrar,
@@ -224,5 +311,8 @@ module.exports = {
     atualizarGrafico,
     insertregistro,
     atualizarDashboard,
-    verificarAdmin
+    verificarAdmin,
+    atualizarDados,
+    verificarsenha,
+    atualizarsenha
 }
