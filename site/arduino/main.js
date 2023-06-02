@@ -61,23 +61,63 @@ const serial = async (
         //console.log(data);
         const valores = data.split(';');
 
-        var dht11Umidade1 = parseFloat(valores[1]);
+        var min = 1;
+        var max = 4;
+        var valor_aleatorio_fkLocal = parseInt(Math.random() * (max - min + 1) + 1)
+
         var dht11Temperatura1 = parseFloat(valores[0]);
+        var dht11Umidade1 = parseFloat(valores[1]);
+        var fkSensor1 = parseInt(valores[2]);
 
-        var dht11Umidade2 = parseFloat(valores[4]);
         var dht11Temperatura2 = parseFloat(valores[3]);
+        var dht11Umidade2 = parseFloat(valores[4]);
+        var fkSensor2 = parseInt(valores[5]);
 
-        var dht11Umidade3 = parseFloat(valores[7]);
         var dht11Temperatura3 = parseFloat(valores[6]);
+        var dht11Umidade3 = parseFloat(valores[7]);
+        var fkSensor3 = parseInt(valores[8]);
 
-        var dht11Umidade4 = parseFloat(valores[10]);
         var dht11Temperatura4 = parseFloat(valores[9]);
+        var dht11Umidade4 = parseFloat(valores[10]);
+        var fkSensor4 = parseInt(valores[11]);
 
-        var dht11Umidade5 = parseFloat(valores[13]);
         var dht11Temperatura5 = parseFloat(valores[12]);
+        var dht11Umidade5 = parseFloat(valores[13]);
+        var fkSensor5 = parseInt(valores[14]);
 
-        var dht11Umidade6 = parseFloat(valores[16]);
         var dht11Temperatura6 = parseFloat(valores[15]);
+        var dht11Umidade6 = parseFloat(valores[16]);
+        var fkSensor6 = parseInt(valores[17]);
+
+        if (valor_aleatorio_fkLocal == 1) {
+            fkSensor1 = 1;
+            fkSensor2 = 2;
+            fkSensor3 = 3;
+            fkSensor4 = 4;
+            fkSensor5 = 5;
+            fkSensor6 = 6;
+        } else if (valor_aleatorio_fkLocal == 2) {
+            fkSensor1 = 7;
+            fkSensor2 = 8;
+            fkSensor3 = 9;
+            fkSensor4 = 10;
+            fkSensor5 = 11;
+            fkSensor6 = 12;
+        } else if (valor_aleatorio_fkLocal == 3) {
+            fkSensor1 = 13;
+            fkSensor2 = 14;
+            fkSensor3 = 15;
+            fkSensor4 = 16;
+            fkSensor5 = 17;
+            fkSensor6 = 18;
+        } else if (valor_aleatorio_fkLocal == 4) {
+            fkSensor1 = 19;
+            fkSensor2 = 20;
+            fkSensor3 = 21;
+            fkSensor4 = 22;
+            fkSensor5 = 23;
+            fkSensor6 = 24;
+        }
 
         console.log(data)
 
@@ -121,23 +161,25 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
+
+
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 1)', [dht11Umidade1, dht11Temperatura1]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)', [dht11Umidade1, dht11Temperatura1, fkSensor1]
                 );
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 2)', [dht11Umidade2, dht11Temperatura2]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)', [dht11Umidade2, dht11Temperatura2, fkSensor2]
                 );
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 3)', [dht11Umidade3, dht11Temperatura3]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)', [dht11Umidade3, dht11Temperatura3, fkSensor3]
                 );
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 4)', [dht11Umidade4, dht11Temperatura4]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)', [dht11Umidade4, dht11Temperatura4, fkSensor4]
                 );
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 5)', [dht11Umidade5, dht11Temperatura5]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)', [dht11Umidade5, dht11Temperatura5, fkSensor5]
                 );
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), 6)', [dht11Umidade6, dht11Temperatura6]
+                    'INSERT INTO registro (umidade, temperatura, dataHora, fkSensor) VALUES (?, ?, now(), ?)', [dht11Umidade6, dht11Temperatura6, fkSensor6]
                 );
                 console.log("valores inseridos no banco: ")
 
