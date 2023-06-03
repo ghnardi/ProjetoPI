@@ -3,21 +3,35 @@ process.env.AMBIENTE_PROCESSO = "desenvolvimento";
 
 const nodemailer = require('nodemailer');
 
-function configureTransporter() {
+function configureTransporterAtendimento() {
     // Configuração do transporte do Nodemailer
-    const transporter = nodemailer.createTransport({
-      // Configurações do seu provedor de e-mail (ex: Gmail)
-      service: 'outlook',
-      auth: {
-        user: 'lucas.flima@sptech.school',
-        pass: '#Gf48546298866',
-      },
+    const transporterAtendimento = nodemailer.createTransport({
+        // Configurações do seu provedor de e-mail (ex: Gmail)
+        service: 'outlook',
+        auth: {
+            user: 'lucas.flima@sptech.school',
+            pass: '#Gf48546298866',
+        },
     });
-  
-    return transporter;
-  }
 
-  
+    return transporterAtendimento;
+}
+
+function configureTransporterJira() {
+    // Configuração do transporte do Nodemailer
+    const transporterJira = nodemailer.createTransport({
+        // Configurações do seu provedor de e-mail (ex: Gmail)
+        service: 'outlook',
+        auth: {
+            user: 'lucas.flima@sptech.schoo',
+            pass: '#Gf48546298866',
+        },
+    });
+
+    return transporterJira;
+}
+
+
 
 var express = require("express");
 var cors = require("cors");
@@ -51,29 +65,60 @@ app.listen(PORTA, function () {
 });
 
 app.post('/enviar-email', (req, res) => {
-    const { destinatario, remetente, assunto, corpo } = req.body;
-  
+    const { nome, remetente, telefone, corpo } = req.body;
+
     // Obtém uma instância do transporte do Nodemailer
-    const transporter = configureTransporter();
-  
+    const transporterAtendimento = configureTransporterAtendimento();
+
     const mailOptions = {
-      from: 'lucas.flima@sptech.school',
-      to: destinatario,
-      subject: assunto,
-      text: `Remetente: ${remetente}
-      ${corpo}`,
+        from: 'Cliente <lucas.flima@sptech.school>',
+        to: 'atendimento.arttech@gmail.com',
+        subject: 'Contato de um atual ou futuro cliente',
+        text: `Remetente: ${nome}
+Email do remetente: ${remetente}
+
+${corpo}
+
+Telefone para contato: ${telefone}`,
     };
-  
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log(error);
-        res.status(500).send('Erro ao enviar o e-mail.');
-      } else {
-        console.log('E-mail enviado: ' + info.response);
-        res.send('E-mail enviado com sucesso!');
-      }
+
+    transporterAtendimento.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.status(500).send('Erro ao enviar o e-mail.');
+        } else {
+            console.log('E-mail enviado: ' + info.response);
+            res.send('E-mail enviado com sucesso!');
+        }
     });
-  });
+});
+
+
+app.post('/relatar-problema', (req, res) => {
+    const { remetente, assunto, corpo } = req.body;
+
+    // Obtém uma instância do transporte do Nodemailer
+    const transporterJira = configureTransporterJira();
+
+    const mailOptions = {
+        from: 'Cliente <lucas.flima@sptech.school>',
+        to: 'support@arttechgrupo05.atlassian.net',
+        subject: assunto,
+        text: `Remetente: ${remetente}
+
+${corpo}`,
+    };
+
+    transporterJira.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.status(500).send('Erro ao enviar o e-mail.');
+        } else {
+            console.log('E-mail enviado: ' + info.response);
+            res.send('E-mail enviado com sucesso!');
+        }
+    });
+});
 
 
 
