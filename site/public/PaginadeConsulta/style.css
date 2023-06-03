@@ -100,7 +100,7 @@ body {
     height: auto;
 }
 
-/* GABRIELLA FAZENDO DASH GERAL */
+/* DASH GERAL */
 
 .dashGeral {
     display: flex;
@@ -203,10 +203,10 @@ body {
     display: flex;
     position: absolute;
     width: 30%;
-    height: 65%;
+    height: 70%;
     background-color: #493510;
     right:10%;
-    top: 23%;
+    top: 22%;
     border-radius: 1vmax;
     flex-direction: column;
     align-items: center;
@@ -240,9 +240,9 @@ body {
     height: 10%;
 }
 
-#cardAviso{
+#cardAvisoSala1Temperatura{
     display: none;
-    height: 15%;
+    height: 10%;
     width: 90%;
     background-color: #6D4A00;
     margin-top: 4%;
@@ -251,15 +251,15 @@ body {
     border-radius: 1vmax;
 }
 
-#informacaoMural{
+#informacaoMuralSala1Temperatura{
     color: #C6B082;
     font-weight: 800;
     font-size: 1vmax;
 }
 
-#cardAviso2{
+#cardAvisoSala1Umidade{
     display: none;
-    height: 15%;
+    height: 10%;
     width: 90%;
     background-color: #6D4A00;
     margin-top: 4%;
@@ -268,15 +268,15 @@ body {
     border-radius: 1vmax;
 }
 
-#informacaoMural2{
+#informacaoMuralSala1Umidade{
     color: #C6B082;
     font-weight: 800;
     font-size: 1vmax;
 }
 
-#cardAviso3{
+#cardAvisoSala2Temperatura{
     display: none;
-    height: 15%;
+    height: 10%;
     width: 90%;
     background-color: #6D4A00;
     margin-top: 4%;
@@ -285,15 +285,15 @@ body {
     border-radius: 1vmax;
 }
 
-#informacaoMural3{
+#informacaoMuralSala2Temperatura{
     color: #C6B082;
     font-weight: 800;
     font-size: 1vmax;
 }
 
-#cardAviso4{
+#cardAvisoSala2Umidade{
     display: none;
-    height: 15%;
+    height: 10%;
     width: 90%;
     background-color: #6D4A00;
     margin-top: 4%;
@@ -302,7 +302,75 @@ body {
     border-radius: 1vmax;
 }
 
-#informacaoMural4{
+#informacaoMuralSala2Umidade{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1vmax;
+}
+
+#cardAvisoSala3Temperatura{
+    display: none;
+    height: 10%;
+    width: 90%;
+    background-color: #6D4A00;
+    margin-top: 4%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vmax;
+}
+
+#informacaoMuralSala3Temperatura{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1vmax;
+}
+
+#cardAvisoSala3Umidade{
+    display: none;
+    height: 10%;
+    width: 90%;
+    background-color: #6D4A00;
+    margin-top: 4%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vmax;
+}
+
+#informacaoMuralSala3Umidade{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1vmax;
+}
+
+#cardAvisoSala4Temperatura{
+    display: none;
+    height: 10%;
+    width: 90%;
+    background-color: #6D4A00;
+    margin-top: 4%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vmax;
+}
+
+#informacaoMuralSala4Temperatura{
+    color: #C6B082;
+    font-weight: 800;
+    font-size: 1vmax;
+}
+
+#cardAvisoSala4Umidade{
+    display: none;
+    height: 10%;
+    width: 90%;
+    background-color: #6D4A00;
+    margin-top: 4%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vmax;
+}
+
+#informacaoMuralSala4Umidade{
     color: #C6B082;
     font-weight: 800;
     font-size: 1vmax;
@@ -312,7 +380,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90%;
+    height: 150%;
     width: 100%;
 }
 

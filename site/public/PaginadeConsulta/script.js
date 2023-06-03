@@ -1057,6 +1057,116 @@ function atualizarDadosDashboardsLocalizadas() {
            
         }
     }
+    const cardAvisoSala1Temperatura = document.getElementById("cardAvisoSala1Temperatura");
+    const cardAvisoSala1Umidade = document.getElementById("cardAvisoSala1Umidade");
+    const informacaoMuralSala1Temperatura = document.getElementById("informacaoMuralSala1Temperatura")
+    const informacaoMuralSala1Umidade = document.getElementById("informacaoMuralSala1Umidade")
+
+    const cardAvisoSala2Temperatura = document.getElementById("cardAvisoSala2Temperatura");
+    const cardAvisoSala2Umidade = document.getElementById("cardAvisoSala2Umidade");
+    const informacaoMuralSala2Temperatura = document.getElementById("informacaoMuralSala2Temperatura")
+    const informacaoMuralSala2Umidade = document.getElementById("informacaoMuralSala2Umidade")
+
+    const cardAvisoSala3Temperatura = document.getElementById("cardAvisoSala3Temperatura");
+    const cardAvisoSala3Umidade = document.getElementById("cardAvisoSala3Umidade");
+    const informacaoMuralSala3Temperatura = document.getElementById("informacaoMuralSala3Temperatura")
+    const informacaoMuralSala3Umidade = document.getElementById("informacaoMuralSala3Umidade")
+
+    const cardAvisoSala4Temperatura = document.getElementById("cardAvisoSala4Temperatura");
+    const cardAvisoSala4Umidade = document.getElementById("cardAvisoSala4Umidade");
+    const informacaoMuralSala4Temperatura = document.getElementById("informacaoMuralSala4Temperatura")
+    const informacaoMuralSala4Umidade = document.getElementById("informacaoMuralSala4Umidade")
+    
+    // ALERTA DE TEMPERATURA SALA 1
+    if((media_ultima_temperatura_sala1 < 18 || media_ultima_temperatura_sala1 > 22) || (media_ultima_temperatura_sala1 < 18.47 || media_ultima_temperatura_sala1 > 20.6)
+    || (mediaArray(temperatura_media_sala1) < 18 || mediaArray(temperatura_media_sala1) > 22)
+    || (mediaArray(temperatura_media_sala1) < 18.47 || mediaArray(temperatura_media_sala1) > 20.6)) {
+
+        cardAvisoSala1Temperatura.style.display = 'flex'
+        informacaoMuralSala1Temperatura.innerHTML = "Há alteração de temperatura na Sala 1"
+    } else {
+
+        cardAvisoSala1Temperatura.style.display = 'none'
+        informacaoMuralSala1Temperatura.innerHTML = ""
+    }
+
+    // ALERTA DE UMIDADE SALA 1
+    if((media_ultima_umidade_sala1 < 45 || media_ultima_umidade_sala1 > 55) || (media_ultima_umidade_sala1 < 46.2 || media_ultima_umidade_sala1 > 52.6) || (mediaArray(umidade_media_sala1) < 45 || mediaArray(umidade_media_sala1) > 55) ||
+    (mediaArray(umidade_media_sala1) < 46.2 || mediaArray(umidade_media_sala1) > 52.6)) {
+        cardAvisoSala1Umidade.style.display = 'flex'
+        informacaoMuralSala1Umidade.innerHTML = "Há alteração de umidade na Sala 1"
+    } else {
+        cardAvisoSala1Umidade.style.display = 'none'
+        informacaoMuralSala1Umidade.innerHTML = ""
+    }
+
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // ALERTA DE TEMPERATURA SALA 2
+    if((media_ultima_temperatura_sala2 < 18 || media_ultima_temperatura_sala2 > 22) || (media_ultima_temperatura_sala2 < 18.47 || media_ultima_temperatura_sala2 > 20.6) || (mediaArray(temperatura_media_sala2) < 18 || mediaArray(temperatura_media_sala2) > 22) ||
+    (mediaArray(temperatura_media_sala2) < 18.47 || mediaArray(temperatura_media_sala2) > 20.6)) {
+
+        cardAvisoSala2Temperatura.style.display = 'flex'
+        informacaoMuralSala2Temperatura.innerHTML = "Há alteração de temperatura na Sala 2"
+    } else {
+
+        cardAvisoSala2Temperatura.style.display = 'none'
+        informacaoMuralSala2Temperatura.innerHTML = ""
+    }
+
+    // ALERTA DE UMIDADE SALA 2
+    if((media_ultima_umidade_sala2 < 45 || media_ultima_umidade_sala2 > 55) || (media_ultima_umidade_sala2 < 46.2 || media_ultima_umidade_sala2 > 52.6) ||
+    (mediaArray(umidade_media_sala2) < 45 || mediaArray(umidade_media_sala2) > 55) || (mediaArray(umidade_media_sala2) < 46.2 || mediaArray(umidade_media_sala2) > 52.6)) {
+        cardAvisoSala2Umidade.style.display = 'flex'
+        informacaoMuralSala2Umidade.innerHTML = "Há alteração de umidade na Sala 2"
+    } else {
+        cardAvisoSala2Umidade.style.display = 'none'
+        informacaoMuralSala2Umidade.innerHTML = ""
+    }
+
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // ALERTA DE TEMPERATURA SALA 3
+    if((media_ultima_temperatura_sala3 < 18 || media_ultima_temperatura_sala3 > 22) || (media_ultima_temperatura_sala3 < 18.47 || media_ultima_temperatura_sala3 > 20.6) ||
+    (mediaArray(temperatura_media_sala3) < 18 || mediaArray(temperatura_media_sala3) > 22) || (mediaArray(temperatura_media_sala3) < 18.47 || mediaArray(temperatura_media_sala3) > 20.6)) {
+
+        cardAvisoSala3Temperatura.style.display = 'flex'
+        informacaoMuralSala3Temperatura.innerHTML = "Há alteração de temperatura na Sala 3"
+    } else {
+
+        cardAvisoSala3Temperatura.style.display = 'none'
+        informacaoMuralSala3Temperatura.innerHTML = ""
+    }
+
+    // ALERTA DE UMIDADE SALA 3
+    if((media_ultima_umidade_sala3 < 45 || media_ultima_umidade_sala3 > 55) || (media_ultima_umidade_sala3 < 46.2 || media_ultima_umidade_sala3 > 52.6) ||
+    (mediaArray(umidade_media_sala3) < 45 || mediaArray(umidade_media_sala3) > 55) || (mediaArray(umidade_media_sala3) < 46.2 || mediaArray(umidade_media_sala3) > 52.6)) {
+        cardAvisoSala3Umidade.style.display = 'flex'
+        informacaoMuralSala3Umidade.innerHTML = "Há alteração de umidade na Sala 3"
+    } else {
+        cardAvisoSala3Umidade.style.display = 'none'
+        informacaoMuralSala3Umidade.innerHTML = ""
+    }
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // ALERTA DE TEMPERATURA SALA 4
+    if((media_ultima_temperatura_sala4 < 18 || media_ultima_temperatura_sala4 > 22) || (media_ultima_temperatura_sala4 < 18.47 || media_ultima_temperatura_sala4 > 20.6) ||
+    (mediaArray(temperatura_media_sala4) < 18 || mediaArray(temperatura_media_sala4) > 22) || (mediaArray(temperatura_media_sala4) < 18.47 || mediaArray(temperatura_media_sala4) > 20.6)) {
+
+        cardAvisoSala4Temperatura.style.display = 'flex'
+        informacaoMuralSala4Temperatura.innerHTML = "Há alteração de temperatura na Sala 4"
+    } else {
+
+        cardAvisoSala4Temperatura.style.display = 'none'
+        informacaoMuralSala4Temperatura.innerHTML = ""
+    }
+
+    // ALERTA DE UMIDADE SALA 4
+    if((media_ultima_umidade_sala4 < 45 || media_ultima_umidade_sala4 > 55) || (media_ultima_umidade_sala4 < 46.2 || media_ultima_umidade_sala4 > 52.6) ||
+    (mediaArray(umidade_media_sala4) < 45 || mediaArray(umidade_media_sala4) > 55) || (mediaArray(umidade_media_sala4) < 46.2 || mediaArray(umidade_media_sala4) > 52.6)) {
+        cardAvisoSala4Umidade.style.display = 'flex'
+        informacaoMuralSala4Umidade.innerHTML = "Há alteração de umidade na Sala 4"
+    } else {
+        cardAvisoSala4Umidade.style.display = 'none'
+        informacaoMuralSala4Umidade.innerHTML = ""
+    }
 }
 
 
