@@ -52,6 +52,11 @@ router.post("/verificarsenha", function (req, res) {
     usuarioController.verificarsenha(req, res);
 });
 
+router.post("/atualizarlocal", function (req, res) {
+    usuarioController.atualizarLocal(req, res);
+});
+  
+
 
 
 module.exports = router;

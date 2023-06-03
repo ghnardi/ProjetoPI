@@ -1,5 +1,41 @@
 setInterval(atualizarDashboard, 1000);
 
+function atualizarLocal(){
+
+    fetch("/usuarios/atualizarlocal", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        fkEmpresaServer: sessionStorage.FK_EMPRESA
+    })
+}).then(function (resposta) {
+    console.log("ESTOU RECEBENDO O LOCAL PARA ATUALIZAR A DASHBOARD!")
+
+    if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+        });
+
+    } else {
+        resposta.text().then(texto => {
+            console.error(texto);
+        });
+    }
+
+}).catch(function (erro) {
+    console.log(erro);
+})
+
+return false;
+}
+
+
+
 dashdash1.style.display = 'flex'
 menuleft1.style.display = 'flex'
 dashdashtexto.innerHTML = `DASHBOARD DA ALA 1`
@@ -154,7 +190,6 @@ function insertregistro() {
 }
 
 function atualizarDashboard() {
-
     insertregistro();
 
     fetch("/usuarios/atualizarDashboard", {

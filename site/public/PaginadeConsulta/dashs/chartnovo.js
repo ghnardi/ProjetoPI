@@ -55,16 +55,16 @@ function insertregistro() {
     var valor_aleatorio_fkLocal = parseInt(valor_aleatorio_local_quebrado);
 
     if (valor_aleatorio_fkLocal == 2) {
-        valor_aleatorio *= 1.2;
-        valor_aleatorio2 *= 1.2;
+        valor_aleatorio *= 1.05;
+        valor_aleatorio2 *= 1.05;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 6
     } else if (valor_aleatorio_fkLocal == 3) {
-        valor_aleatorio *= 0.8;
-        valor_aleatorio2 *= 0.8;
+        valor_aleatorio *= 0.95;
+        valor_aleatorio2 *= 0.95;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 12
     } else if (valor_aleatorio_fkLocal == 4 ){
-        valor_aleatorio *= 2;
-        valor_aleatorio2 *= 2;
+        valor_aleatorio *= 1.1;
+        valor_aleatorio2 *= 1.1;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 18
     } 
     
@@ -102,6 +102,8 @@ function insertregistro() {
 
 }
 
+
+
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -109,15 +111,20 @@ function getQueryParam(param) {
   
   const grafico_selecionado = getQueryParam("parametro")
 
+  const textoTopoSala = document.getElementById("textoTopoSala")
   var soma_sala = 0;
   if (grafico_selecionado == 1) {
     soma_sala = 0;
+    textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
   } else if (grafico_selecionado == 2){
     soma_sala = 6
+    textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
   } else if (grafico_selecionado == 3){
     soma_sala = 12
+    textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
   } else if (grafico_selecionado == 4) {
     soma_sala = 18
+    textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
   }
 
 function atualizarGrafico() {
@@ -330,15 +337,15 @@ const data_setor = {
         {
             label: 'Temperatura',
             data: temperaturas[0],
-            backgroundColor: 'red',
-            borderColor: 'red',
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'rgba(255, 99, 132, 1)',
             borderWidth: 2
         },
         {
             label: 'Umidade',
             data: umidades[0],
-            backgroundColor: 'blue',
-            borderColor: 'blue',
+            backgroundColor: '#1d8d8e',
+            borderColor: '#1d8d8e',
             borderWidth: 2
         }
     ]

@@ -26,6 +26,41 @@ function clickMenu() {
 
 
 
+
+
+document.getElementById('faleConosco').addEventListener('click', function(event) {
+    event.preventDefault();
+    contatar();
+});
+
+function contatar() {
+        const destinatario = "support@arttechgrupo05.atlassian.net";
+        const remetente = sessionStorage.EMAIL_USUARIO;
+        const assunto = input_email.value;
+        const corpo = input_mensagem.value;
+    
+        fetch('/enviar-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ destinatario, remetente, assunto, corpo }),
+        })
+          .then(function(response) {
+            if (response.ok) {
+              console.log('E-mail enviado com sucesso!');
+              // Faça algo após o envio do e-mail, se necessário
+            } else {
+              console.log('Erro ao enviar o e-mail.');
+            }
+          })
+          .catch(function(error) {
+            console.log('Erro ao enviar o e-mail:', error);
+          });
+  }
+
+
+
 function clickBloco1() {
     if (dashdash1.style.display == 'none') {
 

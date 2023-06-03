@@ -88,9 +88,9 @@ function atualizarGrafico(limite_linhas) {
         selects.push(database.executar(instrucao4));
         selects.push(database.executar(instrucao5));
         selects.push(database.executar(instrucao6));
-        selects.push(database.executar(instrucao7 ));
-        selects.push(database.executar(instrucao8 ));
-        selects.push(database.executar(instrucao9 ));
+        selects.push(database.executar(instrucao7));
+        selects.push(database.executar(instrucao8));
+        selects.push(database.executar(instrucao9));
         selects.push(database.executar(instrucao10));
         selects.push(database.executar(instrucao11));
         selects.push(database.executar(instrucao12));
@@ -165,9 +165,9 @@ function atualizarDashboard(limite_linhas) {
         selects.push(database.executar(instrucao4));
         selects.push(database.executar(instrucao5));
         selects.push(database.executar(instrucao6));
-        selects.push(database.executar(instrucao7 ));
-        selects.push(database.executar(instrucao8 ));
-        selects.push(database.executar(instrucao9 ));
+        selects.push(database.executar(instrucao7));
+        selects.push(database.executar(instrucao8));
+        selects.push(database.executar(instrucao9));
         selects.push(database.executar(instrucao10));
         selects.push(database.executar(instrucao11));
         selects.push(database.executar(instrucao12));
@@ -207,13 +207,20 @@ function verificarsenha(senha, id) {
     var instrucao = `SELECT * FROM usuario WHERE senha = sha2('${senha}', 256) AND idUsuario = ${id}`;
     console.log("Executando verificação de senha: \n" + instrucao);
     return database.executar(instrucao);
-  }
+}
 
 function atualizarSenha(senha, id) {
     var instrucao = `update usuario set senha = sha2('${senha}', 256) where idUsuario = ${id};`;
     console.log("Executando alteração de senha: \n" + instrucao);
     return database.executar(instrucao);
-  }
+}
+
+function atualizarLocal(fkEmpresa) {
+    var instrucao = `select localInstalacao.nome from localInstalacao join empresa 
+	on fkEmpresa = idEmpresa where fkEmpresa = ${fkEmpresa};`;
+    console.log("Executando atualização do local na dashboard: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 module.exports = {
     entrar,
@@ -226,5 +233,6 @@ module.exports = {
     atualizarDashboard,
     atualizarDados,
     verificarsenha,
-    atualizarSenha
+    atualizarSenha,
+    atualizarLocal
 };

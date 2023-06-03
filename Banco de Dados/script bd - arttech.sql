@@ -90,16 +90,16 @@ SELECT * FROM usuario WHERE senha = sha2('@12345678', 256) AND idUsuario = 101;
 
 -- INSERINDO ALAS
 insert into localInstalacao values 
-(null, 'sala1', 1),
-(null, 'sala2', 1),
-(null, 'sala3', 1),
-(null, 'sala4', 1);
+(null, 'Sala 1', 2),
+(null, 'Sala 2', 2),
+(null, 'Sala 3', 2),
+(null, 'Sala 4', 2);
 
 select * from localInstalacao;
 
 -- INSERINDO SENSOR
 select * from registro;
-truncate table registro;
+
 insert into sensores values 
 (null, 'DHT11',1),
 (null, 'DHT11',1),

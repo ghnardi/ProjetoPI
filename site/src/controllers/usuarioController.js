@@ -124,59 +124,59 @@ function verificaremail(req, res) {
 function verificarsenha(req, res) {
     var senha = req.body.senha_atualServer;
     var id = req.body.idServer
-  
-    if (senha == undefined) {
-      res.status(400).send("A senha está indefinida!");
-    } else {
-      usuarioModel
-        .verificarsenha(senha, id)
-        .then(function (resultado) {
-          if (resultado.length > 0) {
-            res.json({ senhaExiste: true });
-          } else {
-            res.json({ senhaExiste: false });
-          }
-        })
-        .catch(function (erro) {
-          console.log(erro);
-          console.log(
-            "\nHouve um erro ao verificar a senha! Erro: ",
-            erro.sqlMessage
-          );
-          res.status(500).json(erro.sqlMessage);
-        });
-    }
-  }
 
-  function atualizarsenha(req, res) {
+    if (senha == undefined) {
+        res.status(400).send("A senha está indefinida!");
+    } else {
+        usuarioModel
+            .verificarsenha(senha, id)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.json({ senhaExiste: true });
+                } else {
+                    res.json({ senhaExiste: false });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao verificar a senha! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
+function atualizarsenha(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var senha_nova = req.body.senhaNovaServer;
     var idUsuario = req.body.idServer;
-  
+
     // Faça as validações dos valores
     if (senha_nova == undefined) {
-      res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Sua senha está undefined!");
     } else if (idUsuario == undefined) {
-      res.status(400).send("Usuário não logado! ID não encontrado!");
+        res.status(400).send("Usuário não logado! ID não encontrado!");
     } else {
-      usuarioModel.atualizarSenha(senha_nova, idUsuario)
-        .then(function (resultado) {
-          if (resultado.length > 0) {
-            res.json({ atualizacao_senha_enviada: true });
-          } else {
-            res.json({ atualizacao_senha_enviada: false });
-          }
-        })
-        .catch(function (erro) {
-          console.log(erro);
-          console.log(
-            "\nHouve um erro ao realizar a atualização da senha. Erro: ",
-            erro.sqlMessage
-          );
-          res.status(500).json(erro.sqlMessage);
-        });
+        usuarioModel.atualizarSenha(senha_nova, idUsuario)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    res.json({ atualizacao_senha_enviada: true });
+                } else {
+                    res.json({ atualizacao_senha_enviada: false });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar a atualização da senha. Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            });
     }
-  }
+}
 
 function atualizarGrafico(req, res) {
 
@@ -248,7 +248,7 @@ function verificarAdmin(req, res) {
     if (id == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else {
-        
+
         usuarioModel.verificarAdmin(id)
             .then(
                 function (resultado) {
@@ -281,14 +281,14 @@ function atualizarDados(req, res) {
     if (email == undefined || nome == undefined || id == undefined || data == undefined) {
         res.status(400).send("Seus dados estão indefinido!");
     } else {
-        
+
         usuarioModel.atualizarDados(email, nome, data, id)
             .then(
                 function (resultado) {
-                        console.log(`\nResultados encontrados: ${resultado.length}`);
-                        console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
-                        console.log(resultado);
-                        res.json(resultado[0]);
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                    console.log(resultado);
+                    res.json(resultado[0]);
                 }
             ).catch(
                 function (erro) {
@@ -302,6 +302,32 @@ function atualizarDados(req, res) {
 }
 
 
+function atualizarLocal(req, res) {
+
+    var fkEmpresa = req.body.fkEmpresaServer;
+
+    usuarioModel.atualizarLocal(fkEmpresa)
+        .then(
+            function (resultado) {
+                console.log(`\nResultados encontrados: ${resultado.length}`);
+                console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                if (resultado.length == 1) {
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else if (resultado.length == 0) {
+                    res.status(403).send("Não existe o local");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao receber o local para atualizar a dashboard! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     entrar,
     cadastrar,
@@ -314,5 +340,6 @@ module.exports = {
     verificarAdmin,
     atualizarDados,
     verificarsenha,
-    atualizarsenha
+    atualizarsenha,
+    atualizarLocal
 }

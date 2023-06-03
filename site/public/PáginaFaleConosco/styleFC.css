@@ -212,6 +212,7 @@ input {
     font-size: 1vmax;
     color: white;
     font-family: 'Montserrat Ace';
+    cursor: pointer;
 }
 
 .containerInterno {
