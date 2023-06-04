@@ -243,7 +243,7 @@ const menuSuporte = document.querySelectorAll(".menuSuporte")
 const suporteFechar = document.getElementById("suporteFechar")
 const botaoSuporteIcon = document.getElementById("botaoSuporteIcon")
 
-botaoSuporte.addEventListener("mouseenter", function () {
+botaoSuporte.addEventListener("mouseover", function () {
     if (menuSuporte[0].style.display == '' || menuSuporte[0].style.display == 'none'){
         botaoSuporteMensagem.style.display = 'flex'
         botaoSuporteMensagem.style.animationName = "suporteA";
@@ -255,6 +255,18 @@ botaoSuporte.addEventListener("mouseenter", function () {
 
 })
 
+
+function aparecerMensagemBotao(){
+    if (menuSuporte[0].style.display == '' || menuSuporte[0].style.display == 'none'){
+        botaoSuporteMensagem.style.display = 'flex'
+        botaoSuporteMensagem.style.animationName = "suporteA";
+        botaoSuporteMensagem.style.animationFillMode = "forwards";
+        botaoSuporteMensagem.style.animationDuration = "1s";
+    } else {
+        botaoSuporteMensagem.style.display = 'none'
+    }
+}
+
 botaoSuporte.addEventListener("mouseleave", function () {
     botaoSuporteMensagem.style.animationName = "suporteB";
     botaoSuporteMensagem.style.animationFillMode = "forwards";
@@ -262,6 +274,12 @@ botaoSuporte.addEventListener("mouseleave", function () {
 })
 
 botaoSuporte.addEventListener("click", function () {
+    if( botaoSuporteIcon.innerHTML === 'send'){
+        alert("Oi")
+    }
+
+    
+    botaoSuporteMensagem.style.display = 'none'
     menuSuporte[0].style.display = 'flex'
     menuSuporte[0].style.animationName = "suporteA";
     menuSuporte[0].style.animationFillMode = "forwards";
@@ -272,8 +290,8 @@ botaoSuporte.addEventListener("click", function () {
     } else {
         botaoSuporteIcon.innerHTML = 'send'
     }
-
 })
+
 
 suporteFechar.addEventListener("click", function () {
     menuSuporte[0].style.display = 'none'
