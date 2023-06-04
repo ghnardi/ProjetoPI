@@ -74,31 +74,6 @@ function contatar() {
         });
 }
 
-function relatarProblema() {
-    const remetente = sessionStorage.EMAIL_USUARIO;
-    const assunto = input_assunto.value;
-    const corpo = input_mensagem.value;
-
-    fetch('/relatar-problema', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ remetente, assunto, corpo }),
-    })
-        .then(function (response) {
-            if (response.ok) {
-                console.log('E-mail enviado com sucesso!');
-                limparInputs()
-            } else {
-                console.log('Erro ao enviar o e-mail.');
-            }
-        })
-        .catch(function (error) {
-            console.log('Erro ao enviar o e-mail:', error);
-        });
-}
-
 
 function limparInputs() {
     var inputs = document.getElementsByTagName('input'); // Obtém todas as inputs da página
@@ -235,74 +210,4 @@ function cadastrar() {
 function entrar() {
     window.location.href = "../PáginaLogin/login.html";
 }
-
-// MENU SUPORTE
-const botaoSuporte = document.getElementById("botaoSuporte")
-const botaoSuporteMensagem = document.getElementById("botaoSuporteMensagem")
-const menuSuporte = document.querySelectorAll(".menuSuporte")
-const suporteFechar = document.getElementById("suporteFechar")
-const botaoSuporteIcon = document.getElementById("botaoSuporteIcon")
-
-botaoSuporte.addEventListener("mouseover", function () {
-    if (menuSuporte[0].style.display == '' || menuSuporte[0].style.display == 'none'){
-        botaoSuporteMensagem.style.display = 'flex'
-        botaoSuporteMensagem.style.animationName = "suporteA";
-        botaoSuporteMensagem.style.animationFillMode = "forwards";
-        botaoSuporteMensagem.style.animationDuration = "1s";
-    } else {
-        botaoSuporteMensagem.style.display = 'none'
-    }
-
-})
-
-
-function aparecerMensagemBotao(){
-    if (menuSuporte[0].style.display == '' || menuSuporte[0].style.display == 'none'){
-        botaoSuporteMensagem.style.display = 'flex'
-        botaoSuporteMensagem.style.animationName = "suporteA";
-        botaoSuporteMensagem.style.animationFillMode = "forwards";
-        botaoSuporteMensagem.style.animationDuration = "1s";
-    } else {
-        botaoSuporteMensagem.style.display = 'none'
-    }
-}
-
-botaoSuporte.addEventListener("mouseleave", function () {
-    botaoSuporteMensagem.style.animationName = "suporteB";
-    botaoSuporteMensagem.style.animationFillMode = "forwards";
-    botaoSuporteMensagem.style.animationDuration = "0.5s";
-})
-
-botaoSuporte.addEventListener("click", function () {
-    if( botaoSuporteIcon.innerHTML === 'send'){
-        alert("Oi")
-    }
-
-    
-    botaoSuporteMensagem.style.display = 'none'
-    menuSuporte[0].style.display = 'flex'
-    menuSuporte[0].style.animationName = "suporteA";
-    menuSuporte[0].style.animationFillMode = "forwards";
-    menuSuporte[0].style.animationDuration = "0.5s";
-
-    if (menuSuporte[0].style.display == 'none' || menuSuporte[0].style.display == ''){
-        botaoSuporteIcon.innerHTML = 'warning'
-    } else {
-        botaoSuporteIcon.innerHTML = 'send'
-    }
-})
-
-
-suporteFechar.addEventListener("click", function () {
-    menuSuporte[0].style.display = 'none'
-    menuSuporte[0].style.animationName = "suporteB";
-    menuSuporte[0].style.animationFillMode = "forwards";
-    menuSuporte[0].style.animationDuration = "0.5s";
-
-    if (menuSuporte[0].style.display == 'none' || menuSuporte[0].style.display == ''){
-        botaoSuporteIcon.innerHTML = 'warning'
-    } else {
-        botaoSuporteIcon.innerHTML = 'send'
-    }
-})
 

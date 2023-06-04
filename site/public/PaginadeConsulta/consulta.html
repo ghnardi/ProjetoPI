@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arttech | Página de Consulta</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="../js/funcoes.js"></script>
     <link rel="stylesheet" href="./stylemenuleft.css" />
     <link rel="stylesheet" href="./styledashboard.css" />
     <link rel="stylesheet" href="../cssglobal/stylemenuflutuante.css" />
@@ -17,6 +16,40 @@
   </head>
 
   <body onload="validarSessaoDashs()">
+
+     <!-- SUPORTE -->
+     <div class="menuSuporte">
+      <span id="suporteTitulo">SUPORTE ARTTECH
+          <span class="material-symbols-outlined" id="suporteFechar">close</span>
+      </span>
+      
+
+      <span id="suporteRemetente">
+          <span id="suporteRementeTitulo">EMAIL</span>
+          <input type="text" id="i_email">
+      </span>
+
+      
+      <span id="suporteRemetente">
+          <span id="suporteRementeTitulo">ASSUNTO</span>
+          <input type="text" id="i_assunto">
+      </span>
+
+      <span id="suporteRemetenteMensagem">
+          <span id="suporteRementeTitulo">MENSAGEM</span>
+          <textarea type="text" id="i_msg"></textarea>
+      </span>
+
+  </div>
+  <div id="botaoSuporte">
+      <span class="material-symbols-outlined" id="botaoSuporteIcon">warning</span>
+  </div>
+
+  <div id="botaoSuporteMensagem">
+      <span id="botaoSuporteTexto">PRECISA DE AJUDA?</span>
+  </div>
+
+
     <div class="header">
       <div class="navbar">
         <img src="./assets/logo.png" class="logo" alt="" onclick="home()">
@@ -362,4 +395,5 @@
   </body>
 </html>
 
+<script src="../js/funcoes.js"></script>
 <script type="text/javascript" src="./script.js"></script>

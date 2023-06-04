@@ -72,6 +72,10 @@ insert into empresa values
 (null,'museu3','12345678912345','museu3@sptech.school', '09581-310');
 select * from usuario;
 select * from empresa;
+
+select localInstalacao.nome, empresa.nome from localInstalacao join empresa 
+on fkEmpresa = idEmpresa where fkEmpresa = 2;
+    
 -- INSERINDO USUARIOS
 
 -- USUARIO ADM

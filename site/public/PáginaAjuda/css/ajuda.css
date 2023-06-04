@@ -375,3 +375,182 @@ a:active {
   color: white;
   margin-top: 1%;
 }
+
+/* SUPORTE */
+#botaoSuporte {
+  display: flex;
+  position: fixed;
+  z-index: 3;
+  width: 3%;
+  height: 6%;
+  top: 85%;
+  left: 94%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #bea46b;
+  cursor: pointer;
+}
+
+#botaoSuporteIcon {
+  color: white;
+  font-size: 1.7vmax;
+  font-weight: 300;
+  z-index: 3;
+}
+
+#botaoSuporteMensagem{
+  display: flex;
+  position: fixed;
+  background-color: #bea46b;
+  z-index: 1;
+  width: 14%;
+  height: 6%;
+  top: 85%;
+  left: 83%;
+  border-radius: 30px;
+  opacity: 0;
+}
+
+#botaoSuporteMensagem:hover{
+  animation-name: suporteA;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes suporteA {
+  0% {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes suporteB {
+  0% {
+      opacity: 1;
+  }
+
+  to {
+      opacity: 0;
+  }
+}
+
+#botaoSuporteTexto{
+  display: flex;
+  color: white;
+  font-size: 0.9vmax;
+  font-weight: 500;
+  width: 100%;
+  margin-left: 8%;
+  align-items: center;
+  
+}
+
+.menuSuporte{
+  display: none;
+  position: fixed;
+  background-color: #C6B082;
+  width: 20%;
+  height: 50%;
+  margin-top: 19%;
+  margin-left: 77%;
+  z-index: 2;
+  border-radius: 15px;
+  flex-direction: column;
+}
+
+#suporteTitulo{
+  display: flex;
+  background-color: #2E2109;
+  width: 100%;
+  height: 12%;
+  border-radius: 10px 10px 0 0;
+  font-size: 1.15vmax;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#suporteFechar{
+  display: flex;
+  position: absolute;
+  left: 90%;
+  cursor: pointer;
+}
+
+#suporteRemetente{
+  display: flex;
+  width: 100%;
+  height: 12%;
+  margin-top: 5%;
+  flex-direction: column;
+}
+
+#suporteRementeTitulo{
+  display: flex;
+  color: #2E2109;
+  margin-left: 5%;
+  font-size: 0.9vmax;
+  font-weight: 800;
+}
+
+#i_email{
+  display: flex;
+  width: 88%;
+  height: 60%;
+  margin-left: 4.5%;
+  border-radius: 5px;
+  background-color: #392D12;
+  color: white;
+  font-size: 1vmax;
+  padding-left: 2%;
+  border: 0;
+}
+
+#i_assunto{
+  display: flex;
+  width: 88%;
+  height: 60%;
+  margin-left: 4.5%;
+  border-radius: 5px;
+  background-color: #392D12;
+  color: white;
+  padding-left: 2%;
+  font-size: 1vmax;
+  font-weight: 400;
+  border: 0;
+}
+
+#suporteRemetenteMensagem{
+  display: flex;
+  width: 100%;
+  height: 45%;
+  margin-top: 5%;
+  flex-direction: column;
+}
+
+#i_msg{
+  display: flex;
+  width: 88%;
+  height: 80%;
+  margin-left: 4.5%;
+  border-radius: 5px;
+  background-color: #392D12;
+  color: white;
+  padding-left: 2%;
+  text-align: left;
+  vertical-align: top;
+  font-family: 'Montserrat Ace';
+  font-size: 1vmax;
+  font-weight: 400;
+  border: 0;
+  resize: none;
+}
+
+#i_msg:focus{
+  outline: 0;
+}

@@ -23,7 +23,7 @@ function configureTransporterJira() {
         // Configurações do seu provedor de e-mail (ex: Gmail)
         service: 'outlook',
         auth: {
-            user: 'lucas.flima@sptech.schoo',
+            user: 'lucas.flima@sptech.school',
             pass: '#Gf48546298866',
         },
     });
