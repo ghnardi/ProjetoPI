@@ -1,6 +1,6 @@
 setInterval(atualizarGrafico, 1000)
 setTimeout(validarSessaoDashs, 0)
-  
+
 
 function clickPerfil() {
     if (subsub.style.display == 'flex') {
@@ -63,12 +63,12 @@ function insertregistro() {
         valor_aleatorio *= 0.95;
         valor_aleatorio2 *= 0.95;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 12
-    } else if (valor_aleatorio_fkLocal == 4 ){
+    } else if (valor_aleatorio_fkLocal == 4) {
         valor_aleatorio *= 1.1;
         valor_aleatorio2 *= 1.1;
         valor_aleatorio_fkSensor = valor_aleatorio_fkSensor + 18
-    } 
-    
+    }
+
     fetch("/usuarios/insertregistro", {
         method: "post",
         headers: {
@@ -103,30 +103,31 @@ function insertregistro() {
 
 }
 
-
+var temperatura_media_card = []
+var umidade_media_card = []
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
-  }
-  
-  const grafico_selecionado = getQueryParam("parametro")
+}
 
-  const textoTopoSala = document.getElementById("textoTopoSala")
-  var soma_sala = 0;
-  if (grafico_selecionado == 1) {
+const grafico_selecionado = getQueryParam("parametro")
+
+const textoTopoSala = document.getElementById("textoTopoSala")
+var soma_sala = 0;
+if (grafico_selecionado == 1) {
     soma_sala = 0;
     textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
-  } else if (grafico_selecionado == 2){
+} else if (grafico_selecionado == 2) {
     soma_sala = 6
     textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
-  } else if (grafico_selecionado == 3){
+} else if (grafico_selecionado == 3) {
     soma_sala = 12
     textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
-  } else if (grafico_selecionado == 4) {
+} else if (grafico_selecionado == 4) {
     soma_sala = 18
     textoTopoSala.innerHTML = `Sala ${grafico_selecionado}`
-  }
+}
 
 function atualizarGrafico() {
 
@@ -272,8 +273,10 @@ function plotarGrafico(n) {
 
     headerinfotexto.innerHTML = `${umidades[n][4].toFixed(1)}%`;
     headerinfotexto2.innerHTML = `${temperaturas[n][4].toFixed(1)}ºC`;
-    headerinfotexto3.innerHTML = `${mediaArray(temperaturas[n]).toFixed(1)}ºC`;
-    headerinfotexto4.innerHTML = `${mediaArray(umidades[n]).toFixed(1)}%`;
+    headerinfotexto3.innerHTML = `${temperatura_grafico_barra[n].toFixed(1)}ºC`;
+    headerinfotexto4.innerHTML = `${umidade_grafico_barra[n].toFixed(1)}%`;
+
+    console.log(temperatura_media_card, umidade_media_card)
 
     validacao_cores_cards(n);
 }

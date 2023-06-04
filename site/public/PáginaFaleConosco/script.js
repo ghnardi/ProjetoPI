@@ -53,6 +53,17 @@ function contatar() {
     const telefone = input_telefone.value;
     const corpo = input_mensagem.value;
 
+    if (nome == "" || remetente == "" || telefone == "" || corpo == "") {
+        input_nome.style.color = "red"
+        input_email.style.color = "red"
+        input_telefone.style.color = "red"
+        input_mensagem.style.color = "red"
+    } else if (remetente.indexOf("@") == -1){
+        input_email.style.color = "red"
+    } else if (telefone.length < 10) {
+        input_telefone.style.color = "red"
+    } else {
+
     fetch('/enviar-email', {
         method: 'POST',
         headers: {
@@ -72,17 +83,21 @@ function contatar() {
         .catch(function (error) {
             console.log('Erro ao enviar o e-mail:', error);
         });
+    }
 }
 
 
 function limparInputs() {
     var inputs = document.getElementsByTagName('input'); // Obtém todas as inputs da página
+    var textarea = document.getElementById("i_msg")
 
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].type !== 'button' && inputs[i].type !== 'submit') { // Ignora botões de tipo submit e button
             inputs[i].value = ''; // Limpa o valor da input
         }
     }
+
+    textarea.value = "";
 }
 
 function clickBloco1() {
