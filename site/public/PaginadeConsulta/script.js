@@ -1,4 +1,6 @@
 setInterval(atualizarDashboard, 1000);
+setTimeout(validarSessaoDashs, 0)
+window.onload = atualizarLocal
 
 function atualizarLocal(){
 
@@ -19,6 +21,17 @@ function atualizarLocal(){
         resposta.json().then(json => {
             console.log(json);
             console.log(JSON.stringify(json));
+            console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA NAO AGUENTO MAIS")
+            console.log(json[0].nome)
+            const dashtexto = document.querySelectorAll("#dashtexto")
+            
+            for (var i = 0; i < dashtexto.length; i++){
+                dashtexto[i].innerHTML = json[i].LocalInstalacao
+            }
+
+            const nomeLocal = document.getElementById('nomeLocal')
+            nomeLocal.innerHTML = json[0].NomeEmpresa
+      
         });
 
     } else {
@@ -33,6 +46,10 @@ function atualizarLocal(){
 
 return false;
 }
+
+
+
+
 
 
 

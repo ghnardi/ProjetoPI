@@ -24,6 +24,26 @@ function validarSessao(){
     }
 }
 
+function validarSessaoDashs(){
+    var email = sessionStorage.EMAIL_USUARIO
+    var nome = sessionStorage.NOME_USUARIO
+    const textomenuperfil = document.getElementById("textomenuperfil")
+    const iconmenuperfil = document.getElementById("iconmenuperfil")
+    const nomeconta = document.querySelectorAll(".nomeconta")
+    const contaemail = document.querySelectorAll(".contaemail")
+    
+    if (email != null && nome != null){
+        textomenuperfil.style.display = 'flex'
+        iconmenuperfil.style.display = 'flex'
+        textomenuperfil.innerHTML = nome
+        nomeconta[0].innerHTML = nome
+        contaemail[0].innerHTML = email
+        verificarAdmin()
+    } else {
+        window.location = "../PáginaInicial/home.html"
+    }
+}
+
 function verificarAdmin(){
     const adminconta  = document.querySelectorAll(".adminconta")
     const cadastrarusuario = document.querySelectorAll(".cadastrarusuario")

@@ -1,4 +1,5 @@
 setInterval(atualizarGrafico, 1000)
+setTimeout(validarSessaoDashs, 0)
   
 
 function clickPerfil() {

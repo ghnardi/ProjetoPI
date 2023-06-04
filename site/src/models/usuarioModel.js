@@ -216,8 +216,8 @@ function atualizarSenha(senha, id) {
 }
 
 function atualizarLocal(fkEmpresa) {
-    var instrucao = `select localInstalacao.nome from localInstalacao join empresa 
-	on fkEmpresa = idEmpresa where fkEmpresa = ${fkEmpresa};`;
+    var instrucao = `select localInstalacao.nome as LocalInstalacao, empresa.nome as NomeEmpresa from localInstalacao join empresa 
+    on fkEmpresa = idEmpresa where fkEmpresa = ${fkEmpresa};`;
     console.log("Executando atualização do local na dashboard: \n" + instrucao);
     return database.executar(instrucao);
 }

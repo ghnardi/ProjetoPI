@@ -27,18 +27,18 @@ function clickMenu() {
 function formatarTelefone() {
     const telefoneInput = document.getElementById('input_telefone');
     let telefone = telefoneInput.value;
-  
+
     // Remove todos os caracteres não numéricos
     telefone = telefone.replace(/\D/g, '');
-  
+
     // Verifica se há um DDD no início do número e adiciona os parênteses
     if (telefone.length > 2) {
-      telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2)}`;
+        telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2)}`;
     }
-  
+
     // Atualiza o valor da input com o telefone formatado
     telefoneInput.value = telefone;
-  }
+}
 
 
 
@@ -63,6 +63,7 @@ function contatar() {
         .then(function (response) {
             if (response.ok) {
                 console.log('E-mail enviado com sucesso!');
+                alert('E-mail enviado com sucesso!')
                 limparInputs()
             } else {
                 console.log('Erro ao enviar o e-mail.');
@@ -234,4 +235,56 @@ function cadastrar() {
 function entrar() {
     window.location.href = "../PáginaLogin/login.html";
 }
+
+// MENU SUPORTE
+const botaoSuporte = document.getElementById("botaoSuporte")
+const botaoSuporteMensagem = document.getElementById("botaoSuporteMensagem")
+const menuSuporte = document.querySelectorAll(".menuSuporte")
+const suporteFechar = document.getElementById("suporteFechar")
+const botaoSuporteIcon = document.getElementById("botaoSuporteIcon")
+
+botaoSuporte.addEventListener("mouseenter", function () {
+    if (menuSuporte[0].style.display == '' || menuSuporte[0].style.display == 'none'){
+        botaoSuporteMensagem.style.display = 'flex'
+        botaoSuporteMensagem.style.animationName = "suporteA";
+        botaoSuporteMensagem.style.animationFillMode = "forwards";
+        botaoSuporteMensagem.style.animationDuration = "1s";
+    } else {
+        botaoSuporteMensagem.style.display = 'none'
+    }
+
+})
+
+botaoSuporte.addEventListener("mouseleave", function () {
+    botaoSuporteMensagem.style.animationName = "suporteB";
+    botaoSuporteMensagem.style.animationFillMode = "forwards";
+    botaoSuporteMensagem.style.animationDuration = "0.5s";
+})
+
+botaoSuporte.addEventListener("click", function () {
+    menuSuporte[0].style.display = 'flex'
+    menuSuporte[0].style.animationName = "suporteA";
+    menuSuporte[0].style.animationFillMode = "forwards";
+    menuSuporte[0].style.animationDuration = "0.5s";
+
+    if (menuSuporte[0].style.display == 'none' || menuSuporte[0].style.display == ''){
+        botaoSuporteIcon.innerHTML = 'warning'
+    } else {
+        botaoSuporteIcon.innerHTML = 'send'
+    }
+
+})
+
+suporteFechar.addEventListener("click", function () {
+    menuSuporte[0].style.display = 'none'
+    menuSuporte[0].style.animationName = "suporteB";
+    menuSuporte[0].style.animationFillMode = "forwards";
+    menuSuporte[0].style.animationDuration = "0.5s";
+
+    if (menuSuporte[0].style.display == 'none' || menuSuporte[0].style.display == ''){
+        botaoSuporteIcon.innerHTML = 'warning'
+    } else {
+        botaoSuporteIcon.innerHTML = 'send'
+    }
+})
 
