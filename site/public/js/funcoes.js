@@ -103,6 +103,7 @@ const botaoSuporteIcon = document.getElementById("botaoSuporteIcon")
 const i_email = document.getElementById("i_email")
 const i_assunto = document.getElementById("i_assunto")
 const i_msg = document.getElementById("i_msg")
+const suporteLoading = document.getElementById("suporteLoading")
 
 if (sessionStorage.EMAIL_USUARIO == null) {
     botaoSuporte.style.display = 'none'
@@ -142,7 +143,23 @@ if (sessionStorage.EMAIL_USUARIO == null) {
             if (i_email.value == '' || i_assunto.value == '' || i_msg.value == '') {
                 alert("Todos os campos precisam estar preenchidos!")
             } else {
-                // relatarProblema()
+
+                new Promise(function (ok, erro) {
+                    botaoSuporte.style.backgroundColor = "#2e2109"
+                    botaoSuporteIcon.innerHTML = ''
+                    setTimeout(relatarProblema, 100)
+
+                }).then(function (resposta) {
+                    console.log(resposta)
+                    // if (resposta) {
+                    //     botaoSuporte.style.backgroundColor = "#bea46b"
+                    //     botaoSuporteIcon.innerHTML = 'send'
+                    //     suporteLoading.style.display = 'none'
+                    // }
+                }).catch(function () {
+                    console.log(erro)
+                })
+
             }
         }
 
@@ -177,32 +194,37 @@ if (sessionStorage.EMAIL_USUARIO == null) {
 }
 
 
-function relatarProblema() {
-    const i_assunto = document.getElementById("i_assunto")
-    const i_msg = document.getElementById("i_msg")
-
-
-    const remetente = sessionStorage.EMAIL_USUARIO;
-    const assunto = i_assunto.value;
-    const corpo = i_msg.value;
-
-    fetch('/relatar-problema', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ remetente, assunto, corpo }),
-    })
-        .then(function (response) {
-            if (response.ok) {
-                console.log('E-mail enviado com sucesso!');
-                alert("E-mail enviado com sucesso!")
-                limparInputs()
-            } else {
-                console.log('Erro ao enviar o e-mail.');
-            }
-        })
-        .catch(function (error) {
-            console.log('Erro ao enviar o e-mail:', error);
-        });
+function relatarProblema(status) {
+    alert("oi")
+    return true
 }
+
+// function relatarProblema() {
+//     const i_assunto = document.getElementById("i_assunto")
+//     const i_msg = document.getElementById("i_msg")
+
+
+//     const remetente = sessionStorage.EMAIL_USUARIO;
+//     const assunto = i_assunto.value;
+//     const corpo = i_msg.value;
+
+//     fetch('/relatar-problema', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ remetente, assunto, corpo }),
+//     })
+//         .then(function (response) {
+//             if (response.ok) {
+//                 console.log('E-mail enviado com sucesso!');
+//                 alert("E-mail enviado com sucesso!")
+//                 limparInputs()
+//             } else {
+//                 console.log('Erro ao enviar o e-mail.');
+//             }
+//         })
+//         .catch(function (error) {
+//             console.log('Erro ao enviar o e-mail:', error);
+//         });
+// }

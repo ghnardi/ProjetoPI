@@ -473,5 +473,10 @@ input {
 
 #suporteLoading{
     display: flex;
-    background-image: url();
+    background-image: url(./imgs/Rolling-1s-200px.svg);
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
 }
