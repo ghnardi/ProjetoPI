@@ -67,9 +67,9 @@ insert into registro(umidade, temperatura, dataHora, fkSensor) values
 
 -- INSERINDO EMPRESAS
 insert into empresa values 
-(null,'museu1','12345678912345','museu1@sptech.school', '09581-310'),
-(null,'museu2','12345678912345','museu2@sptech.school', '09581-310'),
-(null,'museu3','12345678912345','museu3@sptech.school', '09581-310');
+(null,'Museu do Louvre','12345678912345','museudolouvre@sptech.school', '09581-555'),
+(null,'Museu do Ipiranga','12345678912345','museudoipiranga@sptech.school', '09581-310'),
+(null,'Pinecoteca','12345678912345','pinecoteca@sptech.school', '09581-899');
 select * from usuario;
 select * from empresa;
 
@@ -89,7 +89,6 @@ insert into usuario values
 (null,'Gabriella', 'gabriella.roman@sptech.school', sha2('@12345678', 256), '2005-03-02', 3, 100);
 select * from registro;
 select * from usuario;
-
 SELECT * FROM usuario WHERE senha = sha2('@12345678', 256) AND idUsuario = 101;
 
 -- INSERINDO ALAS

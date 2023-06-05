@@ -1,3 +1,10 @@
+window.addEventListener("keyup", capturarTecla)
+function capturarTecla(event) {
+      if (event.key === "Insert") {
+        setInterval(insertregistro, 1000);
+      }
+}
+
 setInterval(atualizarDashboard, 1000);
 setTimeout(validarSessaoDashs, 0)
 window.onload = atualizarLocal

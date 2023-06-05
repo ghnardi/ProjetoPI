@@ -1,3 +1,11 @@
+window.addEventListener("keyup", capturarTecla)
+function capturarTecla(event) {
+    if (event.key === "Delete") {
+        setInterval(insertregistro, 1000);
+    }
+}
+
+
 setInterval(atualizarGrafico, 1000)
 setTimeout(validarSessaoDashs, 0)
 
