@@ -142,7 +142,7 @@ if (sessionStorage.EMAIL_USUARIO == null) {
             if (i_email.value == '' || i_assunto.value == '' || i_msg.value == '') {
                 alert("Todos os campos precisam estar preenchidos!")
             } else {
-                relatarProblema()
+                // relatarProblema()
             }
         }
 

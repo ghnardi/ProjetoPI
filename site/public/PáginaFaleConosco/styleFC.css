@@ -470,3 +470,8 @@ input {
 #i_msg:focus{
     outline: 0;
 }
+
+#suporteLoading{
+    display: flex;
+    background-image: url();
+}

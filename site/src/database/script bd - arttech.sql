@@ -9,17 +9,23 @@ email varchar(50),
 cep char(9)
 );
 
+create user 'arttech'@'10.18.32.239' identified by 'sptech';
+grant all privileges on arttech.registro to 'arttech'@'10.18.32.239';
+
+
 create table usuario (
 idUsuario int auto_increment,
 nome varchar(45),
 email varchar(45),
-senha varchar(45),
+senha varchar(200),
+dtNasc date,
 fkEmpresa int,
 fkAdmin int,
 constraint fkAdmin foreign key (fkAdmin) references usuario(idUsuario),
 constraint fkEmpresa foreign key (fkEmpresa) references empresa(idEmpresa),
 primary key (idUsuario, fkEmpresa)
 )auto_increment = 100;
+
 
 create table localInstalacao (
 idLocal int auto_increment,
@@ -49,81 +55,121 @@ primary key (idRegistro, fkSensor)
 );
 
 
-
+select umidade, temperatura, dataHora from registro where fkSensor = 1 order by idRegistro desc limit 6;
+insert into registro(umidade, temperatura, dataHora, fkSensor) values
+	(90,10, now(), 1),
+    (52,0, now(), 1),
+    (11,70, now(), 1),
+    (16,90, now(),1 ),
+    (99,20, now(), 1),
+    (10,50, now(), 1);
 
 
 -- INSERINDO EMPRESAS
 insert into empresa values 
-(null,'museu1','12345678912345','museu1@sptech.school', '09581-310'),
-(null,'museu2','12345678912345','museu1@sptech.school', '09581-310'),
-(null,'museu3','12345678912345','museu1@sptech.school', '09581-310');
-
+(null,'Museu do Louvre','12345678912345','museudolouvre@sptech.school', '09581-555'),
+(null,'Museu do Ipiranga','12345678912345','museudoipiranga@sptech.school', '09581-310'),
+(null,'Pinecoteca','12345678912345','pinecoteca@sptech.school', '09581-899');
+select * from usuario;
 select * from empresa;
+
+select localInstalacao.nome, empresa.nome from localInstalacao join empresa 
+on fkEmpresa = idEmpresa where fkEmpresa = 2;
+    
 -- INSERINDO USUARIOS
 
 -- USUARIO ADM
 insert into usuario values 
-(null,'Matheus', 'matheus.santiago@sptech.school', '@12345678', 2, null);
+(null,'Matheus', 'matheus.santiago@sptech.school', sha2('@12345678', 256), '2004-12-09', 2, null);
 -- USUARIO COMUM
 insert into usuario values 
-(null,'Douglas', 'douglas.queiroz@sptech.school', '@12345678', 1, 100),
-(null,'Guilherme', 'guilherme.queiroz@sptech.school', '@12345678',2, 100),
-(null,'Lucas', 'lucas.queiroz@sptech.school', '@12345678', 3, 100);
-
+(null,'Douglas', 'douglas.queiroz@sptech.school', sha2('@12345678', 256), '2005-05-02', 1, 100),
+(null,'Thiago','thiago.garcia@sptech.school' , sha2('@12345678', 256), '2002-09-02', 2, 100),
+(null,'Lucas', 'lucas.flima@sptech.school', sha2('@12345678', 256) , '2002-10-21', 3, 100),
+(null,'Gabriella', 'gabriella.roman@sptech.school', sha2('@12345678', 256), '2005-03-02', 3, 100);
+select * from registro;
 select * from usuario;
+SELECT * FROM usuario WHERE senha = sha2('@12345678', 256) AND idUsuario = 101;
 
 -- INSERINDO ALAS
 insert into localInstalacao values 
-(null, 'ala1', 3),
-(null, 'ala2', 3),
-(null, 'ala3', 3),
-(null, 'ala4', 3),
-(null, 'ala1', 1),
-(null, 'ala2', 1),
-(null, 'ala3', 1),
-(null, 'ala1', 2),
-(null, 'ala2', 2);
+(null, 'Sala 1', 2),
+(null, 'Sala 2', 2),
+(null, 'Sala 3', 2),
+(null, 'Sala 4', 2);
+
 select * from localInstalacao;
 
-
 -- INSERINDO SENSOR
+select * from registro;
 
 insert into sensores values 
 (null, 'DHT11',1),
 (null, 'DHT11',1),
 (null, 'DHT11',1),
+(null, 'DHT11',1),
+(null, 'DHT11',1),
+(null, 'DHT11',1),
 (null, 'DHT11',2),
 (null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',2),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
+(null, 'DHT11',3),
 (null, 'DHT11',3),
 (null, 'DHT11',4),
 (null, 'DHT11',4),
 (null, 'DHT11',4),
-(null, 'DHT11',5),
-(null, 'DHT11',6),
-(null, 'DHT11',7),
-(null, 'DHT11',8),
-(null, 'DHT11',9);
+(null, 'DHT11',4),
+(null, 'DHT11',4),
+(null, 'DHT11',4);
+
 select * from sensores;
 
 -- INSERINDO REGISTROS
 
 insert into registro values 
 (null, '2023-03-20', 48.3, 20.52, 1),
-(null, '2023-10-20', 46.3, 21.05, 1),
-(null, '2023-11-10', 44.7, 20.15, 2),
-(null, '2023-09-10', 45.7, 19.75, 3),
-(null, '2023-12-10', 46.7, 20.25, 4),
-(null, '2023-01-10', 47.7, 20.3, 5),
-(null, '2023-02-10', 44.9, 21.1, 5),
-(null, '2023-02-10', 47.9, 20.22, 6),
-(null, '2023-03-10', 48.7, 19.85, 7),
-(null, '2023-04-10', 45.7, 20.8, 8),
-(null, '2023-03-10', 49.2, 21.15, 9),
-(null, '2023-02-10', 44.4, 22.15, 10),
-(null, '2023-05-10', 44.1, 19.25, 11),
-(null, '2023-11-10', 43.7, 20.15, 12),
-(null, '2023-01-10', 47.85, 23.15, 13),
-(null, '2023-07-10', 45.72, 20.15, 14);
+(null, '2023-10-20', 41.3, 21.05, 1),
+(null, '2023-11-10', 43.7, 20.15, 1),
+(null, '2023-09-10', 48.7, 19.75, 1),
+(null, '2023-12-10', 41.7, 20.25, 1),
+(null, '2023-01-10', 42.7, 20.3, 1),
+(null, '2023-02-10', 41.9, 21.1, 2),
+(null, '2023-02-10', 42.9, 20.22, 2),
+(null, '2023-03-10', 48.7, 19.85, 2),
+(null, '2023-04-10', 41.7, 20.8, 2),
+(null, '2023-03-10', 43.2, 21.15, 2),
+(null, '2023-02-10', 48.4, 22.15, 2),
+(null, '2023-05-10', 42.1, 19.25, 3),
+(null, '2023-11-10', 43.7, 20.15, 3),
+(null, '2023-01-10', 45.85, 23.15, 3),
+(null, '2023-01-10', 43.5, 29.1, 3),
+(null, '2023-01-10', 41.5, 25.1, 3),
+(null, '2023-07-10', 47.72, 20.15, 3),
+(null, '2023-07-10', 42.2, 26.2, 4),
+(null, '2023-07-10', 43.1, 21.54, 4),
+(null, '2023-07-10', 47.5, 20.1, 4),
+(null, '2023-07-10', 41.5, 20.5, 4),
+(null, '2023-07-10', 48.1, 23.5, 4),
+(null, '2023-07-10', 41, 29.1, 4),
+(null, '2023-07-10', 47, 29, 5),
+(null, '2023-07-10', 40, 22, 5),
+(null, '2023-07-10', 41, 21, 5),
+(null, '2023-07-10', 43, 23, 5),
+(null, '2023-07-10', 45, 20, 5),
+(null, '2023-07-10', 41, 21.5, 5),
+(null, '2023-07-10', 47, 21, 16),
+(null, '2023-07-10', 42, 28, 16),
+(null, '2023-07-10', 41, 23, 16),
+(null, '2023-07-10', 47, 24, 16),
+(null, '2023-07-10', 43, 22, 16),
+(null, '2023-07-10', 44, 25, 16);
 
 
 -- SELECTs 
@@ -146,6 +192,11 @@ select sensores.idSensor, registro.*
 	from sensores join registro
 		on sensores.idSensor = registro.idRegistro
 			where dataHora = '2023-02-10';
+            
+select registro.dataHora,umidade,temperatura, sensores.idSensor, localInstalacao.nome, empresa.nome from registro 
+	join sensores on fkSensor = idSensor
+		join localInstalacao on fkLocais = idLocal
+			join empresa on fkEmpresa = idEmpresa;
             
 select sensores.idSensor, localInstalacao.nome, empresa.nome
 	from sensores join localInstalacao 
