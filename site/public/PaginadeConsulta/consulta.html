@@ -1,398 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arttech | Página de Consulta</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./stylemenuleft.css" />
-    <link rel="stylesheet" href="./styledashboard.css" />
-    <link rel="stylesheet" href="../cssglobal/stylemenuflutuante.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-  </head>
 
-  <body onload="validarSessaoDashs()">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arttech | Página de Consulta</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./stylemenuleft.css" />
+  <link rel="stylesheet" href="./styledashboard.css" />
+  <link rel="stylesheet" href="../cssglobal/stylemenuflutuante.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
 
-     <!-- SUPORTE -->
-     <div class="menuSuporte">
-      <span id="suporteTitulo">SUPORTE ARTTECH
-          <span class="material-symbols-outlined" id="suporteFechar">close</span>
-      </span>
-      
+<body onload="validarSessaoDashs()">
 
-      <span id="suporteRemetente">
-          <span id="suporteRementeTitulo">EMAIL</span>
-          <input type="text" id="i_email">
-      </span>
+  <!-- SUPORTE -->
+  <div class="menuSuporte">
+    <span id="suporteTitulo">SUPORTE ARTTECH
+      <span class="material-symbols-outlined" id="suporteFechar">close</span>
+    </span>
 
-      
-      <span id="suporteRemetente">
-          <span id="suporteRementeTitulo">ASSUNTO</span>
-          <input type="text" id="i_assunto">
-      </span>
+    <span id="suporteRemetente">
+      <span id="suporteRementeTitulo">ASSUNTO</span>
+      <input type="text" id="i_assunto">
+    </span>
 
-      <span id="suporteRemetenteMensagem">
-          <span id="suporteRementeTitulo">MENSAGEM</span>
-          <textarea type="text" id="i_msg"></textarea>
-      </span>
+    <span id="suporteRemetenteMensagem">
+      <span id="suporteRementeTitulo">MENSAGEM</span>
+      <textarea type="text" id="i_msg"></textarea>
+    </span>
 
   </div>
   <div id="botaoSuporte">
-      <span class="material-symbols-outlined" id="botaoSuporteIcon">warning</span>
+    <div id="suporteLoading"></div>
+    <span class="material-symbols-outlined" id="botaoSuporteIcon">warning</span>
   </div>
 
   <div id="botaoSuporteMensagem">
-      <span id="botaoSuporteTexto">PRECISA DE AJUDA?</span>
+    <span id="botaoSuporteTexto">PRECISA DE AJUDA?</span>
   </div>
 
 
-    <div class="header">
-      <div class="navbar">
-        <img src="./assets/logo.png" class="logo" alt="" onclick="home()">
-        <div id="textonavbar">
-            <li id="homehover"><a href="../PáginaInicial/home.html">HOME</a></li>
-            <li id="sobrehover"><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
-            <li id="ajudahover"><a href="../PáginaAjuda/ajuda.html">AJUDA</a></li>
-            <li id="falehover"><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
-            <li>|</li>
-            <li id="textomenuperfil">ID_PERFIL</li>
-            <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>            </div>
-   
-    </div>
-    </div>
-
-    <div class="menuflutuante" id="subsub">
-      <span class="blocomenuflu"></span>
-      <span class="conta">CONTA</span>
-      <span class="nomeconta">Museu Ipiranga</span>
-      <span class="adminconta">(admin)</span>
-      <span class="contaemail">museudoipiranga@ipiranga.com</span>
-      <span class="cadastrarusuario" onclick="cadastrar()">Cadastrar Usuario</span>
-      <span class="gerenciarconta"onclick="gerenciarconta()">Gerenciar conta</span>
-      <span class="contadashboard" onclick="dashboard()">Dashboard</span>
-      <span class="contaconfig">Configurações</span>
-      <span class="contalinha"></span>
-      <span class="contalogout" onclick="logout()">Fazer Logout</span>
-  </div>
-
-    <div id="dashGeral" class="dashGeral">
-      <div class="blocoTitulo">
-        <span id="tituloDoBloco">DASHBOARD GERAL</span>
+  <div class="header">
+    <div class="navbar">
+      <img src="./assets/logo.png" class="logo" alt="" onclick="home()">
+      <div id="textonavbar">
+        <li id="homehover"><a href="../PáginaInicial/home.html">HOME</a></li>
+        <li id="sobrehover"><a href="../PáginaSobre/pagina-sobre.html">SOBRE</a></li>
+        <li id="ajudahover"><a href="https://arttechgrupo05.atlassian.net/servicedesk/customer/portals">AJUDA</a></li>
+        <li id="falehover"><a href="../PáginaFaleConosco/faleconosco.html">FALE CONOSCO</a></li>
+        <li>|</li>
+        <li id="textomenuperfil">ID_PERFIL</li>
+        <li id="iconmenuperfil" class="material-symbols-outlined" onclick="clickPerfil()">menu</li>
       </div>
-      <div class="conteudoDashGeral">
-        <div class="blocoParaNome">
-          <span id="nomeLocal"></span>
-          <div class="blocoDireita">
-            <span class="material-symbols-outlined" id="imgGrafico"
-              >monitoring</span
-            >
+
+    </div>
+  </div>
+
+  <div class="menuflutuante" id="subsub">
+    <span class="blocomenuflu"></span>
+    <span class="conta">CONTA</span>
+    <span class="nomeconta">Museu Ipiranga</span>
+    <span class="adminconta">(admin)</span>
+    <span class="contaemail">museudoipiranga@ipiranga.com</span>
+    <span class="cadastrarusuario" onclick="cadastrar()">Cadastrar Usuario</span>
+    <span class="gerenciarconta" onclick="gerenciarconta()">Gerenciar conta</span>
+    <span class="contadashboard" onclick="dashboard()">Dashboard</span>
+    <span class="contaconfig">Configurações</span>
+    <span class="contalinha"></span>
+    <span class="contalogout" onclick="logout()">Fazer Logout</span>
+  </div>
+
+  <div id="dashGeral" class="dashGeral">
+    <div class="blocoTitulo">
+      <span id="tituloDoBloco">DASHBOARD GERAL</span>
+    </div>
+    <div class="conteudoDashGeral">
+      <div class="blocoParaNome">
+        <span id="nomeLocal"></span>
+        <div class="blocoDireita">
+          <span class="material-symbols-outlined" id="imgGrafico">monitoring</span>
+        </div>
+      </div>
+
+      <div class="dashGeralInterno">
+        <div class="dashinfoGeral" id="dashinfoGeral">
+          <div class="topoDashInfo" id="topoDashInfo">
+            <span id="dashinfoicon1" class="material-symbols-outlined">
+              warning
+            </span>
+            <span id="titulotopo">TEMPERATURA MÉDIA(hoje)</span>
+          </div>
+          <div class="blocoDash" id="blocoDash">
+            <span id="dadosGeraisTemperatura"></span>
           </div>
         </div>
+        <div class="dashinfoGeral" id="dashinfoGeral2">
+          <div class="topoDashInfo" id="topoDashInfo2">
+            <span id="dashinfoicon2" class="material-symbols-outlined">
+              warning </span><span id="titulotopo2">UMIDADE MÉDIA(hoje)</span>
+          </div>
+          <div class="blocoDash" id="blocoDash2"><span id="dadosGeraisUmidade"></span></div>
+        </div>
+      </div>
+      <button id="buttonParaDash" onclick="mostrarDashLocalizada()">
+        IR PARA DASHBOARDS<br />LOCALIZADAS
+      </button>
+      <div class="muralAvisos">
+        <div class="tituloMural">
+          <span id="tituloMural">MURAL DE ALERTAS:</span>
+        </div>
+        <div class="conteudoMural">
+          <div id="cardAvisoSala1Temperatura"><span id="informacaoMuralSala1Temperatura"></span></div>
+          <div id="cardAvisoSala1Umidade"><span id="informacaoMuralSala1Umidade"></span></div>
+          <div id="cardAvisoSala2Temperatura"><span id="informacaoMuralSala2Temperatura"></span></div>
+          <div id="cardAvisoSala2Umidade"><span id="informacaoMuralSala2Umidade"></span></div>
+          <div id="cardAvisoSala3Temperatura"><span id="informacaoMuralSala3Temperatura"></span></div>
+          <div id="cardAvisoSala3Umidade"><span id="informacaoMuralSala3Umidade"></span></div>
+          <div id="cardAvisoSala4Temperatura"><span id="informacaoMuralSala4Temperatura"></span></div>
+          <div id="cardAvisoSala4Umidade"><span id="informacaoMuralSala4Umidade"></span></div>
+        </div>
+      </div>
 
-        <div class="dashGeralInterno">
-          <div class="dashinfoGeral" id="dashinfoGeral">
-            <div class="topoDashInfo" id="topoDashInfo">
-              <span id="dashinfoicon1" class="material-symbols-outlined">
+    </div>
+  </div>
+
+  <div class="menutop">
+    <i id="iconmenutop" class="material-symbols-outlined" onclick="clickMenu()"><span id="iconmenumenu">close</span></i>
+    <span class="menutoptexto">Menu</span>
+  </div>
+  <div id="conteudo" class="conteudo">
+    <div class="menuleft" id="menumenu">
+      <div class="containermenuleft">
+        <button id="buttonDashGeral" onclick="mostrarDashLocalizada()">
+          DASHBOARD GERAL
+        </button>
+        <span id="menulefttexto">MUSEU IPIRANGA
+          <i id="iconmenuleft" class="material-symbols-outlined" onclick="clickMenuLeft()">expand_more</i>
+        </span>
+
+        <div class="blocoala1" id="menuleft1" onclick="clickBloco1()">
+          <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft" />
+          <span class="textomenuleft">Ala 1</span>
+        </div>
+      </div>
+      <div class="menuleftlinha"></div>
+    </div>
+
+    <div class="dashboard">
+      <div class="dashboardbloco2">
+        <span class="dashboardtexto" id="dashdashtexto"></span>
+      </div>
+      <div class="dashboardAla1" id="dashdash1">
+        <div class="dash">
+          <div id="dashmarrom">
+            <span id="dashtexto">N° da Sala: 1</span>
+            <span class="dashiconfundo">
+              <span id="iconflecha" onclick="dashboardIcon(1)" class="material-symbols-outlined md-30">
+                arrow_outward
+              </span>
+            </span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto1"><span id="dashicon1" class="material-symbols-outlined">
+                warning </span>Temperatura Atual:</span>
+            <span id="dashinfobloquinho1" class="dashinfobloquinho">35°C</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto2"><span id="dashicon2" class="material-symbols-outlined">
+                warning </span>Umidade Atual:</span>
+            <span id="dashinfobloquinho2" class="dashinfobloquinho">40%</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto3">
+              <span id="dashicon3" class="material-symbols-outlined">
                 warning
               </span>
-              <span id="titulotopo">TEMPERATURA MÉDIA(hoje)</span>
-            </div>
-            <div class="blocoDash" id="blocoDash">
-              <span id="dadosGeraisTemperatura"></span>
-            </div>
+              Média de Temperatura (hoje):</span>
+            <span id="dashinfobloquinho3" class="dashinfobloquinho">20%</span>
           </div>
-          <div class="dashinfoGeral" id="dashinfoGeral2">
-            <div class="topoDashInfo" id="topoDashInfo2">
-              <span id="dashinfoicon2" class="material-symbols-outlined">
-                warning </span
-              ><span id="titulotopo2">UMIDADE MÉDIA(hoje)</span>
-            </div>
-            <div class="blocoDash" id="blocoDash2"><span id="dadosGeraisUmidade"></span></div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto4"><span id="dashicon4" class="material-symbols-outlined">
+                warning </span>Média de Umidade (hoje):</span>
+            <span id="dashinfobloquinho4" class="dashinfobloquinho">35°C</span>
           </div>
         </div>
-        <button id="buttonParaDash" onclick="mostrarDashLocalizada()">
-          IR PARA DASHBOARDS<br />LOCALIZADAS
-        </button>
-        <div class="muralAvisos">
-          <div class="tituloMural">
-            <span id="tituloMural">MURAL DE ALERTAS:</span>
+
+        <div class="dash">
+          <div id="dashmarrom">
+            <span id="dashtexto">N° da Sala: 2</span>
+            <span class="dashiconfundo">
+              <span id="iconflecha" onclick="dashboardIcon(2)" class="material-symbols-outlined md-30">
+                arrow_outward
+              </span>
+            </span>
           </div>
-          <div class="conteudoMural">
-            <div id="cardAvisoSala1Temperatura"><span id="informacaoMuralSala1Temperatura"></span></div>
-            <div id="cardAvisoSala1Umidade"><span id="informacaoMuralSala1Umidade"></span></div>
-            <div id="cardAvisoSala2Temperatura"><span id="informacaoMuralSala2Temperatura"></span></div>
-            <div id="cardAvisoSala2Umidade"><span id="informacaoMuralSala2Umidade"></span></div>
-            <div id="cardAvisoSala3Temperatura"><span id="informacaoMuralSala3Temperatura"></span></div>
-            <div id="cardAvisoSala3Umidade"><span id="informacaoMuralSala3Umidade"></span></div>
-            <div id="cardAvisoSala4Temperatura"><span id="informacaoMuralSala4Temperatura"></span></div>
-            <div id="cardAvisoSala4Umidade"><span id="informacaoMuralSala4Umidade"></span></div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto5"><span id="dashicon5" class="material-symbols-outlined">
+                warning </span>Temperatura Atual:</span>
+            <span id="dashinfobloquinho5" class="dashinfobloquinho">35°C</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto6"><span id="dashicon6" class="material-symbols-outlined">
+                warning </span>Umidade Atual:</span>
+            <span id="dashinfobloquinho6" class="dashinfobloquinho">40%</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto7">
+              <span id="dashicon7" class="material-symbols-outlined">
+                warning
+              </span>
+              Média de Temperatura (hoje):</span>
+            <span id="dashinfobloquinho7" class="dashinfobloquinho">20%</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto8"><span id="dashicon8" class="material-symbols-outlined">
+                warning </span>Média de Umidade (hoje):</span>
+            <span id="dashinfobloquinho8" class="dashinfobloquinho">35°C</span>
           </div>
         </div>
-        
-      </div>
-    </div>
 
-    <div class="menutop">
-      <i
-        id="iconmenutop"
-        class="material-symbols-outlined"
-        onclick="clickMenu()"
-        ><span id="iconmenumenu">close</span></i
-      >
-      <span class="menutoptexto">Menu</span>
-    </div>
-    <div id="conteudo" class="conteudo">
-      <div class="menuleft" id="menumenu">
-        <div class="containermenuleft">
-          <button id="buttonDashGeral" onclick="mostrarDashLocalizada()">
-            DASHBOARD GERAL
-          </button>
-          <span id="menulefttexto"
-            >MUSEU IPIRANGA
-            <i
-              id="iconmenuleft"
-              class="material-symbols-outlined"
-              onclick="clickMenuLeft()"
-              >expand_more</i
-            >
-          </span>
-
-          <div class="blocoala1" id="menuleft1" onclick="clickBloco1()">
-            <img src="./assets/🦆 icon _brush_.png" class="pincelmenuleft" />
-            <span class="textomenuleft">Ala 1</span>
+        <div class="dash">
+          <div id="dashmarrom">
+            <span id="dashtexto">N° da Sala: 3</span>
+            <span class="dashiconfundo">
+              <span id="iconflecha" onclick="dashboardIcon(3)" class="material-symbols-outlined md-30">
+                arrow_outward
+              </span>
+            </span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto9"><span id="dashicon9" class="material-symbols-outlined">
+                warning </span>Temperatura Atual:</span>
+            <span id="dashinfobloquinho9" class="dashinfobloquinho">35°C</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto10"><span id="dashicon10" class="material-symbols-outlined">
+                warning </span>Umidade Atual:</span>
+            <span id="dashinfobloquinho10" class="dashinfobloquinho">40%</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto11">
+              <span id="dashicon11" class="material-symbols-outlined">
+                warning
+              </span>
+              Média de Temperatura (hoje):</span>
+            <span id="dashinfobloquinho11" class="dashinfobloquinho">20%</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto12"><span id="dashicon12" class="material-symbols-outlined">
+                warning </span>Média de Umidade (hoje):</span>
+            <span id="dashinfobloquinho12" class="dashinfobloquinho">35°C</span>
           </div>
         </div>
-        <div class="menuleftlinha"></div>
-      </div>
 
-      <div class="dashboard">
-        <div class="dashboardbloco2">
-          <span class="dashboardtexto" id="dashdashtexto"></span>
-        </div>
-        <div class="dashboardAla1" id="dashdash1">
-          <div class="dash">
-            <div id="dashmarrom">
-              <span id="dashtexto">N° da Sala: 1</span>
-              <span class="dashiconfundo">
-                <span
-                  id="iconflecha"
-                  onclick="dashboardIcon(1)"
-                  class="material-symbols-outlined md-30"
-                >
-                  arrow_outward
-                </span>
+        <div class="dash">
+          <div id="dashmarrom">
+            <span id="dashtexto">N° da Sala: 4</span>
+            <span class="dashiconfundo">
+              <span id="iconflecha" onclick="dashboardIcon(4)" class="material-symbols-outlined md-30">
+                arrow_outward
               </span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto1"
-                ><span id="dashicon1" class="material-symbols-outlined">
-                  warning </span
-                >Temperatura Atual:</span
-              >
-              <span id="dashinfobloquinho1" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto2"
-                ><span id="dashicon2" class="material-symbols-outlined">
-                  warning </span
-                >Umidade Atual:</span
-              >
-              <span id="dashinfobloquinho2" class="dashinfobloquinho">40%</span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto3">
-                <span id="dashicon3" class="material-symbols-outlined">
-                  warning
-                </span>
-                Média de Temperatura (hoje):</span
-              >
-              <span id="dashinfobloquinho3" class="dashinfobloquinho">20%</span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto4"
-                ><span id="dashicon4" class="material-symbols-outlined">
-                  warning </span
-                >Média de Umidade (hoje):</span
-              >
-              <span id="dashinfobloquinho4" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
+            </span>
           </div>
-
-          <div class="dash">
-            <div id="dashmarrom">
-              <span id="dashtexto">N° da Sala: 2</span>
-              <span class="dashiconfundo">
-                <span
-                  id="iconflecha"
-                  onclick="dashboardIcon(2)"
-                  class="material-symbols-outlined md-30"
-                >
-                  arrow_outward
-                </span>
-              </span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto5"
-                ><span id="dashicon5" class="material-symbols-outlined">
-                  warning </span
-                >Temperatura Atual:</span
-              >
-              <span id="dashinfobloquinho5" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto6"
-                ><span id="dashicon6" class="material-symbols-outlined">
-                  warning </span
-                >Umidade Atual:</span
-              >
-              <span id="dashinfobloquinho6" class="dashinfobloquinho">40%</span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto7">
-                <span id="dashicon7" class="material-symbols-outlined">
-                  warning
-                </span>
-                Média de Temperatura (hoje):</span
-              >
-              <span id="dashinfobloquinho7" class="dashinfobloquinho">20%</span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto8"
-                ><span id="dashicon8" class="material-symbols-outlined">
-                  warning </span
-                >Média de Umidade (hoje):</span
-              >
-              <span id="dashinfobloquinho8" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto13"><span id="dashicon13" class="material-symbols-outlined">
+                warning </span>Temperatura Atual:</span>
+            <span id="dashinfobloquinho13" class="dashinfobloquinho">35°C</span>
           </div>
-
-          <div class="dash">
-            <div id="dashmarrom">
-              <span id="dashtexto">N° da Sala: 3</span>
-              <span class="dashiconfundo">
-                <span
-                  id="iconflecha"
-                  onclick="dashboardIcon(3)"
-                  class="material-symbols-outlined md-30"
-                >
-                  arrow_outward
-                </span>
-              </span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto9"
-                ><span id="dashicon9" class="material-symbols-outlined">
-                  warning </span
-                >Temperatura Atual:</span
-              >
-              <span id="dashinfobloquinho9" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto10"
-                ><span id="dashicon10" class="material-symbols-outlined">
-                  warning </span
-                >Umidade Atual:</span
-              >
-              <span id="dashinfobloquinho10" class="dashinfobloquinho"
-                >40%</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto11">
-                <span id="dashicon11" class="material-symbols-outlined">
-                  warning
-                </span>
-                Média de Temperatura (hoje):</span
-              >
-              <span id="dashinfobloquinho11" class="dashinfobloquinho"
-                >20%</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto12"
-                ><span id="dashicon12" class="material-symbols-outlined">
-                  warning </span
-                >Média de Umidade (hoje):</span
-              >
-              <span id="dashinfobloquinho12" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto14"><span id="dashicon14" class="material-symbols-outlined">
+                warning </span>Umidade Atual:</span>
+            <span id="dashinfobloquinho14" class="dashinfobloquinho">40%</span>
           </div>
-
-          <div class="dash">
-            <div id="dashmarrom">
-              <span id="dashtexto">N° da Sala: 4</span>
-              <span class="dashiconfundo">
-                <span
-                  id="iconflecha"
-                  onclick="dashboardIcon(4)"
-                  class="material-symbols-outlined md-30"
-                >
-                  arrow_outward
-                </span>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto15">
+              <span id="dashicon15" class="material-symbols-outlined">
+                warning
               </span>
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto13"
-                ><span id="dashicon13" class="material-symbols-outlined">
-                  warning </span
-                >Temperatura Atual:</span
-              >
-              <span id="dashinfobloquinho13" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto14"
-                ><span id="dashicon14" class="material-symbols-outlined">
-                  warning </span
-                >Umidade Atual:</span
-              >
-              <span id="dashinfobloquinho14" class="dashinfobloquinho"
-                >40%</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto15">
-                <span id="dashicon15" class="material-symbols-outlined">
-                  warning
-                </span>
-                Média de Temperatura (hoje):</span
-              >
-              <span id="dashinfobloquinho15" class="dashinfobloquinho"
-                >20%</span
-              >
-            </div>
-            <div class="dashinfo">
-              <span class="dashinfotexto" id="dashinfotexto16"
-                ><span id="dashicon16" class="material-symbols-outlined">
-                  warning </span
-                >Média de Umidade (hoje):</span
-              >
-              <span id="dashinfobloquinho16" class="dashinfobloquinho"
-                >35°C</span
-              >
-            </div>
+              Média de Temperatura (hoje):</span>
+            <span id="dashinfobloquinho15" class="dashinfobloquinho">20%</span>
+          </div>
+          <div class="dashinfo">
+            <span class="dashinfotexto" id="dashinfotexto16"><span id="dashicon16" class="material-symbols-outlined">
+                warning </span>Média de Umidade (hoje):</span>
+            <span id="dashinfobloquinho16" class="dashinfobloquinho">35°C</span>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
 
 <script src="../js/funcoes.js"></script>

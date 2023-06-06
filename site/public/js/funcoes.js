@@ -100,7 +100,6 @@ const botaoSuporteMensagem = document.getElementById("botaoSuporteMensagem")
 const menuSuporte = document.querySelectorAll(".menuSuporte")
 const suporteFechar = document.getElementById("suporteFechar")
 const botaoSuporteIcon = document.getElementById("botaoSuporteIcon")
-const i_email = document.getElementById("i_email")
 const i_assunto = document.getElementById("i_assunto")
 const i_msg = document.getElementById("i_msg")
 const suporteLoading = document.getElementById("suporteLoading")
@@ -140,41 +139,26 @@ if (sessionStorage.EMAIL_USUARIO == null) {
 
     botaoSuporte.addEventListener("click", function () {
         if (botaoSuporteIcon.innerHTML === 'send') {
-            if (i_email.value == '' || i_assunto.value == '' || i_msg.value == '') {
+            if (i_assunto.value == '' || i_msg.value == '') {
                 alert("Todos os campos precisam estar preenchidos!")
             } else {
-
-                new Promise(function (ok, erro) {
-                    botaoSuporte.style.backgroundColor = "#2e2109"
                     botaoSuporteIcon.innerHTML = ''
-                    setTimeout(relatarProblema, 100)
-
-                }).then(function (resposta) {
-                    console.log(resposta)
-                    // if (resposta) {
-                    //     botaoSuporte.style.backgroundColor = "#bea46b"
-                    //     botaoSuporteIcon.innerHTML = 'send'
-                    //     suporteLoading.style.display = 'none'
-                    // }
-                }).catch(function () {
-                    console.log(erro)
-                })
-
+                    setTimeout(relatarProblema, 1000)
+            }
+        } else {
+            botaoSuporteMensagem.style.display = 'none'
+            menuSuporte[0].style.display = 'flex'
+            menuSuporte[0].style.animationName = "suporteA";
+            menuSuporte[0].style.animationFillMode = "forwards";
+            menuSuporte[0].style.animationDuration = "0.5s";
+    
+            if (menuSuporte[0].style.display == 'none' || menuSuporte[0].style.display == '') {
+                botaoSuporteIcon.innerHTML = 'warning'
+            } else {
+                botaoSuporteIcon.innerHTML = 'send'
             }
         }
-
-
-        botaoSuporteMensagem.style.display = 'none'
-        menuSuporte[0].style.display = 'flex'
-        menuSuporte[0].style.animationName = "suporteA";
-        menuSuporte[0].style.animationFillMode = "forwards";
-        menuSuporte[0].style.animationDuration = "0.5s";
-
-        if (menuSuporte[0].style.display == 'none' || menuSuporte[0].style.display == '') {
-            botaoSuporteIcon.innerHTML = 'warning'
-        } else {
-            botaoSuporteIcon.innerHTML = 'send'
-        }
+   
     })
 
 
@@ -194,37 +178,58 @@ if (sessionStorage.EMAIL_USUARIO == null) {
 }
 
 
-function relatarProblema(status) {
-    alert("oi")
-    return true
+// function relatarProblema() {
+//     botaoSuporteIcon.innerHTML = ''
+//     suporteLoading.style.display = 'flex'
+//     console.log("oi")
+//     setTimeout(function() {
+//         botaoSuporte.style.backgroundColor = "#bea46b"
+//         botaoSuporteIcon.innerHTML = 'send'
+//         suporteLoading.style.display = 'none'
+//     }, 5000)
+
+// }
+
+function relatarProblema() {
+    const i_assunto = document.getElementById("i_assunto")
+    const i_msg = document.getElementById("i_msg")
+    const remetente = sessionStorage.EMAIL_USUARIO;
+    const assunto = i_assunto.value;
+    const corpo = i_msg.value;
+
+    // Tirar o icon do botao e dar flex no loading
+    botaoSuporte.style.backgroundColor = "#2e2109"
+    suporteLoading.style.display = 'flex'
+
+    fetch('/relatar-problema', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ remetente, assunto, corpo }),
+    })
+        .then(function (response) {
+            if (response.ok) {
+                
+                console.log('E-mail enviado com sucesso!');
+                alert("E-mail enviado com sucesso!")
+                limparInputs()
+                botaoSuporte.style.backgroundColor = "#bea46b"
+                botaoSuporteIcon.innerHTML = 'send'
+                suporteLoading.style.display = 'none'
+            } else {
+                console.log('Erro ao enviar o e-mail.');
+            }
+        })
+        .catch(function (error) {
+            console.log('Erro ao enviar o e-mail:', error);
+        });
 }
 
-// function relatarProblema() {
-//     const i_assunto = document.getElementById("i_assunto")
-//     const i_msg = document.getElementById("i_msg")
+function limparInputs(){
+    const i_assunto = document.getElementById("i_assunto")
+    const i_msg = document.getElementById("i_msg")
 
-
-//     const remetente = sessionStorage.EMAIL_USUARIO;
-//     const assunto = i_assunto.value;
-//     const corpo = i_msg.value;
-
-//     fetch('/relatar-problema', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ remetente, assunto, corpo }),
-//     })
-//         .then(function (response) {
-//             if (response.ok) {
-//                 console.log('E-mail enviado com sucesso!');
-//                 alert("E-mail enviado com sucesso!")
-//                 limparInputs()
-//             } else {
-//                 console.log('Erro ao enviar o e-mail.');
-//             }
-//         })
-//         .catch(function (error) {
-//             console.log('Erro ao enviar o e-mail:', error);
-//         });
-// }
+    i_assunto.value = ''
+    i_msg.value = ''
+}
